@@ -1,0 +1,15 @@
+%% Grammar for the ComBE language
+%% By default, based on an example "entities" syntax
+module ComBE
+
+imports Common
+
+exports
+
+  context-free start-symbols
+  
+    Start
+
+  context-free syntax
+  
+    ""       -> Start {"Start"}

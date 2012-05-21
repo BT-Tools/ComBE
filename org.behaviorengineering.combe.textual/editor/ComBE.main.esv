@@ -1,0 +1,16 @@
+module ComBE.main
+
+imports ComBE-Builders ComBE-Colorer ComBE-Completions ComBE-Folding ComBE-Outliner ComBE-References ComBE-Syntax
+
+language General properties
+                  
+  name          : ComBE
+  id            : org.behaviorengineering.combe.textual
+  extends       : Root
+                  
+  description   : "Spoofax/IMP-generated editor for Behavior Engineering"
+  url           : http://www.behaviorengineering.org/
+                  
+  extensions    : bt
+  table         : include/ComBE.tbl
+  start symbols : Start

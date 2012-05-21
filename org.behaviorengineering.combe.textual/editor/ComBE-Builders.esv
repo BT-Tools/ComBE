@@ -1,0 +1,20 @@
+module ComBE-Builders
+
+imports ComBE-Builders.generated
+
+builders
+                                                                                   
+  // This file can be used for custom analysis, builder and refactoring rules.     
+  //                                                                               
+  // See the imported file for a brief introduction and examples.                  
+
+builders
+                                                                                                                          
+  provider : include/combe.ctree                                                                                          
+  provider : include/combe-java.jar                                                                                       
+                                                                                                                          
+  observer : editor-analyze                                                                                               
+                                                                                                                          
+  builder  : "Show abstract syntax (for selection)"          = generate-aterm (openeditor) (realtime) (meta) (source)     
+  builder  : "Show analyzed abstract syntax (for selection)" = generate-analyzed (openeditor) (realtime) (meta) (source)  
+                                                                                                                          
