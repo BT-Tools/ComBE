@@ -24,9 +24,9 @@ rules // Analysis
       ast'                    := <id> ast; // Optional AST desugaring
       (ast'', filesToAnalyze) := <analyze-top(|<language>)> (ast', path, project-path);
       index-transaction(
-        errors                := [];
-        warnings              := [];
-        notes                 := []
+        errors                := <collect-all(constraint-error, conc)> ast'';
+        warnings              := [];//<collect-all(constraint-warning, conc)> ast'';
+        notes                 := []//<collect-all(constraint-note, conc)> ast''
       );
       filesToAnalyze'         := <make-set> <map(index-filepair-to-file)> filesToAnalyze
 
