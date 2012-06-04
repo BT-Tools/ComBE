@@ -21,8 +21,8 @@ exports
 	
 	"#T" BehaviorTree?									-> Root {"Root"}
 	
-	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* (";" child:BehaviorTree)?			-> BehaviorTree {"AtomicSequence"}
-	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#N" "{" nodes:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
-	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#P" "{" nodes:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* (";" child:BehaviorTree)?				-> BehaviorTree {"AtomicSequence"}
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
 	Requirement@ID*	Component@ID Behavior@INT									-> Node {"Node"}
