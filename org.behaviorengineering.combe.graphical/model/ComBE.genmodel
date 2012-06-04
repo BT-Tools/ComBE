@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.behaviorengineering.combe.graphical/src"
+    modelPluginID="org.behaviorengineering.combe.graphical" modelName="ComBE" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>ComBE.ecore</foreignModel>
+  <genPackages prefix="ComBE" disposableProviderFactory="true" ecorePackage="ComBE.ecore#/">
+    <genClasses ecoreClass="ComBE.ecore#//Specification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//Specification/requirements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//Specification/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//Specification/root"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//Requirement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//Requirement/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//StandardComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//StandardComponent/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//StandardComponent/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//StandardComponent/behavior"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//SystemComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//SystemComponent/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//SystemComponent/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//SystemComponent/behavior"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//Behavior">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//Behavior/int"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//Behavior/label"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//Root/behaviortree"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//AtomicSequence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AtomicSequence/requirement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AtomicSequence/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AtomicSequence/behavior"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//AtomicSequence/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//AtomicSequence/child"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//AlternativeBranch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AlternativeBranch/requirement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AlternativeBranch/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//AlternativeBranch/behavior"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//AlternativeBranch/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//AlternativeBranch/children"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//ParallelBranch">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//ParallelBranch/requirement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//ParallelBranch/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//ParallelBranch/behavior"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//ParallelBranch/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComBE.ecore#//ParallelBranch/children"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//Node">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//Node/requirement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//Node/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//Node/behavior"/>
+    </genClasses>
+    <genClasses ecoreClass="ComBE.ecore#//Component"/>
+    <genClasses ecoreClass="ComBE.ecore#//BehaviorTree"/>
+  </genPackages>
+</genmodel:GenModel>
