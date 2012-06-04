@@ -13,9 +13,9 @@ imports
   lib/compilation-library.generated
   analysis-manual
   check
-
+  	
 rules // Analysis
-  
+   
   // Analyzes the current program, returning a tuple with the analyzed AST, errors, warnings, notes and
   // files that should be re-analyzed.
   analyze:

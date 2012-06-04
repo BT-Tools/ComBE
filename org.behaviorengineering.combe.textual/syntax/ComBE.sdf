@@ -1,5 +1,4 @@
 %% Grammar for the ComBE language
-%% By default, based on an example "entities" syntax
 module ComBE
 
 imports Common
@@ -12,22 +11,18 @@ exports
 
   context-free syntax
   
-    "#RT" Requirement* Component* "#T" BehaviorTree?	-> Start {"Specification"}
+    "#RT" Requirement* Component* Root?					-> Start {"Specification"}
     
-    Requirement@=ID label:ID					-> Requirement {"Requirement"}
+    Requirement@=ID label:ID							-> Requirement {"Requirement"}
     
-	"#C" Component@=ID label:ID Behavior*		-> Component {"StandardComponent"}
-	"#SC" Component@=ID label:ID Behavior*		-> Component {"SystemComponent"}
-	"#S" Behavior@=INT label:ID 				-> Behavior {"Behavior"}
+	"#C" Component@=ID label:ID behavior:Behavior*		-> Component {"StandardComponent"}
+	"#SC" Component@=ID label:ID behavior:Behavior*		-> Component {"SystemComponent"}
+	"#S" Behavior@=INT label:ID 						-> Behavior {"Behavior"}
 	
-	{Node	";"}+								-> BehaviorTree {"BehaviorTree"}
+	"#T" BehaviorTree?									-> Root {"Root"}
 	
-	Requirement@ID*	Component@ID Behavior@INT										-> Node {"SequentilNode", prefer}
-	Requirement@ID*	Component@ID Behavior@INT "#N" "{" choices:BehaviorTree* "}" 	-> Node {"AlternativeBranch"}
-	Requirement@ID*	Component@ID Behavior@INT "#P" "{" processes:BehaviorTree* "}" 	-> Node {"ParallelBranch"}
-	
-	Requirement@ID*	Component@ID Behavior@INT										-> AtomicNode {"AtomicNode"}
-	{AtomicNode	";;"}+																-> Node {"AtomicSequence"}
-	
-	
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* (";" child:BehaviorTree)?			-> BehaviorTree {"AtomicSequence"}
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#N" "{" nodes:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
+	Requirement@ID*	Component@ID Behavior@INT (";;" nodes:Node)* "#P" "{" nodes:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
+	Requirement@ID*	Component@ID Behavior@INT									-> Node {"Node"}
