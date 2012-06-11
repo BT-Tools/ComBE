@@ -1,0 +1,15 @@
+// Requirement traceability
+#RT R1 R1
+
+// Components
+#C C1 C
+ #EI 1 e
+ #EI 2 e
+ #EI 3 e
+
+// Tree
+#T R1 C1 1 ; R1 C1 2 ;; R1 C1 3
+
+/*
+	#T R1 C1 1 ; R1 C1 2 ;; R1 C1 3
+*/

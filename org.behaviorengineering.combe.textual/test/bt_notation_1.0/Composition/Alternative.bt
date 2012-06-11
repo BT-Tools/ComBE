@@ -1,0 +1,15 @@
+#RT R1 R1
+
+#C C1 C
+ #S 1 s
+ 
+#C C2 D
+ #L 1 b
+ 
+#C C3 E
+ #L 1 b
+ 
+#T R1 C1 1 #N{
+ R1 C2 1
+ R1 C3 1
+ }

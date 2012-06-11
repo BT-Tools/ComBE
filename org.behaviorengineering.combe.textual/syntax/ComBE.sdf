@@ -11,17 +11,55 @@ exports
 
   context-free syntax
   
-    "#RT" Requirement* Component* Root?						-> Start {"Specification"}
+    "#RT" Requirement* Component* BT?						-> Start {"Specification"}
     
     Requirement@=ID label:ID								-> Requirement {"Requirement"}
     
-	"#C" Component@=ID label:ID behavior:Behavior*			-> Component {"StandardComponent"}
-	"#SC" Component@=ID label:ID behavior:Behavior*			-> Component {"SystemComponent"}
-	"#S" Behavior@=INT label:ID 							-> Behavior {"Behavior"}
+    %% TODO: make enum
+	"#C" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"StandardComponent"}
+	"#SC" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"SystemComponent"}
 	
-	"#T" BehaviorTree?										-> Root {"Root"}
+	BehaviorKind Behavior*									-> BehaviorSeq {"BehaviorSeq"}
+	
+	Behavior@=INT label:ID									-> Behavior {"Behavior"}
+	
+	"#T" BehaviorTree?										-> BT {"Root"}
+	"#T" "_" label:ID? Operator?							-> BT {"EmptyTree"}
 	{nodes:Node ";;"}+ (";" child:BehaviorTree)?			-> BehaviorTree {"AtomicSequence"}
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
-	Requirement@ID*	Component@ID Behavior@INT				-> Node {"Node"}
+
+	Requirement@ID+ TracibilityStatus? Component@ID Behavior@INT label:ID? Operator?	-> Node {"Node"}
 	
+	
+  lexical syntax
+  	
+  	"#S"		-> BehaviorKind
+	"#L"		-> BehaviorKind
+	"#E"		-> BehaviorKind
+	"#G"		-> BehaviorKind
+	"#II"		-> BehaviorKind
+	"#IO"		-> BehaviorKind
+	"#EI"		-> BehaviorKind
+	"#EO"		-> BehaviorKind
+	"#A"		-> BehaviorKind
+  	
+  	"+"			-> TracibilityStatus
+	"-"			-> TracibilityStatus
+	"++"		-> TracibilityStatus 
+	"--"		-> TracibilityStatus
+	"+-"		-> TracibilityStatus
+  	
+	"--"		-> Operator
+	"&"			-> Operator
+	"|"			-> Operator
+	"%"			-> Operator
+	"=>"		-> Operator
+	"^"			-> Operator
+	"^^"		-> Operator
+	"="			-> Operator
+	"XOR"		-> Operator
+	
+  lexical syntax
+		
+	"XOR" 	-> ID {reject}	

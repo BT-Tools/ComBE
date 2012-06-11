@@ -1,0 +1,26 @@
+#RT R1 R1 R2 R2 R3 R3 R5 R5 R6 R6 R7 R7
+
+#C C1 OVEN
+ #S 1 Open 2 Cooking
+ #EI 3 TimeOut
+ 
+#C C2 USER
+ #EI 1 PushButton 2 DoorOpen
+ 
+#C C3 DOOR
+ #S 1 Open 
+ 
+#C C4 POWERTUBE
+ #S 1 Off
+
+#C C5 BUTTON
+ #S 1 Disabled
+
+#T R6 C1 1; R1 C1 2 #N{
+	R2 + C2 1
+	R3 + C2 2; R5 C3 1 #P{ 
+		R5 + C4 1
+		R3 C5 1
+	} 
+	R7 C1 3; R3 C4 1 
+}
