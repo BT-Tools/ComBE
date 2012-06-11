@@ -11,15 +11,15 @@ exports
 
   context-free syntax
   
-    "#RT" Requirement* Component* BT?						-> Start {"Specification"}
+    "#RT" Requirement* Component* BT?						-> Start {"Specification", scope(Requirement, Component)}
     
     Requirement@=ID label:ID								-> Requirement {"Requirement"}
     
-    %% TODO: make enum
-	"#C" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"StandardComponent"}
-	"#SC" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"SystemComponent"}
+    %% TODO: make enum?
+	"#C" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"StandardComponent", scope(Behavior)}
+	"#SC" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"SystemComponent", scope(Behavior)}
 	
-	BehaviorKind Behavior*									-> BehaviorSeq {"BehaviorSeq"}
+	BehaviorType Behavior*									-> BehaviorSeq {"BehaviorSeq"}
 	
 	Behavior@=INT label:ID									-> Behavior {"Behavior"}
 	
@@ -34,15 +34,15 @@ exports
 	
   lexical syntax
   	
-  	"#S"		-> BehaviorKind
-	"#L"		-> BehaviorKind
-	"#E"		-> BehaviorKind
-	"#G"		-> BehaviorKind
-	"#II"		-> BehaviorKind
-	"#IO"		-> BehaviorKind
-	"#EI"		-> BehaviorKind
-	"#EO"		-> BehaviorKind
-	"#A"		-> BehaviorKind
+  	"#S"		-> BehaviorType
+	"#L"		-> BehaviorType
+	"#E"		-> BehaviorType
+	"#G"		-> BehaviorType
+	"#II"		-> BehaviorType
+	"#IO"		-> BehaviorType
+	"#EI"		-> BehaviorType
+	"#EO"		-> BehaviorType
+	"#A"		-> BehaviorType
   	
   	"+"			-> TracibilityStatus
 	"-"			-> TracibilityStatus
