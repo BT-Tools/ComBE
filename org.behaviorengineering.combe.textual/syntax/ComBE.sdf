@@ -11,26 +11,24 @@ exports
 
   context-free syntax
   
-    "#RT" Requirement* Component* BT?						-> Start {"Specification", scope(Requirement, Component)}
+    "#RT" Requirement* Component* ("#T" root:BehaviorTree)?	-> Start {"Specification", scope(Requirement, Component)}
     
     Requirement@=ID label:ID								-> Requirement {"Requirement"}
     
     %% TODO: make enum?
-	"#C" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"StandardComponent", scope(Behavior)}
-	"#SC" Component@=ID label:ID behavior:BehaviorSeq*		-> Component {"SystemComponent", scope(Behavior)}
+	"#C" Component@=ID label:ID BehaviorSeq*				-> Component {"StandardComponent", scope(Behavior)}
+	"#SC" Component@=ID label:ID BehaviorSeq*				-> Component {"SystemComponent", scope(Behavior)}
 	
-	BehaviorType Behavior*									-> BehaviorSeq {"BehaviorSeq"}
+	BehaviorType behavior:Behavior*							-> BehaviorSeq {"BehaviorSeq"}
 	
 	Behavior@=INT label:ID									-> Behavior {"Behavior"}
 	
-	"#T" BehaviorTree?										-> BT {"Root"}
-	"#T" "_" label:ID? Operator?							-> BT {"EmptyTree"}
 	{nodes:Node ";;"}+ (";" child:BehaviorTree)?			-> BehaviorTree {"AtomicSequence"}
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	Requirement@ID+ TracibilityStatus? Component@ID Behavior@INT label:ID? Operator?	-> Node {"Node"}
-	
+	Requirement@ID+ TracibilityStatus? Component@ID Behavior@INT label:ID? Operator?	-> Node {"StandardNode"}
+	"_" label:ID? Operator?																-> Node {"EmptyNode"}
 	
   lexical syntax
   	
