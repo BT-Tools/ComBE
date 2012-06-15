@@ -11,7 +11,7 @@ exports
 
   context-free syntax
   
-    "#RT" Requirement* Component* ("#T" root:BehaviorTree)?	-> Start {"Specification", scope(Requirement, Component)}
+    "#RT" Requirement* Component* ("#T" Root)?				-> Start {"Specification", scope(Requirement, Component)}
     
     Requirement@=ID label:ID								-> Requirement {"Requirement"}
     
@@ -23,40 +23,44 @@ exports
 	
 	Behavior@=INT label:ID									-> Behavior {"Behavior"}
 	
+	BehaviorTree											-> Root {"Root"} %% workaround for GMF phantom node bug
+	
 	{nodes:Node ";;"}+ (";" child:BehaviorTree)?			-> BehaviorTree {"AtomicSequence"}
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	Requirement@ID+ TracibilityStatus? Component@ID Behavior@INT label:ID? Operator?	-> Node {"StandardNode"}
-	"_" label:ID? Operator?																-> Node {"EmptyNode"}
+	Requirement@ID+ TracibilityStatus Component@ID Behavior@INT label:ID? Operator		-> Node {"StandardNode"}
+	"_" label:ID? Operator																-> Node {"EmptyNode"}
 	
   lexical syntax
   	
-  	"#S"		-> BehaviorType
-	"#L"		-> BehaviorType
-	"#E"		-> BehaviorType
-	"#G"		-> BehaviorType
-	"#II"		-> BehaviorType
-	"#IO"		-> BehaviorType
-	"#EI"		-> BehaviorType
-	"#EO"		-> BehaviorType
-	"#A"		-> BehaviorType
+  	StateRealisation:"#S"	-> BehaviorType
+	Selection:"#L"			-> BehaviorType
+	Event:"#E"				-> BehaviorType
+	Guard:"#G"				-> BehaviorType
+	IIEvent:"#II"			-> BehaviorType
+	IOEvent:"#IO"			-> BehaviorType
+	EIEvent:"#EI"			-> BehaviorType
+	EOEvent:"#EO"			-> BehaviorType
+	Assertion:"#A"			-> BehaviorType
   	
-  	"+"			-> TracibilityStatus
-	"-"			-> TracibilityStatus
-	"++"		-> TracibilityStatus 
-	"--"		-> TracibilityStatus
-	"+-"		-> TracibilityStatus
+  	None:""					-> TracibilityStatus
+  	Implied:"+"				-> TracibilityStatus
+	Missing:"-"				-> TracibilityStatus
+	Updated:"++"			-> TracibilityStatus 
+	Deleted:"--"			-> TracibilityStatus
+	Refinement:"+-"			-> TracibilityStatus
   	
-	"--"		-> Operator
-	"&"			-> Operator
-	"|"			-> Operator
-	"%"			-> Operator
-	"=>"		-> Operator
-	"^"			-> Operator
-	"^^"		-> Operator
-	"="			-> Operator
-	"XOR"		-> Operator
+  	None:""					-> Operator
+	BranchKill:"--"			-> Operator
+	Conjunction:"&"			-> Operator
+	Disjunction:"|"			-> Operator
+	May:"%"					-> Operator
+	Reference:"=>"			-> Operator
+	Reversion:"^"			-> Operator
+	StartNew:"^^"			-> Operator
+	Synchronisation:"="		-> Operator
+	XOR:"XOR"				-> Operator
 	
   lexical syntax
 		
