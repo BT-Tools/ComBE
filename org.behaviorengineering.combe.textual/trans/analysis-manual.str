@@ -5,5 +5,19 @@ imports
   lib/analysis-auto.generated
   lib/index-library.generated
   lib/analysis-library.generated
+  lib/editor-common.generated
 
 rules // Adjust lookup
+
+	// Set root URI part to the file path.
+  	adjust-index-path(is-def |namespace, path):
+    	Specification(_, _, _) -> [<string-replace(|<project-path>, "")> <Fst> <index-get-current-file>]
+	
+	// state references
+	adjust-index-lookup(target |namespace, path, prefix):
+		StandardNode(_, _, c, <target>, _, _) -> f*
+		where
+			<debug> prefix;
+			f* := <index-lookup-children(|Behavior(), prefix)> c
+			
+			

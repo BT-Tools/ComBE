@@ -8,7 +8,7 @@ import org.strategoxt.lang.Strategy;
  */
 public class InteropRegisterer extends JavaInteropRegisterer {
 
-  public InteropRegisterer() {
-    super(new Strategy[] { java_strategy_0_0.instance });
-  }
+	public InteropRegisterer() {
+		super(new Strategy[] { java_strategy_0_0.instance, term_to_model_0_3.instance });
+	}
 }

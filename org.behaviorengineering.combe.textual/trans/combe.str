@@ -36,7 +36,8 @@ rules // Analysis
     with
       editor-init;
       (ast', errors, warnings, notes, filesToAnalyze) := <analyze> (ast, path, project-path);
-      <try(editor-queue-analysis)> filesToAnalyze
+      <try(editor-queue-analysis)> filesToAnalyze;
+      <text2model> (ast, path, project-path)
       
   // Main entry point for analyzes, called when multiple files have changed. 
   editor-analyze:
@@ -59,6 +60,17 @@ rules // Analysis
     with
       index-setup(|<language>, [<project-path>], ".");
       <trigger-commit-and-compile> <language>
+
+  text2model:
+    (ast', path, project-path) -> None()
+    with
+      packageName := <get-config> "program";
+      textFilePath := $[[project-path]/[path]];
+      diagramFileExtension := <conc-strings> (<lower-case> packageName, "_diagram");
+      diagramFilePath := $[[project-path]/[<guarantee-extension(|diagramFileExtension)> path]];
+      <term-to-model(|diagramFilePath, packageName, textFilePath)> ast'
+      
+  external term-to-model(|diagramFilePath, packageName, textFilePath)
 
 rules // Editor services
   

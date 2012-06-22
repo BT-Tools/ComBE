@@ -10,7 +10,7 @@ exports
     Start
 
   context-free syntax
-  
+ 
     "#RT" Requirement* Component* ("#T" Root)?				-> Start {"Specification", scope(Requirement, Component)}
     
     Requirement@=ID label:ID								-> Requirement {"Requirement"}
@@ -29,7 +29,7 @@ exports
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	Requirement@ID+ TracibilityStatus Component@ID Behavior@INT label:ID? Operator		-> Node {"StandardNode"}
+	Requirement@ID TracibilityStatus Component@ID Behavior@INT label:ID? Operator		-> Node {"StandardNode"}
 	"_" label:ID? Operator																-> Node {"EmptyNode"}
 	
   lexical syntax
