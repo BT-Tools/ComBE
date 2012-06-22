@@ -56,9 +56,8 @@
     <descriptors
         name="NodeFigure">
       <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="NodeFigure"
-          qualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
+          xsi:type="gmfgraph:Rectangle"
+          name="NodeFigure"/>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -66,6 +65,12 @@
           xsi:type="gmfgraph:PolylineConnection"
           name="ComBEConnectionFigure"
           targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors
+        name="EmptyNodeFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="EmptyNodeFigure"/>
     </descriptors>
   </figures>
   <nodes
@@ -80,6 +85,9 @@
   <nodes
       name="Node"
       figure="NodeFigure"/>
+  <nodes
+      name="EmptyNode"
+      figure="EmptyNodeFigure"/>
   <connections
       name="ComBEConnection"
       figure="ComBEConnectionFigure"/>

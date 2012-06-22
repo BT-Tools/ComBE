@@ -28,8 +28,22 @@
               href="ComBE.gmfgraph#Node"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="ComBE.ecore#//AlternativeBranch/nodes"/>
+        <ownedChild>
+          <domainMetaElement
+              href="ComBE.ecore#//EmptyNode"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
+          <diagramNode
+              href="ComBE.gmfgraph#EmptyNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
         <compartment
             href="ComBE.gmfgraph#AlternativeBranchNodesCompartment"/>
       </compartments>
@@ -58,8 +72,22 @@
               href="ComBE.gmfgraph#Node"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.1/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="ComBE.ecore#//ParallelBranch/nodes"/>
+        <ownedChild>
+          <domainMetaElement
+              href="ComBE.ecore#//EmptyNode"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
+          <diagramNode
+              href="ComBE.gmfgraph#EmptyNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.1/@ownedChild/@children.0">
+          children="//@nodes.1/@ownedChild/@children.0 //@nodes.1/@ownedChild/@children.1">
         <compartment
             href="ComBE.gmfgraph#ParallelBranchNodesCompartment"/>
       </compartments>
@@ -88,14 +116,32 @@
               href="ComBE.gmfgraph#Node"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.2/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="ComBE.ecore#//AtomicSequence/nodes"/>
+        <ownedChild>
+          <domainMetaElement
+              href="ComBE.ecore#//EmptyNode"/>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
+          <diagramNode
+              href="ComBE.gmfgraph#EmptyNode"/>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.2/@ownedChild/@children.0">
+          children="//@nodes.2/@ownedChild/@children.0 //@nodes.2/@ownedChild/@children.1">
         <compartment
             href="ComBE.gmfgraph#AtomicSequenceNodesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
+    <domainMetaElement
+        href="ComBE.ecore#//AlternativeBranch"/>
+    <containmentFeature
+        href="ComBE.ecore#//AlternativeBranch/children"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -106,6 +152,10 @@
         href="ComBE.ecore#//AlternativeBranch/children"/>
   </links>
   <links>
+    <domainMetaElement
+        href="ComBE.ecore#//ParallelBranch"/>
+    <containmentFeature
+        href="ComBE.ecore#//ParallelBranch/children"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -116,6 +166,10 @@
         href="ComBE.ecore#//ParallelBranch/children"/>
   </links>
   <links>
+    <domainMetaElement
+        href="ComBE.ecore#//AtomicSequence"/>
+    <containmentFeature
+        href="ComBE.ecore#//AtomicSequence/child"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>

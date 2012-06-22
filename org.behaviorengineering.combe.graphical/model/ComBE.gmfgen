@@ -24,6 +24,7 @@
         visualID="3004"
         editPartClassName="StandardNodeEditPart"
         itemSemanticEditPolicyClassName="StandardNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="StandardNodeViewFactory"
         canonicalEditPolicyClassName="StandardNodeCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StandardNodeGraphicalNodeEditPolicy"
         createCommandClassName="StandardNodeCreateCommand"
@@ -35,7 +36,7 @@
           editHelperClassName="StandardNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
@@ -46,9 +47,36 @@
       </modelFacet>
     </childNodes>
     <childNodes
+        visualID="3007"
+        editPartClassName="EmptyNodeEditPart"
+        itemSemanticEditPolicyClassName="EmptyNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="EmptyNodeViewFactory"
+        canonicalEditPolicyClassName="EmptyNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EmptyNodeGraphicalNodeEditPolicy"
+        createCommandClassName="EmptyNodeCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="EmptyNodeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <modelFacet>
+        <metaClass
+            href="ComBE.genmodel#//ComBE/EmptyNode"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+      </modelFacet>
+    </childNodes>
+    <childNodes
         visualID="3005"
         editPartClassName="StandardNode2EditPart"
         itemSemanticEditPolicyClassName="StandardNode2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StandardNodeViewFactory"
         canonicalEditPolicyClassName="StandardNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StandardNode2GraphicalNodeEditPolicy"
         createCommandClassName="StandardNode2CreateCommand"
@@ -60,7 +88,7 @@
           metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
@@ -71,9 +99,35 @@
       </modelFacet>
     </childNodes>
     <childNodes
+        visualID="3008"
+        editPartClassName="EmptyNode2EditPart"
+        itemSemanticEditPolicyClassName="EmptyNode2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EmptyNode2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EmptyNode2GraphicalNodeEditPolicy"
+        createCommandClassName="EmptyNode2CreateCommand"
+        containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.1/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <modelFacet>
+        <metaClass
+            href="ComBE.genmodel#//ComBE/EmptyNode"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+      </modelFacet>
+    </childNodes>
+    <childNodes
         visualID="3006"
         editPartClassName="StandardNode3EditPart"
         itemSemanticEditPolicyClassName="StandardNode3ItemSemanticEditPolicy"
+        notationViewFactoryClassName="StandardNodeViewFactory"
         canonicalEditPolicyClassName="StandardNode3CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="StandardNode3GraphicalNodeEditPolicy"
         createCommandClassName="StandardNode3CreateCommand"
@@ -85,10 +139,35 @@
           metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+      </modelFacet>
+    </childNodes>
+    <childNodes
+        visualID="3009"
+        editPartClassName="EmptyNode3EditPart"
+        itemSemanticEditPolicyClassName="EmptyNode3ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="EmptyNode3CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="EmptyNode3GraphicalNodeEditPolicy"
+        createCommandClassName="EmptyNode3CreateCommand"
+        containers="//@diagram/@compartments.2">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.1/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <modelFacet>
+        <metaClass
+            href="ComBE.genmodel#//ComBE/EmptyNode"/>
         <containmentMetaFeature
             href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
         <childMetaFeature
@@ -99,6 +178,7 @@
         visualID="2004"
         editPartClassName="AlternativeBranchEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchItemSemanticEditPolicy"
+        notationViewFactoryClassName="AlternativeBranchViewFactory"
         canonicalEditPolicyClassName="AlternativeBranchCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="AlternativeBranchGraphicalNodeEditPolicy"
@@ -121,6 +201,7 @@
         visualID="2005"
         editPartClassName="ParallelBranchEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParallelBranchViewFactory"
         canonicalEditPolicyClassName="ParallelBranchCanonicalEditPolicy"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="ParallelBranchGraphicalNodeEditPolicy"
@@ -143,6 +224,7 @@
         visualID="2006"
         editPartClassName="AtomicSequenceEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicSequenceViewFactory"
         canonicalEditPolicyClassName="AtomicSequenceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.2"
         graphicalNodeEditPolicyClassName="AtomicSequenceGraphicalNodeEditPolicy"
@@ -162,62 +244,86 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4001"
-        editPartClassName="AlternativeBranchChildrenEditPart"
-        itemSemanticEditPolicyClassName="AlternativeBranchChildrenItemSemanticEditPolicy"
-        createCommandClassName="AlternativeBranchChildrenCreateCommand"
-        reorientCommandClassName="AlternativeBranchChildrenReorientCommand">
+        visualID="4004"
+        editPartClassName="AlternativeBranch2EditPart"
+        itemSemanticEditPolicyClassName="AlternativeBranch2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="AlternativeBranchViewFactory"
+        createCommandClassName="AlternativeBranch2CreateCommand"
+        reorientCommandClassName="AlternativeBranchReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="ComBE.genmodel#//ComBE/AlternativeBranch"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
+        <targetMetaFeature
             href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
       </modelFacet>
     </links>
     <links
-        visualID="4002"
-        editPartClassName="ParallelBranchChildrenEditPart"
-        itemSemanticEditPolicyClassName="ParallelBranchChildrenItemSemanticEditPolicy"
-        createCommandClassName="ParallelBranchChildrenCreateCommand"
-        reorientCommandClassName="ParallelBranchChildrenReorientCommand">
+        visualID="4005"
+        editPartClassName="ParallelBranch2EditPart"
+        itemSemanticEditPolicyClassName="ParallelBranch2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParallelBranchViewFactory"
+        createCommandClassName="ParallelBranch2CreateCommand"
+        reorientCommandClassName="ParallelBranchReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="ComBE.genmodel#//ComBE/ParallelBranch"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
+        <targetMetaFeature
             href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
       </modelFacet>
     </links>
     <links
-        visualID="4003"
-        editPartClassName="AtomicSequenceChildEditPart"
-        itemSemanticEditPolicyClassName="AtomicSequenceChildItemSemanticEditPolicy"
-        createCommandClassName="AtomicSequenceChildCreateCommand"
-        reorientCommandClassName="AtomicSequenceChildReorientCommand">
+        visualID="4006"
+        editPartClassName="AtomicSequence2EditPart"
+        itemSemanticEditPolicyClassName="AtomicSequence2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicSequenceViewFactory"
+        createCommandClassName="AtomicSequence2CreateCommand"
+        reorientCommandClassName="AtomicSequenceReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"/>
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@topLevelNodes.2/@elementType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="ComBE.genmodel#//ComBE/AtomicSequence"/>
+        <containmentMetaFeature
+            href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
+        <childMetaFeature
+            href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
+        <targetMetaFeature
             href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
       </modelFacet>
     </links>
@@ -225,8 +331,9 @@
         visualID="7002"
         editPartClassName="AlternativeBranchAlternativeBranchNodesCompartmentEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AlternativeBranchAlternativeBranchNodesCompartmentViewFactory"
         canonicalEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="AlternativeBranchNodesCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -242,8 +349,9 @@
         visualID="7003"
         editPartClassName="ParallelBranchParallelBranchNodesCompartmentEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParallelBranchParallelBranchNodesCompartmentViewFactory"
         canonicalEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.1"
+        childNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.3"
         title="ParallelBranchNodesCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -259,8 +367,9 @@
         visualID="7001"
         editPartClassName="AtomicSequenceAtomicSequenceNodesCompartmentEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicSequenceAtomicSequenceNodesCompartmentViewFactory"
         canonicalEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.2"
+        childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.5"
         title="AtomicSequenceNodesCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -280,7 +389,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Node"
             description="Create new Node"
-            genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@topLevelNodes.2 //@diagram/@childNodes.2"/>
+            genNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.2 //@diagram/@topLevelNodes.2 //@diagram/@childNodes.4"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="AlternativeBranch"
@@ -291,6 +400,11 @@
             title="ParallelBranch"
             description="Create new ParallelBranch"
             genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="EmptyNode"
+            description="Create new Empty Node"
+            genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.3 //@diagram/@childNodes.5"/>
       </groups>
       <groups
           title="Connections"
@@ -340,17 +454,26 @@
         parent="//@diagram/@topLevelNodes.0"
         child="//@diagram/@childNodes.0"/>
     <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@childNodes.1"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.0"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@childNodes.1"/>
+        child="//@diagram/@childNodes.2"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@childNodes.3"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@childNodes.2"/>
+        child="//@diagram/@childNodes.4"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@childNodes.5"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.2"/>
@@ -397,12 +520,36 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@topLevelNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -450,12 +597,48 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
         child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@links.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -503,12 +686,60 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
+        child="//@diagram/@links.2"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.2"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
