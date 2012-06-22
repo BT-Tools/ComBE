@@ -41,13 +41,11 @@
     <descriptors
         name="ParallelBranchFigure">
       <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="ParallelBranchFigure"
-          qualifiedClassName="ComBE.diagram.figures.ParallelBranchFigure">
+          xsi:type="gmfgraph:Rectangle"
+          name="ParallelBranchFigure">
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ParallelBranchNodesCompartmentFigure"
-            lineWidth="0"/>
+            name="ParallelBranchNodesCompartmentFigure"/>
       </actualFigure>
       <accessors
           accessor="getParallelBranchNodesCompartmentFigure"
