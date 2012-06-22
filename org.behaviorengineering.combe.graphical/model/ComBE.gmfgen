@@ -21,24 +21,24 @@
     <domainDiagramElement
         href="ComBE.genmodel#//ComBE/Specification"/>
     <childNodes
-        visualID="3002"
-        editPartClassName="Node2EditPart"
-        itemSemanticEditPolicyClassName="Node2ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="Node2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Node2GraphicalNodeEditPolicy"
-        createCommandClassName="Node2CreateCommand"
+        visualID="3004"
+        editPartClassName="StandardNodeEditPart"
+        itemSemanticEditPolicyClassName="StandardNodeItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="StandardNodeCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StandardNodeGraphicalNodeEditPolicy"
+        createCommandClassName="StandardNodeCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="NodeEditHelper"/>
+          editHelperClassName="StandardNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
       <modelFacet>
         <metaClass
-            href="ComBE.genmodel#//ComBE/Node"/>
+            href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
             href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
         <childMetaFeature
@@ -46,12 +46,12 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3003"
-        editPartClassName="Node3EditPart"
-        itemSemanticEditPolicyClassName="Node3ItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="Node3CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="Node3GraphicalNodeEditPolicy"
-        createCommandClassName="Node3CreateCommand"
+        visualID="3005"
+        editPartClassName="StandardNode2EditPart"
+        itemSemanticEditPolicyClassName="StandardNode2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="StandardNode2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StandardNode2GraphicalNodeEditPolicy"
+        createCommandClassName="StandardNode2CreateCommand"
         containers="//@diagram/@compartments.1">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -60,10 +60,10 @@
           metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
       <modelFacet>
         <metaClass
-            href="ComBE.genmodel#//ComBE/Node"/>
+            href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
             href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
         <childMetaFeature
@@ -71,13 +71,12 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3001"
-        editPartClassName="NodeEditPart"
-        itemSemanticEditPolicyClassName="NodeItemSemanticEditPolicy"
-        notationViewFactoryClassName="NodeViewFactory"
-        canonicalEditPolicyClassName="NodeCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="NodeGraphicalNodeEditPolicy"
-        createCommandClassName="NodeCreateCommand"
+        visualID="3006"
+        editPartClassName="StandardNode3EditPart"
+        itemSemanticEditPolicyClassName="StandardNode3ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="StandardNode3CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="StandardNode3GraphicalNodeEditPolicy"
+        createCommandClassName="StandardNode3CreateCommand"
         containers="//@diagram/@compartments.2">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -86,10 +85,10 @@
           metamodelType="//@diagram/@childNodes.0/@elementType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+          figureQualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
       <modelFacet>
         <metaClass
-            href="ComBE.genmodel#//ComBE/Node"/>
+            href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
             href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
         <childMetaFeature
@@ -100,7 +99,6 @@
         visualID="2004"
         editPartClassName="AlternativeBranchEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchItemSemanticEditPolicy"
-        notationViewFactoryClassName="AlternativeBranchViewFactory"
         canonicalEditPolicyClassName="AlternativeBranchCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="AlternativeBranchGraphicalNodeEditPolicy"
@@ -123,7 +121,6 @@
         visualID="2005"
         editPartClassName="ParallelBranchEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParallelBranchViewFactory"
         canonicalEditPolicyClassName="ParallelBranchCanonicalEditPolicy"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="ParallelBranchGraphicalNodeEditPolicy"
@@ -136,7 +133,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ParallelBranchFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ParallelBranchFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fParallelBranchNodesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ParallelBranchFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fParallelBranchNodesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;this.add(fParallelBranchNodesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getParallelBranchNodesCompartmentFigure() {&#xA;&#x9;&#x9;return fParallelBranchNodesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ParallelBranchFigure extends ComBE.diagram.figures.ParallelBranchFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fParallelBranchNodesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ParallelBranchFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fParallelBranchNodesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;fParallelBranchNodesCompartmentFigure.setLineWidth(0);&#xA;&#xA;this.add(fParallelBranchNodesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getParallelBranchNodesCompartmentFigure() {&#xA;&#x9;&#x9;return fParallelBranchNodesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="ComBE.genmodel#//ComBE/ParallelBranch"/>
@@ -146,7 +143,6 @@
         visualID="2006"
         editPartClassName="AtomicSequenceEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceItemSemanticEditPolicy"
-        notationViewFactoryClassName="AtomicSequenceViewFactory"
         canonicalEditPolicyClassName="AtomicSequenceCanonicalEditPolicy"
         compartments="//@diagram/@compartments.2"
         graphicalNodeEditPolicyClassName="AtomicSequenceGraphicalNodeEditPolicy"
@@ -159,7 +155,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="AtomicSequenceFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AtomicSequenceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fAtomicSequenceNodesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AtomicSequenceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fAtomicSequenceNodesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;this.add(fAtomicSequenceNodesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getAtomicSequenceNodesCompartmentFigure() {&#xA;&#x9;&#x9;return fAtomicSequenceNodesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AtomicSequenceFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fAtomicSequenceNodesCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AtomicSequenceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;this.setLineWidth(0);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fAtomicSequenceNodesCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;fAtomicSequenceNodesCompartmentFigure.setOutline(false);&#xA;fAtomicSequenceNodesCompartmentFigure.setLineWidth(0);&#xA;&#xA;this.add(fAtomicSequenceNodesCompartmentFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getAtomicSequenceNodesCompartmentFigure() {&#xA;&#x9;&#x9;return fAtomicSequenceNodesCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="ComBE.genmodel#//ComBE/AtomicSequence"/>
@@ -169,7 +165,6 @@
         visualID="4001"
         editPartClassName="AlternativeBranchChildrenEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchChildrenItemSemanticEditPolicy"
-        notationViewFactoryClassName="AlternativeBranchChildrenViewFactory"
         createCommandClassName="AlternativeBranchChildrenCreateCommand"
         reorientCommandClassName="AlternativeBranchChildrenReorientCommand">
       <diagramRunTimeClass
@@ -190,7 +185,6 @@
         visualID="4002"
         editPartClassName="ParallelBranchChildrenEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchChildrenItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParallelBranchChildrenViewFactory"
         createCommandClassName="ParallelBranchChildrenCreateCommand"
         reorientCommandClassName="ParallelBranchChildrenReorientCommand">
       <diagramRunTimeClass
@@ -211,7 +205,6 @@
         visualID="4003"
         editPartClassName="AtomicSequenceChildEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceChildItemSemanticEditPolicy"
-        notationViewFactoryClassName="AtomicSequenceChildViewFactory"
         createCommandClassName="AtomicSequenceChildCreateCommand"
         reorientCommandClassName="AtomicSequenceChildReorientCommand">
       <diagramRunTimeClass
@@ -230,11 +223,11 @@
     </links>
     <compartments
         visualID="7002"
-        editPartClassName="AlternativeBranchAlternativeBranchChildrenCompartmentEditPart"
-        itemSemanticEditPolicyClassName="AlternativeBranchAlternativeBranchChildrenCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="AlternativeBranchAlternativeBranchChildrenCompartmentCanonicalEditPolicy"
+        editPartClassName="AlternativeBranchAlternativeBranchNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
-        title="AlternativeBranchChildrenCompartment"
+        title="AlternativeBranchNodesCompartment"
         canCollapse="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.0">
@@ -247,11 +240,11 @@
     </compartments>
     <compartments
         visualID="7003"
-        editPartClassName="ParallelBranchParallelBranchChildrenCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ParallelBranchParallelBranchChildrenCompartmentItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ParallelBranchParallelBranchChildrenCompartmentCanonicalEditPolicy"
+        editPartClassName="ParallelBranchParallelBranchNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1"
-        title="ParallelBranchChildrenCompartment"
+        title="ParallelBranchNodesCompartment"
         canCollapse="false"
         needsTitle="false"
         node="//@diagram/@topLevelNodes.1">
@@ -264,10 +257,9 @@
     </compartments>
     <compartments
         visualID="7001"
-        editPartClassName="AtomicSequenceAtomicSecquenceChildrenCompartmentEditPart"
-        itemSemanticEditPolicyClassName="AtomicSequenceAtomicSecquenceChildrenCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="AtomicSequenceAtomicSecquenceChildrenCompartmentViewFactory"
-        canonicalEditPolicyClassName="AtomicSequenceAtomicSecquenceChildrenCompartmentCanonicalEditPolicy"
+        editPartClassName="AtomicSequenceAtomicSequenceNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2"
         title="AtomicSequenceNodesCompartment"
         canCollapse="false"

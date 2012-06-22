@@ -12,10 +12,14 @@
         name="AtomicSequenceFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="AtomicSequenceFigure">
+          name="AtomicSequenceFigure"
+          outline="false"
+          lineWidth="0">
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="AtomicSequenceNodesCompartmentFigure"/>
+            name="AtomicSequenceNodesCompartmentFigure"
+            outline="false"
+            lineWidth="0"/>
       </actualFigure>
       <accessors
           accessor="getAtomicSequenceNodesCompartmentFigure"
@@ -37,11 +41,13 @@
     <descriptors
         name="ParallelBranchFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ParallelBranchFigure">
+          xsi:type="gmfgraph:CustomFigure"
+          name="ParallelBranchFigure"
+          qualifiedClassName="ComBE.diagram.figures.ParallelBranchFigure">
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ParallelBranchNodesCompartmentFigure"/>
+            name="ParallelBranchNodesCompartmentFigure"
+            lineWidth="0"/>
       </actualFigure>
       <accessors
           accessor="getParallelBranchNodesCompartmentFigure"
@@ -50,8 +56,9 @@
     <descriptors
         name="NodeFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="NodeFigure"/>
+          xsi:type="gmfgraph:CustomFigure"
+          name="NodeFigure"
+          qualifiedClassName="ComBE.diagram.figures.NodeFigure"/>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -81,11 +88,11 @@
       figure="AtomicSequenceFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <compartments
-      name="AlternativeBranchChildrenCompartment"
+      name="AlternativeBranchNodesCompartment"
       figure="AlternativeBranchFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <compartments
-      name="ParallelBranchChildrenCompartment"
+      name="ParallelBranchNodesCompartment"
       figure="ParallelBranchFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
 </gmfgraph:Canvas>

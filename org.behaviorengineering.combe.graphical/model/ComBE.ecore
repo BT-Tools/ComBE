@@ -19,13 +19,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
-        eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
+        eType="#//BehaviorSeq" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
+        eType="#//BehaviorSeq" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorSeq">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviortype" lowerBound="1"
+        eType="#//BehaviorType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
         eType="#//Behavior" containment="true"/>
   </eClassifiers>
@@ -35,53 +41,77 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Root">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviortree" eType="#//BehaviorTree"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviortree" lowerBound="1"
+        eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicSequence" eSuperTypes="#//BehaviorTree">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
-        eType="#//Requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
-        eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
-        eType="#//Behavior"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
         eType="#//Node" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" eType="#//BehaviorTree"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlternativeBranch" eSuperTypes="#//BehaviorTree">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
-        eType="#//Requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
-        eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
-        eType="#//Behavior"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
         eType="#//Node" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParallelBranch" eSuperTypes="#//BehaviorTree">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
-        eType="#//Requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
-        eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
-        eType="#//Behavior"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
         eType="#//Node" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Node">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
         eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tracibilitystatus" lowerBound="1"
+        eType="#//TracibilityStatus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
         eType="#//Behavior"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//Operator"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EmptyNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//Operator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="BehaviorType">
+    <eLiterals name="StateRealisation" literal="#S"/>
+    <eLiterals name="Selection" literal="#L"/>
+    <eLiterals name="Event" literal="#E"/>
+    <eLiterals name="Guard" literal="#G"/>
+    <eLiterals name="IIEvent" literal="#II"/>
+    <eLiterals name="IOEvent" literal="#IO"/>
+    <eLiterals name="EIEvent" literal="#EI"/>
+    <eLiterals name="EOEvent" literal="#EO"/>
+    <eLiterals name="Assertion" literal="#A"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TracibilityStatus">
+    <eLiterals name="None" literal=""/>
+    <eLiterals name="Implied" literal="+"/>
+    <eLiterals name="Missing" literal="-"/>
+    <eLiterals name="Updated" literal="++"/>
+    <eLiterals name="Deleted" literal="--"/>
+    <eLiterals name="Refinement" literal="+-"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operator">
+    <eLiterals name="None" literal=""/>
+    <eLiterals name="BranchKill" literal="--"/>
+    <eLiterals name="Conjunction" literal="&amp;"/>
+    <eLiterals name="Disjunction" literal="|"/>
+    <eLiterals name="May" literal="%"/>
+    <eLiterals name="Reference" literal="=>"/>
+    <eLiterals name="Reversion" literal="^"/>
+    <eLiterals name="StartNew" literal="^^"/>
+    <eLiterals name="Synchronisation" literal="="/>
+    <eLiterals name="XOR" literal="XOR"/>
+  </eClassifiers>
 </ecore:EPackage>

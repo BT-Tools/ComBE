@@ -20,7 +20,7 @@
             href="ComBE.ecore#//AlternativeBranch/nodes"/>
         <ownedChild>
           <domainMetaElement
-              href="ComBE.ecore#//Node"/>
+              href="ComBE.ecore#//StandardNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -31,7 +31,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="ComBE.gmfgraph#AlternativeBranchChildrenCompartment"/>
+            href="ComBE.gmfgraph#AlternativeBranchNodesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -50,7 +50,7 @@
             href="ComBE.ecore#//ParallelBranch/nodes"/>
         <ownedChild>
           <domainMetaElement
-              href="ComBE.ecore#//Node"/>
+              href="ComBE.ecore#//StandardNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -61,7 +61,7 @@
       <compartments
           children="//@nodes.1/@ownedChild/@children.0">
         <compartment
-            href="ComBE.gmfgraph#ParallelBranchChildrenCompartment"/>
+            href="ComBE.gmfgraph#ParallelBranchNodesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -80,7 +80,7 @@
             href="ComBE.ecore#//AtomicSequence/nodes"/>
         <ownedChild>
           <domainMetaElement
-              href="ComBE.ecore#//Node"/>
+              href="ComBE.ecore#//StandardNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>
