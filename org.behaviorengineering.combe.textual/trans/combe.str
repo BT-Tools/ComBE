@@ -37,7 +37,7 @@ rules // Analysis
       editor-init;
       (ast', errors, warnings, notes, filesToAnalyze) := <analyze> (ast, path, project-path);
       <try(editor-queue-analysis)> filesToAnalyze;
-      <text2model> (ast, path, project-path)
+      <text2model> (ast', path, project-path)
       
   // Main entry point for analyzes, called when multiple files have changed. 
   editor-analyze:
