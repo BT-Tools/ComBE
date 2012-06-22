@@ -138,10 +138,6 @@
     </ownedChild>
   </nodes>
   <links>
-    <domainMetaElement
-        href="ComBE.ecore#//AlternativeBranch"/>
-    <containmentFeature
-        href="ComBE.ecore#//AlternativeBranch/children"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -152,10 +148,6 @@
         href="ComBE.ecore#//AlternativeBranch/children"/>
   </links>
   <links>
-    <domainMetaElement
-        href="ComBE.ecore#//ParallelBranch"/>
-    <containmentFeature
-        href="ComBE.ecore#//ParallelBranch/children"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -166,10 +158,6 @@
         href="ComBE.ecore#//ParallelBranch/children"/>
   </links>
   <links>
-    <domainMetaElement
-        href="ComBE.ecore#//AtomicSequence"/>
-    <containmentFeature
-        href="ComBE.ecore#//AtomicSequence/child"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComBE.gmftool#//@palette/@tools.1/@tools.0"/>

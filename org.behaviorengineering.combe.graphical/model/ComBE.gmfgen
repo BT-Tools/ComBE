@@ -102,6 +102,7 @@
         visualID="3008"
         editPartClassName="EmptyNode2EditPart"
         itemSemanticEditPolicyClassName="EmptyNode2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="EmptyNodeViewFactory"
         canonicalEditPolicyClassName="EmptyNode2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EmptyNode2GraphicalNodeEditPolicy"
         createCommandClassName="EmptyNode2CreateCommand"
@@ -153,6 +154,7 @@
         visualID="3009"
         editPartClassName="EmptyNode3EditPart"
         itemSemanticEditPolicyClassName="EmptyNode3ItemSemanticEditPolicy"
+        notationViewFactoryClassName="EmptyNodeViewFactory"
         canonicalEditPolicyClassName="EmptyNode3CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="EmptyNode3GraphicalNodeEditPolicy"
         createCommandClassName="EmptyNode3CreateCommand"
@@ -244,86 +246,65 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4004"
-        editPartClassName="AlternativeBranch2EditPart"
-        itemSemanticEditPolicyClassName="AlternativeBranch2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AlternativeBranchViewFactory"
-        createCommandClassName="AlternativeBranch2CreateCommand"
-        reorientCommandClassName="AlternativeBranchReorientCommand">
+        visualID="4007"
+        editPartClassName="AlternativeBranchChildrenEditPart"
+        itemSemanticEditPolicyClassName="AlternativeBranchChildrenItemSemanticEditPolicy"
+        notationViewFactoryClassName="AlternativeBranchChildrenViewFactory"
+        createCommandClassName="AlternativeBranchChildrenCreateCommand"
+        reorientCommandClassName="AlternativeBranchChildrenReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
+          xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="ComBE.genmodel#//ComBE/AlternativeBranch"/>
-        <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
-        <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
-        <targetMetaFeature
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
             href="ComBE.genmodel#//ComBE/AlternativeBranch/children"/>
       </modelFacet>
     </links>
     <links
-        visualID="4005"
-        editPartClassName="ParallelBranch2EditPart"
-        itemSemanticEditPolicyClassName="ParallelBranch2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParallelBranchViewFactory"
-        createCommandClassName="ParallelBranch2CreateCommand"
-        reorientCommandClassName="ParallelBranchReorientCommand">
+        visualID="4008"
+        editPartClassName="ParallelBranchChildrenEditPart"
+        itemSemanticEditPolicyClassName="ParallelBranchChildrenItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParallelBranchChildrenViewFactory"
+        createCommandClassName="ParallelBranchChildrenCreateCommand"
+        reorientCommandClassName="ParallelBranchChildrenReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.1/@elementType"/>
+          xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="ComBE.genmodel#//ComBE/ParallelBranch"/>
-        <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
-        <childMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
-        <targetMetaFeature
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
             href="ComBE.genmodel#//ComBE/ParallelBranch/children"/>
       </modelFacet>
     </links>
     <links
-        visualID="4006"
-        editPartClassName="AtomicSequence2EditPart"
-        itemSemanticEditPolicyClassName="AtomicSequence2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="AtomicSequenceViewFactory"
-        createCommandClassName="AtomicSequence2CreateCommand"
-        reorientCommandClassName="AtomicSequenceReorientCommand">
+        visualID="4009"
+        editPartClassName="AtomicSequenceChildEditPart"
+        itemSemanticEditPolicyClassName="AtomicSequenceChildItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicSequenceChildViewFactory"
+        createCommandClassName="AtomicSequenceChildCreateCommand"
+        reorientCommandClassName="AtomicSequenceChildReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.2/@elementType"/>
+          xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComBEConnectionFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComBEConnectionFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComBEConnectionFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="ComBE.genmodel#//ComBE/AtomicSequence"/>
-        <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
-        <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
-        <targetMetaFeature
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
             href="ComBE.genmodel#//ComBE/AtomicSequence/child"/>
       </modelFacet>
     </links>
@@ -520,36 +501,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.0"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
         child="//@diagram/@topLevelNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"
@@ -597,48 +554,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.1"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
         child="//@diagram/@topLevelNodes.1"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.1"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@links.1"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
         child="//@diagram/@links.1"
         referenceType="out_target"
         groupName="outgoing links"
@@ -686,60 +607,12 @@
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@links.1"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.1"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@links.2"
-        referenceType="out_target"
-        groupName="target"
-        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="incoming links"
-        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
         child="//@diagram/@topLevelNodes.2"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.2"
-        child="//@diagram/@links.2"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
-        child="//@diagram/@links.2"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.2"
         child="//@diagram/@links.2"
         referenceType="out_target"
         groupName="outgoing links"
