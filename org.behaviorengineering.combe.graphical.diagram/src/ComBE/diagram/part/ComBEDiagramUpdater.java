@@ -52,4 +52,25 @@ public class ComBEDiagramUpdater {
 		return Collections.emptyList();
 	}
 
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3005SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3006SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3004SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
 }
