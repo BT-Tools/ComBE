@@ -93,4 +93,46 @@ public class ComBEDiagramUpdater {
 	public static List<ComBENodeDescriptor> getStandardNode_3004SemanticChildren(View model) {
 		return Collections.emptyList();
 	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getEmptyNode_3013SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getEmptyNode_3015SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getEmptyNode_3011SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3012SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3014SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Workaround for GMF/352271
+	 */
+	public static List<ComBENodeDescriptor> getStandardNode_3010SemanticChildren(View model) {
+		return Collections.emptyList();
+	}
 }
