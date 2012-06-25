@@ -4,6 +4,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComBE"
     nsURI="ComBE" nsPrefix="ComBE">
   <eClassifiers xsi:type="ecore:EClass" name="Specification">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="requirements"/>
+      <details key="2" value="components"/>
+      <details key="3" value="root"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
         eType="#//Requirement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -11,58 +16,103 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//Root" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="id"/>
+      <details key="2" value="label"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StandardComponent" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
-        eType="#//BehaviorSeq" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
-        eType="#//BehaviorSeq" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorSeq">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="behaviortype"/>
+      <details key="2" value="behavior"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviortype" lowerBound="1"
         eType="#//BehaviorType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" upperBound="-1"
         eType="#//Behavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Behavior">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="int"/>
+      <details key="2" value="label"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="int" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="behaviortree"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviortree" lowerBound="1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtomicSequence" eSuperTypes="#//BehaviorTree">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
+        eType="#//BehaviorSeq" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardComponent" eSuperTypes="#//Component">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="id"/>
+      <details key="2" value="label"/>
+      <details key="3" value="behaviorseqs"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="#//Component">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="id"/>
+      <details key="2" value="label"/>
+      <details key="3" value="behaviorseqs"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
         eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicSequence" eSuperTypes="#//BehaviorTree">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="nodes"/>
+      <details key="2" value="child"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" eType="#//BehaviorTree"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlternativeBranch" eSuperTypes="#//BehaviorTree">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
-        eType="#//Node" containment="true"/>
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="nodes"/>
+      <details key="2" value="children"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParallelBranch" eSuperTypes="#//BehaviorTree">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" lowerBound="1" upperBound="-1"
-        eType="#//Node" containment="true"/>
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="nodes"/>
+      <details key="2" value="children"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="#//Operator"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="requirement"/>
+      <details key="2" value="tracibilitystatus"/>
+      <details key="3" value="component"/>
+      <details key="4" value="behavior"/>
+      <details key="5" value="label"/>
+      <details key="6" value="operator"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
         eType="#//Requirement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tracibilitystatus" lowerBound="1"
@@ -71,18 +121,13 @@
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
         eType="#//Behavior"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-        eType="#//Operator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyNode" eSuperTypes="#//Node">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
-        eType="#//Operator"/>
+    <eAnnotations source="StrategoTerm.index">
+      <details key="1" value="label"/>
+      <details key="2" value="operator"/>
+    </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
   <eClassifiers xsi:type="ecore:EEnum" name="BehaviorType">
     <eLiterals name="StateRealisation" literal="#S"/>
     <eLiterals name="Selection" literal="#L"/>

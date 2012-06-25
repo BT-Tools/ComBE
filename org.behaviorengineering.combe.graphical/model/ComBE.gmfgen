@@ -21,7 +21,7 @@
     <domainDiagramElement
         href="ComBE.genmodel#//ComBE/Specification"/>
     <childNodes
-        visualID="3004"
+        visualID="3010"
         editPartClassName="StandardNodeEditPart"
         itemSemanticEditPolicyClassName="StandardNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -41,13 +41,13 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3007"
+        visualID="3011"
         editPartClassName="EmptyNodeEditPart"
         itemSemanticEditPolicyClassName="EmptyNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -67,13 +67,13 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/EmptyNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AlternativeBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3005"
+        visualID="3012"
         editPartClassName="StandardNode2EditPart"
         itemSemanticEditPolicyClassName="StandardNode2ItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -93,13 +93,13 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3008"
+        visualID="3013"
         editPartClassName="EmptyNode2EditPart"
         itemSemanticEditPolicyClassName="EmptyNode2ItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -119,13 +119,13 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/EmptyNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/ParallelBranch/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3006"
+        visualID="3014"
         editPartClassName="StandardNode3EditPart"
         itemSemanticEditPolicyClassName="StandardNode3ItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -145,13 +145,13 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/StandardNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3009"
+        visualID="3015"
         editPartClassName="EmptyNode3EditPart"
         itemSemanticEditPolicyClassName="EmptyNode3ItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -171,9 +171,9 @@
         <metaClass
             href="ComBE.genmodel#//ComBE/EmptyNode"/>
         <containmentMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
         <childMetaFeature
-            href="ComBE.genmodel#//ComBE/AtomicSequence/nodes"/>
+            href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
     </childNodes>
     <topLevelNodes
