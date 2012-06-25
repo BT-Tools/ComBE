@@ -5,9 +5,9 @@
     nsURI="ComBE" nsPrefix="ComBE">
   <eClassifiers xsi:type="ecore:EClass" name="Specification">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="requirements"/>
-      <details key="2" value="components"/>
-      <details key="3" value="root"/>
+      <details key="0" value="requirements"/>
+      <details key="1" value="components"/>
+      <details key="2" value="root"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirements" upperBound="-1"
         eType="#//Requirement" containment="true"/>
@@ -17,8 +17,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Requirement">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="id"/>
-      <details key="2" value="label"/>
+      <details key="0" value="id"/>
+      <details key="1" value="label"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
@@ -26,8 +26,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorSeq">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="behaviortype"/>
-      <details key="2" value="behavior"/>
+      <details key="0" value="behaviortype"/>
+      <details key="1" value="behavior"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviortype" lowerBound="1"
         eType="#//BehaviorType"/>
@@ -36,8 +36,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Behavior">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="int"/>
-      <details key="2" value="label"/>
+      <details key="0" value="int"/>
+      <details key="1" value="label"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="int" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         iD="true"/>
@@ -45,7 +45,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Root">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="behaviortree"/>
+      <details key="0" value="behaviortree"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviortree" lowerBound="1"
         eType="#//BehaviorTree" containment="true"/>
@@ -59,16 +59,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardComponent" eSuperTypes="#//Component">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="id"/>
-      <details key="2" value="label"/>
-      <details key="3" value="behaviorseqs"/>
+      <details key="0" value="id"/>
+      <details key="1" value="label"/>
+      <details key="2" value="behaviorseqs"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="#//Component">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="id"/>
-      <details key="2" value="label"/>
-      <details key="3" value="behaviorseqs"/>
+      <details key="0" value="id"/>
+      <details key="1" value="label"/>
+      <details key="2" value="behaviorseqs"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorTree" abstract="true">
@@ -77,24 +77,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicSequence" eSuperTypes="#//BehaviorTree">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="nodes"/>
-      <details key="2" value="child"/>
+      <details key="0" value="nodes"/>
+      <details key="1" value="child"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="child" eType="#//BehaviorTree"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlternativeBranch" eSuperTypes="#//BehaviorTree">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="nodes"/>
-      <details key="2" value="children"/>
+      <details key="0" value="nodes"/>
+      <details key="1" value="children"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParallelBranch" eSuperTypes="#//BehaviorTree">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="nodes"/>
-      <details key="2" value="children"/>
+      <details key="0" value="nodes"/>
+      <details key="1" value="children"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//BehaviorTree" containment="true"/>
@@ -106,12 +106,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="requirement"/>
-      <details key="2" value="tracibilitystatus"/>
-      <details key="3" value="component"/>
-      <details key="4" value="behavior"/>
-      <details key="5" value="label"/>
-      <details key="6" value="operator"/>
+      <details key="0" value="requirement"/>
+      <details key="1" value="tracibilitystatus"/>
+      <details key="2" value="component"/>
+      <details key="3" value="behavior"/>
+      <details key="4" value="label"/>
+      <details key="5" value="operator"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
         eType="#//Requirement"/>
@@ -124,8 +124,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyNode" eSuperTypes="#//Node">
     <eAnnotations source="StrategoTerm.index">
-      <details key="1" value="label"/>
-      <details key="2" value="operator"/>
+      <details key="0" value="label"/>
+      <details key="1" value="operator"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BehaviorType">
