@@ -94,7 +94,7 @@
           lineWidth="0">
         <layout
             xsi:type="gmfgraph:GridLayout"
-            numColumns="4"
+            numColumns="3"
             equalWidth="false">
           <margins/>
           <spacing/>
@@ -105,9 +105,9 @@
         <backgroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGreen"/>
-        <preferredSize
-            dx="180"
-            dy="60"/>
+        <border
+            xsi:type="gmfgraph:CustomBorder"
+            qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="Left"
@@ -132,9 +132,6 @@
                 dx="1"
                 dy="60"/>
           </layoutData>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
           <backgroundColor
               xsi:type="gmfgraph:ConstantColor"
               value="black"/>
@@ -149,24 +146,8 @@
               grabExcessHorizontalSpace="true"
               grabExcessVerticalSpace="true"/>
           <preferredSize
-              dx="120"
+              dx="125"
               dy="60"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="Operator"
-            outline="false"
-            lineWidth="0">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="orange"/>
-          <backgroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="orange"/>
         </children>
       </actualFigure>
     </descriptors>
