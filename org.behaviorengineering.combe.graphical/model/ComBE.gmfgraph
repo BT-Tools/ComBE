@@ -13,16 +13,15 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="AtomicSequenceFigure"
+          outline="false"
+          fill="false"
           lineWidth="0">
         <layout
             xsi:type="gmfgraph:GridLayout">
-          <margins/>
+          <margins
+              dy="10"/>
           <spacing/>
         </layout>
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"/>
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"/>
         <minimumSize
             dx="200"
             dy="61"/>
@@ -50,22 +49,32 @@
         name="AlternativeBranchFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="AlternativeBranchFigure">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="red"/>
-        <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="red"/>
+          name="AlternativeBranchFigure"
+          outline="false"
+          fill="false"
+          lineWidth="0">
+        <layout
+            xsi:type="gmfgraph:GridLayout">
+          <margins
+              dy="10"/>
+          <spacing/>
+        </layout>
+        <minimumSize
+            dx="200"
+            dy="61"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="AlternativeBranchNodesCompartmentFigure">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
           <foregroundColor
               xsi:type="gmfgraph:ConstantColor"
-              value="blue"/>
+              value="black"/>
           <backgroundColor
               xsi:type="gmfgraph:ConstantColor"
-              value="blue"/>
+              value="black"/>
         </children>
       </actualFigure>
       <accessors
@@ -125,6 +134,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="Line"
+            outline="false"
             lineWidth="0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData">
