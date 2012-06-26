@@ -13,13 +13,33 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="AtomicSequenceFigure"
-          outline="false"
           lineWidth="0">
+        <layout
+            xsi:type="gmfgraph:GridLayout">
+          <margins/>
+          <spacing/>
+        </layout>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"/>
+        <minimumSize
+            dx="200"
+            dy="61"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="AtomicSequenceNodesCompartmentFigure"
-            outline="false"
-            lineWidth="0"/>
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"/>
+        </children>
       </actualFigure>
       <accessors
           accessor="getAtomicSequenceNodesCompartmentFigure"
@@ -30,9 +50,22 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="AlternativeBranchFigure">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="AlternativeBranchNodesCompartmentFigure"/>
+            name="AlternativeBranchNodesCompartmentFigure">
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="blue"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="blue"/>
+        </children>
       </actualFigure>
       <accessors
           accessor="getAlternativeBranchNodesCompartmentFigure"
@@ -55,7 +88,116 @@
         name="NodeFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="NodeFigure"/>
+          name="NodeFigure"
+          outline="false">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            numColumns="6"
+            equalWidth="false">
+          <margins/>
+          <spacing/>
+        </layout>
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightGreen"/>
+        <backgroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="lightGreen"/>
+        <preferredSize
+            dx="180"
+            dy="60"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="LeftBorder"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData">
+            <sizeHint
+                dx="1"
+                dy="60"/>
+          </layoutData>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Left"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true">
+            <sizeHint
+                dx="54"
+                dy="60"/>
+          </layoutData>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Line"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData">
+            <sizeHint
+                dx="1"
+                dy="60"/>
+          </layoutData>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Right"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+          <preferredSize
+              dx="120"
+              dy="60"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="Operator"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="orange"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="orange"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="RightBorder"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData">
+            <sizeHint
+                dx="1"
+                dy="60"/>
+          </layoutData>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+        </children>
+      </actualFigure>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -73,19 +215,24 @@
   </figures>
   <nodes
       name="AtomicSequence"
-      figure="AtomicSequenceFigure"/>
+      figure="AtomicSequenceFigure"
+      resizeConstraint="NONE"/>
   <nodes
       name="AlternativeBranch"
-      figure="AlternativeBranchFigure"/>
+      figure="AlternativeBranchFigure"
+      resizeConstraint="NONE"/>
   <nodes
       name="ParallelBranch"
-      figure="ParallelBranchFigure"/>
+      figure="ParallelBranchFigure"
+      resizeConstraint="NONE"/>
   <nodes
       name="Node"
-      figure="NodeFigure"/>
+      figure="NodeFigure"
+      resizeConstraint="NONE"/>
   <nodes
       name="EmptyNode"
-      figure="EmptyNodeFigure"/>
+      figure="EmptyNodeFigure"
+      resizeConstraint="NONE"/>
   <connections
       name="ComBEConnection"
       figure="ComBEConnectionFigure"/>
