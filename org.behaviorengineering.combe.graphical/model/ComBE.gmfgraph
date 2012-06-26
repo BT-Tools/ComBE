@@ -23,8 +23,8 @@
           <spacing/>
         </layout>
         <minimumSize
-            dx="200"
-            dy="61"/>
+            dx="202"
+            dy="83"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="AtomicSequenceNodesCompartmentFigure"
@@ -60,8 +60,8 @@
           <spacing/>
         </layout>
         <minimumSize
-            dx="200"
-            dy="61"/>
+            dx="202"
+            dy="82"/>
         <children
             xsi:type="gmfgraph:Rectangle"
             name="AlternativeBranchNodesCompartmentFigure">
