@@ -38,7 +38,8 @@
               xsi:type="gmfgraph:ConstantColor"
               value="black"/>
           <backgroundColor
-              xsi:type="gmfgraph:ConstantColor"/>
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
         </children>
       </actualFigure>
       <accessors
@@ -89,17 +90,18 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="NodeFigure"
-          outline="false">
+          outline="false"
+          lineWidth="0">
         <layout
             xsi:type="gmfgraph:GridLayout"
-            numColumns="6"
+            numColumns="4"
             equalWidth="false">
           <margins/>
           <spacing/>
         </layout>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="lightGreen"/>
+            value="black"/>
         <backgroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGreen"/>
@@ -108,24 +110,8 @@
             dy="60"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="LeftBorder"
-            lineWidth="0">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData">
-            <sizeHint
-                dx="1"
-                dy="60"/>
-          </layoutData>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-          <backgroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
             name="Left"
+            outline="false"
             lineWidth="0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -156,6 +142,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="Right"
+            outline="false"
             lineWidth="0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -168,6 +155,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="Operator"
+            outline="false"
             lineWidth="0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
@@ -179,23 +167,6 @@
           <backgroundColor
               xsi:type="gmfgraph:ConstantColor"
               value="orange"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="RightBorder"
-            lineWidth="0">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData">
-            <sizeHint
-                dx="1"
-                dy="60"/>
-          </layoutData>
-          <foregroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
-          <backgroundColor
-              xsi:type="gmfgraph:ConstantColor"
-              value="black"/>
         </children>
       </actualFigure>
     </descriptors>
