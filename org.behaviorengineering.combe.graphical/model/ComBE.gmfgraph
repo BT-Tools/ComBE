@@ -85,10 +85,33 @@
         name="ParallelBranchFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ParallelBranchFigure">
+          name="ParallelBranchFigure"
+          outline="false"
+          fill="false"
+          lineWidth="0">
+        <layout
+            xsi:type="gmfgraph:GridLayout">
+          <margins
+              dy="8"/>
+          <spacing/>
+        </layout>
+        <minimumSize
+            dx="202"
+            dy="82"/>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ParallelBranchNodesCompartmentFigure"/>
+            name="ParallelBranchNodesCompartmentFigure">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+        </children>
       </actualFigure>
       <accessors
           accessor="getParallelBranchNodesCompartmentFigure"
@@ -242,9 +265,6 @@
                 grabExcessVerticalSpace="true"/>
             <layout
                 xsi:type="gmfgraph:BorderLayout"/>
-            <minimumSize
-                dx="80"
-                dy="60"/>
             <insets
                 top="2"
                 bottom="2"/>
@@ -306,8 +326,8 @@
             <layout
                 xsi:type="gmfgraph:BorderLayout"/>
             <insets
-                top="2"
-                bottom="2"/>
+                top="1"
+                bottom="20"/>
             <children
                 xsi:type="gmfgraph:Rectangle"
                 name="OperatorRectangle"
@@ -319,7 +339,10 @@
                   alignment="BEGINNING"
                   vertical="true"/>
               <layout
-                  xsi:type="gmfgraph:GridLayout"/>
+                  xsi:type="gmfgraph:GridLayout">
+                <margins/>
+                <spacing/>
+              </layout>
               <children
                   xsi:type="gmfgraph:Label"
                   name="NodeOperatorLabelFigure"
@@ -338,9 +361,13 @@
                 lineWidth="0">
               <layoutData
                   xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="END"
                   vertical="true"/>
               <layout
-                  xsi:type="gmfgraph:GridLayout"/>
+                  xsi:type="gmfgraph:GridLayout">
+                <margins/>
+                <spacing/>
+              </layout>
               <children
                   xsi:type="gmfgraph:Label"
                   name="NodeLabelLabelFigure"
@@ -350,17 +377,6 @@
                     grabExcessHorizontalSpace="true"
                     grabExcessVerticalSpace="true"/>
               </children>
-            </children>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="EmptyRectangle"
-                outline="false"
-                fill="false"
-                lineWidth="0">
-              <layoutData
-                  xsi:type="gmfgraph:BorderLayoutData"
-                  alignment="END"
-                  vertical="true"/>
             </children>
           </children>
         </children>
