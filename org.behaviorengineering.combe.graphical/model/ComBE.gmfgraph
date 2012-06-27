@@ -128,56 +128,71 @@
             outline="false"
             lineWidth="0">
           <layout
-              xsi:type="gmfgraph:BorderLayout"/>
+              xsi:type="gmfgraph:GridLayout">
+            <margins/>
+            <spacing/>
+          </layout>
           <preferredSize
               dx="54"
               dy="60"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="RequirementRectangle"
+              name="LeftLeft"
               outline="false"
               fill="false"
               lineWidth="0">
             <layoutData
-                xsi:type="gmfgraph:BorderLayoutData"
-                alignment="BEGINNING"
-                vertical="true"/>
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
             <layout
-                xsi:type="gmfgraph:GridLayout"/>
+                xsi:type="gmfgraph:BorderLayout"/>
             <insets
-                top="6"/>
+                top="2"
+                bottom="2"/>
             <children
-                xsi:type="gmfgraph:Label"
-                name="NodeRequirementLabelFigure"
-                text="">
+                xsi:type="gmfgraph:Rectangle"
+                name="RequirementRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
               <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  grabExcessVerticalSpace="true"/>
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="BEGINNING"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeRequirementLabelFigure"
+                  text="">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
             </children>
-          </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="TracibilityStatusRectangle"
-              outline="false"
-              fill="false"
-              lineWidth="0">
-            <layoutData
-                xsi:type="gmfgraph:BorderLayoutData"
-                alignment="END"
-                vertical="true"/>
-            <layout
-                xsi:type="gmfgraph:GridLayout"/>
-            <insets
-                bottom="6"/>
             <children
-                xsi:type="gmfgraph:Label"
-                name="NodeTracibilityStatusLabel"
-                text="Hello">
+                xsi:type="gmfgraph:Rectangle"
+                name="TracibilityStatusRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
               <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  grabExcessHorizontalSpace="true"
-                  grabExcessVerticalSpace="true"/>
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="END"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeTracibilityStatusLabel"
+                  text=" ">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
             </children>
           </children>
         </children>
@@ -205,17 +220,167 @@
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
               grabExcessVerticalSpace="true"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              numColumns="2"
+              equalWidth="false">
+            <margins/>
+            <spacing/>
+          </layout>
           <preferredSize
               dx="125"
               dy="60"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="RightLeft"
+              outline="false"
+              fill="false"
+              lineWidth="0">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
+            <layout
+                xsi:type="gmfgraph:BorderLayout"/>
+            <minimumSize
+                dx="80"
+                dy="60"/>
+            <insets
+                top="2"
+                bottom="2"/>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="ComponentRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="BEGINNING"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeComponentLabelFigure"
+                  text="">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
+            </children>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="BehaviorRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="END"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeBehaviorLabelFigure"
+                  text="">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
+            </children>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="RightRight"
+              outline="false"
+              fill="false"
+              lineWidth="0">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
+            <layout
+                xsi:type="gmfgraph:BorderLayout"/>
+            <insets
+                top="2"
+                bottom="2"/>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="OperatorRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="BEGINNING"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeOperatorLabelFigure"
+                  text=" ">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
+            </children>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="LabelRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  vertical="true"/>
+              <layout
+                  xsi:type="gmfgraph:GridLayout"/>
+              <children
+                  xsi:type="gmfgraph:Label"
+                  name="NodeLabelLabelFigure"
+                  text=" ">
+                <layoutData
+                    xsi:type="gmfgraph:GridLayoutData"
+                    grabExcessHorizontalSpace="true"
+                    grabExcessVerticalSpace="true"/>
+              </children>
+            </children>
+            <children
+                xsi:type="gmfgraph:Rectangle"
+                name="EmptyRectangle"
+                outline="false"
+                fill="false"
+                lineWidth="0">
+              <layoutData
+                  xsi:type="gmfgraph:BorderLayoutData"
+                  alignment="END"
+                  vertical="true"/>
+            </children>
+          </children>
         </children>
       </actualFigure>
       <accessors
           accessor="getFigureNodeRequirementLabelFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
-          accessor="getFigureNodeTracibilityStatusFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1/@children.0"/>
+          accessor="getFigureNodeTracibilityStatusLabelFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
+      <accessors
+          accessor="getFigureNodeComponentLabelFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getFigureNodeBehaviorLabelFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2/@children.0/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2/@children.1/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2/@children.1/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -272,8 +437,28 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
+      name="NodeComponentLabel"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.2"/>
+  <labels
+      name="NodeBehaviorLabel"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.3"/>
+  <labels
       name="NodeTracibilityStatusLabel"
       figure="NodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels
+      name="NodeOperatorFigure"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.4"/>
+  <labels
+      name="NodeLabelFigure"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.5"/>
 </gmfgraph:Canvas>
