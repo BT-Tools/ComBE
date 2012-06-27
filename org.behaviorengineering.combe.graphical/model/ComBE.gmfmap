@@ -125,6 +125,10 @@
             <viewExpression
                 body="if requirement->isEmpty() then '' else requirement.id endif"/>
           </labelMappings>
+          <labelMappings>
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeTracibilityStatusLabel"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>

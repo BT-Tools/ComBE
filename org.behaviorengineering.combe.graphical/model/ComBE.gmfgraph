@@ -114,6 +114,11 @@
         <backgroundColor
             xsi:type="gmfgraph:ConstantColor"
             value="lightGreen"/>
+        <font
+            xsi:type="gmfgraph:BasicFont"
+            faceName="ComBEFont"
+            height="6"
+            style="BOLD"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
             qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>
@@ -122,24 +127,58 @@
             name="Left"
             outline="false"
             lineWidth="0">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true">
-            <sizeHint
-                dx="54"
-                dy="60"/>
-          </layoutData>
           <layout
-              xsi:type="gmfgraph:GridLayout"/>
+              xsi:type="gmfgraph:BorderLayout"/>
+          <preferredSize
+              dx="54"
+              dy="60"/>
           <children
-              xsi:type="gmfgraph:Label"
-              name="NodeRequirementLabelFigure"
-              text="">
+              xsi:type="gmfgraph:Rectangle"
+              name="RequirementRectangle"
+              outline="false"
+              fill="false"
+              lineWidth="0">
             <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"/>
+                xsi:type="gmfgraph:BorderLayoutData"
+                alignment="BEGINNING"
+                vertical="true"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"/>
+            <insets
+                top="6"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="NodeRequirementLabelFigure"
+                text="">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"/>
+            </children>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="TracibilityStatusRectangle"
+              outline="false"
+              fill="false"
+              lineWidth="0">
+            <layoutData
+                xsi:type="gmfgraph:BorderLayoutData"
+                alignment="END"
+                vertical="true"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"/>
+            <insets
+                bottom="6"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="NodeTracibilityStatusLabel"
+                text="Hello">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"/>
+            </children>
           </children>
         </children>
         <children
@@ -173,7 +212,10 @@
       </actualFigure>
       <accessors
           accessor="getFigureNodeRequirementLabelFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getFigureNodeTracibilityStatusFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1/@children.0"/>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -229,4 +271,9 @@
       figure="NodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="NodeTracibilityStatusLabel"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
 </gmfgraph:Canvas>
