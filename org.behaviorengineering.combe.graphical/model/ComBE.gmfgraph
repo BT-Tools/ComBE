@@ -19,7 +19,7 @@
         <layout
             xsi:type="gmfgraph:GridLayout">
           <margins
-              dy="10"/>
+              dy="8"/>
           <spacing/>
         </layout>
         <minimumSize
@@ -56,7 +56,7 @@
         <layout
             xsi:type="gmfgraph:GridLayout">
           <margins
-              dy="10"/>
+              dy="8"/>
           <spacing/>
         </layout>
         <minimumSize
@@ -130,6 +130,17 @@
                 dx="54"
                 dy="60"/>
           </layoutData>
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="NodeRequirementLabelFigure"
+              text="">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
+          </children>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -160,6 +171,9 @@
               dy="60"/>
         </children>
       </actualFigure>
+      <accessors
+          accessor="getFigureNodeRequirementLabelFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="ComBEConnectionFigure">
@@ -210,4 +224,9 @@
       name="ParallelBranchNodesCompartment"
       figure="ParallelBranchFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="NodeRequirementLabel"
+      figure="NodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -21,6 +21,14 @@
         <ownedChild>
           <domainMetaElement
               href="ComBE.ecore#//StandardNode"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeRequirementLabel"/>
+            <viewExpression
+                body="if requirement->isEmpty() then '' else requirement.id endif"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -109,6 +117,14 @@
         <ownedChild>
           <domainMetaElement
               href="ComBE.ecore#//StandardNode"/>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeRequirementLabel"/>
+            <viewExpression
+                body="if requirement->isEmpty() then '' else requirement.id endif"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.0"/>
