@@ -7,7 +7,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 public class CustomCreateNodePlate {
-	
+
+	/**
+	 * Note that there is an 'invisible border' around AtomicSeq, Parallel and Alternative Branch figures. 
+	 * This method makes sure that begin and end points of connections, connect to the 'Node Compartment' 
+	 * of these figures and not to the invisible border.
+	 */
 	public static NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40) {
 			public PointList getPolygonPoints() {
@@ -15,11 +20,11 @@ public class CustomCreateNodePlate {
 				Rectangle anchRect = getHandleBounds();
 				final int space = 10;
 				Point topLeft = new Point(anchRect.x + space, anchRect.y + space); // top-left
-				points.addPoint(topLeft); 
+				points.addPoint(topLeft);
 				points.addPoint(anchRect.x + anchRect.width - space, anchRect.y + space); // top-right
 				points.addPoint(anchRect.x + anchRect.width - space, anchRect.y + anchRect.height - space); // bottom-right
 				points.addPoint(anchRect.x + space, anchRect.y + anchRect.height - space); // bottom-left
-				points.addPoint(topLeft); 
+				points.addPoint(topLeft);
 				return points;
 			}
 		};

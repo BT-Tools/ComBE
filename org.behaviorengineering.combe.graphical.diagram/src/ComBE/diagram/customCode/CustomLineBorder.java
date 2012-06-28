@@ -5,6 +5,9 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.geometry.Insets;
 
+/**
+ * A line border that only draws lines at the left, right and bottom of the figure (not at the top).
+ */
 public class CustomLineBorder extends LineBorder {
 
 	/**
