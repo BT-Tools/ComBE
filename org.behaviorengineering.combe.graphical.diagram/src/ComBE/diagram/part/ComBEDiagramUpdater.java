@@ -13,126 +13,64 @@ public class ComBEDiagramUpdater {
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getAlternativeBranch_2004SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getAlternativeBranch_2001SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getAtomicSequence_2006SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getAtomicSequence_2003SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3008SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getEmptyNode_3004SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3009SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getEmptyNode_3006SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3007SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getEmptyNode_3002SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getNode_3002SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getParallelBranch_2002SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getNode_3003SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getStandardNode_3003SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Workaround for GMF/352271
 	 */
-	public static List<ComBENodeDescriptor> getNode_3001SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getParallelBranch_2005SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3005SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3006SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3004SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3013SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3015SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getEmptyNode_3011SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3012SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3014SemanticChildren(View model) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Workaround for GMF/352271
-	 */
-	public static List<ComBENodeDescriptor> getStandardNode_3010SemanticChildren(View model) {
+	public static List<ComBENodeDescriptor> getStandardNode_3001SemanticChildren(View model) {
+		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
 }
