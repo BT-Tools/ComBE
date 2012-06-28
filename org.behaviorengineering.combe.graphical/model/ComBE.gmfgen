@@ -21,7 +21,7 @@
     <domainDiagramElement
         href="ComBE.genmodel#//ComBE/Specification"/>
     <childNodes
-        visualID="3010"
+        visualID="3001"
         editPartClassName="StandardNodeEditPart"
         itemSemanticEditPolicyClassName="StandardNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -55,7 +55,7 @@
             href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
       <labels
-          visualID="5008"
+          visualID="5001"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -71,7 +71,7 @@
             parser="//@labelParsers/@implementations.0"/>
       </labels>
       <labels
-          visualID="5009"
+          visualID="5002"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -87,7 +87,7 @@
             parser="//@labelParsers/@implementations.1"/>
       </labels>
       <labels
-          visualID="5010"
+          visualID="5003"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -103,7 +103,7 @@
             parser="//@labelParsers/@implementations.2"/>
       </labels>
       <labels
-          visualID="5011"
+          visualID="5004"
           editPartClassName="StandardNodeTracibilitystatusEditPart"
           itemSemanticEditPolicyClassName="StandardNodeTracibilitystatusItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeTracibilitystatusViewFactory">
@@ -121,7 +121,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5012"
+          visualID="5005"
           editPartClassName="StandardNodeOperatorEditPart"
           itemSemanticEditPolicyClassName="StandardNodeOperatorItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeOperatorViewFactory">
@@ -139,7 +139,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5013"
+          visualID="5006"
           editPartClassName="StandardNodeLabelEditPart"
           itemSemanticEditPolicyClassName="StandardNodeLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory">
@@ -158,7 +158,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3011"
+        visualID="3002"
         editPartClassName="EmptyNodeEditPart"
         itemSemanticEditPolicyClassName="EmptyNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -187,7 +187,7 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3012"
+        visualID="3003"
         editPartClassName="StandardNode2EditPart"
         itemSemanticEditPolicyClassName="StandardNode2ItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -221,7 +221,7 @@
             href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
       <labels
-          visualID="5014"
+          visualID="5007"
           editPartClassName="WrappingLabel4EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel4ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -237,7 +237,7 @@
             parser="//@labelParsers/@implementations.4"/>
       </labels>
       <labels
-          visualID="5015"
+          visualID="5008"
           editPartClassName="WrappingLabel5EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel5ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -253,7 +253,7 @@
             parser="//@labelParsers/@implementations.5"/>
       </labels>
       <labels
-          visualID="5016"
+          visualID="5009"
           editPartClassName="WrappingLabel6EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel6ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -269,7 +269,7 @@
             parser="//@labelParsers/@implementations.6"/>
       </labels>
       <labels
-          visualID="5017"
+          visualID="5010"
           editPartClassName="StandardNodeTracibilitystatus2EditPart"
           itemSemanticEditPolicyClassName="StandardNodeTracibilitystatus2ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeTracibilitystatusViewFactory">
@@ -287,7 +287,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5018"
+          visualID="5011"
           editPartClassName="StandardNodeOperator2EditPart"
           itemSemanticEditPolicyClassName="StandardNodeOperator2ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeOperatorViewFactory">
@@ -305,7 +305,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5019"
+          visualID="5012"
           editPartClassName="StandardNodeLabel2EditPart"
           itemSemanticEditPolicyClassName="StandardNodeLabel2ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory">
@@ -324,7 +324,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3013"
+        visualID="3004"
         editPartClassName="EmptyNode2EditPart"
         itemSemanticEditPolicyClassName="EmptyNode2ItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -353,7 +353,7 @@
       </modelFacet>
     </childNodes>
     <childNodes
-        visualID="3014"
+        visualID="3005"
         editPartClassName="StandardNode3EditPart"
         itemSemanticEditPolicyClassName="StandardNode3ItemSemanticEditPolicy"
         notationViewFactoryClassName="StandardNodeViewFactory"
@@ -387,7 +387,7 @@
             href="ComBE.genmodel#//ComBE/BehaviorTree/nodes"/>
       </modelFacet>
       <labels
-          visualID="5002"
+          visualID="5013"
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -403,7 +403,7 @@
             parser="//@labelParsers/@implementations.7"/>
       </labels>
       <labels
-          visualID="5003"
+          visualID="5014"
           editPartClassName="WrappingLabel8EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel8ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -419,7 +419,7 @@
             parser="//@labelParsers/@implementations.8"/>
       </labels>
       <labels
-          visualID="5004"
+          visualID="5015"
           editPartClassName="WrappingLabel9EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel9ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory"
@@ -435,7 +435,7 @@
             parser="//@labelParsers/@implementations.9"/>
       </labels>
       <labels
-          visualID="5005"
+          visualID="5016"
           editPartClassName="StandardNodeTracibilitystatus3EditPart"
           itemSemanticEditPolicyClassName="StandardNodeTracibilitystatus3ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeTracibilitystatusViewFactory">
@@ -453,7 +453,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5006"
+          visualID="5017"
           editPartClassName="StandardNodeOperator3EditPart"
           itemSemanticEditPolicyClassName="StandardNodeOperator3ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeOperatorViewFactory">
@@ -471,7 +471,7 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5007"
+          visualID="5018"
           editPartClassName="StandardNodeLabel3EditPart"
           itemSemanticEditPolicyClassName="StandardNodeLabel3ItemSemanticEditPolicy"
           notationViewFactoryClassName="StandardNodeLabelViewFactory">
@@ -490,7 +490,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3015"
+        visualID="3006"
         editPartClassName="EmptyNode3EditPart"
         itemSemanticEditPolicyClassName="EmptyNode3ItemSemanticEditPolicy"
         notationViewFactoryClassName="EmptyNodeViewFactory"
@@ -519,7 +519,7 @@
       </modelFacet>
     </childNodes>
     <topLevelNodes
-        visualID="2004"
+        visualID="2001"
         editPartClassName="AlternativeBranchEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchItemSemanticEditPolicy"
         notationViewFactoryClassName="AlternativeBranchViewFactory"
@@ -545,7 +545,7 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2005"
+        visualID="2002"
         editPartClassName="ParallelBranchEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchItemSemanticEditPolicy"
         notationViewFactoryClassName="ParallelBranchViewFactory"
@@ -571,7 +571,7 @@
       </modelFacet>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2006"
+        visualID="2003"
         editPartClassName="AtomicSequenceEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceItemSemanticEditPolicy"
         notationViewFactoryClassName="AtomicSequenceViewFactory"
@@ -597,7 +597,7 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4007"
+        visualID="4001"
         editPartClassName="AlternativeBranchChildrenEditPart"
         itemSemanticEditPolicyClassName="AlternativeBranchChildrenItemSemanticEditPolicy"
         notationViewFactoryClassName="AlternativeBranchChildrenViewFactory"
@@ -618,7 +618,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4008"
+        visualID="4002"
         editPartClassName="ParallelBranchChildrenEditPart"
         itemSemanticEditPolicyClassName="ParallelBranchChildrenItemSemanticEditPolicy"
         notationViewFactoryClassName="ParallelBranchChildrenViewFactory"
@@ -639,7 +639,7 @@
       </modelFacet>
     </links>
     <links
-        visualID="4009"
+        visualID="4003"
         editPartClassName="AtomicSequenceChildEditPart"
         itemSemanticEditPolicyClassName="AtomicSequenceChildItemSemanticEditPolicy"
         notationViewFactoryClassName="AtomicSequenceChildViewFactory"
@@ -660,11 +660,11 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7002"
-        editPartClassName="AlternativeBranchAlternativeBranchNodesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="AlternativeBranchAlternativeBranchNodesCompartmentViewFactory"
-        canonicalEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPolicy"
+        visualID="7001"
+        editPartClassName="AtomicSequenceAtomicSequenceNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicSequenceAtomicSequenceNodesCompartmentViewFactory"
+        canonicalEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="AlternativeBranchNodesCompartment"
         canCollapse="false"
@@ -683,11 +683,11 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7003"
-        editPartClassName="ParallelBranchParallelBranchNodesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParallelBranchParallelBranchNodesCompartmentViewFactory"
-        canonicalEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy"
+        visualID="7002"
+        editPartClassName="AlternativeBranchAlternativeBranchNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AlternativeBranchAlternativeBranchNodesCompartmentViewFactory"
+        canonicalEditPolicyClassName="AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.2 //@diagram/@childNodes.3"
         title="ParallelBranchNodesCompartment"
         canCollapse="false"
@@ -706,11 +706,11 @@
       </viewmap>
     </compartments>
     <compartments
-        visualID="7001"
-        editPartClassName="AtomicSequenceAtomicSequenceNodesCompartmentEditPart"
-        itemSemanticEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="AtomicSequenceAtomicSequenceNodesCompartmentViewFactory"
-        canonicalEditPolicyClassName="AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy"
+        visualID="7003"
+        editPartClassName="ParallelBranchParallelBranchNodesCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParallelBranchParallelBranchNodesCompartmentViewFactory"
+        canonicalEditPolicyClassName="ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4 //@diagram/@childNodes.5"
         title="AtomicSequenceNodesCompartment"
         canCollapse="false"
