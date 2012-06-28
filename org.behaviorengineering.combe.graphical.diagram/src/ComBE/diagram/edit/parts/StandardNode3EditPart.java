@@ -1,5 +1,7 @@
 package ComBE.diagram.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
+
 import ComBE.StandardNode;
 import ComBE.diagram.customCode.CustomPainting;
 
@@ -16,7 +18,7 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 	/**
 	* @generated NOT
 	*/
-	public StandardNode2EditPart(View view) {
+	public StandardNode3EditPart(View view) {
 		super(view);
 		this.view = view;
 	}

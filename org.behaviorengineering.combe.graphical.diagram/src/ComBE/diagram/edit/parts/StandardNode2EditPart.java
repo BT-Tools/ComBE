@@ -1,5 +1,7 @@
 package ComBE.diagram.edit.parts;
 
+import org.eclipse.draw2d.Graphics;
+
 import ComBE.StandardNode;
 import ComBE.diagram.customCode.CustomPainting;
 
