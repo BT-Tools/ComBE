@@ -18,7 +18,7 @@ public class CustomCreateNodePlate {
 			public PointList getPolygonPoints() {
 				PointList points = new PointList(6);
 				Rectangle anchRect = getHandleBounds();
-				final int space = 10;
+				final int space = 9;
 				Point topLeft = new Point(anchRect.x + space, anchRect.y + space); // top-left
 				points.addPoint(topLeft);
 				points.addPoint(anchRect.x + anchRect.width - space, anchRect.y + space); // top-right
