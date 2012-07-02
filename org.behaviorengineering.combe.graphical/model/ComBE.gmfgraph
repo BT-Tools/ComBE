@@ -78,13 +78,15 @@
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="AlternativeNodeBottomRectangle"
+            name="AlternativeBranchBottomRectangle"
             outline="false"
             lineWidth="0">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
               grabExcessVerticalSpace="true"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"/>
           <foregroundColor
               xsi:type="gmfgraph:ConstantColor"
               value="black"/>
@@ -96,9 +98,23 @@
           <preferredSize
               dx="182"
               dy="27"/>
+          <font
+              xsi:type="gmfgraph:BasicFont"
+              faceName="ComBEFont"
+              height="7"
+              style="BOLD"/>
           <border
               xsi:type="gmfgraph:CustomBorder"
               qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="AlternativeBranchBottomLabel"
+              text="[ ]">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"/>
+          </children>
         </children>
       </actualFigure>
       <accessors
