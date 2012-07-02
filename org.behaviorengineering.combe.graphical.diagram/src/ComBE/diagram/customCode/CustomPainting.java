@@ -1,6 +1,5 @@
 package ComBE.diagram.customCode;
 
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.swt.graphics.Color;
@@ -31,47 +30,47 @@ public class CustomPainting {
 		
 		switch (behaviorSeq.getBehaviortype().getValue()) {
 		case BehaviorType.ASSERTION_VALUE:
-			prefix = "-";
-			suffix = "-";
+			prefix = "!";
+			suffix = "!";
 			break;
 		case BehaviorType.EI_EVENT_VALUE:
-			prefix = "--";
-			suffix = "--";
-			break;
-		case BehaviorType.EO_EVENT_VALUE:
-			prefix = "+";
-			suffix = "+";
-			break;
-		case BehaviorType.EVENT_VALUE:
-			prefix = "++";
-			suffix = "++";
-			break;
-		case BehaviorType.GUARD_VALUE:
-			prefix = "<";
-			suffix = ">";
-			break;
-		case BehaviorType.II_EVENT_VALUE:
-			prefix = "<<";
-			suffix = ">>";
-			break;
-		case BehaviorType.IO_EVENT_VALUE:
-			prefix = ">";
-			suffix = "<";
-			break;
-		case BehaviorType.SELECTION_VALUE:
 			prefix = ">>";
 			suffix = "<<";
 			break;
+		case BehaviorType.EO_EVENT_VALUE:
+			prefix = "<<";
+			suffix = ">>";
+			break;
+		case BehaviorType.EVENT_VALUE:
+			prefix = "??";
+			suffix = "??";
+			break;
+		case BehaviorType.GUARD_VALUE:
+			prefix = "???";
+			suffix = "???";
+			break;
+		case BehaviorType.II_EVENT_VALUE:
+			prefix = ">";
+			suffix = "<";
+			break;
+		case BehaviorType.IO_EVENT_VALUE:
+			prefix = "<";
+			suffix = ">";
+			break;
+		case BehaviorType.SELECTION_VALUE:
+			prefix = "?";
+			suffix = "?";
+			break;
 		case BehaviorType.STATE_REALISATION_VALUE:
-			prefix = "^";
-			suffix = "^";
+			prefix = "[";
+			suffix = "]";
 			break;
 		default:
 			break;
 		}
 		
 		if (! (label.getText().startsWith(prefix) && label.getText().endsWith(suffix))) {
-			label.setText(prefix + " " + label.getText() + " " + suffix);
+			label.setText(prefix + "  " + label.getText() + "  " + suffix);
 		}
 	}
 		
@@ -85,22 +84,22 @@ public class CustomPainting {
 		
 		switch (node.getTracibilitystatus().getValue()) {
 		case TracibilityStatus.DELETED_VALUE:
-			color = ColorConstants.blue;
+			color = new Color(null, 221, 221, 221);
 			break;
 		case TracibilityStatus.IMPLIED_VALUE:
-			color = ColorConstants.yellow;
+			color = new Color(null, 251, 245, 173);
 			break;
 		case TracibilityStatus.MISSING_VALUE:
-			color = ColorConstants.red;
+			color = new Color(null, 247, 168, 170);
 			break;
 		case TracibilityStatus.REFINEMENT_VALUE:
-			color = ColorConstants.orange;
+			color = new Color(null, 255, 255, 255);
 			break;
 		case TracibilityStatus.UPDATED_VALUE:
-			color = ColorConstants.cyan;
+			color = new Color(null, 69, 179, 211);
 			break;
 		default:
-			color = ColorConstants.green;
+			color = new Color(null, 179, 211, 69);
 			break;
 		}
 		
