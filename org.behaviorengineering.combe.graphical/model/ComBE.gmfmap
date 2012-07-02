@@ -80,6 +80,20 @@
         <ownedChild>
           <domainMetaElement
               href="ComBE.ecore#//EmptyNode"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeLabelFigure"/>
+            <features
+                href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
+            <features
+                href="ComBE.ecore#//Node/operator"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -169,6 +183,20 @@
         <ownedChild>
           <domainMetaElement
               href="ComBE.ecore#//EmptyNode"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeLabelFigure"/>
+            <features
+                href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
+            <features
+                href="ComBE.ecore#//Node/operator"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -258,6 +286,20 @@
         <ownedChild>
           <domainMetaElement
               href="ComBE.ecore#//EmptyNode"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeLabelFigure"/>
+            <features
+                href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
+            <features
+                href="ComBE.ecore#//Node/operator"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComBE.gmftool#//@palette/@tools.0/@tools.3"/>
