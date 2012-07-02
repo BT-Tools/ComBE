@@ -135,12 +135,14 @@
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
         <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="lightGreen"/>
+            xsi:type="gmfgraph:RGBColor"
+            red="179"
+            green="211"
+            blue="69"/>
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="6"
+            height="7"
             style="BOLD"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
@@ -423,12 +425,14 @@
             xsi:type="gmfgraph:ConstantColor"
             value="black"/>
         <backgroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="lightGreen"/>
+            xsi:type="gmfgraph:RGBColor"
+            red="179"
+            green="211"
+            blue="69"/>
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="6"
+            height="7"
             style="BOLD"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
