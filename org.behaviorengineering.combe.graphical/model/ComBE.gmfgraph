@@ -76,6 +76,30 @@
               xsi:type="gmfgraph:ConstantColor"
               value="black"/>
         </children>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="AlternativeNodeBottomRectangle"
+            outline="false"
+            lineWidth="0">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <backgroundColor
+              xsi:type="gmfgraph:RGBColor"
+              red="179"
+              green="211"
+              blue="69"/>
+          <preferredSize
+              dx="182"
+              dy="27"/>
+          <border
+              xsi:type="gmfgraph:CustomBorder"
+              qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>
+        </children>
       </actualFigure>
       <accessors
           accessor="getAlternativeBranchNodesCompartmentFigure"
@@ -405,7 +429,11 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="ComBEConnectionFigure"
-          targetDecoration="//@figures.0/@figures.0"/>
+          targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="black"/>
+      </actualFigure>
     </descriptors>
     <descriptors
         name="EmptyNodeFigure">
