@@ -10,6 +10,19 @@ imports
 
 rules // Resolving
   
-  constraint-error:
-    x{[Unresolved(t) | _]} -> (x, $[Unable to resolve.])
+	constraint-error:
+		x{[Unresolved(t) | _]} -> (x, $[Unable to resolve])
 
+	is-unique-namespace = ?Requirement()
+	is-unique-namespace = ?Component()
+	is-unique-namespace = ?Behavior()
+      
+	constraint-error:
+		definition -> (definition, $[Duplicate definition])
+		where
+			key{[ns|_]} := <nam-get-definition-key> definition;
+			<is-unique-namespace> ns;
+			definitions := <index-lookup-all> key;
+			<gt> (<length> definitions, 1)
+			
+			
