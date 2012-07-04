@@ -10,19 +10,20 @@ imports
 
 rules // Resolving
   
-	constraint-error:
-		x{[Unresolved(t) | _]} -> (x, $[Unable to resolve])
+	constraint-error: 	x{[Unresolved(Requirement()) | _]} -> (x, $[Unable to resolve [x] to a requirement])
+	constraint-error: 	x{[Unresolved(Component()) | _]} -> (x, $[Unable to resolve [x] to a component])
+	constraint-error: 	x{[Unresolved(Behavior()) | _]} -> (x, $[Unable to resolve [x] to behavior])
 
-	is-unique-namespace = ?Requirement()
-	is-unique-namespace = ?Component()
-	is-unique-namespace = ?Behavior()
+	ns2string: Requirement() -> "requirement"
+	ns2string: Component() -> "component"
+	ns2string: Behavior() -> "behavior"
       
 	constraint-error:
-		definition -> (definition, $[Duplicate definition])
+		definition -> (definition, $[Duplicate [namespace] [key]])
 		where
 			key{[ns|_]} := <nam-get-definition-key> definition;
-			<is-unique-namespace> ns;
 			definitions := <index-lookup-all> key;
-			<gt> (<length> definitions, 1)
+			<gt> (<length> definitions, 1);
+			namespace := <ns2string> ns
 			
 			

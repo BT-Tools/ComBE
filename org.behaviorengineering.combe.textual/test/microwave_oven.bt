@@ -1,0 +1,16 @@
+#RT R5 R5
+
+#C C1 OVEN
+ #S 1 Cooking
+    2 Cooking[Stopped]
+
+#C C2 USER
+ #E 1 OpensDoor
+ 
+#C C3 DOOR
+ #S 1 Open
+ 
+#C C4 POWER-TUBE
+ #S 1 Off
+ 
+#T R5 + C1 1; R5 + C2 1; R5 C3 1; R5 + C4 1; R5 + C1 2
