@@ -5,7 +5,7 @@ exports
   lexical syntax
   
     [a-zA-Z][a-zA-Z0-9]* -> ID
-    ~[\n\r\ ]+			 -> Label
+    ~[\n\r\ \;]+			 -> Label
     "-"? [0-9]+          -> INT
     
     "\"" StringChar* "\"" -> STRING
@@ -29,7 +29,7 @@ exports
     CommentChar   -/- [\/]
     INT           -/- [0-9]
     ID            -/- [a-zA-Z0-9\_]
-    Label         -/- ~[\n\r\ ]
+    Label         -/- ~[\n\r\ \;]
     
     %% EOF may not be followed by any char
     
@@ -46,3 +46,15 @@ exports
     LAYOUT? -/- [\ \t\n\r]
     LAYOUT? -/- [\/].[\/]
     LAYOUT? -/- [\/].[\*]
+
+  lexical syntax
+	"--"	-> Label {reject}
+	"&"		-> Label {reject}
+	"|"		-> Label {reject}
+	"%"		-> Label {reject}
+	"=>"	-> Label {reject}
+	"^"		-> Label {reject}
+	"^^"	-> Label {reject}
+	"="		-> Label {reject}
+	"XOR"	-> Label {reject}
+	
