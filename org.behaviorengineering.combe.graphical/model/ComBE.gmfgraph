@@ -182,7 +182,7 @@
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="7"
+            height="6"
             style="BOLD"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
@@ -476,7 +476,7 @@
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="7"
+            height="6"
             style="BOLD"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
