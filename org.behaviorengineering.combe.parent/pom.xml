@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.be.textbe</groupId>
+	<artifactId>org.behaviorengineering.combe.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>0.15.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<repositories>
+		<repository>
+			<id>indigo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/indigo</url>
+		</repository>
+		<repository>
+			<id>Spoofax</id>
+			<layout>p2</layout>
+			<url>http://www.lclnet.nl/update/nightly</url>
+		</repository>
+
+
+	</repositories>
+
+
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<dependency-resolution>
+						<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+
+		<module>../org.behaviorengineering.combe.graphical</module>
+		<module>../org.behaviorengineering.combe.graphical.diagram</module>
+		<module>../org.behaviorengineering.combe.graphical.edit</module>
+		<module>../org.behaviorengineering.combe.graphical.editor</module>
+		<module>../org.behaviorengineering.combe.graphical.tests</module>
+		<module>../org.behaviorengineering.combe.textual</module>
+		<module>../org.spoofax.graphical</module>
+		<module>../org.behaviorengineering.combe.feature</module>
+		<module>../org.behaviorengineering.combe.repository</module>
+	</modules>
+	<url>http://code.google.com/p/textbe</url>
+	<description>Behavior Engineering (BE) is an integrated discipline that supports the systems and software engineering of large-scale, dependable software-intensive systems. Behavior Engineering employs a graphical Behavior Modeling Language (BML) that is used to construct complete behavioral, compositional and structural integrated views from natural language descriptions of a large set of requirements for a proposed system.
+
+TextBE provides a textual editor for defining BE models using textual representations of the three integrated views (Behavior Trees (BT), Composition Trees (CT), Structure Trees (ST)) of the Behavior Modeling Language. TextBE converts the textual representation into a graphical visualisation for use whilst editing that can also be saved into various file formats for use outside of TextBE.</description>
+	<name>Textual Editor for Behavior Engineering</name>
+	<inceptionYear>2006</inceptionYear>
+	<organization>
+		<name>Behavior Engineering</name>
+		<url>http://www.behaviorengineering.org</url>
+	</organization>
+	<scm>
+		<developerConnection>scm:svn:https://textbe.googlecode.com/svn</developerConnection>
+		<connection>scm:svn:https://textbe.googlecode.com/svn</connection>
+		<url>http://code.google.com/p/textbe/source/browse/</url>
+		<tag>HEAD</tag>
+	</scm>
+	<issueManagement>
+		<url>http://code.google.com/p/textbe/issues/list</url>
+		<system>Issue Tracker</system>
+	</issueManagement>
+	<ciManagement>
+		<url>http://emory.eait.uq.edu.au:8080/</url>
+		<system>University of Queensland ITEE Jenkins Server</system>
+	</ciManagement>
+</project>
