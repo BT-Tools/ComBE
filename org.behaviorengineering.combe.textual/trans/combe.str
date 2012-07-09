@@ -68,7 +68,7 @@ rules // Analysis
       textFilePath := $[[project-path]/[path]];
       diagramFileExtension := <conc-strings> (<lower-case> packageName, "_diagram");
       diagramFilePath := $[[project-path]/[<guarantee-extension(|diagramFileExtension)> path]];
-      <term-to-model(|diagramFilePath, packageName, textFilePath)> ast'
+      <term-to-model(|textFilePath, diagramFilePath, packageName)> ast'
       
   external term-to-model(|diagramFilePath, packageName, textFilePath)
 
