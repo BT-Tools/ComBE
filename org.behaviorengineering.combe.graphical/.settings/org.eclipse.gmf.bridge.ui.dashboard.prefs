@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.behaviorengineering.combe.graphical/model/ComBE.gmftool

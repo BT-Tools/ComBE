@@ -32,14 +32,235 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link ComBE.impl.StandardNodeImpl#getTracibilitystatus <em>Tracibilitystatus</em>}</li>
  *   <li>{@link ComBE.impl.StandardNodeImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link ComBE.impl.StandardNodeImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link ComBE.impl.StandardNodeImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link ComBE.impl.StandardNodeImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class StandardNodeImpl extends NodeImpl implements StandardNode {
+
+	/**
+	 * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequirement()
+	 * @generated
+	 * @ordered
+	 */
+	protected Requirement requirement;
+	/**
+	 * The default value of the '{@link #getTracibilitystatus() <em>Tracibilitystatus</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTracibilitystatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TracibilityStatus TRACIBILITYSTATUS_EDEFAULT = TracibilityStatus.NONE;
+	/**
+	 * The cached value of the '{@link #getTracibilitystatus() <em>Tracibilitystatus</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTracibilitystatus()
+	 * @generated
+	 * @ordered
+	 */
+	protected TracibilityStatus tracibilitystatus = TRACIBILITYSTATUS_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Component component;
+	/**
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior behavior;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StandardNodeImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ComBEPackage.Literals.STANDARD_NODE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirement getRequirement() {
+		if (requirement != null && requirement.eIsProxy()) {
+			InternalEObject oldRequirement = (InternalEObject)requirement;
+			requirement = (Requirement)eResolveProxy(oldRequirement);
+			if (requirement != oldRequirement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComBEPackage.STANDARD_NODE__REQUIREMENT, oldRequirement, requirement));
+			}
+		}
+		return requirement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirement basicGetRequirement() {
+		return requirement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequirement(Requirement newRequirement) {
+		Requirement oldRequirement = requirement;
+		requirement = newRequirement;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__REQUIREMENT, oldRequirement, requirement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TracibilityStatus getTracibilitystatus() {
+		return tracibilitystatus;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTracibilitystatus(TracibilityStatus newTracibilitystatus) {
+		TracibilityStatus oldTracibilitystatus = tracibilitystatus;
+		tracibilitystatus = newTracibilitystatus == null ? TRACIBILITYSTATUS_EDEFAULT : newTracibilitystatus;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS, oldTracibilitystatus, tracibilitystatus));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component getComponent() {
+		if (component != null && component.eIsProxy()) {
+			InternalEObject oldComponent = (InternalEObject)component;
+			component = (Component)eResolveProxy(oldComponent);
+			if (component != oldComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComBEPackage.STANDARD_NODE__COMPONENT, oldComponent, component));
+			}
+		}
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component basicGetComponent() {
+		return component;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComponent(Component newComponent) {
+		Component oldComponent = component;
+		component = newComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__COMPONENT, oldComponent, component));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComBEPackage.STANDARD_NODE__BEHAVIOR, oldBehavior, behavior));
+			}
+		}
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(Behavior newBehavior) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__BEHAVIOR, oldBehavior, behavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
+				if (resolve) return getRequirement();
+				return basicGetRequirement();
+			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
+				return getTracibilitystatus();
+			case ComBEPackage.STANDARD_NODE__COMPONENT:
+				if (resolve) return getComponent();
+				return basicGetComponent();
+			case ComBEPackage.STANDARD_NODE__BEHAVIOR:
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
 	 * @generated NOT
@@ -76,5 +297,65 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 				return;
 		}
 		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
+				setRequirement((Requirement)null);
+				return;
+			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
+				setTracibilitystatus(TRACIBILITYSTATUS_EDEFAULT);
+				return;
+			case ComBEPackage.STANDARD_NODE__COMPONENT:
+				setComponent((Component)null);
+				return;
+			case ComBEPackage.STANDARD_NODE__BEHAVIOR:
+				setBehavior((Behavior)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
+				return requirement != null;
+			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
+				return tracibilitystatus != TRACIBILITYSTATUS_EDEFAULT;
+			case ComBEPackage.STANDARD_NODE__COMPONENT:
+				return component != null;
+			case ComBEPackage.STANDARD_NODE__BEHAVIOR:
+				return behavior != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (tracibilitystatus: ");
+		result.append(tracibilitystatus);
+		result.append(')');
+		return result.toString();
 	}
 }
