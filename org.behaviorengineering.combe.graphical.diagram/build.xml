@@ -1,0 +1,60 @@
+<project name="GMFPluginGeneration" default="runGeneration">
+	<description>
+		You'll need to configure the Classpath in the ../launch/Generate GMF Diagram.launch to add
+		  org.eclipse.gmf.common,
+		  org.eclipse.gmf.codegen
+		as external JARs.
+    </description>
+
+	<path id="myclasspath">
+		<pathelement location="bin" />
+	</path>
+
+	<!-- set global properties for this build -->
+	<property file="ant/config.properties"/>
+	<property file="ant/commonGen.properties"/>
+
+	<property name="workspaceRoot" location="${basedir}/../" />
+	<property name="gmfgenProject" location="${basedir}" />
+	
+	<property name="modelsFolder" location="../${models.folder}"/>
+	<property name="tempFolder" location="${gmfgenProject}/temp/model"/>
+	
+	<property name="gmfmap_src" location="${modelsFolder}/${gmfmap}"/>
+	
+	<property name="gmfgen_src" location="${modelsFolder}/${gmfgen}"/>
+	<property name="gmfgen_trgt" location="${tempFolder}/${gmfgen}"/>
+	
+	<property name="copyrightTextFile" location="${modelsFolder}/${copyrightTextFileName}"/>
+	
+	
+	<echo> Base dir : ${basedir} </echo>
+	<echo> WS root dir : ${workspaceRoot} </echo>
+	<echo> Models folder : ${modelsFolder}</echo>
+	<echo> Temp Folder : ${tempFolder}</echo>
+	<echo> GMFgen source : ${gmfgen_src}</echo>
+	<echo> GMFgen target : ${gmfgen_trgt}</echo>
+	
+	<taskdef name="gmf.adjustgenmodel" classname="org.eclipse.sphinx.gmfgen.tasks.GMFGenModelAdjustTask">
+			<classpath refid="myclasspath" />
+	</taskdef>
+	
+	<taskdef name="gmf.generatediagramcode" classname="org.eclipse.sphinx.gmfgen.tasks.GenerateDiagramCodeTask">
+		<classpath refid="myclasspath" />
+	</taskdef>
+	
+	<target name="copy" description="Copy genModel to a temp dir">
+			<eclipse.refreshLocal resource="${gmfgenProject}"/>
+			<copy file="${gmfgen_src}" tofile="${gmfgen_trgt}" overwrite="true"/>
+	</target>
+	
+	<target name="adjustGenModel">
+			<gmf.adjustgenmodel gmfgenPath="${gmfgen_trgt}" copyrightTextFile="${copyrightTextFile}" dynamicTemplates="${dynamicTemplates}" templateDirectory="${templateDirectory}"/>
+	</target>
+	
+	<target name="execGMFGeneration">
+		<gmf.generatediagramcode gmfgenPath="${gmfgen_trgt}" ignoreLoadErrors="true" ignoreValidationErrors="true"/>
+	</target>
+	
+	<target name="runGeneration" depends="copy, adjustGenModel, execGMFGeneration"/>
+</project>

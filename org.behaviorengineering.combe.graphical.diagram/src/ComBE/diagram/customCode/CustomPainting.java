@@ -15,19 +15,19 @@ public class CustomPainting {
 	 * Add symbols to BehaviorLabels, depending on the BehaviorType enumeration.
 	 * 
 	 * This is a bit of a hack and this functionality should actually be added to gmfmap (as label expression).
-	 * It should be possible to define this in OCL, but the method 'oclContainer()' is not yet supported which makes it hard.
+	 * It should be possible to define this in OCL, but the method 'oclContainer()' (which is needed) is not yet supported which makes it hard.
 	 * That's why I put it here.
 	 */
 	public static void setBehaviorLabel(WrappingLabel label, StandardNode node) {
 		if (node.getBehavior() == null) {
 			return;
 		}
-		
+
 		BehaviorSeq behaviorSeq = (BehaviorSeq) node.getBehavior().eContainer();
-		
+
 		String prefix = "";
 		String suffix = "";
-		
+
 		switch (behaviorSeq.getBehaviortype().getValue()) {
 		case BehaviorType.ASSERTION_VALUE:
 			prefix = "!";
@@ -68,41 +68,81 @@ public class CustomPainting {
 		default:
 			break;
 		}
-		
-		if (! (label.getText().startsWith(prefix) && label.getText().endsWith(suffix))) {
+
+		if (!(label.getText().startsWith(prefix) && label.getText().endsWith(suffix))) {
 			label.setText(prefix + "  " + label.getText() + "  " + suffix);
 		}
 	}
-		
+
 	/**
 	 * Change color of Nodes, depending on the TracibilityStatus enumeration.
 	 * 
 	 * Couldn't find a way to model this in gmfgraph. This may not be the nicest solution.
+	 * @param hasFocus 
 	 */
-	public static void setNodeColor(Figure figure, StandardNode node) {
-		Color color = null;
-		
+	public static void setNodeColor(Figure figure, StandardNode node, boolean hasFocus) {
+		int red = 179;
+		int green = 211;
+		int blue = 69;
+
 		switch (node.getTracibilitystatus().getValue()) {
 		case TracibilityStatus.DELETED_VALUE:
-			color = new Color(null, 221, 221, 221);
+			red = 221;
+			green = 221;
+			blue = 221;
 			break;
 		case TracibilityStatus.IMPLIED_VALUE:
-			color = new Color(null, 251, 245, 173);
+			red = 251;
+			green = 245;
+			blue = 173;
 			break;
 		case TracibilityStatus.MISSING_VALUE:
-			color = new Color(null, 247, 168, 170);
+			red = 247;
+			green = 168;
+			blue = 170;
 			break;
 		case TracibilityStatus.REFINEMENT_VALUE:
-			color = new Color(null, 255, 255, 255);
+			red = 255;
+			green = 255;
+			blue = 255;
 			break;
 		case TracibilityStatus.UPDATED_VALUE:
-			color = new Color(null, 69, 179, 211);
+			red = 69;
+			green = 179;
+			blue = 211;
 			break;
 		default:
-			color = new Color(null, 179, 211, 69);
 			break;
 		}
-		
-		figure.setBackgroundColor(color);
+
+		if (hasFocus) {
+			final int darkest = Math.min(red, Math.min(green, blue));
+			red = brighten(red, darkest);
+			green = brighten(green, darkest);
+			blue = brighten(blue, darkest);
+		}
+
+		figure.setBackgroundColor(new Color(null, red, green, blue));
 	}
+
+
+	private final static int colorDiff = 40;
+	
+	private static int brighten(int color, int darkest) {
+		if (255-darkest < colorDiff) {
+			if (color + darkest/2 <= 255) {
+				return color + darkest/2;
+			}
+			else {
+				return 255;
+			}
+		}
+		else if (color + colorDiff <= 255) {
+			return color + colorDiff;
+		}
+		else {
+			return 255;
+		}
+	}
+
 }

@@ -1,0 +1,7 @@
+# Tracing options for the org.behaviorengineering.combe.graphical.diagram plug-in
+
+# Common issues
+org.behaviorengineering.combe.graphical.diagram/debug=false
+
+# Visual IDs
+org.behaviorengineering.combe.graphical.diagram/debug/visualID=false
