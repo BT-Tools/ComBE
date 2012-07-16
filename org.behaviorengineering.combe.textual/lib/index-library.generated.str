@@ -27,6 +27,9 @@ signature constructors
   Global : List(UriPart) -> Summary
   Global : List(UriPart) * List(Summary) -> Summary
   
+  // None namespace
+  None   : Namespace
+  
 rules // Index management
    
   /**
@@ -174,14 +177,14 @@ rules // Index management
    * Starts a transaction, applies given strategy and ends the transaction. All index operations used from the given
    * strategy are thread safe.
    * 
-   * @param s The strategy to apply.
+   * @param s The strategy to apply. Transaction will still properly end if strategy fails.
    * @type x -> x'
    *
    * @see index-start-transaction
    * @see index-end-transaction
    */
   index-transaction(s) = 
-    prim("LANG_index_start_transaction"); s; prim("LANG_index_end_transaction")
+    prim("LANG_index_start_transaction"); try(s); prim("LANG_index_end_transaction")
   
 rules // Index querying
   
@@ -604,25 +607,62 @@ rules // Index utility
    * Converts a file ((file, subfile) tuple) to a string.
    *
    * Example:
-   *   <index-file-to-string> ("fullpath/file.ext", "") => "fullpath/file.ext"
+   *   <index-file-to-string> ("fullpath/file.ext", []) => "fullpath/file.ext"
    *
-   * @type (file, "") -> file
+   * @type (file, []) -> file
    */
   index-file-to-string:
-    (file, "") -> file
+    (file, []) -> file
     
   /**
    * Converts a file ((file, subfile) tuple) to a string.
    *
    * Example:
-   *   <index-file-to-string> ("fullpath/file.ext", "subfile") => "fullpath/file.ext@subfile"
+   *   <index-file-to-string> ("fullpath/file.ext", [Entity(), "Foo" "Bar"]) => "fullpath/file.ext@Entity://Foo.Bar"
    *
    * @type (file, subfile) -> str
    */
   index-file-to-string:
-    (file, subfile) -> <concat-strings> [file, "@", subfile]
+    (file, subfile) -> <concat-strings> [file, "@", <index-uri-to-string> subfile]
     where
-      not("" := subfile)
+      not([] := subfile)
+
+  /**
+   * Converts a file to a URI.
+   *
+   * Example:
+   *   <index-file-to-uri> "fullpath/file.ext" => [None(), "fullpath/file.ext"]
+   *
+   * @type file -> uri
+   */      
+  index-file-to-uri:
+    file -> [None(), file]
+    where
+      not(<is-tuple> file)
+      
+  /**
+   * Converts a file ((file, subfile) tuple) to a URI.
+   *
+   * Example:
+   *   <index-file-to-uri> ("fullpath/file.ext", []) => [None(), "fullpath/file.ext]
+   *
+   * @type (file, subfile) -> uri
+   */      
+  index-file-to-uri:
+    (file, []) -> [None(), file]
+    
+  /**
+   * Converts a file ((file, subfile) tuple) to a URI.
+   *
+   * Example:
+   *   <index-file-to-uri> ("fullpath/file.ext", [Entity(), "Foo" "Bar"]) => [Entity(), "Foo", "Bar", "fullpath/file.ext"]
+   *
+   * @type (file, subfile) -> uri
+   */      
+  index-file-to-uri:
+    (file, subfile) -> <conc> ([file], subfile)
+    where
+      not([] := subfile)
       
 /** @internal */
 rules // URI and value projections

@@ -68,9 +68,9 @@ rules // Analysis
       textFilePath := $[[project-path]/[path]];
       diagramFileExtension := <conc-strings> (<lower-case> packageName, "_diagram");
       diagramFilePath := $[[project-path]/[<guarantee-extension(|diagramFileExtension)> path]];
-      <term-to-model(|textFilePath, diagramFilePath, packageName)> ast'
+      <gmf-bridge(|textFilePath, diagramFilePath, packageName)> ast'
       
-  external term-to-model(|diagramFilePath, packageName, textFilePath)
+  external gmf-bridge(|diagramFilePath, packageName, textFilePath)
 
 rules // Editor services
   

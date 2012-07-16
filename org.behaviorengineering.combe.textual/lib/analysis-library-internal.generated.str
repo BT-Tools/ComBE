@@ -144,7 +144,7 @@ rules // Analysis traversals
   analyze-top-store-ast:
     (ast, file) -> <id>
     with
-      <index-set-global(|[<index-file-to-string> file, "ast"])> ast
+      <index-set-global(|<conc> (<index-file-to-uri> file, ["ast"]))> ast
       
   /**
    * Identifies all definitions in the tree and annotates them with their URI.
@@ -376,6 +376,14 @@ rules // Diffs
       // Files to analyze
       analyzeFiles := <make-set> <remove-all(fake-file)> dependentFiles;
       analyzeFiles' := analyzeFiles;
+      // TODO: Is this extra check needed?
+      /*if <getfirst(index-get-file-revision; \r -> (r, revision)\; gt)> analyzeFiles then
+        // Add current file if the current file has read information from another file with a higher revision.
+        // This indicates that potentially outdated information was read.
+        analyzeFiles' := [file|analyzeFiles]
+      else
+        analyzeFiles' := analyzeFiles
+      end;*/
       
       // Files to compile
       changedAstFiles := <filter(analyze-astdiff)> astFilePairs;
@@ -391,7 +399,7 @@ rules // Diffs
   analyze-astdiff:
     (ast, file) -> file
     where
-      name := [<index-file-to-string> file, "ast-checksum"];
+      name := <conc> (<index-file-to-uri> file, ["ast-checksum"]);
       newChecksum := <checksum> ast;
       if oldChecksum := <index-get-global(|name)> then
         <index-set-global(|name)> newChecksum;
@@ -612,9 +620,7 @@ rules // Internal helpers
   
   /** @internal */
   ast-uri-to-ast-file(|full-path):
-    (ast, uri) -> (ast, (full-path, uriStr))
-    with
-      (<index-uri-to-string> uri <+ !"") => uriStr
+    (ast, uri) -> (ast, (full-path, uri))
   
   /** @internal */     
   index-is-name-substring(|name):

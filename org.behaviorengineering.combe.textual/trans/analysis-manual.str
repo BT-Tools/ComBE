@@ -17,7 +17,6 @@ rules // Adjust lookup
 	adjust-index-lookup(target |namespace, path, prefix):
 		StandardNode(_, _, c, <target>, _, _) -> f*
 		where
-			<debug> prefix;
 			f* := <index-lookup-children(|Behavior(), prefix)> c
 			
 			
