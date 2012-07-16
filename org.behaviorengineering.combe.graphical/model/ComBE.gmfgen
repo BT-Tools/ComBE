@@ -929,7 +929,6 @@
   </diagram>
   <plugin
       provider="UQ"
-      version="1.0.0"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
