@@ -35,7 +35,7 @@
 	                    <goals>
 	                        <goal>eclipse-run</goal>
 	                    </goals>
-	                    <phase>compile</phase>
+	                    <phase>generate-resources</phase>
 	                </execution>
 	            </executions>
 	        </plugin>

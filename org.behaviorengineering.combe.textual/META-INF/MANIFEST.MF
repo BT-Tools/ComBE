@@ -21,3 +21,4 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-ActivationPolicy: lazy
 Export-Package: org.behaviorengineering.combe.textual
 Eclipse-RegisterBuddy: org.strategoxt.imp.runtime
+Eclipse-BundleShape: dir
