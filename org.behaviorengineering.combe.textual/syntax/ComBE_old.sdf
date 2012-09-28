@@ -11,17 +11,17 @@ exports
 
   context-free syntax
  
-    "#RT" Requirement* Component* ("#T" Root)?				-> Start {"Specification"}
+    "#RT" Requirement* Component* ("#T" Root)?				-> Start {"Specification", scope(Requirement, Component)}
     
-    ID Label												-> Requirement {"Requirement"}
+    Requirement@=ID Label									-> Requirement {"Requirement"}
     
     %% TODO: make enum?
-	"#C" ID Label BehaviorSeq*								-> Component {"StandardComponent"}
-	"#SC" ID Label BehaviorSeq*								-> Component {"SystemComponent"}
+	"#C" Component@=ID Label BehaviorSeq*					-> Component {"StandardComponent", scope(Behavior)}
+	"#SC" Component@=ID Label BehaviorSeq*					-> Component {"SystemComponent", scope(Behavior)}
 	
 	BehaviorType behavior:Behavior*							-> BehaviorSeq {"BehaviorSeq"}
 	
-	INT Label												-> Behavior {"Behavior"}
+	Behavior@=INT Label										-> Behavior {"Behavior"}
 	
 	BehaviorTree											-> Root {"Root"} %% workaround for GMF phantom node bug
 	
@@ -29,8 +29,8 @@ exports
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	ID TracibilityStatus ID INT Label? Operator				-> Node {"StandardNode"}
-	"_" Label? Operator										-> Node {"EmptyNode"}
+	Requirement@ID TracibilityStatus Component@ID Behavior@INT Label? Operator		-> Node {"StandardNode"}
+	"_" Label? Operator																-> Node {"EmptyNode"}
 	
   lexical syntax
   	

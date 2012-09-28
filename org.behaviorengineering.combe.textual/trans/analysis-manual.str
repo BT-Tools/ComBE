@@ -6,6 +6,7 @@ imports
   lib/index-library.generated
   lib/analysis-library.generated
   lib/editor-common.generated
+  names
 
 rules // Adjust lookup
 

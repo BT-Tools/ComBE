@@ -7,6 +7,7 @@ imports
   lib/analysis-auto.generated
   lib/index-library.generated
   lib/analysis-library.generated
+  names
 
 rules // Resolving
   
@@ -18,12 +19,12 @@ rules // Resolving
 	ns2string: Component() -> "component"
 	ns2string: Behavior() -> "behavior"
       
-	constraint-error:
-		definition -> (definition, $[Duplicate [namespace] [key]])
-		where
-			key{[ns|_]} := <nam-get-definition-key> definition;
-			definitions := <index-lookup-all> key;
-			<gt> (<length> definitions, 1);
-			namespace := <ns2string> ns
+	// constraint-error:
+	// 	definition -> (definition, $[Duplicate [namespace] [key]])
+	// 	where
+	// 		key{[ns|_]} := <nam-get-definition-key> definition;
+	// 		definitions := <index-lookup-all> key;
+	// 		<gt> (<length> definitions, 1);
+	// 		namespace := <ns2string> ns
 			
 			

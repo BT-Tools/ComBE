@@ -1,0 +1,124 @@
+module names
+
+imports
+  lib/analysis-library.generated
+  lib/analysis-library-internal.generated
+  lib/index-library.generated
+
+
+imports
+  include/ComBE
+
+
+signature
+  constructors
+    Type        : DefDataKind
+    Import      : DefDataKind
+    Transitive  : ImportAnno
+    CurrentFile : ImportAnno
+
+  constructors
+    Requirement : Namespace
+    Component   : Namespace
+    Behavior    : Namespace
+
+
+rules
+
+  nam-get-scope-types :
+    Specification(_, _, _) -> [Requirement(), Component()]
+
+
+rules
+
+  nam-get-definition-keys :
+    Requirement(x, _) -> [x]
+
+  nam-get-definitions :
+    Requirement(x, _) -> [(Requirement(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Requirement(x, _) -> <Requirement(nam-annotate-def(|path__), id)>
+
+  nam-unique :
+    Requirement(x, _) -> <id>
+
+
+rules
+
+  nam-get-scope-types :
+    StandardComponent(x, _, _) -> [Behavior()]
+
+  nam-get-definition-keys :
+    StandardComponent(x, _, _) -> [x]
+
+  nam-get-definitions :
+    StandardComponent(x, _, _) -> [(Component(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    StandardComponent(x, _, _) -> <StandardComponent(nam-annotate-def(|path__), id, id)>
+
+  nam-unique :
+    StandardComponent(x, _, _) -> <id>
+
+
+rules
+
+  nam-get-scope-types :
+    SystemComponent(x, _, _) -> [Behavior()]
+
+  nam-get-definition-keys :
+    SystemComponent(x, _, _) -> [x]
+
+  nam-get-definitions :
+    SystemComponent(x, _, _) -> [(Component(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    SystemComponent(x, _, _) -> <SystemComponent(nam-annotate-def(|path__), id, id)>
+
+  nam-unique :
+    SystemComponent(x, _, _) -> <id>
+
+
+rules
+
+  nam-get-definition-keys :
+    Behavior(x, _) -> [x]
+
+  nam-get-definitions :
+    Behavior(x, _) -> [(Behavior(), [x])]
+
+  nam-annotate-names(|paths__, path__):
+    Behavior(x, _) -> <Behavior(nam-annotate-def(|path__), id)>
+
+  nam-unique :
+    Behavior(x, _) -> <id>
+
+
+rules
+
+  nam-get-uses-keys :
+    StandardNode(r, _, c, b, _, _) -> [r, c, b]
+
+  nam-get-uses :
+    StandardNode(r, _, c, b, _, _) -> [ (Requirement(), [r])
+                                      , (Component(), [c])
+                                      , (Behavior(), [b])
+                                      ]
+
+  nam-annotate-names(|paths__, path__):
+    StandardNode(r, _, c, b, _, _) -> <StandardNode(
+                                         nam-annotate-use(|paths__, Requirement())
+                                       , id
+                                       , nam-annotate-use(|paths__, Component())
+                                       , nam-annotate-use(|paths__, Behavior())
+                                       , id
+                                       , id
+                                       )>
+
+  adjust-index-lookup(target__|namespace__, path__, prefix__):
+    StandardNode(r, _, c, b, _, _) -> [ [Requirement()|path__]
+                                      , [Component()|path__]
+                                      , [Behavior()|path__]
+                                      ]
+    where <target__> r

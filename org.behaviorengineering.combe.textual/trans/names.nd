@@ -1,0 +1,35 @@
+module names
+
+imports
+	
+	include/ComBE
+	
+namespaces
+	
+	Requirement
+	Component
+	Behavior
+	
+rules
+
+	Specification(_, _, _) :
+	  scopes Requirement, Component
+
+	Requirement(x, _) :
+	  defines Requirement x
+
+	StandardComponent(x, _, _) :
+	  defines Component x
+	  scopes Behavior
+
+	SystemComponent(x, _, _) :
+	  defines Component x
+	  scopes Behavior
+
+	Behavior(x, _) :
+	  defines Behavior x
+
+	StandardNode(r, _, c, b, _, _) :
+	  refers to Requirement r
+	  refers to Component c
+	  refers to Behavior b

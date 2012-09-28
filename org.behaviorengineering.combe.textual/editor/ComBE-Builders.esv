@@ -13,7 +13,7 @@ builders
   provider : include/combe.ctree                                                                                          
   provider : include/combe-java.jar                                                                                       
                                                                                                                           
-  observer : editor-analyze                                                                                               
+  observer : editor-analyze                                                                                 
                                                                                                                           
   builder  : "Show abstract syntax (for selection)"          = generate-aterm (openeditor) (realtime) (source)     
   builder  : "Show analyzed abstract syntax (for selection)" = generate-analyzed (openeditor) (realtime) (source)  
