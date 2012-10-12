@@ -19,7 +19,7 @@
 		<repository>
 			<id>Spoofax</id>
 			<layout>p2</layout>
-			<url>http://www.lclnet.nl/update/nightly</url>
+			<url>http://spoofax.org/update/unstable</url>
 		</repository>
 
 
