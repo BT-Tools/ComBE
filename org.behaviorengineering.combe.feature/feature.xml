@@ -64,7 +64,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.spoofax.graphical"
+         id="org.spoofax.modelware.gmf"
          download-size="0"
          install-size="0"
          version="0.0.0"
