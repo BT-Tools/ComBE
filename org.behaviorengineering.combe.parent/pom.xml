@@ -98,7 +98,7 @@
 		<module>../org.behaviorengineering.combe.graphical.editor</module>
 		<module>../org.behaviorengineering.combe.graphical.tests</module>
 		<module>../org.behaviorengineering.combe.textual</module>
-		<module>../org.spoofax.graphical</module>
+		<module>../org.spoofax.modelware.gmf</module>
 		<module>../org.behaviorengineering.combe.feature</module>
 		<module>../org.behaviorengineering.combe.repository</module>
 	</modules>
