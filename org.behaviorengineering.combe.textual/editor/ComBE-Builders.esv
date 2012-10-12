@@ -15,6 +15,6 @@ builders
                                                                                                                           
   observer : editor-analyze                                                                                 
                                                                                                                           
-  builder  : "Show abstract syntax (for selection)"          = generate-aterm (openeditor) (realtime) (source)     
-  builder  : "Show analyzed abstract syntax (for selection)" = generate-analyzed (openeditor) (realtime) (source)  
-                                                                                                                          
+  builder  : "Show abstract syntax"                = debug-generate-aterm (openeditor) (realtime) (source)           
+  builder  : "Show analyzed syntax"                = debug-generate-analyzed (openeditor) (realtime) (source)        
+                                                                                                       

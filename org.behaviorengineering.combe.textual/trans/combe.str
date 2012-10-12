@@ -167,15 +167,15 @@ rules // Utility
     with
       index-parallel-analyze-files(analyze)
 
-rules // Graphical editor  
+rules // Modelware 
 
   to-modelware:
     (ast', path, project-path) -> None()
     with
       packageName := <get-config> "program";
-      textFilePath := $[[project-path]/[path]];
-      diagramFileExtension := <conc-strings> (<lower-case> packageName, "_diagram");
-      diagramFilePath := $[[project-path]/[<guarantee-extension(|diagramFileExtension)> path]];
-      <to-modelware(|textFilePath, diagramFilePath, packageName)> ast'
+      filePath :=  $[[project-path]/[<remove-extension> path]];
+      textFileExtension := <get-extension> path;
+      <to-modelware(|filePath, textFileExtension, packageName)> ast'
       
-  external to-modelware(|diagramFilePath, packageName, textFilePath)
+  external to-modelware(|filePath, textFileExtension, packageName)
+
