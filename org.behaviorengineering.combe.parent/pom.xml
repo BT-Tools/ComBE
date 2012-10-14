@@ -106,7 +106,7 @@
 	<url>http://www.youtube.com/watch?v=1NmjMbVpuZI</url>
 	<description>Behavior Engineering (BE) is an integrated discipline that supports the systems and software engineering of large-scale, dependable software-intensive systems. Behavior Engineering employs a graphical Behavior Modeling Language (BML) that is used to construct complete behavioral, compositional and structural integrated views from natural language descriptions of a large set of requirements for a proposed system.
 
-ComBE provides a combined (textual + graphical) editor for Behavior Engineering. The textual and graphical editors are based on Spoofax and GMF respectively and are synchronised in real-time. ComBE has a number of useful editor services, such as Selection Sharing, Reference Resolution, Code Completion, Auto-layouting and Zooming. It has the same textual syntax as TextBE, which means that existing .bt files can be reused. Furthermore, tools based on EMF can easily be integrated with ComBE.
+ComBE provides a combined (textual + graphical) editor for Behavior Engineering. The textual and graphical editors are based on Spoofax and GMF respectively and are synchronised in real-time. ComBE has a number of useful editor services, such as Selection Sharing, Reference Resolution, Code Completion, Auto-layouting and Zooming. It has the same textual syntax as TextBE, which means that existing .bt files can be reused. Furthermore, tools based on EMF can easily be integrated with ComBE.</description>
 	<name>ComBE</name>
 	<inceptionYear>2012</inceptionYear>
 	<organization>
