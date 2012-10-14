@@ -1,0 +1,76 @@
+module lib/analysis-auto.generated
+
+signature
+  constructors
+    Requirement : Namespace
+    Component   : Namespace
+    Behavior    : Namespace
+
+
+imports
+  lib/editor-common.generated
+  include/ComBE
+
+
+rules
+
+  nam-get-scope-types :
+    Specification(_, _, _) -> [Requirement(), Component()]
+
+  nam-get-scope-types :
+    StandardComponent(_, _, _) -> [Behavior()]
+
+  nam-get-scope-types :
+    SystemComponent(_, _, _) -> [Behavior()]
+
+  nam-get-definition-key :
+    Requirement(x, _) -> x
+
+  nam-get-definition :
+    Requirement(x, _) -> <nam-get-def(|Requirement())> x
+
+  nam-get-definition-key :
+    StandardComponent(x, _, _) -> x
+
+  nam-get-definition :
+    StandardComponent(x, _, _) -> <nam-get-def(|Component())> x
+
+  nam-get-definition-key :
+    SystemComponent(x, _, _) -> x
+
+  nam-get-definition :
+    SystemComponent(x, _, _) -> <nam-get-def(|Component())> x
+
+  nam-get-definition-key :
+    Behavior(x, _) -> x
+
+  nam-get-definition :
+    Behavior(x, _) -> <nam-get-def(|Behavior())> x
+
+  nam-annotate-names(|def-path):
+    Requirement(u_6756, v_6756) -> Requirement(u_6756{def-path}, v_6756)
+
+  nam-annotate-names(|def-path):
+    StandardComponent(r_6756, s_6756, t_6756) -> StandardComponent(r_6756{def-path}, s_6756, t_6756)
+
+  nam-annotate-names(|def-path):
+    SystemComponent(o_6756, p_6756, q_6756) -> SystemComponent(o_6756{def-path}, p_6756, q_6756)
+
+  nam-annotate-names(|def-path):
+    Behavior(l_6756, m_6756) -> Behavior(l_6756{def-path}, m_6756)
+
+  nam-annotate-names(|def-path):
+    StandardNode(a_6756, b_6756, c_6756, d_6756, e_6756, f_6756) -> StandardNode(
+                                                                      <nam-annotate-use(|Requirement())> a_6756
+                                                                    , b_6756
+                                                                    , <nam-annotate-use(|Component())> c_6756
+                                                                    , <nam-annotate-use(|Behavior())> d_6756
+                                                                    , e_6756
+                                                                    , f_6756
+                                                                    )
+
+  nam-get-def(|n) =
+    fail
+
+  nam-annotate-use(|n) =
+    fail
