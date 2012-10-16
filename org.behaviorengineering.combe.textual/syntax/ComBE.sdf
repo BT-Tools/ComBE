@@ -29,7 +29,7 @@ exports
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	ID TracibilityStatus ID INT Label? Operator				-> Node {"StandardNode"}
+	ID TraceabilityStatus ID INT Label? Operator			-> Node {"StandardNode"}
 	"_" Label? Operator										-> Node {"EmptyNode"}
 	
   lexical syntax
@@ -44,12 +44,12 @@ exports
 	EOEvent:"#EO"			-> BehaviorType
 	Assertion:"#A"			-> BehaviorType
   	
-  	None:""					-> TracibilityStatus
-  	Implied:"+"				-> TracibilityStatus
-	Missing:"-"				-> TracibilityStatus
-	Updated:"++"			-> TracibilityStatus 
-	Deleted:"--"			-> TracibilityStatus
-	Refinement:"+-"			-> TracibilityStatus
+  	None:""					-> TraceabilityStatus
+  	Implied:"+"				-> TraceabilityStatus
+	Missing:"-"				-> TraceabilityStatus
+	Updated:"++"			-> TraceabilityStatus 
+	Deleted:"--"			-> TraceabilityStatus
+	Refinement:"+-"			-> TraceabilityStatus
   	
   	None:""					-> Operator
 	BranchKill:"--"			-> Operator

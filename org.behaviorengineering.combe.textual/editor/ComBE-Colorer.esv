@@ -7,7 +7,9 @@ colorer
   // This file can be used for custom colorer rules.                  
   //                                                                  
   // See the imported file for a brief introduction and examples.     
-  BehaviorType	: 127 0 85 bold
-  Label			: darkgreen
-  identifier	: black
-  number		: black
+  BehaviorType			: 127 0 85 bold
+  Label					: darkgreen
+  identifier			: black
+  number				: black
+  TraceabilityStatus 	: gray
+  Operator				: gray
