@@ -24,6 +24,7 @@ import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdap
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -117,10 +118,10 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getParallelBranchNodesCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -130,9 +131,9 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getParallelBranchNodesCompartmentFigure();
-			pane.remove(((ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart) childEditPart).getFigure());
+			pane.remove(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -162,7 +163,7 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart) {
+		if (editPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			return getPrimaryShape().getParallelBranchNodesCompartmentFigure();
 		}
 		return getContentPane();
@@ -338,10 +339,10 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003) {
-				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004) {
-				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);

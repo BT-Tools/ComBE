@@ -133,7 +133,7 @@ public class AtomicSequenceItemSemanticEditPolicy extends ComBE.diagram.edit.pol
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 			Node node = (Node) nit.next();
 			switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(node)) {
-			case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+			case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(cnode)) {

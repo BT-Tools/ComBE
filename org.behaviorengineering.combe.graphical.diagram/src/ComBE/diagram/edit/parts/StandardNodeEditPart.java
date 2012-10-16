@@ -142,16 +142,16 @@ public class StandardNodeEditPart extends ShapeNodeEditPart {
 			((ComBE.diagram.edit.parts.WrappingLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeBehaviorLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart) {
-			((ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeTraceabilityStatusLabelFigure());
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeOperatorEditPart) {
-			((ComBE.diagram.edit.parts.StandardNodeOperatorEditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeOperatorLabelFigure());
-			return true;
-		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeLabelEditPart) {
 			((ComBE.diagram.edit.parts.StandardNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeLabelLabelFigure());
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel4EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel4EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeTraceabilityStatusLabelFigure());
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel5EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel5EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeOperatorLabelFigure());
 			return true;
 		}
 		return false;
@@ -170,13 +170,13 @@ public class StandardNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeOperatorEditPart) {
-			return true;
-		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeLabelEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel4EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel5EditPart) {
 			return true;
 		}
 		return false;

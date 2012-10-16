@@ -35,16 +35,25 @@ public class ComBEOCLFactory {
 	 * @generated
 	 */
 	protected ComBEOCLFactory() {
-		this.expressions = new ComBE.diagram.expressions.ComBEAbstractExpression[9];
+		this.expressions = new ComBE.diagram.expressions.ComBEAbstractExpression[18];
 		this.expressionBodies = new String[] { "if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
 				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
 				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+				"traceabilitystatus", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
 				"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
 				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
 				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+				"traceabilitystatus", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
 				"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
 				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
 				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+				"traceabilitystatus", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
+				"operator", //$NON-NLS-1$
 		};
 	}
 

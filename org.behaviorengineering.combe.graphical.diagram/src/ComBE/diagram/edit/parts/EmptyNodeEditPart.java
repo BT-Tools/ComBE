@@ -115,12 +115,12 @@ public class EmptyNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart) {
-			((ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureEmptyNodeLabelLabelFigure());
+		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabelEditPart) {
+			((ComBE.diagram.edit.parts.EmptyNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getFigureEmptyNodeLabelLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeOperator2EditPart) {
-			((ComBE.diagram.edit.parts.EmptyNodeOperator2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureEmptyNodeOperatorLabelFigure());
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel6EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel6EditPart) childEditPart).setLabel(getPrimaryShape().getFigureEmptyNodeOperatorLabelFigure());
 			return true;
 		}
 		return false;
@@ -130,10 +130,10 @@ public class EmptyNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabelEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeOperator2EditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel6EditPart) {
 			return true;
 		}
 		return false;
@@ -268,7 +268,7 @@ public class EmptyNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
 	}
 
 	/**

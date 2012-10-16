@@ -52,7 +52,7 @@ public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy ext
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren(viewObject);
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAtomicSequenceAtomicSequenceNodesCompartment_7003SemanticChildren(viewObject);
 		for (ComBE.diagram.part.ComBENodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -71,7 +71,7 @@ public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy ext
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
-		return visualID == ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID;
+		return visualID == ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy ext
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren((View) getHost().getModel());
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAtomicSequenceAtomicSequenceNodesCompartment_7003SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

@@ -281,7 +281,7 @@ public class EmptyNodeLabel3EditPart extends CompartmentEditPart implements ITex
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
+			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

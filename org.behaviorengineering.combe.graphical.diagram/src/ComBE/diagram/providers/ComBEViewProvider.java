@@ -254,7 +254,7 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
+		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
@@ -285,7 +285,7 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
+		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
@@ -316,7 +316,7 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		}
 		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore, IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(), FigureUtilities.RGBToInteger(fillRGB));
-		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
+		createCompartment(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID), false, false, true, true);
 		return node;
 	}
 
@@ -335,9 +335,9 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		Node label5001 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		Node label5002 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 		Node label5003 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
-		Node label5004 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart.VISUAL_ID));
-		Node label5005 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperatorEditPart.VISUAL_ID));
-		Node label5006 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabelEditPart.VISUAL_ID));
+		Node label5004 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabelEditPart.VISUAL_ID));
+		Node label5005 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		Node label5006 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -353,8 +353,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		Node label5021 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID));
-		Node label5022 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeOperator2EditPart.VISUAL_ID));
+		Node label5007 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
+		Node label5008 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -370,12 +370,12 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		Node label5007 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
-		Node label5008 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
-		Node label5009 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
-		Node label5010 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart.VISUAL_ID));
-		Node label5011 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperator2EditPart.VISUAL_ID));
+		Node label5009 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
+		Node label5010 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		Node label5011 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
 		Node label5012 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabel2EditPart.VISUAL_ID));
+		Node label5013 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
+		Node label5014 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -391,8 +391,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		Node label5023 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
-		Node label5024 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeOperator3EditPart.VISUAL_ID));
+		Node label5015 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID));
+		Node label5016 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -408,12 +408,12 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		Node label5013 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
-		Node label5014 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
-		Node label5015 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
-		Node label5016 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus3EditPart.VISUAL_ID));
-		Node label5017 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperator3EditPart.VISUAL_ID));
-		Node label5018 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabel3EditPart.VISUAL_ID));
+		Node label5017 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+		Node label5018 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID));
+		Node label5019 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel15EditPart.VISUAL_ID));
+		Node label5020 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabel3EditPart.VISUAL_ID));
+		Node label5021 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel16EditPart.VISUAL_ID));
+		Node label5022 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel17EditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -429,8 +429,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		node.setElement(domainElement);
 		// initializeFromPreferences 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
-		Node label5019 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
-		Node label5020 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeOperatorEditPart.VISUAL_ID));
+		Node label5023 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
+		Node label5024 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel18EditPart.VISUAL_ID));
 		return node;
 	}
 

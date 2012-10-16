@@ -2,6 +2,7 @@ package ComBE.diagram.edit.policies;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,7 +53,7 @@ public class AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPoli
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(viewObject);
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren(viewObject);
 		for (ComBE.diagram.part.ComBENodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -71,7 +72,7 @@ public class AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPoli
 	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
-		return visualID == ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID;
+		return visualID == ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -82,7 +83,7 @@ public class AlternativeBranchAlternativeBranchNodesCompartmentCanonicalEditPoli
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren((View) getHost().getModel());
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

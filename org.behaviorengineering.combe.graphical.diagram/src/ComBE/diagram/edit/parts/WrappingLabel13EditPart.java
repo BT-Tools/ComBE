@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
@@ -33,9 +34,11 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.directedit.ComboDirectEditManager;
+import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.HasOclTracker;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.OclTracker;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -47,12 +50,12 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements ITextAwareEditPart {
+public class WrappingLabel13EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5020;
+	public static final int VISUAL_ID = 5017;
 
 	/**
 	 * @generated
@@ -67,7 +70,7 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	/**
 	 * @generated
 	 */
-	private List<?> parserElements;
+	private OclTracker.Registrator myOclRegistrator;
 
 	/**
 	 * @generated
@@ -82,7 +85,7 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	/**
 	 * @generated
 	 */
-	public EmptyNodeOperatorEditPart(View view) {
+	public WrappingLabel13EditPart(View view) {
 		super(view);
 	}
 
@@ -191,13 +194,14 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	}
 
 	/**
-	 * @generated
+	 * @generated NOT
+	 * Workaround for GMF/331875
 	 */
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), 0);
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;
@@ -227,7 +231,7 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return getParser() != null;
+		return false;
 	}
 
 	/**
@@ -281,7 +285,7 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeOperatorEditPart.VISUAL_ID));
+			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -291,7 +295,7 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new ComboDirectEditManager(this, null, ComBE.diagram.edit.parts.ComBEEditPartFactory.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager2(this, null, ComBE.diagram.edit.parts.ComBEEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
@@ -314,8 +318,23 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == ComboDirectEditManager.class) {
-			((ComboDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation.getSWTPoint());
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private void performDirectEdit(char initialCharacter) {
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(initialCharacter);
+		} else // 
+		if (getManager() instanceof TextDirectEditManager2) {
+			((TextDirectEditManager2) getManager()).show(initialCharacter);
+		} else //
+		{
+			performDirectEdit();
 		}
 	}
 
@@ -329,7 +348,10 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 
 				public void run() {
 					if (isActive() && isEditable()) {
-						if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+							performDirectEdit(initialChar.charValue());
+						} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
 							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
@@ -424,28 +446,16 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 * @generated
 	 */
 	protected void addSemanticListeners() {
-		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
-			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
-			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
-			}
-		} else {
-			super.addSemanticListeners();
-		}
+		OclTracker tracker = getTracker();
+		tracker.initialize(resolveSemanticElement());
+		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void removeSemanticListeners() {
-		if (parserElements != null) {
-			for (int i = 0; i < parserElements.size(); i++) {
-				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
-			}
-		} else {
-			super.removeSemanticListeners();
-		}
+		getTracker().uninstallListeners();
 	}
 
 	/**
@@ -468,6 +478,34 @@ public class EmptyNodeOperatorEditPart extends CompartmentEditPart implements IT
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
+	}
+
+	/**
+	 * @generated
+	 */
+	private OclTracker getTracker() {
+		return ((HasOclTracker) getParser()).getOclTracker();
+	}
+
+	/**
+	 * @generated
+	 */
+	private OclTracker.Registrator getOclRegistrator() {
+		if (myOclRegistrator == null) {
+			myOclRegistrator = new OclTracker.Registrator() {
+
+				@Override
+				public void registerListener(String filterId, NotificationListener listener, EObject element) {
+					addListenerFilter(filterId, listener, element);
+				}
+
+				@Override
+				public void unregisterListener(String filterId) {
+					removeListenerFilter(filterId);
+				}
+			};
+		}
+		return myOclRegistrator;
 	}
 
 	/**

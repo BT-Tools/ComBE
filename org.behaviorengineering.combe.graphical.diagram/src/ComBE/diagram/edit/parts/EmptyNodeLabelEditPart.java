@@ -52,7 +52,7 @@ public class EmptyNodeLabelEditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5019;
+	public static final int VISUAL_ID = 5007;
 
 	/**
 	 * @generated
@@ -281,7 +281,7 @@ public class EmptyNodeLabelEditPart extends CompartmentEditPart implements IText
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
+			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
 		}
 		return parser;
 	}

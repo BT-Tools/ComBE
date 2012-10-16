@@ -12,18 +12,18 @@ public class ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy 
 	 * @generated
 	 */
 	public ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy() {
-		super(ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003);
+		super(ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005 == req.getElementType()) {
-			return getGEFWrapper(new ComBE.diagram.edit.commands.StandardNode3CreateCommand(req));
+		if (ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003 == req.getElementType()) {
+			return getGEFWrapper(new ComBE.diagram.edit.commands.StandardNode2CreateCommand(req));
 		}
-		if (ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006 == req.getElementType()) {
-			return getGEFWrapper(new ComBE.diagram.edit.commands.EmptyNode3CreateCommand(req));
+		if (ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004 == req.getElementType()) {
+			return getGEFWrapper(new ComBE.diagram.edit.commands.EmptyNode2CreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

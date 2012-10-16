@@ -54,7 +54,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5009;
+	public static final int VISUAL_ID = 5008;
 	/**
 	 * @generated
 	 */
@@ -196,7 +196,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(new EObjectAdapter(parserElement), 2);
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), 5);
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;
@@ -226,7 +226,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -280,7 +280,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

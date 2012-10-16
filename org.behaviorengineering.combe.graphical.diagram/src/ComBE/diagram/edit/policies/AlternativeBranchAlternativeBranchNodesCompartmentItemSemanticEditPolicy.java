@@ -12,18 +12,18 @@ public class AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditP
 	 * @generated
 	 */
 	public AlternativeBranchAlternativeBranchNodesCompartmentItemSemanticEditPolicy() {
-		super(ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002);
+		super(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003 == req.getElementType()) {
-			return getGEFWrapper(new ComBE.diagram.edit.commands.StandardNode2CreateCommand(req));
+		if (ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001 == req.getElementType()) {
+			return getGEFWrapper(new ComBE.diagram.edit.commands.StandardNodeCreateCommand(req));
 		}
-		if (ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004 == req.getElementType()) {
-			return getGEFWrapper(new ComBE.diagram.edit.commands.EmptyNode2CreateCommand(req));
+		if (ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002 == req.getElementType()) {
+			return getGEFWrapper(new ComBE.diagram.edit.commands.EmptyNodeCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

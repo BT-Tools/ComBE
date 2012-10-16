@@ -54,7 +54,7 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5014;
+	public static final int VISUAL_ID = 5010;
 	/**
 	 * @generated
 	 */
@@ -280,7 +280,7 @@ public class WrappingLabel8EditPart extends CompartmentEditPart implements IText
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

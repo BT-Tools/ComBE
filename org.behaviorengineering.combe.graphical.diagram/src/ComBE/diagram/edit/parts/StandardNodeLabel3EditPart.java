@@ -52,7 +52,7 @@ public class StandardNodeLabel3EditPart extends CompartmentEditPart implements I
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5018;
+	public static final int VISUAL_ID = 5020;
 
 	/**
 	 * @generated

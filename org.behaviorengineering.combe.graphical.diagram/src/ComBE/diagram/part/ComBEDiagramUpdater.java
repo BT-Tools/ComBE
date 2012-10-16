@@ -25,11 +25,11 @@ public class ComBEDiagramUpdater {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
 			return getSpecification_1000SemanticChildren(view);
-		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
-			return getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren(view);
 		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
-			return getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(view);
+			return getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren(view);
 		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+			return getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(view);
+		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 			return getAtomicSequenceAtomicSequenceNodesCompartment_7003SemanticChildren(view);
 		}
 		return Collections.emptyList();

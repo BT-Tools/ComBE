@@ -127,28 +127,28 @@ public class StandardNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel4EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel4EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeRequirementLabelFigure());
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel7EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel7EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeRequirementLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel5EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel5EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeComponentLabelFigure());
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel8EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel8EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeComponentLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel6EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel6EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeBehaviorLabelFigure());
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart) {
-			((ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeTraceabilityStatusLabelFigure());
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeOperator2EditPart) {
-			((ComBE.diagram.edit.parts.StandardNodeOperator2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeOperatorLabelFigure());
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel9EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel9EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeBehaviorLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeLabel2EditPart) {
 			((ComBE.diagram.edit.parts.StandardNodeLabel2EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeLabelLabelFigure());
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel10EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel10EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeTraceabilityStatusLabelFigure());
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel11EditPart) {
+			((ComBE.diagram.edit.parts.WrappingLabel11EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeOperatorLabelFigure());
 			return true;
 		}
 		return false;
@@ -158,22 +158,22 @@ public class StandardNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel4EditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel7EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel5EditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel8EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel6EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart) {
-			return true;
-		}
-		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeOperator2EditPart) {
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel9EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeLabel2EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel10EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel11EditPart) {
 			return true;
 		}
 		return false;
@@ -308,7 +308,7 @@ public class StandardNode2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
 	}
 
 	/**

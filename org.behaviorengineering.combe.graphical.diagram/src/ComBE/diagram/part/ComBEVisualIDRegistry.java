@@ -117,7 +117,7 @@ public class ComBEVisualIDRegistry {
 				return ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID;
 			}
 			break;
-		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID;
 			}
@@ -125,7 +125,7 @@ public class ComBEVisualIDRegistry {
 				return ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID;
 			}
 			break;
-		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID;
 			}
@@ -133,7 +133,7 @@ public class ComBEVisualIDRegistry {
 				return ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID;
 			}
 			break;
-		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID;
 			}
@@ -176,17 +176,17 @@ public class ComBEVisualIDRegistry {
 			}
 			break;
 		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
-			if (ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
+			if (ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -200,53 +200,25 @@ public class ComBEVisualIDRegistry {
 			if (ComBE.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComBE.diagram.edit.parts.StandardNodeOperatorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ComBE.diagram.edit.parts.StandardNodeLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			break;
-		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
-			if (ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComBE.diagram.edit.parts.EmptyNodeOperator2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComBE.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			break;
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+			if (ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComBE.diagram.edit.parts.StandardNodeOperator2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComBE.diagram.edit.parts.StandardNodeLabel2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
-		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
-			if (ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ComBE.diagram.edit.parts.EmptyNodeOperator3EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -256,25 +228,53 @@ public class ComBEVisualIDRegistry {
 			if (ComBE.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.StandardNodeLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeOperator3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComBE.diagram.edit.parts.WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
+			if (ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComBE.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+			if (ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComBE.diagram.edit.parts.WrappingLabel14EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComBE.diagram.edit.parts.WrappingLabel15EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComBE.diagram.edit.parts.StandardNodeLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ComBE.diagram.edit.parts.WrappingLabel16EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ComBE.diagram.edit.parts.WrappingLabel17EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
-			if (ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.EmptyNodeOperatorEditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.WrappingLabel18EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -282,7 +282,7 @@ public class ComBEVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -290,7 +290,7 @@ public class ComBEVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 			if (ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -339,9 +339,9 @@ public class ComBEVisualIDRegistry {
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
 		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
