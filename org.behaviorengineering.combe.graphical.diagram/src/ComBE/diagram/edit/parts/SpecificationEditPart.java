@@ -11,6 +11,7 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
 /**
  * @generated
@@ -18,40 +19,41 @@ import org.eclipse.gmf.runtime.notation.View;
 public class SpecificationEditPart extends DiagramEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final static String MODEL_ID = "ComBE"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 1000;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public SpecificationEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.SpecificationItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.SpecificationCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	/*package-local*/static class NodeLabelDragPolicy extends NonResizableEditPolicy {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@SuppressWarnings("rawtypes")
 		protected List createSelectionHandles() {
 			MoveHandle h = new MoveHandle((GraphicalEditPart) getHost());
@@ -60,15 +62,15 @@ public class SpecificationEditPart extends DiagramEditPart {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public Command getCommand(Request request) {
 			return null;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public boolean understandsRequest(Request request) {
 			return false;
 		}

@@ -22,82 +22,82 @@ import org.eclipse.swt.graphics.Image;
 public class ComBEElementTypes {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBEElementTypes() {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Map<IElementType, ENamedElement> elements;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static ImageRegistry imageRegistry;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType Specification_1000 = getElementType("org.behaviorengineering.combe.graphical.diagram.Specification_1000"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType AlternativeBranch_2001 = getElementType("org.behaviorengineering.combe.graphical.diagram.AlternativeBranch_2001"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType ParallelBranch_2002 = getElementType("org.behaviorengineering.combe.graphical.diagram.ParallelBranch_2002"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType AtomicSequence_2003 = getElementType("org.behaviorengineering.combe.graphical.diagram.AtomicSequence_2003"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType StandardNode_3001 = getElementType("org.behaviorengineering.combe.graphical.diagram.StandardNode_3001"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType EmptyNode_3002 = getElementType("org.behaviorengineering.combe.graphical.diagram.EmptyNode_3002"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType StandardNode_3003 = getElementType("org.behaviorengineering.combe.graphical.diagram.StandardNode_3003"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType EmptyNode_3004 = getElementType("org.behaviorengineering.combe.graphical.diagram.EmptyNode_3004"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType StandardNode_3005 = getElementType("org.behaviorengineering.combe.graphical.diagram.StandardNode_3005"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType EmptyNode_3006 = getElementType("org.behaviorengineering.combe.graphical.diagram.EmptyNode_3006"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType AlternativeBranchChildren_4001 = getElementType("org.behaviorengineering.combe.graphical.diagram.AlternativeBranchChildren_4001"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType ParallelBranchChildren_4002 = getElementType("org.behaviorengineering.combe.graphical.diagram.ParallelBranchChildren_4002"); //$NON-NLS-1$
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final IElementType AtomicSequenceChild_4003 = getElementType("org.behaviorengineering.combe.graphical.diagram.AtomicSequenceChild_4003"); //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -106,15 +106,15 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static String getImageRegistryKey(ENamedElement element) {
 		return element.getName();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature feature = ((EStructuralFeature) element);
@@ -137,8 +137,8 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		String key = getImageRegistryKey(element);
 		ImageDescriptor imageDescriptor = getImageRegistry().getDescriptor(key);
@@ -153,8 +153,8 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static Image getImage(ENamedElement element) {
 		String key = getImageRegistryKey(element);
 		Image image = getImageRegistry().get(key);
@@ -170,8 +170,8 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(IAdaptable hint) {
 		ENamedElement element = getElement(hint);
 		if (element == null) {
@@ -181,8 +181,8 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static Image getImage(IAdaptable hint) {
 		ENamedElement element = getElement(hint);
 		if (element == null) {
@@ -192,10 +192,10 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* Returns 'type' of the ecore object associated with the hint.
-	* 
-	* @generated
-	*/
+	 * Returns 'type' of the ecore object associated with the hint.
+	 * 
+	 * @generated
+	 */
 	public static ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
 		if (elements == null) {
@@ -231,15 +231,15 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static IElementType getElementType(String id) {
 		return ElementTypeRegistry.getInstance().getType(id);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
@@ -261,8 +261,8 @@ public class ComBEElementTypes {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:

@@ -15,28 +15,28 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 public class AlternativeBranchChildrenReorientCommand extends EditElementCommand {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final int reorientDirection;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EObject referenceOwner;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EObject oldEnd;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EObject newEnd;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AlternativeBranchChildrenReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
@@ -46,8 +46,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean canExecute() {
 		if (false == referenceOwner instanceof ComBE.AlternativeBranch) {
 			return false;
@@ -62,8 +62,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean canReorientSource() {
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.AlternativeBranch)) {
 			return false;
@@ -72,8 +72,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean canReorientTarget() {
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.BehaviorTree)) {
 			return false;
@@ -82,8 +82,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
@@ -98,8 +98,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 		getOldSource().getChildren().remove(getOldTarget());
 		getNewSource().getChildren().add(getOldTarget());
@@ -107,8 +107,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 		getOldSource().getChildren().remove(getOldTarget());
 		getOldSource().getChildren().add(getNewTarget());
@@ -116,29 +116,29 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.AlternativeBranch getOldSource() {
 		return (ComBE.AlternativeBranch) referenceOwner;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.AlternativeBranch getNewSource() {
 		return (ComBE.AlternativeBranch) newEnd;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.BehaviorTree getOldTarget() {
 		return (ComBE.BehaviorTree) oldEnd;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.BehaviorTree getNewTarget() {
 		return (ComBE.BehaviorTree) newEnd;
 	}

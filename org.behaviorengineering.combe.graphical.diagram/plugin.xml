@@ -266,7 +266,13 @@
          <object class="ComBE.diagram.edit.parts.AlternativeBranchEditPart" id="AlternativeBranch_2001"/>
          <object class="ComBE.diagram.edit.parts.ParallelBranchEditPart" id="ParallelBranch_2002"/>
          <object class="ComBE.diagram.edit.parts.AtomicSequenceEditPart" id="AtomicSequence_2003"/>
-         <context elements="Specification_1000,AlternativeBranch_2001,ParallelBranch_2002,AtomicSequence_2003"/>
+         <object class="ComBE.diagram.edit.parts.StandardNodeEditPart" id="StandardNode_3001"/>
+         <object class="ComBE.diagram.edit.parts.EmptyNodeEditPart" id="EmptyNode_3002"/>
+         <object class="ComBE.diagram.edit.parts.StandardNode2EditPart" id="StandardNode_3003"/>
+         <object class="ComBE.diagram.edit.parts.EmptyNode2EditPart" id="EmptyNode_3004"/>
+         <object class="ComBE.diagram.edit.parts.StandardNode3EditPart" id="StandardNode_3005"/>
+         <object class="ComBE.diagram.edit.parts.EmptyNode3EditPart" id="EmptyNode_3006"/>
+         <context elements="Specification_1000,AlternativeBranch_2001,ParallelBranch_2002,AtomicSequence_2003,StandardNode_3001,EmptyNode_3002,StandardNode_3003,EmptyNode_3004,StandardNode_3005,EmptyNode_3006"/>
       </modelingAssistantProvider>
    </extension>
 

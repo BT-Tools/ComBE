@@ -27,8 +27,8 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getTypesForPopupBar(IAdaptable host) {
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ComBE.diagram.edit.parts.SpecificationEditPart) {
@@ -60,8 +60,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -77,8 +77,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -94,8 +94,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
@@ -112,8 +112,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -129,8 +129,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -146,22 +146,22 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EObject selectExistingElementForSource(IAdaptable target, IElementType relationshipType) {
 		return selectExistingElement(target, getTypesForSource(target, relationshipType));
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EObject selectExistingElementForTarget(IAdaptable source, IElementType relationshipType) {
 		return selectExistingElement(source, getTypesForTarget(source, relationshipType));
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected EObject selectExistingElement(IAdaptable host, Collection types) {
 		if (types.isEmpty()) {
 			return null;
@@ -185,16 +185,16 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean isApplicableElement(EObject element, Collection types) {
 		IElementType type = ElementTypeRegistry.getInstance().getElementType(element);
 		return types.contains(type);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());

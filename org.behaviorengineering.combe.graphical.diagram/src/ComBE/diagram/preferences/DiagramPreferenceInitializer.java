@@ -9,8 +9,8 @@ import org.eclipse.jface.preference.IPreferenceStore;
 public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
 		ComBE.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
@@ -22,8 +22,8 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IPreferenceStore getPreferenceStore() {
 		return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}

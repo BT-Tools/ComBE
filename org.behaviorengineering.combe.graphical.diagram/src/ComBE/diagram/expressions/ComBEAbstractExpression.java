@@ -19,13 +19,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public abstract class ComBEAbstractExpression {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IStatus status = Status.OK_STATUS;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setStatus(int severity, String message, Throwable throwable) {
 		String pluginID = ComBE.diagram.part.ComBEDiagramEditorPlugin.ID;
 		this.status = new Status(severity, pluginID, -1, (message != null) ? message : "", throwable); //$NON-NLS-1$
@@ -35,60 +35,60 @@ public abstract class ComBEAbstractExpression {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IStatus getStatus() {
 		return status;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final String myBody;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String body() {
 		return myBody;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EClassifier myContext;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EClassifier context() {
 		return myContext;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBEAbstractExpression(String body, EClassifier context) {
 		myBody = body;
 		myContext = context;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
 	protected abstract Object doEvaluate(Object context, Map env);
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Object evaluate(Object context) {
 		return evaluate(context, Collections.EMPTY_MAP);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
 	public Object evaluate(Object context, Map env) {
 		if (context().isInstance(context)) {
@@ -102,9 +102,9 @@ public abstract class ComBEAbstractExpression {
 	}
 
 	/**
-	* Expression may return number value which is not directly compatible with feature type (e.g. Double when Integer is expected), or EEnumLiteral meta-object when literal instance is expected
-	* @generated
-	*/
+	 * Expression may return number value which is not directly compatible with feature type (e.g. Double when Integer is expected), or EEnumLiteral meta-object when literal instance is expected
+	 * @generated
+	 */
 	public static Object performCast(Object value, EDataType targetType) {
 		if (targetType instanceof EEnum) {
 			if (value instanceof EEnumLiteral) {

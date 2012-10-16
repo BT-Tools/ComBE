@@ -24,22 +24,22 @@ import org.eclipse.ui.PlatformUI;
 public class DeleteElementAction extends AbstractDeleteFromAction {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public DeleteElementAction(IWorkbenchPart part) {
 		super(part);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public DeleteElementAction(IWorkbenchPage workbenchPage) {
 		super(workbenchPage);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init() {
 		super.init();
 		setId(ActionIds.ACTION_DELETE_FROM_MODEL);
@@ -52,15 +52,15 @@ public class DeleteElementAction extends AbstractDeleteFromAction {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getCommandLabel() {
 		return DiagramUIMessages.DiagramEditor_Delete_from_Model;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCommand(Request request) {
 		List operationSet = getOperationSet();
 		if (operationSet.isEmpty()) {

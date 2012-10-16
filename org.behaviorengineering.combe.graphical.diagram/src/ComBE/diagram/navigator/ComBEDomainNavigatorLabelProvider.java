@@ -8,24 +8,24 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Image getImage(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBEDomainNavigatorItem) {
 			return myAdapterFactoryLabelProvider.getImage(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element).getEObject());
@@ -34,8 +34,8 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getText(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBEDomainNavigatorItem) {
 			return myAdapterFactoryLabelProvider.getText(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element).getEObject());
@@ -44,36 +44,36 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void addListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.addListener(listener);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void dispose() {
 		myAdapterFactoryLabelProvider.dispose();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean isLabelProperty(Object element, String property) {
 		return myAdapterFactoryLabelProvider.isLabelProperty(element, property);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void removeListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.removeListener(listener);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void restoreState(IMemento aMemento) {
 	}
 
@@ -84,8 +84,8 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getDescription(Object anElement) {
 		return null;
 	}

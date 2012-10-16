@@ -11,15 +11,16 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBEDiagramUpdater {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBENodeDescriptor> getSemanticChildren(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
@@ -35,8 +36,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBENodeDescriptor> getSpecification_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -66,8 +67,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBENodeDescriptor> getAlternativeBranchAlternativeBranchNodesCompartment_7001SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -94,8 +95,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBENodeDescriptor> getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -122,8 +123,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBENodeDescriptor> getAtomicSequenceAtomicSequenceNodesCompartment_7003SemanticChildren(View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -150,15 +151,15 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Iterator<EObject> getPhantomNodesIterator(Resource resource) {
 		return resource.getAllContents();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getContainedLinks(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
@@ -186,8 +187,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getIncomingLinks(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
@@ -213,8 +214,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getOutgoingLinks(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
@@ -240,15 +241,15 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getSpecification_1000ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAlternativeBranch_2001ContainedLinks(View view) {
 		ComBE.AlternativeBranch modelElement = (ComBE.AlternativeBranch) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -257,8 +258,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getParallelBranch_2002ContainedLinks(View view) {
 		ComBE.ParallelBranch modelElement = (ComBE.ParallelBranch) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -267,8 +268,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAtomicSequence_2003ContainedLinks(View view) {
 		ComBE.AtomicSequence modelElement = (ComBE.AtomicSequence) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -277,50 +278,50 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3002ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3003ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3005ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3006ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAlternativeBranch_2001IncomingLinks(View view) {
 		ComBE.AlternativeBranch modelElement = (ComBE.AlternativeBranch) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -332,8 +333,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getParallelBranch_2002IncomingLinks(View view) {
 		ComBE.ParallelBranch modelElement = (ComBE.ParallelBranch) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -345,8 +346,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAtomicSequence_2003IncomingLinks(View view) {
 		ComBE.AtomicSequence modelElement = (ComBE.AtomicSequence) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer.find(view.eResource().getResourceSet().getResources());
@@ -358,50 +359,50 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3002IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3003IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3004IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3005IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3006IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAlternativeBranch_2001OutgoingLinks(View view) {
 		ComBE.AlternativeBranch modelElement = (ComBE.AlternativeBranch) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -410,8 +411,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getParallelBranch_2002OutgoingLinks(View view) {
 		ComBE.ParallelBranch modelElement = (ComBE.ParallelBranch) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -420,8 +421,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getAtomicSequence_2003OutgoingLinks(View view) {
 		ComBE.AtomicSequence modelElement = (ComBE.AtomicSequence) view.getElement();
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
@@ -430,50 +431,50 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3002OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3003OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3004OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getStandardNode_3005OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static List<ComBE.diagram.part.ComBELinkDescriptor> getEmptyNode_3006OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getIncomingFeatureModelFacetLinks_AlternativeBranch_Children_4001(ComBE.BehaviorTree target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
@@ -486,8 +487,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getIncomingFeatureModelFacetLinks_ParallelBranch_Children_4002(ComBE.BehaviorTree target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
@@ -500,8 +501,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getIncomingFeatureModelFacetLinks_AtomicSequence_Child_4003(ComBE.BehaviorTree target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
@@ -514,8 +515,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getOutgoingFeatureModelFacetLinks_AlternativeBranch_Children_4001(ComBE.AlternativeBranch source) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		for (Iterator<?> destinations = source.getChildren().iterator(); destinations.hasNext();) {
@@ -526,8 +527,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getOutgoingFeatureModelFacetLinks_ParallelBranch_Children_4002(ComBE.ParallelBranch source) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		for (Iterator<?> destinations = source.getChildren().iterator(); destinations.hasNext();) {
@@ -538,8 +539,8 @@ public class ComBEDiagramUpdater {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static Collection<ComBE.diagram.part.ComBELinkDescriptor> getOutgoingFeatureModelFacetLinks_AtomicSequence_Child_4003(ComBE.AtomicSequence source) {
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		ComBE.BehaviorTree destination = source.getChild();
@@ -549,6 +550,43 @@ public class ComBEDiagramUpdater {
 		result.add(new ComBE.diagram.part.ComBELinkDescriptor(source, destination, ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003, ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<ComBE.diagram.part.ComBENodeDescriptor> getSemanticChildren(View view) {
+			return ComBEDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<ComBE.diagram.part.ComBELinkDescriptor> getContainedLinks(View view) {
+			return ComBEDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<ComBE.diagram.part.ComBELinkDescriptor> getIncomingLinks(View view) {
+			return ComBEDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<ComBE.diagram.part.ComBELinkDescriptor> getOutgoingLinks(View view) {
+			return ComBEDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 	/**
 	 * Workaround for GMF/352271

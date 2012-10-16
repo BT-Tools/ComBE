@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -46,30 +47,30 @@ import ComBE.diagram.customCode.CustomCreateNodePlate;
 public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 2001;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure contentPane;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure primaryShape;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AlternativeBranchEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.AlternativeBranchItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.AlternativeBranchCanonicalEditPolicy());
@@ -79,8 +80,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -104,22 +105,22 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createNodeShape() {
 		return primaryShape = new AlternativeBranchFigure();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AlternativeBranchFigure getPrimaryShape() {
 		return (AlternativeBranchFigure) primaryShape;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getAlternativeBranchNodesCompartmentFigure();
@@ -131,12 +132,11 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getAlternativeBranchNodesCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -144,8 +144,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -154,8 +154,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -164,8 +164,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart) {
 			return getPrimaryShape().getAlternativeBranchNodesCompartmentFigure();
@@ -174,15 +174,15 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated NOT
-	*/
+	 * @generated NOT
+	 */
 	protected NodeFigure createNodePlate() {
 		return CustomCreateNodePlate.createNodePlate();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
@@ -193,13 +193,13 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Creates figure for this edit part.
-	* 
-	* Body of this method does not depend on settings in generation model
-	* so you may safely remove <i>generated</i> tag and modify it.
-	* 
-	* @generated
-	*/
+	 * Creates figure for this edit part.
+	 * 
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * 
+	 * @generated
+	 */
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -210,11 +210,11 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Default implementation treats passed figure as content pane.
-	* Respects layout one may have set for generated figure.
-	* @param nodeShape instance of generated figure class
-	* @generated
-	*/
+	 * Default implementation treats passed figure as content pane.
+	 * Respects layout one may have set for generated figure.
+	 * @param nodeShape instance of generated figure class
+	 * @generated
+	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -225,8 +225,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -235,8 +235,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -244,8 +244,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -253,8 +253,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -262,8 +262,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -271,8 +271,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001);
@@ -280,8 +280,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -297,8 +297,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001) {
@@ -310,8 +310,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001);
@@ -321,8 +321,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001) {
@@ -336,8 +336,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
@@ -353,8 +353,8 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class AlternativeBranchFigure extends RectangleFigure {
 
 		/**
@@ -389,6 +389,7 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fAlternativeBranchNodesCompartmentFigure = new RectangleFigure();
+
 			fAlternativeBranchNodesCompartmentFigure.setForegroundColor(ColorConstants.black);
 			fAlternativeBranchNodesCompartmentFigure.setBackgroundColor(ColorConstants.black);
 
@@ -403,6 +404,7 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 			this.add(fAlternativeBranchNodesCompartmentFigure, constraintFAlternativeBranchNodesCompartmentFigure);
 
 			RectangleFigure alternativeBranchBottomRectangle0 = new RectangleFigure();
+
 			alternativeBranchBottomRectangle0.setOutline(false);
 			alternativeBranchBottomRectangle0.setLineWidth(0);
 			alternativeBranchBottomRectangle0.setForegroundColor(ColorConstants.black);
@@ -429,6 +431,7 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 			alternativeBranchBottomRectangle0.setLayoutManager(layoutAlternativeBranchBottomRectangle0);
 
 			WrappingLabel alternativeBranchBottomLabel1 = new WrappingLabel();
+
 			alternativeBranchBottomLabel1.setText("[ ]");
 
 			GridData constraintAlternativeBranchBottomLabel1 = new GridData();
@@ -462,11 +465,11 @@ public class AlternativeBranchEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static final Color ALTERNATIVEBRANCHBOTTOMRECTANGLE0_BACK = new Color(null, 179, 211, 69);
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static final Font ALTERNATIVEBRANCHBOTTOMRECTANGLE0_FONT = new Font(Display.getCurrent(), "ComBEFont", 7, SWT.BOLD);
 }

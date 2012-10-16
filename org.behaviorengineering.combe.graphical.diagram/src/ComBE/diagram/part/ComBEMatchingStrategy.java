@@ -7,13 +7,13 @@ import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.PartInitException;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBEMatchingStrategy implements IEditorMatchingStrategy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean matches(IEditorReference editorRef, IEditorInput input) {
 		IEditorInput editorInput;
 		try {

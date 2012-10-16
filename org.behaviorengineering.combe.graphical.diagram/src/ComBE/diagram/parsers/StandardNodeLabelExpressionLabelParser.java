@@ -17,36 +17,45 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 /**
  * @generated
  */
-public class StandardNodeLabelExpressionLabelParser implements IParser {
+public class StandardNodeLabelExpressionLabelParser extends ExpressionLabelParserBase {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public StandardNodeLabelExpressionLabelParser() {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	@Override
+	protected String getExpressionBody() {
+		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(8, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).body();
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
@@ -65,9 +74,9 @@ public class StandardNodeLabelExpressionLabelParser implements IParser {
 	}
 
 	/**
-	* @generated NOT
-	* Workaround for GMF/331875
-	*/
+	 * @generated NOT
+	 * Workaround for GMF/331875
+	 */
 	public String getPrintString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
 		Object result = ComBE.diagram.expressions.ComBEOCLFactory.getExpression(flags, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).evaluate(target);
@@ -75,32 +84,23 @@ public class StandardNodeLabelExpressionLabelParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
-	public boolean isAffectingEvent(Object event, int flags) {
-		// XXX Any event is recognized as important, unless there's a way to extract this information from expression itself.
-		// TODO analyze expressions (e.g. using OCL parser) to find out structural features in use  
-		return true;
-	}
-
-	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IStatus updateValues(EObject target, String newString) throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT

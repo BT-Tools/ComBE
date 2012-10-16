@@ -14,18 +14,18 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 public class AtomicSequenceChildCreateCommand extends EditElementCommand {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EObject source;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final EObject target;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AtomicSequenceChildCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -33,8 +33,8 @@ public class AtomicSequenceChildCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean canExecute() {
 		if (source == null && target == null) {
 			return false;
@@ -53,8 +53,8 @@ public class AtomicSequenceChildCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
@@ -68,22 +68,22 @@ public class AtomicSequenceChildCreateCommand extends EditElementCommand {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.AtomicSequence getSource() {
 		return (ComBE.AtomicSequence) source;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.BehaviorTree getTarget() {
 		return (ComBE.BehaviorTree) target;
 	}

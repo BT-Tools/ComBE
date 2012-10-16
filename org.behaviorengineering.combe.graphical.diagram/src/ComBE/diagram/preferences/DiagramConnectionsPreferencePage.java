@@ -8,8 +8,8 @@ import org.eclipse.gmf.runtime.diagram.ui.preferences.ConnectionsPreferencePage;
 public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public DiagramConnectionsPreferencePage() {
 		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}

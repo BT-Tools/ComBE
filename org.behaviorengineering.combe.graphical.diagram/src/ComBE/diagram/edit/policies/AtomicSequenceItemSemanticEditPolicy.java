@@ -29,15 +29,15 @@ import org.eclipse.gmf.runtime.notation.View;
 public class AtomicSequenceItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AtomicSequenceItemSemanticEditPolicy() {
 		super(ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
@@ -126,8 +126,8 @@ public class AtomicSequenceItemSemanticEditPolicy extends ComBE.diagram.edit.pol
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {

@@ -27,8 +27,8 @@ import org.eclipse.gmf.runtime.notation.View;
 public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -39,15 +39,15 @@ public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy ext
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return ComBE.ComBEPackage.eINSTANCE.getBehaviorTree_Nodes();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
@@ -60,23 +60,23 @@ public class AtomicSequenceAtomicSequenceNodesCompartmentCanonicalEditPolicy ext
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
 		return visualID == ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;

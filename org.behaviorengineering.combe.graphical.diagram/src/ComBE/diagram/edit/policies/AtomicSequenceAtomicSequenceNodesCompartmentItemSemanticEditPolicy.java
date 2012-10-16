@@ -4,20 +4,20 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AtomicSequenceAtomicSequenceNodesCompartmentItemSemanticEditPolicy() {
 		super(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001 == req.getElementType()) {
 			return getGEFWrapper(new ComBE.diagram.edit.commands.StandardNodeCreateCommand(req));

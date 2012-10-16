@@ -3,18 +3,18 @@ package ComBE.diagram.navigator;
 import org.eclipse.jface.viewers.ViewerSorter;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBENavigatorSorter extends ViewerSorter {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static final int GROUP_CATEGORY = 7005;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public int category(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
 			ComBE.diagram.navigator.ComBENavigatorItem item = (ComBE.diagram.navigator.ComBENavigatorItem) element;

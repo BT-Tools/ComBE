@@ -8,416 +8,416 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static {
 		NLS.initializeMessages("messages", Messages.class); //$NON-NLS-1$
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Messages() {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizardTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizard_DiagramModelFilePageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizard_DiagramModelFilePageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizard_DomainModelFilePageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizard_DomainModelFilePageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizardOpenEditorError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizardCreationError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBECreationWizardPageExtensionError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditorUtil_OpenModelResourceErrorDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditorUtil_OpenModelResourceErrorDialogMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditorUtil_CreateDiagramProgressTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditorUtil_CreateDiagramCommandLabel;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_isModifiable;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_handleElementContentChanged;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_IncorrectInputError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_NoDiagramInResourceError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_DiagramLoadingError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_UnsynchronizedFileSaveError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_SaveDiagramTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_SaveNextResourceTask;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDocumentProvider_SaveAsOperation;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_ResourceErrorDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_ResourceErrorDialogMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_WizardTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String InitDiagramFile_OpenModelFileDialogTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_CreationPageName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_CreationPageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_CreationPageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageDescription;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageSelectionTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageNoSelectionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_InitDiagramCommand;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBENewDiagramFileWizard_IncorrectRootError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditor_SavingDeletedFile;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditor_SaveAsErrorTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditor_SaveAsErrorMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditor_SaveErrorTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEDiagramEditor_SaveErrorMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEElementChooserDialog_SelectModelElementTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ModelElementSelectionPageMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ValidateActionMessage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Objects1Group_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Connections2Group_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Node1CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Node1CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AlternativeBranch2CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AlternativeBranch2CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ParallelBranch3CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ParallelBranch3CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String EmptyNode4CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String EmptyNode4CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Connection1CreationTool_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String Connection1CreationTool_desc;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AtomicSequenceAtomicSequenceNodesCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AlternativeBranchAlternativeBranchNodesCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ParallelBranchParallelBranchNodesCompartmentEditPart_title;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String CommandName_OpenDiagram;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Specification_1000_links;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AlternativeBranch_2001_incominglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AlternativeBranch_2001_outgoinglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ParallelBranchChildren_4002_target;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ParallelBranchChildren_4002_source;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AtomicSequenceChild_4003_target;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AtomicSequenceChild_4003_source;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AtomicSequence_2003_incominglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AtomicSequence_2003_outgoinglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AlternativeBranchChildren_4001_target;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_AlternativeBranchChildren_4001_source;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ParallelBranch_2002_incominglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ParallelBranch_2002_outgoinglinks;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AbstractParser_UnexpectedValueType;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AbstractParser_WrongStringConversion;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String AbstractParser_UnknownLiteral;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String MessageFormatParser_InvalidInputError;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEModelingAssistantProviderTitle;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String ComBEModelingAssistantProviderMessage;
 
 	//TODO: put accessor fields manually	

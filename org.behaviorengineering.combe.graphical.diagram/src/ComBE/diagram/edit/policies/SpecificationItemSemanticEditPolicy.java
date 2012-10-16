@@ -8,20 +8,20 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class SpecificationItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public SpecificationItemSemanticEditPolicy() {
 		super(ComBE.diagram.providers.ComBEElementTypes.Specification_1000);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001 == req.getElementType()) {
 			return getGEFWrapper(new ComBE.diagram.edit.commands.AlternativeBranchCreateCommand(req));
@@ -36,21 +36,21 @@ public class SpecificationItemSemanticEditPolicy extends ComBE.diagram.edit.poli
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
 			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}

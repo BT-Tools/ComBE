@@ -7,13 +7,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNavigatorItem {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	static {
 		final Class[] supportedTypes = new Class[] { View.class, EObject.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
@@ -32,18 +32,18 @@ public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNav
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private View myView;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean myLeaf = false;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBENavigatorItem(View view, Object parent, boolean isLeaf) {
 		super(parent);
 		myView = view;
@@ -51,22 +51,22 @@ public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNav
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public View getView() {
 		return myView;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean isLeaf() {
 		return myLeaf;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
 			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(((ComBE.diagram.navigator.ComBENavigatorItem) obj).getView()));
@@ -75,8 +75,8 @@ public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNav
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public int hashCode() {
 		return EcoreUtil.getURI(getView()).hashCode();
 	}

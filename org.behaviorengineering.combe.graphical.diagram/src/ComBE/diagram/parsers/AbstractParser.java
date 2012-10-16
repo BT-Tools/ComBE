@@ -29,33 +29,33 @@ import org.eclipse.osgi.util.NLS;
 public abstract class AbstractParser implements IParser {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected final EAttribute[] features;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected final EAttribute[] editableFeatures;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private String viewPattern;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private String editorPattern;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private String editPattern;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AbstractParser(EAttribute[] features) {
 		if (features == null || Arrays.asList(features).contains(null)) {
 			throw new IllegalArgumentException();
@@ -64,8 +64,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AbstractParser(EAttribute[] features, EAttribute[] editableFeatures) {
 		if (features == null || Arrays.asList(features).contains(null)) {
 			throw new IllegalArgumentException();
@@ -78,50 +78,50 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getViewPattern() {
 		return viewPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setViewPattern(String viewPattern) {
 		this.viewPattern = viewPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getEditorPattern() {
 		return editorPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setEditorPattern(String editorPattern) {
 		this.editorPattern = editorPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getEditPattern() {
 		return editPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setEditPattern(String editPattern) {
 		this.editPattern = editPattern;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean isAffectingEvent(Object event, int flags) {
 		if (event instanceof Notification) {
 			return isAffectingFeature(((Notification) event).getFeature());
@@ -130,8 +130,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean isAffectingFeature(Object feature) {
 		for (int i = 0; i < features.length; i++) {
 			if (features[i] == feature) {
@@ -142,15 +142,15 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Object[] getValues(EObject element) {
 		Object[] values = new Object[features.length];
 		for (int i = 0; i < features.length; i++) {
@@ -160,8 +160,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Object[] getEditableValues(EObject element) {
 		Object[] values = new Object[editableFeatures.length];
 		for (int i = 0; i < editableFeatures.length; i++) {
@@ -171,8 +171,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Object getValue(EObject element, EAttribute feature) {
 		Object value = element.eGet(feature);
 		Class iClass = feature.getEAttributeType().getInstanceClass();
@@ -185,8 +185,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ICommand getParseCommand(IAdaptable adapter, Object[] values, int flags) {
 		if (values == null || validateNewValues(values).getCode() != IParserEditStatus.EDITABLE) {
 			return UnexecutableCommand.INSTANCE;
@@ -204,8 +204,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ICommand getModificationCommand(EObject element, EAttribute feature, Object value) {
 		value = getValidNewValue(feature, value);
 		if (value instanceof InvalidValue) {
@@ -216,8 +216,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IParserEditStatus validateNewValues(Object[] values) {
 		if (values.length != editableFeatures.length) {
 			return ParserEditStatus.UNEDITABLE_STATUS;
@@ -232,8 +232,8 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Object getValidNewValue(EAttribute feature, Object value) {
 		EClassifier type = feature.getEType();
 		if (type instanceof EDataType) {
@@ -390,25 +390,25 @@ public abstract class AbstractParser implements IParser {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected class InvalidValue {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private String description;
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public InvalidValue(String description) {
 			this.description = description;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public String toString() {
 			return description;
 		}

@@ -17,11 +17,14 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
+import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
+import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -30,6 +33,11 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
+import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
+import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.HasOclTracker;
+import org.eclipse.gmf.tooling.runtime.ocl.tracker.OclTracker;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -44,36 +52,41 @@ import org.eclipse.swt.graphics.Image;
 public class WrappingLabel6EditPart extends CompartmentEditPart implements ITextAwareEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 5009;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private DirectEditManager manager;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IParser parser;
 	/**
-	* @generated
-	*/
-	private List<?> parserElements;
+	 * @generated
+	 */
+	private OclTracker.Registrator myOclRegistrator;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private String defaultText;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	private ILabelDelegate labelDelegate;
+
+	/**
+	 * @generated
+	 */
 	public WrappingLabel6EditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy());
@@ -82,52 +95,62 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getLabelTextHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getText();
-		} else {
+		} else if (figure instanceof Label) {
 			return ((Label) figure).getText();
+		} else {
+			return getLabelDelegate().getText();
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLabelTextHelper(IFigure figure, String text) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setText(text);
-		} else {
+		} else if (figure instanceof Label) {
 			((Label) figure).setText(text);
+		} else {
+			getLabelDelegate().setText(text);
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Image getLabelIconHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getIcon();
-		} else {
+		} else if (figure instanceof Label) {
 			return ((Label) figure).getIcon();
+		} else {
+			return getLabelDelegate().getIcon(0);
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setIcon(icon);
-		} else {
+			return;
+		} else if (figure instanceof Label) {
 			((Label) figure).setIcon(icon);
+			return;
+		} else {
+			getLabelDelegate().setIcon(icon, 0);
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setLabel(WrappingLabel figure) {
 		unregisterVisuals();
 		setFigure(figure);
@@ -137,38 +160,38 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected EObject getParserElement() {
 		return resolveSemanticElement();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Image getLabelIcon() {
 		return null;
 	}
 
 	/**
-	* @generated NOT
-	* Workaround for GMF/331875
-	*/
+	 * @generated NOT
+	 * Workaround for GMF/331875
+	 */
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
@@ -182,23 +205,16 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) {
-			((ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
-		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) {
-			((ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
-		}
+		refreshSelectionFeedback();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getEditText() {
 		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
@@ -207,15 +223,15 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean isEditable() {
 		return false;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
@@ -243,8 +259,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IContentAssistProcessor getCompletionProcessor() {
 		if (getParserElement() == null || getParser() == null) {
 			return null;
@@ -253,15 +269,15 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IParser getParser() {
 		if (parser == null) {
 			parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003, getParserElement(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
@@ -270,52 +286,56 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(this, TextDirectEditManager.getTextCellEditorClass(this), ComBE.diagram.edit.parts.ComBEEditPartFactory.getTextCellEditorLocator(this)));
+			setManager(new TextDirectEditManager2(this, null, ComBE.diagram.edit.parts.ComBEEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setManager(DirectEditManager manager) {
 		this.manager = manager;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void performDirectEdit() {
 		getManager().show();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation.getSWTPoint());
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else {
+		} else // 
+		if (getManager() instanceof TextDirectEditManager2) {
+			((TextDirectEditManager2) getManager()).show(initialCharacter);
+		} else //
+		{
 			performDirectEdit();
 		}
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
 		try {
@@ -341,8 +361,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -353,24 +373,17 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) {
-			((ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
-		}
-		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) {
-			((ComBE.diagram.edit.policies.ComBETextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
-		}
+		refreshSelectionFeedback();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshUnderline() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -379,8 +392,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshStrikeThrough() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null && getFigure() instanceof WrappingLabel) {
@@ -389,8 +402,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshFont() {
 		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
 		if (style != null) {
@@ -400,43 +413,49 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	private void refreshSelectionFeedback() {
+		requestEditPolicyFeedbackRefresh(EditPolicy.PRIMARY_DRAG_ROLE);
+		requestEditPolicyFeedbackRefresh(EditPolicy.SELECTION_FEEDBACK_ROLE);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void requestEditPolicyFeedbackRefresh(String editPolicyKey) {
+		Object editPolicy = getEditPolicy(editPolicyKey);
+		if (editPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) editPolicy).refreshFeedback();
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void addSemanticListeners() {
-		if (getParser() instanceof ISemanticParser) {
-			EObject element = resolveSemanticElement();
-			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
-			for (int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
-			}
-		} else {
-			super.addSemanticListeners();
-		}
+		OclTracker tracker = getTracker();
+		tracker.initialize(resolveSemanticElement());
+		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void removeSemanticListeners() {
-		if (parserElements != null) {
-			for (int i = 0; i < parserElements.size(); i++) {
-				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
-			}
-		} else {
-			super.removeSemanticListeners();
-		}
+		getTracker().uninstallListeners();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected AccessibleEditPart getAccessibleEditPart() {
 		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
@@ -450,31 +469,85 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	private OclTracker getTracker() {
+		return ((HasOclTracker) getParser()).getOclTracker();
+	}
+
+	/**
+	 * @generated
+	 */
+	private OclTracker.Registrator getOclRegistrator() {
+		if (myOclRegistrator == null) {
+			myOclRegistrator = new OclTracker.Registrator() {
+
+				@Override
+				public void registerListener(String filterId, NotificationListener listener, EObject element) {
+					addListenerFilter(filterId, listener, element);
+				}
+
+				@Override
+				public void unregisterListener(String filterId) {
+					removeListenerFilter(filterId);
+				}
+			};
+		}
+		return myOclRegistrator;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ILabelDelegate getLabelDelegate() {
+		if (labelDelegate == null) {
+			IFigure label = getFigure();
+			if (label instanceof WrappingLabel) {
+				labelDelegate = new WrappingLabelDelegate((WrappingLabel) label);
+			} else {
+				labelDelegate = new SimpleLabelDelegate((Label) label);
+			}
+		}
+		return labelDelegate;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public Object getAdapter(Class key) {
+		if (ILabelDelegate.class.equals(key)) {
+			return getLabelDelegate();
+		}
+		return super.getAdapter(key);
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void addNotationalListeners() {
 		super.addNotationalListeners();
 		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void removeNotationalListeners() {
 		super.removeNotationalListeners();
 		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
 		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
@@ -505,8 +578,8 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createFigure() {
 		// Parent should assign one using setLabel() method
 		return null;

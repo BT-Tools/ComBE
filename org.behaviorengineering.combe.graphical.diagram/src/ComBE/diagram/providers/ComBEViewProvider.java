@@ -48,8 +48,8 @@ import org.eclipse.swt.graphics.FontData;
 public class ComBEViewProvider extends AbstractProvider implements IViewProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final boolean provides(IOperation operation) {
 		if (operation instanceof CreateViewForKindOperation) {
 			return provides((CreateViewForKindOperation) operation);
@@ -66,8 +66,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
 		 if (op.getViewKind() == Node.class)
@@ -79,15 +79,15 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean provides(CreateDiagramViewOperation op) {
 		return ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(op.getSemanticHint()) && ComBE.diagram.part.ComBEVisualIDRegistry.getDiagramVisualID(getSemanticElement(op.getSemanticAdapter())) != -1;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean provides(CreateNodeViewOperation op) {
 		if (op.getContainerView() == null) {
 			return false;
@@ -143,8 +143,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean provides(CreateEdgeViewOperation op) {
 		IElementType elementType = getSemanticElementType(op.getSemanticAdapter());
 		if (!ComBE.diagram.providers.ComBEElementTypes.isKnownElementType(elementType) || (!(elementType instanceof IHintedType))) {
@@ -163,8 +163,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Diagram createDiagram(IAdaptable semanticAdapter, String diagramKind, PreferencesHint preferencesHint) {
 		Diagram diagram = NotationFactory.eINSTANCE.createDiagram();
 		diagram.getStyles().add(NotationFactory.eINSTANCE.createDiagramStyle());
@@ -175,8 +175,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createNode(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
@@ -210,8 +210,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Edge createEdge(IAdaptable semanticAdapter, View containerView, String semanticHint, int index, boolean persisted, PreferencesHint preferencesHint) {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
@@ -228,8 +228,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createAlternativeBranch_2001(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -259,8 +259,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createParallelBranch_2002(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -290,8 +290,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createAtomicSequence_2003(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -321,8 +321,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createStandardNode_3001(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -335,15 +335,15 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		Node label5001 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		Node label5002 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 		Node label5003 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
-		Node label5004 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTracibilitystatusEditPart.VISUAL_ID));
+		Node label5004 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart.VISUAL_ID));
 		Node label5005 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperatorEditPart.VISUAL_ID));
 		Node label5006 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabelEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createEmptyNode_3002(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -359,8 +359,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createStandardNode_3003(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -373,15 +373,15 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		Node label5007 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
 		Node label5008 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 		Node label5009 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
-		Node label5010 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTracibilitystatus2EditPart.VISUAL_ID));
+		Node label5010 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart.VISUAL_ID));
 		Node label5011 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperator2EditPart.VISUAL_ID));
 		Node label5012 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabel2EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createEmptyNode_3004(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -397,8 +397,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createStandardNode_3005(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -411,15 +411,15 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 		Node label5013 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
 		Node label5014 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
 		Node label5015 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
-		Node label5016 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTracibilitystatus3EditPart.VISUAL_ID));
+		Node label5016 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus3EditPart.VISUAL_ID));
 		Node label5017 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeOperator3EditPart.VISUAL_ID));
 		Node label5018 = createLabel(node, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeLabel3EditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Node createEmptyNode_3006(EObject domainElement, View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Node node = NotationFactory.eINSTANCE.createNode();
 		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
@@ -435,8 +435,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Edge createAlternativeBranchChildren_4001(View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -470,8 +470,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Edge createParallelBranchChildren_4002(View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -505,8 +505,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Edge createAtomicSequenceChild_4003(View containerView, int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -540,8 +540,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private void stampShortcut(View containerView, Node target) {
 		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(containerView))) {
 			EAnnotation shortcutAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -552,8 +552,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Node createLabel(View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
 		rv.setType(hint);
@@ -562,8 +562,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Node createCompartment(View owner, String hint, boolean canCollapse, boolean hasTitle, boolean canSort, boolean canFilter) {
 		//SemanticListCompartment rv = NotationFactory.eINSTANCE.createSemanticListCompartment();
 		//rv.setShowTitle(showTitle);
@@ -591,8 +591,8 @@ public class ComBEViewProvider extends AbstractProvider implements IViewProvider
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private EObject getSemanticElement(IAdaptable semanticAdapter) {
 		if (semanticAdapter == null) {
 			return null;

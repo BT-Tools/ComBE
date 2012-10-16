@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
 import ComBE.diagram.customCode.CustomCreateNodePlate;
 
@@ -41,30 +42,30 @@ import ComBE.diagram.customCode.CustomCreateNodePlate;
 public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 2003;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure contentPane;
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure primaryShape;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AtomicSequenceEditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicy());
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.AtomicSequenceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.AtomicSequenceCanonicalEditPolicy());
@@ -74,8 +75,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -99,22 +100,22 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createNodeShape() {
 		return primaryShape = new AtomicSequenceFigure();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AtomicSequenceFigure getPrimaryShape() {
 		return (AtomicSequenceFigure) primaryShape;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getAtomicSequenceNodesCompartmentFigure();
@@ -126,12 +127,11 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getAtomicSequenceNodesCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
@@ -139,8 +139,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -149,8 +149,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -159,8 +159,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
 			return getPrimaryShape().getAtomicSequenceNodesCompartmentFigure();
@@ -169,15 +169,15 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated NOT
-	*/
+	 * @generated NOT
+	 */
 	protected NodeFigure createNodePlate() {
 		return CustomCreateNodePlate.createNodePlate();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
@@ -188,13 +188,13 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Creates figure for this edit part.
-	* 
-	* Body of this method does not depend on settings in generation model
-	* so you may safely remove <i>generated</i> tag and modify it.
-	* 
-	* @generated
-	*/
+	 * Creates figure for this edit part.
+	 * 
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * 
+	 * @generated
+	 */
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -205,11 +205,11 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Default implementation treats passed figure as content pane.
-	* Respects layout one may have set for generated figure.
-	* @param nodeShape instance of generated figure class
-	* @generated
-	*/
+	 * Default implementation treats passed figure as content pane.
+	 * Respects layout one may have set for generated figure.
+	 * @param nodeShape instance of generated figure class
+	 * @generated
+	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -220,8 +220,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -230,8 +230,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -239,8 +239,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -248,8 +248,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -257,8 +257,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -266,8 +266,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003);
@@ -275,8 +275,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
@@ -292,8 +292,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003) {
@@ -305,8 +305,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001);
@@ -316,8 +316,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (relationshipType == ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001) {
@@ -331,8 +331,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
@@ -348,8 +348,8 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public class AtomicSequenceFigure extends RectangleFigure {
 
 		/**
@@ -384,6 +384,7 @@ public class AtomicSequenceEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fAtomicSequenceNodesCompartmentFigure = new RectangleFigure();
+
 			fAtomicSequenceNodesCompartmentFigure.setLineWidth(0);
 			fAtomicSequenceNodesCompartmentFigure.setForegroundColor(ColorConstants.black);
 			fAtomicSequenceNodesCompartmentFigure.setBackgroundColor(ColorConstants.black);

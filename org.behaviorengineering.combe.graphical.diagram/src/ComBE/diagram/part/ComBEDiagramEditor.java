@@ -42,37 +42,37 @@ import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMarker {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final String ID = "ComBE.diagram.part.ComBEDiagramEditorID"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final String CONTEXT_ID = "ComBE.diagram.ui.diagramContext"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBEDiagramEditor() {
 		super(true);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getContextID() {
 		return CONTEXT_ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot root = super.createPaletteRoot(existingPaletteRoot);
 		new ComBE.diagram.part.ComBEPaletteFactory().fillPalette(root);
@@ -80,15 +80,15 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected PreferencesHint getPreferencesHint() {
 		return ComBE.diagram.part.ComBEDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getContributorId() {
 		return ComBE.diagram.part.ComBEDiagramEditorPlugin.ID;
 	}
@@ -109,8 +109,8 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getDocumentProvider();
@@ -119,8 +119,8 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public TransactionalEditingDomain getEditingDomain() {
 		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
 		if (document instanceof IDiagramDocument) {
@@ -130,8 +130,8 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput || input instanceof URIEditorInput) {
 			setDocumentProvider(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getDocumentProvider());
@@ -141,29 +141,29 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
@@ -230,15 +230,15 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getNavigatorSelection());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ISelection getNavigatorSelection() {
 		IDiagramDocument document = getDiagramDocument();
 		if (document == null) {
@@ -257,8 +257,8 @@ public class ComBEDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
 		ComBE.diagram.part.DiagramEditorContextMenuProvider provider = new ComBE.diagram.part.DiagramEditorContextMenuProvider(this, getDiagramGraphicalViewer());

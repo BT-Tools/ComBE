@@ -13,15 +13,15 @@ import org.eclipse.swt.graphics.Image;
 public class ComBEIconProvider extends AbstractProvider implements IIconProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Image getIcon(IAdaptable hint, int flags) {
 		return ComBE.diagram.providers.ComBEElementTypes.getImage(hint);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean provides(IOperation operation) {
 		if (operation instanceof GetIconOperation) {
 			return ((GetIconOperation) operation).execute(this) != null;

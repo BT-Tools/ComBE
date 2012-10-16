@@ -20,17 +20,17 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 public class ComBEPaletteFactory {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createObjects1Group());
 		paletteRoot.add(createConnections2Group());
 	}
 
 	/**
-	* Creates "Objects" palette tool group
-	* @generated
-	*/
+	 * Creates "Objects" palette tool group
+	 * @generated
+	 */
 	private PaletteContainer createObjects1Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(ComBE.diagram.part.Messages.Objects1Group_title);
 		paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
@@ -42,9 +42,9 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* Creates "Connections" palette tool group
-	* @generated
-	*/
+	 * Creates "Connections" palette tool group
+	 * @generated
+	 */
 	private PaletteContainer createConnections2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(ComBE.diagram.part.Messages.Connections2Group_title);
 		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
@@ -53,8 +53,8 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ToolEntry createNode1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001);
@@ -69,8 +69,8 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ToolEntry createAlternativeBranch2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(ComBE.diagram.part.Messages.AlternativeBranch2CreationTool_title, ComBE.diagram.part.Messages.AlternativeBranch2CreationTool_desc, Collections.singletonList(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001));
 		entry.setId("createAlternativeBranch2CreationTool"); //$NON-NLS-1$
@@ -80,8 +80,8 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ToolEntry createParallelBranch3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(ComBE.diagram.part.Messages.ParallelBranch3CreationTool_title, ComBE.diagram.part.Messages.ParallelBranch3CreationTool_desc, Collections.singletonList(ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002));
 		entry.setId("createParallelBranch3CreationTool"); //$NON-NLS-1$
@@ -91,8 +91,8 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ToolEntry createEmptyNode4CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002);
@@ -106,8 +106,8 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ToolEntry createConnection1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001);
@@ -121,26 +121,26 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static class NodeToolEntry extends ToolEntry {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private final List<IElementType> elementTypes;
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private NodeToolEntry(String title, String description, List<IElementType> elementTypes) {
 			super(title, description, null, null);
 			this.elementTypes = elementTypes;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public Tool createTool() {
 			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
 			tool.setProperties(getToolProperties());
@@ -149,26 +149,26 @@ public class ComBEPaletteFactory {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static class LinkToolEntry extends ToolEntry {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private final List<IElementType> relationshipTypes;
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private LinkToolEntry(String title, String description, List<IElementType> relationshipTypes) {
 			super(title, description, null, null);
 			this.relationshipTypes = relationshipTypes;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public Tool createTool() {
 			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());

@@ -5,24 +5,25 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 /**
-* This registry is used to determine which type of visual object should be
-* created for the corresponding Diagram, Node, ChildNode or Link represented
-* by a domain model object.
-* 
-* @generated
-*/
+ * This registry is used to determine which type of visual object should be
+ * created for the corresponding Diagram, Node, ChildNode or Link represented
+ * by a domain model object.
+ * 
+ * @generated
+ */
 public class ComBEVisualIDRegistry {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static final String DEBUG_KEY = "org.behaviorengineering.combe.graphical.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
 			if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(view.getType())) {
@@ -35,8 +36,8 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String getModelID(View view) {
 		View diagram = view.getDiagram();
 		while (view != diagram) {
@@ -50,8 +51,8 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getVisualID(String type) {
 		try {
 			return Integer.parseInt(type);
@@ -64,15 +65,15 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static String getType(int visualID) {
 		return Integer.toString(visualID);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getDiagramVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -84,8 +85,8 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getNodeVisualID(View containerView, EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -145,8 +146,8 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(containerView);
 		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(containerModelID)) {
@@ -199,7 +200,7 @@ public class ComBEVisualIDRegistry {
 			if (ComBE.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTracibilitystatusEditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatusEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComBE.diagram.edit.parts.StandardNodeOperatorEditPart.VISUAL_ID == nodeVisualID) {
@@ -227,7 +228,7 @@ public class ComBEVisualIDRegistry {
 			if (ComBE.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTracibilitystatus2EditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComBE.diagram.edit.parts.StandardNodeOperator2EditPart.VISUAL_ID == nodeVisualID) {
@@ -255,7 +256,7 @@ public class ComBEVisualIDRegistry {
 			if (ComBE.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ComBE.diagram.edit.parts.StandardNodeTracibilitystatus3EditPart.VISUAL_ID == nodeVisualID) {
+			if (ComBE.diagram.edit.parts.StandardNodeTraceabilitystatus3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ComBE.diagram.edit.parts.StandardNodeOperator3EditPart.VISUAL_ID == nodeVisualID) {
@@ -302,8 +303,8 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
@@ -312,13 +313,113 @@ public class ComBEVisualIDRegistry {
 	}
 
 	/**
-	* User can change implementation of this method to handle some specific
-	* situations not covered by default logic.
-	* 
-	* @generated
-	*/
+	 * User can change implementation of this method to handle some specific
+	 * situations not covered by default logic.
+	 * 
+	 * @generated
+	 */
 	private static boolean isDiagram(ComBE.Specification element) {
 		return true;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+		if (candidate == -1) {
+			//unrecognized id is always bad
+			return false;
+		}
+		int basic = getNodeVisualID(containerView, domainElement);
+		return basic == candidate;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isCompartmentVisualID(int visualID) {
+		switch (visualID) {
+		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static boolean isSemanticLeafVisualID(int visualID) {
+		switch (visualID) {
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
+			return false;
+		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
+			return true;
+		default:
+			break;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getVisualID(View view) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public String getModelID(View view) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public int getNodeVisualID(View containerView, EObject domainElement) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isCompartmentVisualID(int visualID) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.isCompartmentVisualID(visualID);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public boolean isSemanticLeafVisualID(int visualID) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.isSemanticLeafVisualID(visualID);
+		}
+	};
 
 }

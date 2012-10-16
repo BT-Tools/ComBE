@@ -14,8 +14,8 @@ import org.eclipse.swt.graphics.Image;
 public class ComBESheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public String getText(Object element) {
 		element = unwrap(element);
 		if (element instanceof ComBE.diagram.navigator.ComBENavigatorGroup) {
@@ -26,16 +26,16 @@ public class ComBESheetLabelProvider extends BaseLabelProvider implements ILabel
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
 		return etype == null ? null : ComBE.diagram.providers.ComBEElementTypes.getImage(etype);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Object unwrap(Object element) {
 		if (element instanceof IStructuredSelection) {
 			return ((IStructuredSelection) element).getFirstElement();
@@ -44,8 +44,8 @@ public class ComBESheetLabelProvider extends BaseLabelProvider implements ILabel
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private View getView(Object element) {
 		if (element instanceof View) {
 			return (View) element;
@@ -57,8 +57,8 @@ public class ComBESheetLabelProvider extends BaseLabelProvider implements ILabel
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IElementType getElementType(View view) {
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {

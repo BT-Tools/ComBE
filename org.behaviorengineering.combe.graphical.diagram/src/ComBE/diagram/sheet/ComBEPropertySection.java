@@ -25,8 +25,8 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 public class ComBEPropertySection extends AdvancedPropertySection implements IPropertySourceProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IPropertySource getPropertySource(Object object) {
 		if (object instanceof IPropertySource) {
 			return (IPropertySource) object;
@@ -45,16 +45,16 @@ public class ComBEPropertySection extends AdvancedPropertySection implements IPr
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IPropertySourceProvider getPropertySourceProvider() {
 		return this;
 	}
 
 	/**
-	* Modify/unwrap selection.
-	* @generated
-	*/
+	 * Modify/unwrap selection.
+	 * @generated
+	 */
 	protected Object transformSelection(Object selected) {
 
 		if (selected instanceof EditPart) {
@@ -74,8 +74,8 @@ public class ComBEPropertySection extends AdvancedPropertySection implements IPr
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		if (selection.isEmpty() || false == selection instanceof StructuredSelection) {
 			super.setInput(part, selection);
@@ -93,8 +93,8 @@ public class ComBEPropertySection extends AdvancedPropertySection implements IPr
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected AdapterFactory getAdapterFactory(Object object) {
 		if (getEditingDomain() instanceof AdapterFactoryEditingDomain) {
 			return ((AdapterFactoryEditingDomain) getEditingDomain()).getAdapterFactory();

@@ -23,13 +23,13 @@ import org.eclipse.ui.navigator.ILinkHelper;
 import org.eclipse.ui.part.FileEditorInput;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBENavigatorLinkHelper implements ILinkHelper {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static IEditorInput getEditorInput(Diagram diagram) {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
@@ -47,8 +47,8 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
 		IDiagramDocument document = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getDocumentProvider().getDiagramDocument(anInput);
 		if (document == null) {
@@ -67,8 +67,8 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;

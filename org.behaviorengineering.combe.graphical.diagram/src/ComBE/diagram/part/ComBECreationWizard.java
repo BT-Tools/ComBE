@@ -20,73 +20,73 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 public class ComBECreationWizard extends Wizard implements INewWizard {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IWorkbench workbench;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IStructuredSelection selection;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.diagram.part.ComBECreationWizardPage diagramModelFilePage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComBE.diagram.part.ComBECreationWizardPage domainModelFilePage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Resource diagram;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean openNewlyCreatedDiagramEditor = true;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IWorkbench getWorkbench() {
 		return workbench;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IStructuredSelection getSelection() {
 		return selection;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final Resource getDiagram() {
 		return diagram;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final boolean isOpenNewlyCreatedDiagramEditor() {
 		return openNewlyCreatedDiagramEditor;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -96,8 +96,8 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void addPages() {
 		diagramModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DiagramModelFile", getSelection(), "combe_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageTitle);
@@ -121,8 +121,8 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 

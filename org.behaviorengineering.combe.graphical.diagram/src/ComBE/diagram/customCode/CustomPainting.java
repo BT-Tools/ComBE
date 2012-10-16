@@ -7,7 +7,7 @@ import org.eclipse.swt.graphics.Color;
 import ComBE.BehaviorSeq;
 import ComBE.BehaviorType;
 import ComBE.StandardNode;
-import ComBE.TracibilityStatus;
+import ComBE.TraceabilityStatus;
 
 public class CustomPainting {
 
@@ -75,7 +75,7 @@ public class CustomPainting {
 	}
 
 	/**
-	 * Change color of Nodes, depending on the TracibilityStatus enumeration.
+	 * Change color of Nodes, depending on the TraceabilityStatus enumeration.
 	 * 
 	 * Couldn't find a way to model this in gmfgraph. This may not be the nicest solution.
 	 * @param hasFocus 
@@ -85,28 +85,28 @@ public class CustomPainting {
 		int green = 211;
 		int blue = 69;
 
-		switch (node.getTracibilitystatus().getValue()) {
-		case TracibilityStatus.DELETED_VALUE:
+		switch (node.getTraceabilitystatus().getValue()) {
+		case TraceabilityStatus.DELETED_VALUE:
 			red = 221;
 			green = 221;
 			blue = 221;
 			break;
-		case TracibilityStatus.IMPLIED_VALUE:
+		case TraceabilityStatus.IMPLIED_VALUE:
 			red = 251;
 			green = 245;
 			blue = 173;
 			break;
-		case TracibilityStatus.MISSING_VALUE:
+		case TraceabilityStatus.MISSING_VALUE:
 			red = 247;
 			green = 168;
 			blue = 170;
 			break;
-		case TracibilityStatus.REFINEMENT_VALUE:
+		case TraceabilityStatus.REFINEMENT_VALUE:
 			red = 255;
 			green = 255;
 			blue = 255;
 			break;
-		case TracibilityStatus.UPDATED_VALUE:
+		case TraceabilityStatus.UPDATED_VALUE:
 			red = 69;
 			green = 179;
 			blue = 211;

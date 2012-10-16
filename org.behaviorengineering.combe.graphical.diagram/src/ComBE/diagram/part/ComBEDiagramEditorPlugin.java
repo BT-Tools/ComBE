@@ -26,54 +26,54 @@ import org.osgi.framework.BundleContext;
 public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final String ID = "org.behaviorengineering.combe.graphical.diagram"; //$NON-NLS-1$
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final PreferencesHint DIAGRAM_PREFERENCES_HINT = new PreferencesHint(ID);
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static ComBEDiagramEditorPlugin instance;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComposedAdapterFactory adapterFactory;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBE.diagram.part.ComBEDocumentProvider documentProvider;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBE.diagram.providers.ElementInitializers initializers;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBE.diagram.expressions.ComBEOCLFactory oclFactory;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBEDiagramEditorPlugin() {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		instance = this;
@@ -82,8 +82,8 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
@@ -95,15 +95,15 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static ComBEDiagramEditorPlugin getInstance() {
 		return instance;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		fillItemProviderFactories(factories);
@@ -111,8 +111,8 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		factories.add(new ComBE.provider.ComBEItemProviderAdapterFactory());
 		factories.add(new ResourceItemProviderAdapterFactory());
@@ -120,15 +120,15 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
 		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
 		if (labelProvider != null) {
@@ -194,8 +194,8 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBE.diagram.part.ComBEDocumentProvider getDocumentProvider() {
 		if (documentProvider == null) {
 			documentProvider = new ComBE.diagram.part.ComBEDocumentProvider();
@@ -204,57 +204,57 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
 		return linkConstraints;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setLinkConstraints(ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.LinkConstraints lc) {
 		this.linkConstraints = lc;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBE.diagram.providers.ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setElementInitializers(ComBE.diagram.providers.ElementInitializers i) {
 		this.initializers = i;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBE.diagram.expressions.ComBEOCLFactory getComBEOCLFactory() {
 		return oclFactory;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setComBEOCLFactory(ComBE.diagram.expressions.ComBEOCLFactory f) {
 		this.oclFactory = f;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void logError(String error) {
 		logError(error, null);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void logError(String error, Throwable throwable) {
 		if (error == null && throwable != null) {
 			error = throwable.getMessage();
@@ -264,15 +264,15 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void logInfo(String message) {
 		logInfo(message, null);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void logInfo(String message, Throwable throwable) {
 		if (message == null && throwable != null) {
 			message = throwable.getMessage();
@@ -282,8 +282,8 @@ public class ComBEDiagramEditorPlugin extends AbstractUIPlugin {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private void debug(String message, Throwable throwable) {
 		if (!isDebugging()) {
 			return;

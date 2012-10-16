@@ -14,15 +14,15 @@ import org.eclipse.gmf.runtime.notation.View;
 public class StandardNode3ItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public StandardNode3ItemSemanticEditPolicy() {
 		super(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005);
 	}
 
 	/**
-	* @generated NOT
-	*/
+	 * @generated NOT
+	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return CustomDestroyElementCommand.getCommand(this, req);
 	}

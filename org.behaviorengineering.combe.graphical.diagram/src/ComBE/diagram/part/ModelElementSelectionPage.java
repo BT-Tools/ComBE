@@ -23,8 +23,8 @@ import org.eclipse.swt.widgets.Label;
  */
 public class ModelElementSelectionPage extends WizardPage {
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected EObject selectedModelElement;
 
 	/**
@@ -33,22 +33,22 @@ public class ModelElementSelectionPage extends WizardPage {
 	private TreeViewer modelViewer;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ModelElementSelectionPage(String pageName) {
 		super(pageName);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EObject getModelElement() {
 		return selectedModelElement;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void setModelElement(EObject modelElement) {
 		selectedModelElement = modelElement;
 		if (modelViewer != null) {
@@ -63,8 +63,8 @@ public class ModelElementSelectionPage extends WizardPage {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 
@@ -100,16 +100,16 @@ public class ModelElementSelectionPage extends WizardPage {
 	}
 
 	/**
-	* Override to provide custom model element description.
-	* @generated
-	*/
+	 * Override to provide custom model element description.
+	 * @generated
+	 */
 	protected String getSelectionTitle() {
 		return ComBE.diagram.part.Messages.ModelElementSelectionPageMessage;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void updateSelection(IStructuredSelection selection) {
 		selectedModelElement = null;
 		if (selection.size() == 1) {
@@ -128,9 +128,9 @@ public class ModelElementSelectionPage extends WizardPage {
 	}
 
 	/**
-	* Override to provide specific validation of the selected model element.
-	* @generated
-	*/
+	 * Override to provide specific validation of the selected model element.
+	 * @generated
+	 */
 	protected boolean validatePage() {
 		return true;
 	}

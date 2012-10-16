@@ -22,78 +22,98 @@ import org.eclipse.ocl.options.ParsingOptions;
 public class ComBEOCLFactory {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private final ComBE.diagram.expressions.ComBEAbstractExpression[] expressions;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	private final String[] expressionBodies;
+
+	/**
+	 * @generated
+	 */
 	protected ComBEOCLFactory() {
 		this.expressions = new ComBE.diagram.expressions.ComBEAbstractExpression[9];
+		this.expressionBodies = new String[] { "if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
+				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
+				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+				"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
+				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
+				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+				"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
+				"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
+				"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
+		};
 	}
 
 	/**
-	* @generated
-	*/
-	public static ComBE.diagram.expressions.ComBEAbstractExpression getExpression(int index, EClassifier context, Map<String, EClassifier> environment) {
-		ComBEOCLFactory cached = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getComBEOCLFactory();
-		if (cached == null) {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().setComBEOCLFactory(cached = new ComBEOCLFactory());
+	 * @generated
+	 */
+	private static ComBEOCLFactory getInstance() {
+		ComBEOCLFactory instance = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getComBEOCLFactory();
+		if (instance == null) {
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().setComBEOCLFactory(instance = new ComBEOCLFactory());
 		}
+		return instance;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static String getExpressionBody(int index) {
+		return getInstance().expressionBodies[index];
+	}
+
+	/**
+	 * @generated
+	 */
+	public static ComBE.diagram.expressions.ComBEAbstractExpression getExpression(int index, EClassifier context, Map<String, EClassifier> environment) {
+		ComBEOCLFactory cached = getInstance();
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] { "if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
-					"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
-					"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
-					"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
-					"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
-					"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
-					"if requirement->isEmpty() then \'\' else requirement.label endif", //$NON-NLS-1$
-					"if component->isEmpty() then \'\' else component.label endif", //$NON-NLS-1$
-					"if behavior->isEmpty() then \'\' else behavior.label endif", //$NON-NLS-1$
-			};
-			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
+			cached.expressions[index] = getExpression(cached.expressionBodies[index], context, environment == null ? Collections.<String, EClassifier> emptyMap() : environment);
 		}
 		return cached.expressions[index];
 	}
 
 	/**
-	* This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
-	* @generated
-	*/
+	 * This is factory method, callers are responsible to keep reference to the return value if they want to reuse parsed expression
+	 * @generated
+	 */
 	public static ComBE.diagram.expressions.ComBEAbstractExpression getExpression(String body, EClassifier context, Map<String, EClassifier> environment) {
 		return new Expression(body, context, environment);
 	}
 
 	/**
-	* This method will become private in the next release
-	* @generated
-	*/
+	 * This method will become private in the next release
+	 * @generated
+	 */
 	public static ComBE.diagram.expressions.ComBEAbstractExpression getExpression(String body, EClassifier context) {
 		return getExpression(body, context, Collections.<String, EClassifier> emptyMap());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static class Expression extends ComBE.diagram.expressions.ComBEAbstractExpression {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private final org.eclipse.ocl.ecore.OCL oclInstance;
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private OCLExpression oclExpression;
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		public Expression(String body, EClassifier context, Map<String, EClassifier> environment) {
 			super(body, context);
 			oclInstance = org.eclipse.ocl.ecore.OCL.newInstance();
@@ -109,8 +129,8 @@ public class ComBEOCLFactory {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		@SuppressWarnings("rawtypes")
 		protected Object doEvaluate(Object context, Map env) {
 			if (oclExpression == null) {
@@ -132,8 +152,8 @@ public class ComBEOCLFactory {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private static void initCustomEnv(Environment<?, EClassifier, ?, ?, ?, EParameter, ?, ?, ?, ?, ?, ?> ecoreEnv, Map<String, EClassifier> environment) {
 			// Use EObject as implicit root class for any object, to allow eContainer() and other EObject operations from OCL expressions
 			ParsingOptions.setOption(ecoreEnv, ParsingOptions.implicitRootClass(ecoreEnv), EcorePackage.eINSTANCE.getEObject());
@@ -144,8 +164,8 @@ public class ComBEOCLFactory {
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		private static Variable createVar(Environment<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?> ecoreEnv, String name, EClassifier type) {
 			Variable var = EcoreFactory.eINSTANCE.createVariable();
 			var.setName(name);

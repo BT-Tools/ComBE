@@ -34,23 +34,23 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 public class ComBENewDiagramFileWizard extends Wizard {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private WizardNewFileCreationPage myFileCreationPage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private ComBE.diagram.part.ModelElementSelectionPage diagramRootElementSelectionPage;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private TransactionalEditingDomain myEditingDomain;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBENewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
@@ -81,16 +81,16 @@ public class ComBENewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void addPages() {
 		addPage(myFileCreationPage);
 		addPage(diagramRootElementSelectionPage);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean performFinish() {
 		LinkedList<IFile> affectedFiles = new LinkedList<IFile>();
 		IFile diagramFile = myFileCreationPage.createNewFile();
@@ -126,27 +126,27 @@ public class ComBENewDiagramFileWizard extends Wizard {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private static class DiagramRootElementSelectionPage extends ComBE.diagram.part.ModelElementSelectionPage {
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected DiagramRootElementSelectionPage(String pageName) {
 			super(pageName);
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected String getSelectionTitle() {
 			return ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageSelectionTitle;
 		}
 
 		/**
-		* @generated
-		*/
+		 * @generated
+		 */
 		protected boolean validatePage() {
 			if (selectedModelElement == null) {
 				setErrorMessage(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageNoSelectionMessage);

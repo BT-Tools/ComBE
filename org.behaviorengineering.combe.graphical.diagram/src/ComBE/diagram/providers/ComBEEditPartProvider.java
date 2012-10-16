@@ -17,57 +17,57 @@ import org.eclipse.gmf.runtime.notation.View;
 public class ComBEEditPartProvider extends AbstractEditPartProvider {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private EditPartFactory factory;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean allowCaching;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private WeakReference cachedPart;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private WeakReference cachedView;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public ComBEEditPartProvider() {
 		setFactory(new ComBE.diagram.edit.parts.ComBEEditPartFactory());
 		setAllowCaching(true);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final EditPartFactory getFactory() {
 		return factory;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setFactory(EditPartFactory factory) {
 		this.factory = factory;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public final boolean isAllowCaching() {
 		return allowCaching;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected synchronized void setAllowCaching(boolean allowCaching) {
 		this.allowCaching = allowCaching;
 		if (!allowCaching) {
@@ -77,8 +77,8 @@ public class ComBEEditPartProvider extends AbstractEditPartProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IGraphicalEditPart createEditPart(View view) {
 		EditPart part = factory.createEditPart(null, view);
 		if (part instanceof IGraphicalEditPart) {
@@ -88,8 +88,8 @@ public class ComBEEditPartProvider extends AbstractEditPartProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IGraphicalEditPart getCachedPart(View view) {
 		if (cachedView != null && cachedView.get() == view) {
 			return (IGraphicalEditPart) cachedPart.get();
@@ -98,8 +98,8 @@ public class ComBEEditPartProvider extends AbstractEditPartProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public synchronized IGraphicalEditPart createGraphicEditPart(View view) {
 		if (isAllowCaching()) {
 			IGraphicalEditPart part = getCachedPart(view);
@@ -113,8 +113,8 @@ public class ComBEEditPartProvider extends AbstractEditPartProvider {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public synchronized boolean provides(IOperation operation) {
 		if (operation instanceof CreateGraphicEditPartOperation) {
 			View view = ((IEditPartOperation) operation).getView();

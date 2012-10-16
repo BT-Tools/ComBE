@@ -15,22 +15,22 @@ import org.eclipse.ui.IWorkbenchPage;
 public class ComBEDiagramActionBarContributor extends DiagramActionBarContributor {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Class getEditorClass() {
 		return ComBE.diagram.part.ComBEDiagramEditor.class;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected String getEditorId() {
 		return ComBE.diagram.part.ComBEDiagramEditor.ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public void init(IActionBars bars, IWorkbenchPage page) {
 		super.init(bars, page);
 		// print preview

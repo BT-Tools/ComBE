@@ -4,13 +4,13 @@ import org.eclipse.core.expressions.PropertyTester;
 import org.eclipse.emf.common.ui.URIEditorInput;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class ComBEUriEditorInputTester extends PropertyTester {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public boolean test(Object receiver, String method, Object[] args, Object expectedValue) {
 		if (false == receiver instanceof URIEditorInput) {
 			return false;

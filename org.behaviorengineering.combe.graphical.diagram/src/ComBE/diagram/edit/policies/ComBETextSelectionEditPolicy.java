@@ -10,30 +10,31 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.editpolicies.SelectionEditPolicy;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 
 /**
  * @generated
  */
-public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
+public class ComBETextSelectionEditPolicy extends SelectionEditPolicy implements IRefreshableFeedbackEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IFigure selectionFeedbackFigure;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private IFigure focusFeedbackFigure;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private FigureListener hostPositionListener;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showPrimarySelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -45,8 +46,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(true);
@@ -61,8 +62,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void hideSelection() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setSelected(false);
@@ -78,8 +79,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void showFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(true);
@@ -91,8 +92,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void hideFocus() {
 		if (getHostFigure() instanceof WrappingLabel) {
 			((WrappingLabel) getHostFigure()).setFocus(false);
@@ -105,8 +106,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected Rectangle getFeedbackBounds() {
 		Rectangle bounds;
 		if (getHostFigure() instanceof Label) {
@@ -121,8 +122,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createSelectionFeedbackFigure() {
 		if (getHostFigure() instanceof Label) {
 			Label feedbackFigure = new Label();
@@ -138,8 +139,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createFocusFeedbackFigure() {
 		return new Figure() {
 
@@ -150,8 +151,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void updateLabel(Label target) {
 		Label source = (Label) getHostFigure();
 		target.setText(source.getText());
@@ -160,8 +161,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshSelectionFeedback() {
 		if (selectionFeedbackFigure != null) {
 			if (selectionFeedbackFigure instanceof Label) {
@@ -174,8 +175,8 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshFocusFeedback() {
 		if (focusFeedbackFigure != null) {
 			focusFeedbackFigure.setBounds(getFeedbackBounds());
@@ -183,16 +184,17 @@ public class ComBETextSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
+	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private FigureListener getHostPositionListener() {
 		if (hostPositionListener == null) {
 			hostPositionListener = new FigureListener() {

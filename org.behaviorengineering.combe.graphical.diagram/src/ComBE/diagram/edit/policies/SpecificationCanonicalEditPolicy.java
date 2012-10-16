@@ -29,13 +29,13 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
-* @generated
-*/
+ * @generated
+ */
 public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshOnActivate() {
 		// Need to activate editpart children before invoking the canonical refresh for EditParts to add event listeners
 		List<?> c = getHost().getChildren();
@@ -46,8 +46,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	@SuppressWarnings("rawtypes")
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
@@ -60,23 +60,23 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
 		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private boolean isMyDiagramElement(View view) {
 		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
 		return visualID == ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void refreshSemantic() {
 		if (resolveSemanticElement() == null) {
 			return;
@@ -158,8 +158,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
 		Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
@@ -190,8 +190,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Collection<ComBE.diagram.part.ComBELinkDescriptor> collectAllLinks(View view, Map<EObject, View> domain2NotationMap) {
 		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view))) {
 			return Collections.emptyList();
@@ -299,8 +299,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Collection<IAdaptable> createConnections(Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors, Map<EObject, View> domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (ComBE.diagram.part.ComBELinkDescriptor nextLinkDescriptor : linkDescriptors) {
@@ -329,8 +329,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private EditPart getEditPart(EObject domainModelElement, Map<EObject, View> domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
@@ -340,8 +340,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
 	}

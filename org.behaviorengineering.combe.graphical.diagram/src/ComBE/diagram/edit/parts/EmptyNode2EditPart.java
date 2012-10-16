@@ -39,30 +39,30 @@ import org.eclipse.swt.widgets.Display;
 public class EmptyNode2EditPart extends ShapeNodeEditPart {
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public static final int VISUAL_ID = 3004;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure contentPane;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure primaryShape;
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EmptyNode2EditPart(View view) {
 		super(view);
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.EmptyNode2ItemSemanticEditPolicy());
@@ -73,8 +73,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -98,22 +98,22 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure createNodeShape() {
 		return primaryShape = new EmptyNodeFigure();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EmptyNodeFigure getPrimaryShape() {
 		return (EmptyNodeFigure) primaryShape;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart) {
 			((ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureEmptyNodeLabelLabelFigure());
@@ -127,8 +127,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart) {
 			return true;
@@ -140,8 +140,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -150,8 +150,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -160,23 +160,23 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		return getContentPane();
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPolicy getPrimaryDragEditPolicy() {
 		EditPolicy result = super.getPrimaryDragEditPolicy();
 		if (result instanceof ResizableEditPolicy) {
@@ -187,13 +187,13 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Creates figure for this edit part.
-	* 
-	* Body of this method does not depend on settings in generation model
-	* so you may safely remove <i>generated</i> tag and modify it.
-	* 
-	* @generated
-	*/
+	 * Creates figure for this edit part.
+	 * 
+	 * Body of this method does not depend on settings in generation model
+	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * 
+	 * @generated
+	 */
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -204,11 +204,11 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* Default implementation treats passed figure as content pane.
-	* Respects layout one may have set for generated figure.
-	* @param nodeShape instance of generated figure class
-	* @generated
-	*/
+	 * Default implementation treats passed figure as content pane.
+	 * Respects layout one may have set for generated figure.
+	 * @param nodeShape instance of generated figure class
+	 * @generated
+	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
@@ -219,8 +219,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public IFigure getContentPane() {
 		if (contentPane != null) {
 			return contentPane;
@@ -229,8 +229,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setForegroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
@@ -238,8 +238,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setBackgroundColor(Color color) {
 		if (primaryShape != null) {
 			primaryShape.setBackgroundColor(color);
@@ -247,8 +247,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineWidth(int width) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineWidth(width);
@@ -256,8 +256,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	protected void setLineType(int style) {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
@@ -265,8 +265,8 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
-	*/
+	 * @generated
+	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
 	}
@@ -316,6 +316,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure left0 = new RectangleFigure();
+
 			left0.setOutline(false);
 			left0.setLineWidth(0);
 			left0.setPreferredSize(new Dimension(getMapMode().DPtoLP(54), getMapMode().DPtoLP(60)));
@@ -331,6 +332,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			this.add(left0, constraintLeft0);
 
 			RectangleFigure line0 = new RectangleFigure();
+
 			line0.setOutline(false);
 			line0.setLineWidth(0);
 			line0.setBackgroundColor(ColorConstants.black);
@@ -348,6 +350,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			this.add(line0, constraintLine0);
 
 			RectangleFigure right0 = new RectangleFigure();
+
 			right0.setOutline(false);
 			right0.setLineWidth(0);
 			right0.setPreferredSize(new Dimension(getMapMode().DPtoLP(125), getMapMode().DPtoLP(60)));
@@ -372,6 +375,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			right0.setLayoutManager(layoutRight0);
 
 			RectangleFigure rightLeft1 = new RectangleFigure();
+
 			rightLeft1.setFill(false);
 			rightLeft1.setOutline(false);
 			rightLeft1.setLineWidth(0);
@@ -387,6 +391,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			right0.add(rightLeft1, constraintRightLeft1);
 
 			RectangleFigure rightRight1 = new RectangleFigure();
+
 			rightRight1.setFill(false);
 			rightRight1.setOutline(false);
 			rightRight1.setLineWidth(0);
@@ -407,6 +412,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			rightRight1.setLayoutManager(layoutRightRight1);
 
 			RectangleFigure operatorRectangle2 = new RectangleFigure();
+
 			operatorRectangle2.setFill(false);
 			operatorRectangle2.setOutline(false);
 			operatorRectangle2.setLineWidth(0);
@@ -423,6 +429,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			operatorRectangle2.setLayoutManager(layoutOperatorRectangle2);
 
 			fFigureEmptyNodeOperatorLabelFigure = new WrappingLabel();
+
 			fFigureEmptyNodeOperatorLabelFigure.setText(" ");
 
 			GridData constraintFFigureEmptyNodeOperatorLabelFigure = new GridData();
@@ -436,6 +443,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			operatorRectangle2.add(fFigureEmptyNodeOperatorLabelFigure, constraintFFigureEmptyNodeOperatorLabelFigure);
 
 			RectangleFigure labelRectangle2 = new RectangleFigure();
+
 			labelRectangle2.setFill(false);
 			labelRectangle2.setOutline(false);
 			labelRectangle2.setLineWidth(0);
@@ -452,6 +460,7 @@ public class EmptyNode2EditPart extends ShapeNodeEditPart {
 			labelRectangle2.setLayoutManager(layoutLabelRectangle2);
 
 			fFigureEmptyNodeLabelLabelFigure = new WrappingLabel();
+
 			fFigureEmptyNodeLabelLabelFigure.setText(" ");
 
 			GridData constraintFFigureEmptyNodeLabelLabelFigure = new GridData();
