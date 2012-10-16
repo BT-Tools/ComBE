@@ -49,23 +49,23 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
-            <features
-                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="ComBE.gmfgraph#NodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
                 href="ComBE.gmfgraph#NodeLabelFigure"/>
             <features
                 href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
+            <viewExpression
+                body="traceabilitystatus"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeOperatorFigure"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -89,11 +89,11 @@
                 href="ComBE.ecore#//Node/label"/>
           </labelMappings>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -103,7 +103,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
+          children="//@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0">
         <compartment
             href="ComBE.gmfgraph#AlternativeBranchNodesCompartment"/>
       </compartments>
@@ -152,23 +152,23 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
-            <features
-                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="ComBE.gmfgraph#NodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
                 href="ComBE.gmfgraph#NodeLabelFigure"/>
             <features
                 href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
+            <viewExpression
+                body="traceabilitystatus"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeOperatorFigure"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -192,11 +192,11 @@
                 href="ComBE.ecore#//Node/label"/>
           </labelMappings>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -206,7 +206,7 @@
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.1/@ownedChild/@children.0 //@nodes.1/@ownedChild/@children.1">
+          children="//@nodes.1/@ownedChild/@children.1 //@nodes.1/@ownedChild/@children.0">
         <compartment
             href="ComBE.gmfgraph#ParallelBranchNodesCompartment"/>
       </compartments>
@@ -255,23 +255,23 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
-            <features
-                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="ComBE.gmfgraph#NodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
                 href="ComBE.gmfgraph#NodeLabelFigure"/>
             <features
                 href="ComBE.ecore#//Node/label"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
+            <viewExpression
+                body="traceabilitystatus"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="ComBE.gmfgraph#NodeOperatorFigure"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
@@ -295,11 +295,11 @@
                 href="ComBE.ecore#//Node/label"/>
           </labelMappings>
           <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
+              xsi:type="gmfmap:ExpressionLabelMapping">
             <diagramLabel
                 href="ComBE.gmfgraph#EmptyNodeOperatorFigure"/>
-            <features
-                href="ComBE.ecore#//Node/operator"/>
+            <viewExpression
+                body="operator"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
