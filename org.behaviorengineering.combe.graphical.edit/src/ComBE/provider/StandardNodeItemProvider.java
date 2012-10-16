@@ -53,7 +53,7 @@ public class StandardNodeItemProvider extends NodeItemProvider implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addRequirementPropertyDescriptor(object);
-			addTracibilitystatusPropertyDescriptor(object);
+			addTraceabilitystatusPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addBehaviorPropertyDescriptor(object);
 		}
@@ -83,19 +83,19 @@ public class StandardNodeItemProvider extends NodeItemProvider implements IEditi
 	}
 
 	/**
-	 * This adds a property descriptor for the Tracibilitystatus feature.
+	 * This adds a property descriptor for the Traceabilitystatus feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTracibilitystatusPropertyDescriptor(Object object) {
+	protected void addTraceabilitystatusPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_StandardNode_tracibilitystatus_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StandardNode_tracibilitystatus_feature", "_UI_StandardNode_type"),
-				 ComBEPackage.Literals.STANDARD_NODE__TRACIBILITYSTATUS,
+				 getString("_UI_StandardNode_traceabilitystatus_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StandardNode_traceabilitystatus_feature", "_UI_StandardNode_type"),
+				 ComBEPackage.Literals.STANDARD_NODE__TRACEABILITYSTATUS,
 				 true,
 				 false,
 				 false,
@@ -189,7 +189,7 @@ public class StandardNodeItemProvider extends NodeItemProvider implements IEditi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StandardNode.class)) {
-			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
+			case ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
