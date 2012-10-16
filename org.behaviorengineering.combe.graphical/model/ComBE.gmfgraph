@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0"
+<gmfgraph:Canvas
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ComBE">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="ComBE">
   <figures
       name="Default">
     <figures
@@ -239,7 +241,7 @@
             </children>
             <children
                 xsi:type="gmfgraph:Rectangle"
-                name="TracibilityStatusRectangle"
+                name="TraceabilityStatusRectangle"
                 outline="false"
                 fill="false"
                 lineWidth="0">
@@ -251,7 +253,7 @@
                   xsi:type="gmfgraph:GridLayout"/>
               <children
                   xsi:type="gmfgraph:Label"
-                  name="NodeTracibilityStatusLabel"
+                  name="NodeTraceabilityStatusLabel"
                   text=" ">
                 <layoutData
                     xsi:type="gmfgraph:GridLayoutData"
@@ -427,7 +429,7 @@
           accessor="getFigureNodeRequirementLabelFigure"
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.0/@children.0"/>
       <accessors
-          accessor="getFigureNodeTracibilityStatusLabelFigure"
+          accessor="getFigureNodeTraceabilityStatusLabelFigure"
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.1/@children.0"/>
       <accessors
           accessor="getFigureNodeComponentLabelFigure"
@@ -664,7 +666,7 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.3"/>
   <labels
-      name="NodeTracibilityStatusLabel"
+      name="NodeTraceabilityStatusLabel"
       figure="NodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.3/@accessors.1"/>

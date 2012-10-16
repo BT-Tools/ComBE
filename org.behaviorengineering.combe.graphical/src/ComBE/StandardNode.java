@@ -16,14 +16,14 @@ package ComBE;
  * The following features are supported:
  * <ul>
  *   <li>{@link ComBE.StandardNode#getRequirement <em>Requirement</em>}</li>
- *   <li>{@link ComBE.StandardNode#getTracibilitystatus <em>Tracibilitystatus</em>}</li>
+ *   <li>{@link ComBE.StandardNode#getTraceabilitystatus <em>Traceabilitystatus</em>}</li>
  *   <li>{@link ComBE.StandardNode#getComponent <em>Component</em>}</li>
  *   <li>{@link ComBE.StandardNode#getBehavior <em>Behavior</em>}</li>
  * </ul>
  * </p>
  *
  * @see ComBE.ComBEPackage#getStandardNode()
- * @model annotation="StrategoTerm.index 0='requirement' 1='tracibilitystatus' 2='component' 3='behavior' 4='label' 5='operator'"
+ * @model annotation="StrategoTerm.index 0='requirement' 1='traceabilitystatus' 2='component' 3='behavior' 4='label' 5='operator'"
  * @generated
  */
 public interface StandardNode extends Node {
@@ -54,33 +54,33 @@ public interface StandardNode extends Node {
 	void setRequirement(Requirement value);
 
 	/**
-	 * Returns the value of the '<em><b>Tracibilitystatus</b></em>' attribute.
-	 * The literals are from the enumeration {@link ComBE.TracibilityStatus}.
+	 * Returns the value of the '<em><b>Traceabilitystatus</b></em>' attribute.
+	 * The literals are from the enumeration {@link ComBE.TraceabilityStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tracibilitystatus</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Traceabilitystatus</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tracibilitystatus</em>' attribute.
-	 * @see ComBE.TracibilityStatus
-	 * @see #setTracibilitystatus(TracibilityStatus)
-	 * @see ComBE.ComBEPackage#getStandardNode_Tracibilitystatus()
+	 * @return the value of the '<em>Traceabilitystatus</em>' attribute.
+	 * @see ComBE.TraceabilityStatus
+	 * @see #setTraceabilitystatus(TraceabilityStatus)
+	 * @see ComBE.ComBEPackage#getStandardNode_Traceabilitystatus()
 	 * @model required="true"
 	 * @generated
 	 */
-	TracibilityStatus getTracibilitystatus();
+	TraceabilityStatus getTraceabilitystatus();
 
 	/**
-	 * Sets the value of the '{@link ComBE.StandardNode#getTracibilitystatus <em>Tracibilitystatus</em>}' attribute.
+	 * Sets the value of the '{@link ComBE.StandardNode#getTraceabilitystatus <em>Traceabilitystatus</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tracibilitystatus</em>' attribute.
-	 * @see ComBE.TracibilityStatus
-	 * @see #getTracibilitystatus()
+	 * @param value the new value of the '<em>Traceabilitystatus</em>' attribute.
+	 * @see ComBE.TraceabilityStatus
+	 * @see #getTraceabilitystatus()
 	 * @generated
 	 */
-	void setTracibilitystatus(TracibilityStatus value);
+	void setTraceabilitystatus(TraceabilityStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' reference.

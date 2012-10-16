@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComBE"
-    nsURI="ComBE" nsPrefix="ComBE">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComBE" nsURI="ComBE" nsPrefix="ComBE">
   <eClassifiers xsi:type="ecore:EClass" name="Specification">
     <eAnnotations source="StrategoTerm.index">
       <details key="0" value="requirements"/>
@@ -107,7 +105,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
     <eAnnotations source="StrategoTerm.index">
       <details key="0" value="requirement"/>
-      <details key="1" value="tracibilitystatus"/>
+      <details key="1" value="traceabilitystatus"/>
       <details key="2" value="component"/>
       <details key="3" value="behavior"/>
       <details key="4" value="label"/>
@@ -115,8 +113,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
         eType="#//Requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tracibilitystatus" lowerBound="1"
-        eType="#//TracibilityStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="traceabilitystatus" lowerBound="1"
+        eType="#//TraceabilityStatus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
@@ -139,7 +137,7 @@
     <eLiterals name="EOEvent" value="7" literal="#EO"/>
     <eLiterals name="Assertion" value="8" literal="#A"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TracibilityStatus">
+  <eClassifiers xsi:type="ecore:EEnum" name="TraceabilityStatus">
     <eLiterals name="None" literal=""/>
     <eLiterals name="Implied" value="1" literal="+"/>
     <eLiterals name="Missing" value="2" literal="-"/>

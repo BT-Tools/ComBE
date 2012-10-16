@@ -88,8 +88,8 @@ public class ComBEFactoryImpl extends EFactoryImpl implements ComBEFactory {
 		switch (eDataType.getClassifierID()) {
 			case ComBEPackage.BEHAVIOR_TYPE:
 				return createBehaviorTypeFromString(eDataType, initialValue);
-			case ComBEPackage.TRACIBILITY_STATUS:
-				return createTracibilityStatusFromString(eDataType, initialValue);
+			case ComBEPackage.TRACEABILITY_STATUS:
+				return createTraceabilityStatusFromString(eDataType, initialValue);
 			case ComBEPackage.OPERATOR:
 				return createOperatorFromString(eDataType, initialValue);
 			default:
@@ -107,8 +107,8 @@ public class ComBEFactoryImpl extends EFactoryImpl implements ComBEFactory {
 		switch (eDataType.getClassifierID()) {
 			case ComBEPackage.BEHAVIOR_TYPE:
 				return convertBehaviorTypeToString(eDataType, instanceValue);
-			case ComBEPackage.TRACIBILITY_STATUS:
-				return convertTracibilityStatusToString(eDataType, instanceValue);
+			case ComBEPackage.TRACEABILITY_STATUS:
+				return convertTraceabilityStatusToString(eDataType, instanceValue);
 			case ComBEPackage.OPERATOR:
 				return convertOperatorToString(eDataType, instanceValue);
 			default:
@@ -261,8 +261,8 @@ public class ComBEFactoryImpl extends EFactoryImpl implements ComBEFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracibilityStatus createTracibilityStatusFromString(EDataType eDataType, String initialValue) {
-		TracibilityStatus result = TracibilityStatus.get(initialValue);
+	public TraceabilityStatus createTraceabilityStatusFromString(EDataType eDataType, String initialValue) {
+		TraceabilityStatus result = TraceabilityStatus.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -272,7 +272,7 @@ public class ComBEFactoryImpl extends EFactoryImpl implements ComBEFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertTracibilityStatusToString(EDataType eDataType, Object instanceValue) {
+	public String convertTraceabilityStatusToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

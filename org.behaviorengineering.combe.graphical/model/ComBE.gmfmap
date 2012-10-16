@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfmap:Mapping xmi:version="2.0"
+<gmfmap:Mapping
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
@@ -48,9 +49,9 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTracibilityStatusLabel"/>
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
             <features
-                href="ComBE.ecore#//StandardNode/tracibilitystatus"/>
+                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
@@ -151,9 +152,9 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTracibilityStatusLabel"/>
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
             <features
-                href="ComBE.ecore#//StandardNode/tracibilitystatus"/>
+                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
@@ -254,9 +255,9 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="ComBE.gmfgraph#NodeTracibilityStatusLabel"/>
+                href="ComBE.gmfgraph#NodeTraceabilityStatusLabel"/>
             <features
-                href="ComBE.ecore#//StandardNode/tracibilitystatus"/>
+                href="ComBE.ecore#//StandardNode/traceabilitystatus"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">

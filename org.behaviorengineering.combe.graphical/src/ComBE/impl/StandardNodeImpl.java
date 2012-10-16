@@ -12,7 +12,7 @@ import ComBE.Component;
 import ComBE.Operator;
 import ComBE.Requirement;
 import ComBE.StandardNode;
-import ComBE.TracibilityStatus;
+import ComBE.TraceabilityStatus;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ComBE.impl.StandardNodeImpl#getRequirement <em>Requirement</em>}</li>
- *   <li>{@link ComBE.impl.StandardNodeImpl#getTracibilitystatus <em>Tracibilitystatus</em>}</li>
+ *   <li>{@link ComBE.impl.StandardNodeImpl#getTraceabilitystatus <em>Traceabilitystatus</em>}</li>
  *   <li>{@link ComBE.impl.StandardNodeImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link ComBE.impl.StandardNodeImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
@@ -49,23 +49,23 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 */
 	protected Requirement requirement;
 	/**
-	 * The default value of the '{@link #getTracibilitystatus() <em>Tracibilitystatus</em>}' attribute.
+	 * The default value of the '{@link #getTraceabilitystatus() <em>Traceabilitystatus</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTracibilitystatus()
+	 * @see #getTraceabilitystatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TracibilityStatus TRACIBILITYSTATUS_EDEFAULT = TracibilityStatus.NONE;
+	protected static final TraceabilityStatus TRACEABILITYSTATUS_EDEFAULT = TraceabilityStatus.NONE;
 	/**
-	 * The cached value of the '{@link #getTracibilitystatus() <em>Tracibilitystatus</em>}' attribute.
+	 * The cached value of the '{@link #getTraceabilitystatus() <em>Traceabilitystatus</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTracibilitystatus()
+	 * @see #getTraceabilitystatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected TracibilityStatus tracibilitystatus = TRACIBILITYSTATUS_EDEFAULT;
+	protected TraceabilityStatus traceabilitystatus = TRACEABILITYSTATUS_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -147,8 +147,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TracibilityStatus getTracibilitystatus() {
-		return tracibilitystatus;
+	public TraceabilityStatus getTraceabilitystatus() {
+		return traceabilitystatus;
 	}
 
 	/**
@@ -156,11 +156,11 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTracibilitystatus(TracibilityStatus newTracibilitystatus) {
-		TracibilityStatus oldTracibilitystatus = tracibilitystatus;
-		tracibilitystatus = newTracibilitystatus == null ? TRACIBILITYSTATUS_EDEFAULT : newTracibilitystatus;
+	public void setTraceabilitystatus(TraceabilityStatus newTraceabilitystatus) {
+		TraceabilityStatus oldTraceabilitystatus = traceabilitystatus;
+		traceabilitystatus = newTraceabilitystatus == null ? TRACEABILITYSTATUS_EDEFAULT : newTraceabilitystatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS, oldTracibilitystatus, tracibilitystatus));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS, oldTraceabilitystatus, traceabilitystatus));
 	}
 
 	/**
@@ -250,8 +250,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
 				if (resolve) return getRequirement();
 				return basicGetRequirement();
-			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
-				return getTracibilitystatus();
+			case ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS:
+				return getTraceabilitystatus();
 			case ComBEPackage.STANDARD_NODE__COMPONENT:
 				if (resolve) return getComponent();
 				return basicGetComponent();
@@ -280,8 +280,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
 				setRequirement((Requirement)newValue);
 				return;
-			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
-				setTracibilitystatus((TracibilityStatus)newValue);
+			case ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS:
+				setTraceabilitystatus((TraceabilityStatus)newValue);
 				return;
 			case ComBEPackage.STANDARD_NODE__COMPONENT:
 				setComponent((Component)newValue);
@@ -310,8 +310,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
 				setRequirement((Requirement)null);
 				return;
-			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
-				setTracibilitystatus(TRACIBILITYSTATUS_EDEFAULT);
+			case ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS:
+				setTraceabilitystatus(TRACEABILITYSTATUS_EDEFAULT);
 				return;
 			case ComBEPackage.STANDARD_NODE__COMPONENT:
 				setComponent((Component)null);
@@ -333,8 +333,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 		switch (featureID) {
 			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
 				return requirement != null;
-			case ComBEPackage.STANDARD_NODE__TRACIBILITYSTATUS:
-				return tracibilitystatus != TRACIBILITYSTATUS_EDEFAULT;
+			case ComBEPackage.STANDARD_NODE__TRACEABILITYSTATUS:
+				return traceabilitystatus != TRACEABILITYSTATUS_EDEFAULT;
 			case ComBEPackage.STANDARD_NODE__COMPONENT:
 				return component != null;
 			case ComBEPackage.STANDARD_NODE__BEHAVIOR:
@@ -353,8 +353,8 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (tracibilitystatus: ");
-		result.append(tracibilitystatus);
+		result.append(" (traceabilitystatus: ");
+		result.append(traceabilitystatus);
 		result.append(')');
 		return result.toString();
 	}

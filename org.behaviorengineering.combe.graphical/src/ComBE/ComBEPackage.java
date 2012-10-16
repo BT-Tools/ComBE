@@ -597,13 +597,13 @@ public interface ComBEPackage extends EPackage {
 	int STANDARD_NODE__REQUIREMENT = NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Tracibilitystatus</b></em>' attribute.
+	 * The feature id for the '<em><b>Traceabilitystatus</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STANDARD_NODE__TRACIBILITYSTATUS = NODE_FEATURE_COUNT + 1;
+	int STANDARD_NODE__TRACEABILITYSTATUS = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' reference.
@@ -680,14 +680,14 @@ public interface ComBEPackage extends EPackage {
 	int BEHAVIOR_TYPE = 15;
 
 	/**
-	 * The meta object id for the '{@link ComBE.TracibilityStatus <em>Tracibility Status</em>}' enum.
+	 * The meta object id for the '{@link ComBE.TraceabilityStatus <em>Traceability Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ComBE.TracibilityStatus
-	 * @see ComBE.impl.ComBEPackageImpl#getTracibilityStatus()
+	 * @see ComBE.TraceabilityStatus
+	 * @see ComBE.impl.ComBEPackageImpl#getTraceabilityStatus()
 	 * @generated
 	 */
-	int TRACIBILITY_STATUS = 16;
+	int TRACEABILITY_STATUS = 16;
 
 	/**
 	 * The meta object id for the '{@link ComBE.Operator <em>Operator</em>}' enum.
@@ -1061,15 +1061,15 @@ public interface ComBEPackage extends EPackage {
 	EReference getStandardNode_Requirement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ComBE.StandardNode#getTracibilitystatus <em>Tracibilitystatus</em>}'.
+	 * Returns the meta object for the attribute '{@link ComBE.StandardNode#getTraceabilitystatus <em>Traceabilitystatus</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tracibilitystatus</em>'.
-	 * @see ComBE.StandardNode#getTracibilitystatus()
+	 * @return the meta object for the attribute '<em>Traceabilitystatus</em>'.
+	 * @see ComBE.StandardNode#getTraceabilitystatus()
 	 * @see #getStandardNode()
 	 * @generated
 	 */
-	EAttribute getStandardNode_Tracibilitystatus();
+	EAttribute getStandardNode_Traceabilitystatus();
 
 	/**
 	 * Returns the meta object for the reference '{@link ComBE.StandardNode#getComponent <em>Component</em>}'.
@@ -1114,14 +1114,14 @@ public interface ComBEPackage extends EPackage {
 	EEnum getBehaviorType();
 
 	/**
-	 * Returns the meta object for enum '{@link ComBE.TracibilityStatus <em>Tracibility Status</em>}'.
+	 * Returns the meta object for enum '{@link ComBE.TraceabilityStatus <em>Traceability Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Tracibility Status</em>'.
-	 * @see ComBE.TracibilityStatus
+	 * @return the meta object for enum '<em>Traceability Status</em>'.
+	 * @see ComBE.TraceabilityStatus
 	 * @generated
 	 */
-	EEnum getTracibilityStatus();
+	EEnum getTraceabilityStatus();
 
 	/**
 	 * Returns the meta object for enum '{@link ComBE.Operator <em>Operator</em>}'.
@@ -1456,12 +1456,12 @@ public interface ComBEPackage extends EPackage {
 		EReference STANDARD_NODE__REQUIREMENT = eINSTANCE.getStandardNode_Requirement();
 
 		/**
-		 * The meta object literal for the '<em><b>Tracibilitystatus</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Traceabilitystatus</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STANDARD_NODE__TRACIBILITYSTATUS = eINSTANCE.getStandardNode_Tracibilitystatus();
+		EAttribute STANDARD_NODE__TRACEABILITYSTATUS = eINSTANCE.getStandardNode_Traceabilitystatus();
 
 		/**
 		 * The meta object literal for the '<em><b>Component</b></em>' reference feature.
@@ -1500,14 +1500,14 @@ public interface ComBEPackage extends EPackage {
 		EEnum BEHAVIOR_TYPE = eINSTANCE.getBehaviorType();
 
 		/**
-		 * The meta object literal for the '{@link ComBE.TracibilityStatus <em>Tracibility Status</em>}' enum.
+		 * The meta object literal for the '{@link ComBE.TraceabilityStatus <em>Traceability Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ComBE.TracibilityStatus
-		 * @see ComBE.impl.ComBEPackageImpl#getTracibilityStatus()
+		 * @see ComBE.TraceabilityStatus
+		 * @see ComBE.impl.ComBEPackageImpl#getTraceabilityStatus()
 		 * @generated
 		 */
-		EEnum TRACIBILITY_STATUS = eINSTANCE.getTracibilityStatus();
+		EEnum TRACEABILITY_STATUS = eINSTANCE.getTraceabilityStatus();
 
 		/**
 		 * The meta object literal for the '{@link ComBE.Operator <em>Operator</em>}' enum.

@@ -25,7 +25,7 @@ import ComBE.Specification;
 import ComBE.StandardComponent;
 import ComBE.StandardNode;
 import ComBE.SystemComponent;
-import ComBE.TracibilityStatus;
+import ComBE.TraceabilityStatus;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -159,7 +159,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum tracibilityStatusEEnum = null;
+	private EEnum traceabilityStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -540,7 +540,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStandardNode_Tracibilitystatus() {
+	public EAttribute getStandardNode_Traceabilitystatus() {
 		return (EAttribute)standardNodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -585,8 +585,8 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getTracibilityStatus() {
-		return tracibilityStatusEEnum;
+	public EEnum getTraceabilityStatus() {
+		return traceabilityStatusEEnum;
 	}
 
 	/**
@@ -673,7 +673,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 
 		standardNodeEClass = createEClass(STANDARD_NODE);
 		createEReference(standardNodeEClass, STANDARD_NODE__REQUIREMENT);
-		createEAttribute(standardNodeEClass, STANDARD_NODE__TRACIBILITYSTATUS);
+		createEAttribute(standardNodeEClass, STANDARD_NODE__TRACEABILITYSTATUS);
 		createEReference(standardNodeEClass, STANDARD_NODE__COMPONENT);
 		createEReference(standardNodeEClass, STANDARD_NODE__BEHAVIOR);
 
@@ -681,7 +681,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 
 		// Create enums
 		behaviorTypeEEnum = createEEnum(BEHAVIOR_TYPE);
-		tracibilityStatusEEnum = createEEnum(TRACIBILITY_STATUS);
+		traceabilityStatusEEnum = createEEnum(TRACEABILITY_STATUS);
 		operatorEEnum = createEEnum(OPERATOR);
 	}
 
@@ -769,7 +769,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 
 		initEClass(standardNodeEClass, StandardNode.class, "StandardNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStandardNode_Requirement(), this.getRequirement(), null, "requirement", null, 1, 1, StandardNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStandardNode_Tracibilitystatus(), this.getTracibilityStatus(), "tracibilitystatus", null, 1, 1, StandardNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStandardNode_Traceabilitystatus(), this.getTraceabilityStatus(), "traceabilitystatus", null, 1, 1, StandardNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStandardNode_Component(), this.getComponent(), null, "component", null, 1, 1, StandardNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStandardNode_Behavior(), this.getBehavior(), null, "behavior", null, 1, 1, StandardNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -787,13 +787,13 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		addEEnumLiteral(behaviorTypeEEnum, BehaviorType.EO_EVENT);
 		addEEnumLiteral(behaviorTypeEEnum, BehaviorType.ASSERTION);
 
-		initEEnum(tracibilityStatusEEnum, TracibilityStatus.class, "TracibilityStatus");
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.NONE);
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.IMPLIED);
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.MISSING);
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.UPDATED);
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.DELETED);
-		addEEnumLiteral(tracibilityStatusEEnum, TracibilityStatus.REFINEMENT);
+		initEEnum(traceabilityStatusEEnum, TraceabilityStatus.class, "TraceabilityStatus");
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.NONE);
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.IMPLIED);
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.MISSING);
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.UPDATED);
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.DELETED);
+		addEEnumLiteral(traceabilityStatusEEnum, TraceabilityStatus.REFINEMENT);
 
 		initEEnum(operatorEEnum, Operator.class, "Operator");
 		addEEnumLiteral(operatorEEnum, Operator.NONE);
@@ -900,7 +900,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		   source, 
 		   new String[] {
 			 "0", "requirement",
-			 "1", "tracibilitystatus",
+			 "1", "traceabilitystatus",
 			 "2", "component",
 			 "3", "behavior",
 			 "4", "label",
