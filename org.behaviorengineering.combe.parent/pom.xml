@@ -114,13 +114,13 @@ ComBE provides a combined (textual + graphical) editor for Behavior Engineering.
 		<url>http://www.behaviorengineering.org</url>
 	</organization>
 	<scm>
-		<developerConnection>scm:svn:https://textbe.googlecode.com/svn</developerConnection>
-		<connection>scm:svn:https://textbe.googlecode.com/svn</connection>
-		<url>http://code.google.com/p/textbe/source/browse/</url>
+		<developerConnection>scm:svn:https://svn.strategoxt.org/repos/StrategoXT/experimental/graphical-editor/combe/</developerConnection>
+		<connection>scm:svn:https://svn.strategoxt.org/repos/StrategoXT/experimental/graphical-editor/combe/</connection>
+		<url>https://svn.strategoxt.org/repos/StrategoXT/experimental/graphical-editor/combe/</url>
 		<tag>HEAD</tag>
 	</scm>
 	<issueManagement>
-		<url>http://code.google.com/p/textbe/issues/list</url>
+		<url>http://yellowgrass.org/project/ComBE</url>
 		<system>Issue Tracker</system>
 	</issueManagement>
 	<ciManagement>
