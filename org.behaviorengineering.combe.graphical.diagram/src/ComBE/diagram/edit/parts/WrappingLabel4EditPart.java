@@ -2,6 +2,7 @@ package ComBE.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
@@ -55,18 +56,22 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 	 * @generated
 	 */
 	public static final int VISUAL_ID = 5005;
+
 	/**
 	 * @generated
 	 */
 	private DirectEditManager manager;
+
 	/**
 	 * @generated
 	 */
 	private IParser parser;
+
 	/**
 	 * @generated
 	 */
 	private OclTracker.Registrator myOclRegistrator;
+
 	/**
 	 * @generated
 	 */
@@ -189,14 +194,13 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
+	 * @generated
 	 */
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(new EObjectAdapter(parserElement), 3);
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;
@@ -546,8 +550,7 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
+	 * @generated
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
@@ -561,7 +564,19 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
-			refreshLabel();
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
+				refreshLabel();
+			}
+			if (getParser() instanceof ISemanticParser) {
+				ISemanticParser modelParser = (ISemanticParser) getParser();
+				if (modelParser.areSemanticElementsAffected(null, event)) {
+					removeSemanticListeners();
+					if (resolveSemanticElement() != null) {
+						addSemanticListeners();
+					}
+					refreshLabel();
+				}
+			}
 		}
 		super.handleNotificationEvent(event);
 	}
@@ -573,4 +588,5 @@ public class WrappingLabel4EditPart extends CompartmentEditPart implements IText
 		// Parent should assign one using setLabel() method
 		return null;
 	}
+
 }

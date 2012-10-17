@@ -194,14 +194,13 @@ public class WrappingLabel18EditPart extends CompartmentEditPart implements ITex
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
+	 * @generated
 	 */
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(new EObjectAdapter(parserElement), 5);
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;

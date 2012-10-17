@@ -194,14 +194,13 @@ public class WrappingLabel10EditPart extends CompartmentEditPart implements ITex
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
+	 * @generated
 	 */
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
 		if (parserElement != null && getParser() != null) {
-			text = getParser().getPrintString(new EObjectAdapter(parserElement), 3);
+			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
 		if (text == null || text.length() == 0) {
 			text = defaultText;
@@ -551,8 +550,7 @@ public class WrappingLabel10EditPart extends CompartmentEditPart implements ITex
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
+	 * @generated
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
@@ -566,7 +564,19 @@ public class WrappingLabel10EditPart extends CompartmentEditPart implements ITex
 		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
-			refreshLabel();
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
+				refreshLabel();
+			}
+			if (getParser() instanceof ISemanticParser) {
+				ISemanticParser modelParser = (ISemanticParser) getParser();
+				if (modelParser.areSemanticElementsAffected(null, event)) {
+					removeSemanticListeners();
+					if (resolveSemanticElement() != null) {
+						addSemanticListeners();
+					}
+					refreshLabel();
+				}
+			}
 		}
 		super.handleNotificationEvent(event);
 	}

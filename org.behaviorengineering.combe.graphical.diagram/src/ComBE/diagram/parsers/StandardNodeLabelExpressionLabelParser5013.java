@@ -23,11 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class EmptyNodeLabelExpressionLabelParser extends ExpressionLabelParserBase {
+public class StandardNodeLabelExpressionLabelParser5013 extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public EmptyNodeLabelExpressionLabelParser() {
+	public StandardNodeLabelExpressionLabelParser5013() {
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class EmptyNodeLabelExpressionLabelParser extends ExpressionLabelParserBa
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(17, ComBE.ComBEPackage.eINSTANCE.getEmptyNode(), null).body();
+		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(9, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).body();
 	}
 
 	/**

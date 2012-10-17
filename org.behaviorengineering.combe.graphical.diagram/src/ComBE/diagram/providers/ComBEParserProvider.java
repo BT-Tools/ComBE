@@ -23,21 +23,21 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5001Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5001();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5002Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5002();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5003Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5003();
 	}
 
 	/**
@@ -61,14 +61,14 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5005Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5005();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5006Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5006();
 	}
 
 	/**
@@ -92,28 +92,28 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getEmptyNodeLabel_5008Parser() {
-		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser5008();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5009Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5009();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5010Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5010();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5011Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5011();
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5013Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5013();
 	}
 
 	/**
@@ -161,14 +161,14 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getEmptyNodeLabel_5024Parser() {
-		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser5024();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5014Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5014();
 	}
 
 	/**
@@ -192,28 +192,28 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getEmptyNodeLabel_5016Parser() {
-		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.EmptyNodeLabelExpressionLabelParser5016();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5017Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5017();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5018Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5018();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5019Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5019();
 	}
 
 	/**
@@ -237,14 +237,14 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5021Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5021();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getStandardNodeLabel_5022Parser() {
-		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser();
+		return new ComBE.diagram.parsers.StandardNodeLabelExpressionLabelParser5022();
 	}
 
 	/**

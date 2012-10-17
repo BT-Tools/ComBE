@@ -1,6 +1,7 @@
 package ComBE.diagram.parsers;
 
 import java.util.Collections;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
@@ -13,7 +14,6 @@ import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
-import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
@@ -23,12 +23,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class StandardNodeLabelExpressionLabelParser extends ExpressionLabelParserBase {
-
+public class StandardNodeLabelExpressionLabelParser5019 extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public StandardNodeLabelExpressionLabelParser() {
+	public StandardNodeLabelExpressionLabelParser5019() {
 	}
 
 	/**
@@ -36,7 +35,7 @@ public class StandardNodeLabelExpressionLabelParser extends ExpressionLabelParse
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(16, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).body();
+		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(14, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).body();
 	}
 
 	/**
@@ -74,16 +73,6 @@ public class StandardNodeLabelExpressionLabelParser extends ExpressionLabelParse
 	}
 
 	/**
-	 * @generated NOT
-	 * Workaround for GMF/331875
-	 */
-	public String getPrintString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Object result = ComBE.diagram.expressions.ComBEOCLFactory.getExpression(flags, ComBE.ComBEPackage.eINSTANCE.getStandardNode(), null).evaluate(target);
-		return String.valueOf(result);
-	}
-
-	/**
 	 * @generated
 	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
@@ -106,4 +95,5 @@ public class StandardNodeLabelExpressionLabelParser extends ExpressionLabelParse
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
 		throw new ExecutionException("Please implement parsing and value modification");
 	}
+
 }
