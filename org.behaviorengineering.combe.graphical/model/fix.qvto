@@ -1,0 +1,12 @@
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+	
+transformation postRec(inout gmfgenModel : GMFGEN);
+ 
+main() {
+  --fix GMF bug 331875 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=331875)
+  var i = "a";
+  gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
+	{
+		parser.className := parser.className.concat(parser._uses->first().container().oclAsType(GenNodeLabel).visualID.toString());
+	}; 
+}
