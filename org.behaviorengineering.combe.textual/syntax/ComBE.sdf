@@ -29,7 +29,7 @@ exports
 	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"AlternativeBranch"}
 	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {"ParallelBranch"}
 
-	ID TraceabilityStatus ID INT Label? Operator			-> Node {"StandardNode"}
+	ID TraceabilityStatus ID INT NodeLabel? Operator		-> Node {"StandardNode"}
 	"_" Label? Operator										-> Node {"EmptyNode"}
 	
   lexical syntax

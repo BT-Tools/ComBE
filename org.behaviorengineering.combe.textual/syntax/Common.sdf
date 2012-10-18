@@ -5,7 +5,8 @@ exports
   lexical syntax
   
     [a-zA-Z][a-zA-Z0-9]* -> ID
-    ~[\n\r\ \;]+			 -> Label
+    ~[\n\r\ \;]+	     -> Label
+    ~[\n\r\ \;]+	     -> NodeLabel
     "-"? [0-9]+          -> INT
     
     "\"" StringChar* "\"" -> STRING

@@ -11,5 +11,6 @@ colorer
   Label					: darkgreen
   identifier			: black
   number				: black
-  TraceabilityStatus 	: gray
-  Operator				: gray
+  NodeLabel				: 205 149 12 italic
+  TraceabilityStatus 	: 205 149 12
+  Operator				: 205 149 12
