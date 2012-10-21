@@ -4,6 +4,8 @@ transformation postRec(inout gmfgenModel : GMFGEN);
  
 main() {
   --fix GMF bug 331875 (https://bugs.eclipse.org/bugs/show_bug.cgi?id=331875)
+  --when to execute: each time you regenerate ComBE.gmfgen
+  --how to execute: go to 'Run Configurations...' and add a new 'Operational QVT Interpreter'
   var i = "a";
   gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
 	{
