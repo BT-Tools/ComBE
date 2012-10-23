@@ -811,8 +811,26 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// Spoofax
+		createSpoofaxAnnotations();
 		// StrategoTerm.index
 		createStrategoTermAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>Spoofax</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createSpoofaxAnnotations() {
+		String source = "Spoofax";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "RootElement", "Specification"
+		   });												
 	}
 
 	/**
@@ -822,7 +840,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 	 * @generated
 	 */
 	protected void createStrategoTermAnnotations() {
-		String source = "StrategoTerm.index";		
+		String source = "StrategoTerm.index";			
 		addAnnotation
 		  (specificationEClass, 
 		   source, 

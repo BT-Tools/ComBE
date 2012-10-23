@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see ComBE.ComBEFactory
  * @model kind="package"
+ *        annotation="Spoofax RootElement='Specification'"
  * @generated
  */
 public interface ComBEPackage extends EPackage {
