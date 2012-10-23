@@ -9,5 +9,5 @@
           <parser class="org.behaviorengineering.combe.textual.ComBEParseController" language="ComBE">
           </parser>
        </extension>    
-       <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="bt" class="org.spoofax.modelware.emf.resource.SpoofaxResourceFactory"/> </extension>
+       <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="bt" class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/> </extension>
  </plugin>

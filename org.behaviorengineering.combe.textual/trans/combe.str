@@ -172,10 +172,9 @@ rules // Modelware
   to-modelware:
     (ast', path, project-path) -> None()
     with
+	  textfilePath := $[[project-path]/[path]];
       packageName := <get-config> "program";
-      filePath :=  $[[project-path]/[<remove-extension> path]];
-      textFileExtension := <get-extension> path;
-      <to-modelware(|filePath, textFileExtension, packageName)> ast'
+      <to-modelware(|textfilePath, packageName)> ast'
       
-  external to-modelware(|filePath, textFileExtension, packageName)
+  external to-modelware(|textfilePath, packageName)
 
