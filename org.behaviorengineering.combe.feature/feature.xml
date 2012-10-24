@@ -2,7 +2,8 @@
 <feature
       id="org.behaviorengineering.combe.feature"
       label="ComBE"
-      version="1.0.0.qualifier">
+      version="1.0.0.qualifier"
+      plugin="org.behaviorengineering.combe.graphical">
 
    <description>
       ComBE
@@ -14,6 +15,9 @@
 
    <license url="">
       ComBE License Information
+
+ComBE is licensed under the GNU Lesser General Public License (LGPL). 
+Its components are based on Spoofax (GNU Lesser General Public License), and EMF and GMF (Eclipse Public Licence).
    </license>
 
    <includes
