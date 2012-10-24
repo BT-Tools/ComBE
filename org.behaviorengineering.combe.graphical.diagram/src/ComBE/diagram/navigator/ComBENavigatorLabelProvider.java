@@ -66,32 +66,32 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 */
 	public Image getImage(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
-		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?ComBE?AtomicSequence?child", ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?ComBE?AtomicSequence", ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?ComBE?Specification", ComBE.diagram.providers.ComBEElementTypes.Specification_1000); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?ComBE?ParallelBranch?children", ComBE.diagram.providers.ComBEElementTypes.ParallelBranchChildren_4002); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?ComBE?AlternativeBranch?children", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?ComBE?AlternativeBranch", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?ComBE?ParallelBranch", ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
+			return getImage("Navigator?Diagram?ComBE?Specification", ComBE.diagram.providers.ComBEElementTypes.Specification_1000); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?ComBE?AlternativeBranch", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?ComBE?ParallelBranch?children", ComBE.diagram.providers.ComBEElementTypes.ParallelBranchChildren_4002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?ComBE?AtomicSequence?child", ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?ComBE?AtomicSequence", ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
+			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -142,32 +142,32 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
-		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
-			return getEmptyNode_3002Text(view);
-		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
-			return getAtomicSequenceChild_4003Text(view);
-		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
-			return getStandardNode_3005Text(view);
-		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
-			return getEmptyNode_3006Text(view);
-		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
-			return getStandardNode_3003Text(view);
-		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
-			return getAtomicSequence_2003Text(view);
-		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
-			return getStandardNode_3001Text(view);
-		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
-			return getSpecification_1000Text(view);
-		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
-			return getParallelBranchChildren_4002Text(view);
 		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
 			return getAlternativeBranchChildren_4001Text(view);
-		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
-			return getEmptyNode_3004Text(view);
-		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
-			return getAlternativeBranch_2001Text(view);
 		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
 			return getParallelBranch_2002Text(view);
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
+			return getSpecification_1000Text(view);
+		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
+			return getAlternativeBranch_2001Text(view);
+		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
+			return getParallelBranchChildren_4002Text(view);
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+			return getStandardNode_3005Text(view);
+		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
+			return getAtomicSequenceChild_4003Text(view);
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+			return getEmptyNode_3002Text(view);
+		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
+			return getStandardNode_3003Text(view);
+		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
+			return getEmptyNode_3006Text(view);
+		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
+			return getAtomicSequence_2003Text(view);
+		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
+			return getEmptyNode_3004Text(view);
+		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
+			return getStandardNode_3001Text(view);
 		}
 		return getUnknownElementText(view);
 	}

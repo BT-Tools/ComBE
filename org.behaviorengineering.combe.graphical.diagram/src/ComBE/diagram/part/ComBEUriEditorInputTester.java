@@ -16,7 +16,7 @@ public class ComBEUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "combe_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "bt_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

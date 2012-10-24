@@ -8,13 +8,13 @@
 		</layoutProvider>
 	</extension><extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="combe_diagram"/>
+      <fileTypes type="text" extension="bt_diagram"/>
    </extension>
 
 <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="combe_diagram"
+         type="bt_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -25,7 +25,7 @@
          id="ComBE.diagram.part.ComBEDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ComBEDiagramFile.gif"
-         extensions="combe_diagram"
+         extensions="bt_diagram"
          default="true"
          class="ComBE.diagram.part.ComBEDiagramEditor"
          matchingStrategy="ComBE.diagram.part.ComBEMatchingStrategy"
@@ -59,7 +59,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.behaviorengineering.combe.graphical.diagram.InitDiagram"
-            nameFilter="*.combe"
+            nameFilter="*.bt"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
@@ -485,7 +485,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="combe_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bt_diagram"/>
                </and>
                <instanceof value="ComBE.diagram.navigator.ComBEAbstractNavigatorItem"/>
             </or>
@@ -502,7 +502,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="combe_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="bt_diagram"/>
                   </and>
                   <instanceof value="ComBE.diagram.navigator.ComBEAbstractNavigatorItem"/>
                </or>
@@ -521,7 +521,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="combe"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bt"/>
                </and>
                <instanceof value="ComBE.diagram.navigator.ComBEDomainNavigatorItem"/>
             </or>
