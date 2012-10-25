@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.behaviorengineering.combe.feature_1.0.0.qualifier.jar" id="org.behaviorengineering.combe.feature" version="1.0.0.qualifier"/>
-   <category-def name="ComBe" label="ComBE">
+   <feature url="features/org.behaviorengineering.combe.feature_1.0.0.qualifier.jar" id="org.behaviorengineering.combe.feature" version="1.0.0.qualifier">
+      <category name="ComBE"/>
+   </feature>
+   <category-def name="ComBE" label="ComBE">
       <description>
          ComBe
       </description>
