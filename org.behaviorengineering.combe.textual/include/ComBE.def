@@ -1,0 +1,128 @@
+definition
+module Common
+
+exports
+
+  lexical syntax
+  
+    [a-zA-Z][a-zA-Z0-9]* -> ID
+    ~[\n\r\ \;]+	     -> Label
+    ~[\n\r\ \;]+	     -> NodeLabel
+    "-"? [0-9]+          -> INT
+    
+    "\"" StringChar* "\"" -> STRING
+    ~[\"\n]               -> StringChar
+    "\\\""                -> StringChar
+    BackSlashChar         -> StringChar
+    "\\"                  -> BackSlashChar
+    
+    [\ \t\n\r] -> LAYOUT
+    
+    [\*]                             -> CommentChar
+    "/*" (~[\*] | CommentChar)* "*/" -> LAYOUT
+    "//" ~[\n\r]* ([\n\r] | EOF)     -> LAYOUT
+    
+    -> EOF
+  
+  lexical restrictions
+  
+    %% Ensure greedy matching for lexicals
+  
+    CommentChar   -/- [\/]
+    INT           -/- [0-9]
+    ID            -/- [a-zA-Z0-9\_]
+    Label         -/- ~[\n\r\ \;]
+    
+    %% EOF may not be followed by any char
+    
+    EOF           -/- ~[]
+
+    %% Backslash chars in strings may not be followed by " 
+    
+    BackSlashChar -/- [\"]
+
+  context-free restrictions
+  
+    %% Ensure greedy matching for comments
+
+    LAYOUT? -/- [\ \t\n\r]
+    LAYOUT? -/- [\/].[\/]
+    LAYOUT? -/- [\/].[\*]
+
+  lexical syntax
+	"--"	-> Label {reject}
+	"&"		-> Label {reject}
+	"|"		-> Label {reject}
+	"%"		-> Label {reject}
+	"=>"	-> Label {reject}
+	"^"		-> Label {reject}
+	"^^"	-> Label {reject}
+	"="		-> Label {reject}
+	"XOR"	-> Label {reject}
+
+module ComBE
+
+imports Common
+
+exports
+
+  context-free start-symbols
+  
+    Start
+
+  context-free syntax
+ 
+    "#RT" Requirement* Component* ("#T" Root)?				-> Start {cons("Specification")}
+    
+    ID Label												-> Requirement {cons("Requirement")}
+    
+    %% TODO: make enum?
+	"#C" ID Label BehaviorSeq*								-> Component {cons("StandardComponent")}
+	"#SC" ID Label BehaviorSeq*								-> Component {cons("SystemComponent")}
+	
+	BehaviorType behavior:Behavior*							-> BehaviorSeq {cons("BehaviorSeq")}
+	
+	INT Label												-> Behavior {cons("Behavior")}
+	
+	BehaviorTree											-> Root {cons("Root")} %% workaround for GMF phantom node bug
+	
+	{nodes:Node ";;"}+ (";" child:BehaviorTree)?			-> BehaviorTree {cons("AtomicSequence")}
+	{nodes:Node ";;"}+ "#N" "{" children:BehaviorTree* "}" 	-> BehaviorTree {cons("AlternativeBranch")}
+	{nodes:Node ";;"}+ "#P" "{" children:BehaviorTree* "}" 	-> BehaviorTree {cons("ParallelBranch")}
+
+	ID TraceabilityStatus ID INT NodeLabel? Operator		-> Node {cons("StandardNode")}
+	"_" Label? Operator										-> Node {cons("EmptyNode")}
+	
+  lexical syntax
+  	
+  	StateRealisation:"#S"	-> BehaviorType
+	Selection:"#L"			-> BehaviorType
+	Event:"#E"				-> BehaviorType
+	Guard:"#G"				-> BehaviorType
+	IIEvent:"#II"			-> BehaviorType
+	IOEvent:"#IO"			-> BehaviorType
+	EIEvent:"#EI"			-> BehaviorType
+	EOEvent:"#EO"			-> BehaviorType
+	Assertion:"#A"			-> BehaviorType
+  	
+  	None:""					-> TraceabilityStatus
+  	Implied:"+"				-> TraceabilityStatus
+	Missing:"-"				-> TraceabilityStatus
+	Updated:"++"			-> TraceabilityStatus 
+	Deleted:"--"			-> TraceabilityStatus
+	Refinement:"+-"			-> TraceabilityStatus
+  	
+  	None:""					-> Operator
+	BranchKill:"--"			-> Operator
+	Conjunction:"&"			-> Operator
+	Disjunction:"|"			-> Operator
+	May:"%"					-> Operator
+	Reference:"=>"			-> Operator
+	Reversion:"^"			-> Operator
+	StartNew:"^^"			-> Operator
+	Synchronisation:"="		-> Operator
+	XOR:"XOR"				-> Operator
+	
+  lexical syntax
+		
+	"XOR" 	-> ID {reject}
