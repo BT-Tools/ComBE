@@ -37,8 +37,7 @@ rules // Analysis
     with
       editor-init;
       (ast', errors, warnings, notes, filesToAnalyze) := <analyze> (ast, path, project-path);
-      <try(editor-queue-analysis)> <remove-all(?path)> filesToAnalyze;
-	  <to-modelware> (ast', path, project-path)
+      <try(editor-queue-analysis)> <remove-all(?path)> filesToAnalyze
       
   // Main entry point for analyzes, called when multiple files have changed. 
   editor-analyze:
@@ -166,15 +165,3 @@ rules // Utility
     files -> None()
     with
       index-parallel-analyze-files(analyze)
-
-rules // Modelware 
-
-  to-modelware:
-    (ast', path, project-path) -> None()
-    with
-	  textfilePath := $[[project-path]/[path]];
-      packageName := <get-config> "program";
-      <to-modelware(|textfilePath, packageName)> ast'
-      
-  external to-modelware(|textfilePath, packageName)
-

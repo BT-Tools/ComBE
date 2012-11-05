@@ -10,4 +10,11 @@
           </parser>
        </extension>    
        <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="bt" class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/> </extension>
+        <extension point="org.spoofax.modelware.gmf.synchronizer">
+          <synchronizer
+                diagramFileExtension="bt_diagram"
+                domainFileExtension="bt"
+                packageName="ComBE"
+                textFileExtension="bt"></synchronizer>
+       </extension>
  </plugin>
