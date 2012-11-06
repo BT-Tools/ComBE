@@ -20,8 +20,8 @@ regular tree grammar
     ListPlusOfNode1         -> <conc>(ListPlusOfNode1,ListStarOfNode1)
     ListPlusOfNode1         -> <conc>(ListPlusOfNode1,ListPlusOfNode1)
     ListPlusOfNode1         -> Node
-    BehaviorTree1           -> <(1)>(BehaviorTree)
-    OptBehaviorTree0        -> <some>(BehaviorTree1)
+    BehaviorTree0           -> <(1)>(BehaviorTree)
+    OptBehaviorTree0        -> <some>(BehaviorTree0)
     OptBehaviorTree0        -> <none>()
     ListStarOfBehavior0     -> ListPlusOfBehavior0
     ListStarOfBehavior0     -> <nil>()
@@ -37,8 +37,8 @@ regular tree grammar
     ListPlusOfBehaviorSeq0  -> <conc>(ListPlusOfBehaviorSeq0,ListStarOfBehaviorSeq0)
     ListPlusOfBehaviorSeq0  -> <conc>(ListPlusOfBehaviorSeq0,ListPlusOfBehaviorSeq0)
     ListPlusOfBehaviorSeq0  -> <cons>(BehaviorSeq,ListStarOfBehaviorSeq0)
-    Root1                   -> <(1)>(Root)
-    OptRoot0                -> <some>(Root1)
+    Root0                   -> <(1)>(Root)
+    OptRoot0                -> <some>(Root0)
     OptRoot0                -> <none>()
     ListStarOfComponent0    -> ListPlusOfComponent0
     ListStarOfComponent0    -> <nil>()

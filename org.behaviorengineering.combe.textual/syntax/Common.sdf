@@ -49,13 +49,13 @@ exports
     LAYOUT? -/- [\/].[\*]
 
   lexical syntax
-	"--"	-> Label {reject}
-	"&"		-> Label {reject}
-	"|"		-> Label {reject}
-	"%"		-> Label {reject}
-	"=>"	-> Label {reject}
-	"^"		-> Label {reject}
-	"^^"	-> Label {reject}
-	"="		-> Label {reject}
-	"XOR"	-> Label {reject}
+	"--"	-> NodeLabel {reject}
+	"&"		-> NodeLabel {reject}
+	"|"		-> NodeLabel {reject}
+	"%"		-> NodeLabel {reject}
+	"=>"	-> NodeLabel {reject}
+	"^"		-> NodeLabel {reject}
+	"^^"	-> NodeLabel {reject}
+	"="		-> NodeLabel {reject}
+	"XOR"	-> NodeLabel {reject}
 	

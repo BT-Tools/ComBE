@@ -48,26 +48,26 @@ rules
     Behavior(x, _) -> <nam-get-def(|Behavior())> x
 
   nam-annotate-names(|def-path):
-    Requirement(p_2831, q_2831) -> Requirement(p_2831{def-path}, q_2831)
+    Requirement(f_10876, g_10876) -> Requirement(f_10876{def-path}, g_10876)
 
   nam-annotate-names(|def-path):
-    StandardComponent(m_2831, n_2831, o_2831) -> StandardComponent(m_2831{def-path}, n_2831, o_2831)
+    StandardComponent(c_10876, d_10876, e_10876) -> StandardComponent(c_10876{def-path}, d_10876, e_10876)
 
   nam-annotate-names(|def-path):
-    SystemComponent(j_2831, k_2831, l_2831) -> SystemComponent(j_2831{def-path}, k_2831, l_2831)
+    SystemComponent(z_10875, a_10876, b_10876) -> SystemComponent(z_10875{def-path}, a_10876, b_10876)
 
   nam-annotate-names(|def-path):
-    Behavior(g_2831, h_2831) -> Behavior(g_2831{def-path}, h_2831)
+    Behavior(w_10875, x_10875) -> Behavior(w_10875{def-path}, x_10875)
 
   nam-annotate-names(|def-path):
-    StandardNode(v_2830, w_2830, x_2830, y_2830, z_2830, a_2831) -> StandardNode(
-                                                                      <nam-annotate-use(|Requirement())> v_2830
-                                                                    , w_2830
-                                                                    , <nam-annotate-use(|Component())> x_2830
-                                                                    , <nam-annotate-use(|Behavior())> y_2830
-                                                                    , z_2830
-                                                                    , a_2831
-                                                                    )
+    StandardNode(l_10875, m_10875, n_10875, o_10875, p_10875, q_10875) -> StandardNode(
+                                                                            <nam-annotate-use(|Requirement())> l_10875
+                                                                          , m_10875
+                                                                          , <nam-annotate-use(|Component())> n_10875
+                                                                          , <nam-annotate-use(|Behavior())> o_10875
+                                                                          , p_10875
+                                                                          , q_10875
+                                                                          )
 
   nam-get-def(|n) =
     fail
