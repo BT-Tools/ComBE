@@ -32,7 +32,7 @@
       <section>
 
 <h1>ComBE</h1>
-<p>ComBE provides an integrated textual and graphical editor for <a href="http://www.behaviorengineering.org/">Behavior Engineering</a>, which keeps its textual and graphical views synchronized in real-time.</p>
+<p>ComBE provides an integrated textual and graphical editor for <a href="http://www.behaviorengineering.org/">Behavior Engineering</a> that synchronises text and graphics in real-time.</p>
 
 <p>
 <iframe src="http://www.screenr.com/embed/xn87" width="650" height="396" frameborder="0"></iframe>
@@ -43,12 +43,11 @@ This screencast shows some of ComBE's highlights. Press 'full-screen' to get a g
 ComBE comes with a rich set of features...
 
 <h4>Easy Integration</h4>
-<p>ComBE is based on the same textual syntax that is used by other Behavior Engineering (BE) tools, such as <a href="https://code.google.com/p/textbe/">TextBE</a> and the SAL model checker. You can use your existing .bt files. ComBE can be installed (in Eclipse) next to TextBE and you can easily switch between the tools.</p>
-</p>Furthermore, ComBE uses <a href="http://www.eclipse.org/modeling/emf/">EMF</a> to maintain your BE models, which means that you can easiliy connect it with other tools that are based on EMF.</p>
+<p>It is based on the same textual syntax that is used by other Behavior Engineering (BE) tools such as <a href="https://code.google.com/p/textbe/">TextBE</a> and the SAL model checker: it can read existing .bt files. Furthermore, underneath the editors is an <a href="http://www.eclipse.org/modeling/emf/">EMF</a> model, which makes it easy to integrate with other tools based on EMF.</p>
 
-<h4>Real-time Synchronization</h4>
-The textual and graphical views are synchronized in real-time and you can easily switch between textual and graphical editors at any moment in time. 
-
+<h4>Real-time Synchronisation</h4>
+The textual and graphical editors are synchronised in real-time and you can easily switch between the two at any moment in time. 
+ 
 <h4>Selection Sharing</h4>
 <p>When you select a node in the diagram, the corresponding text will be highlighted, and vice versa. So even if you prefer textual editing over graphical editing, you can still use the graphical editor to quickly look-up parts of your model and then switch to the textual editor to do the actual editing.<p>
 <p>
@@ -56,18 +55,20 @@ The textual and graphical views are synchronized in real-time and you can easily
 </p>
 
 <h4>Error Checking</h4>
-<p>ComBE lets you know about syntax errrors in your .bt file, but it also tells you when there are duplicate definitions or unresolved references.</p>
+<p>The textual editor shows errors when the syntax is incorrect, but also lets you know when there are duplicate definitions or unresolved references.</p>
 <p>
 <img src="images/duplicate-definition.png"></img>
-<img src="images/unresolved-reference.png"></img>
+<img src="images/unresolved-reference.png"></imtipleg>
 </p>
 
 <h4>Reference Resolution</h4>
-<p>By holding Ctrl and clicking on a reference in the .bt file, your cursor will move to its definition.</p>
-<p>TODO: picture</p>
+<p>By holding Ctrl and clicking on a reference in the textual editor, your cursor will move to its definition.</p>
+<p>
+<img src="images/reference-resolution.png"></img>
+</p>
 
 <h4>Layout and Auto-layout</h4>
-<p>You can position the nodes in your diagram as you like, and possibly use grid-snapping. Or, you can use the auto-layout feature, which also allows you to only auto-layout part of your Behavior Tree.</p>
+<p>You can position the nodes in your diagram as you like, and possibly use grid-snapping to do so. Or, you can use the auto-layout feature that even allows you to auto-layout sub-trees.</p>
 <p>
 <img src="images/auto-layout.png"></img>
 </p>
@@ -77,7 +78,7 @@ Diagrams can be printed directly from Eclipse. It's also possible to export your
 
 
 <h4>Visual Hiding</h4>
-<p>Both textual and graphical editors provide ways to visually hide parts of your model. Code Folding allows you to hide the states of components in which you are not interested at a particular moment in time. Hiding of a selecton of nodes in the diagram is useful if you want to print part of the Behavior Tree only.</p>
+<p>Both textual and graphical editors provide ways to visually hide parts of your model. Code Folding allows you to hide the states of components in which you are not interested at a particular moment in time. Hiding of a selecton of nodes in the diagram is useful if you only want to print part of the Behavior Tree.</p>
 <p>
 <img src="images/code-folding.png"></img>
 <img src="images/diagram-hiding.png"></img>
@@ -87,30 +88,21 @@ Diagrams can be printed directly from Eclipse. It's also possible to export your
 <p>ComBE provides two ways of adding additional information to your model. You can either add comments to your code, or add sticky notes to your diagram.</p>
 <p><img src="images/comments.png"></img></br><img src="images/sticky-notes.png"></img></p>
 
-<h4>Zooming</h4>
-
-<h4>And more...</h4>
-<ul>
- <li>Code Completion (soon)</li>
- <li>Code Colouring</li>
- <li>Bracket Matching</li>
- <li>Auto Indentation</li>
-</ul>
-
+<h4>Code Completion</h4>
+Soon.
 
 <h2>Download</h2>
 
 <p>ComBE is (in a few days!) integrated with TextBE and the SAL model checker and can be downloaded by pointing your Eclipse update manager to http://itee.uq.edu.au/~jgsuess/updates/textbe</p>
 
 <h2>Documentation</h2>
-
 <p>Documentation to be added soon.</p>
 
 <h2>Development</h2> 
 <p>See <a href="resources/poster.pdf">poster</a>.</p>
 
 <h4>Issue Tracking</h4>
-<p>Bugs and features/improvements are maintained by YellowGrass: <a href="http://yellowgrass.org/project/ComBE">http://yellowgrass.org/project/ComBE</a>
+<p>Bugs and feature requests are maintained by YellowGrass: <a href="http://yellowgrass.org/project/ComBE">http://yellowgrass.org/project/ComBE</a>
 
 <h4>Contact</h4>
 <p>For things that do not belong on YellowGrass, please contact me at <a href="mailto:oskarvanrest@gmail.com">oskarvanrest@gmail.com</a>.</p>
