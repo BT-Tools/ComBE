@@ -99,18 +99,18 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DiagramModelFile", getSelection(), "bt_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DiagramModelFile", getSelection(), "btc_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
 		diagramModelFilePage.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DomainModelFile", getSelection(), "bt") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DomainModelFile", getSelection(), "btc") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".bt_diagram".length()); //$NON-NLS-1$
-					setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "bt")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".btc_diagram".length()); //$NON-NLS-1$
+					setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "btc")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

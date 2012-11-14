@@ -3,18 +3,18 @@
 
 <plugin>
        <extension point="org.eclipse.imp.runtime.languageDescription">
-          <language extensions="bt" description="ComBE" language="ComBE" derivedFrom="DynamicRoot" validator="org.behaviorengineering.combe.textual.ComBEValidator" validatorClass="org.behaviorengineering.combe.textual.ComBEValidator"></language>
+          <language extensions="btc" description="ComBE" language="ComBE" derivedFrom="DynamicRoot" validator="org.behaviorengineering.combe.textual.ComBEValidator" validatorClass="org.behaviorengineering.combe.textual.ComBEValidator"></language>
        </extension>
        <extension id="org.behaviorengineering.combe.textual.parser" name="ComBE Parser" point="org.eclipse.imp.runtime.parser">
           <parser class="org.behaviorengineering.combe.textual.ComBEParseController" language="ComBE">
           </parser>
        </extension>    
-       <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="bt" class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/> </extension>
+       <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="btc" class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/> </extension>
         <extension point="org.spoofax.modelware.gmf.synchronizer">
           <synchronizer
-                diagramFileExtension="bt_diagram"
-                domainFileExtension="bt"
+                diagramFileExtension="btc_diagram"
+                domainFileExtension="btc"
                 packageName="ComBE"
-                textFileExtension="bt"></synchronizer>
+                textFileExtension="btc"></synchronizer>
        </extension>
  </plugin>

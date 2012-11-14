@@ -70,7 +70,7 @@ public class ComBENewDiagramFileWizard extends Wizard {
 			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(filePath, fileName, "bt_diagram")); //$NON-NLS-1$
+		myFileCreationPage.setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(filePath, fileName, "btc_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageName);
 		diagramRootElementSelectionPage.setTitle(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageTitle);

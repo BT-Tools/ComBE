@@ -4,8 +4,8 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    diagramFileExtension="bt_diagram"
-    domainFileExtension="bt"
+    diagramFileExtension="btc_diagram"
+    domainFileExtension="btc"
     templateDirectory="">
   <diagram
       visualID="1000"

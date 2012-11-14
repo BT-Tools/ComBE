@@ -11,6 +11,6 @@ language General properties
   description   : "Spoofax/IMP-generated editor for Behavior Engineering"
   url           : http://www.behaviorengineering.org/
                   
-  extensions    : bt
+  extensions    : btc
   table         : include/ComBE.tbl
   start symbols : Start
