@@ -37,7 +37,8 @@ Its components are based on Spoofax (GNU Lesser General Public License), and EMF
          id="org.behaviorengineering.combe.textual"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
          id="org.behaviorengineering.combe.graphical.diagram"
