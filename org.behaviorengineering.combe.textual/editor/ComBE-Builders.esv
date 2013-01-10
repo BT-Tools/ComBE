@@ -8,6 +8,8 @@ builders
   //                                                                               
   // See the imported file for a brief introduction and examples.                  
 
+
+
 builders
                                                                                                                           
   provider : include/combe.ctree                                                                                          
@@ -17,4 +19,8 @@ builders
                                                                                                                           
   builder  : "Show abstract syntax"                = debug-generate-aterm (openeditor) (realtime) (source)           
   builder  : "Show analyzed syntax"                = debug-generate-analyzed (openeditor) (realtime) (source)        
+  
+  pretty-print: pp-combe-string      
+  refactoring  : "Format"               		 = pretty-print (source)  
+    shortcut : "org.eclipse.jdt.ui.edit.text.java.format"
                                                                                                        

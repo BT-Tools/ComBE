@@ -165,3 +165,7 @@ rules // Utility
     files -> None()
     with
       index-parallel-analyze-files(analyze)
+
+
+  pretty-print:
+    (_, selected, position, ast, path, project-path) -> ([(ast, <pp-combe-string>ast)], [],[],[])

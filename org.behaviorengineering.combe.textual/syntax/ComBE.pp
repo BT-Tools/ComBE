@@ -1,2 +1,30 @@
-%% Pretty printing table (see also ComBE.generated.pp)
-[]
+[
+   Specification                 -- V vs=1[H[KW["#RT"] _1] _2 _3],
+   Specification.1:iter-star     -- _1,
+   Specification.2:iter-star     -- _1,
+   Specification.3:opt           -- H[KW["#T"] _1],
+   Specification.3:opt.1:seq     -- H[KW["#T"] _1],
+   Requirement                   -- H[_1 _2],
+   StandardComponent             -- V is=1 [H[KW["#C"] _1 _2] _3],
+   StandardComponent.3:iter-star -- _1,
+   SystemComponent               -- V[H[KW["#SC"] _1 _2] _3],
+   SystemComponent.3:iter-star   -- _1,
+   BehaviorSeq                   -- H [_1 V[_2]],
+   BehaviorSeq.2:iter-star       -- _1,
+   Behavior                      -- H[_1 _2],
+   Root                          -- _1,
+   AtomicSequence                -- H[_1 _2],
+   AtomicSequence.1:iter-sep     -- _1 KW[";;;"],
+   AtomicSequence.2:opt          -- H [KW[";"] _1],
+   AtomicSequence.2:opt.1:seq    -- H [KW[";"] _1],
+   AlternativeBranch             -- H [_1 KW["#N"] KW["{"] V vs=0 [_2] KW["}"]],
+   AlternativeBranch.1:iter-sep  -- _1 KW[";;;"],
+   AlternativeBranch.2:iter-star -- _1,
+   ParallelBranch                -- _1 KW["#P"] KW["{"] _2 KW["}"],
+   ParallelBranch.1:iter-sep     -- _1 KW[";;;"],
+   ParallelBranch.2:iter-star    -- _1,
+   StandardNode                  -- H[_1 _2 _3 _4 _5 _6],
+   StandardNode.5:opt            -- _1,
+   EmptyNode                     -- KW["_"] _1 _2,
+   EmptyNode.1:opt               -- _1
+]
