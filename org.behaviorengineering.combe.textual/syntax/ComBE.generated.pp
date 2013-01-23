@@ -15,7 +15,7 @@
    Root                          -- _1,
    AtomicSequence                -- _1 _2,
    AtomicSequence.1:iter-sep     -- _1 KW[";;"],
-   AtomicSequence.2:opt          -- KW[";"] _1,
+   AtomicSequence.2:opt          -- _1,
    AtomicSequence.2:opt.1:seq    -- KW[";"] _1,
    AlternativeBranch             -- _1 KW["#N"] KW["{"] _2 KW["}"],
    AlternativeBranch.1:iter-sep  -- _1 KW[";;"],
