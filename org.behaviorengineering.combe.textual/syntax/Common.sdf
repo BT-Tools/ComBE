@@ -58,4 +58,6 @@ exports
 	"^^"	-> NodeLabel {reject}
 	"="		-> NodeLabel {reject}
 	"XOR"	-> NodeLabel {reject}
+	"#N{"	-> NodeLabel {reject}
+	"#P{"	-> NodeLabel {reject}
 	
