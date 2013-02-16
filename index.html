@@ -20,7 +20,6 @@
         <p class="header">Edit your Behavior Trees textually or graphically!</p>
 
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/downloads/oskarvanrest/ComBE/ComBE%20v1.0.zip">Download ZIP</a></li>
           <li class="download"><a class="buttons" href="https://github.com/oskarvanrest/ComBE/tarball/master">Download TAR</a></li>
           <li><a class="buttons github" href="https://github.com/oskarvanrest/ComBE">View On GitHub</a></li>
         </ul>
@@ -95,7 +94,20 @@ Soon.
 <p>A proper update site will be available soon.</p>
 
 <h2>Documentation</h2>
-<p>Documentation to be added soon.</p>
+For a quick start:
+<ul>
+<li> Create a new project in Eclipse (File -> New... -> Project -> General -> Project) </li>
+<li> Copy the file <a href="resources/gate.btc">gate.btc</a> into the project </li>
+<li> Right-click on the file and choose "initialize bt_diagram diagram file", which will open the graphical editor </li>
+<li> Double click on gate.btc to open the textual editor and start the synchronization between text and graphics </li>
+</ul>
+
+Some other things to know:
+<ul>
+<li> You can place the editors next to each other using drag-and-drop </li>
+<li> Textual and graphical editors only synchronize if textual (.btc) and graphical (.btc_diagram) files have the same name and are placed in the same directory </li>
+<li> New .btc and .btc_diagram files can also be created by choosing "File -> New... -> Other... -> Examples -> ComBE Diagram" </li>
+</ul>
 
 <h2>Development</h2> 
 <p>See <a href="resources/poster.pdf">poster</a>.</p>
