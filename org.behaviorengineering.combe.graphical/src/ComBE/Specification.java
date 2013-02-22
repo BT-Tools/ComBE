@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -25,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see ComBE.ComBEPackage#getSpecification()
- * @model annotation="StrategoTerm.index 0='requirements' 1='components' 2='root'"
+ * @model annotation="spoofax.term2feature 0='requirements' 1='components' 2='root'"
  * @generated
  */
 public interface Specification extends EObject {

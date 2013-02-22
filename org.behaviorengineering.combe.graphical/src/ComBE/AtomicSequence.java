@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -20,7 +16,7 @@ package ComBE;
  * </p>
  *
  * @see ComBE.ComBEPackage#getAtomicSequence()
- * @model annotation="StrategoTerm.index 0='nodes' 1='child'"
+ * @model annotation="spoofax.term2feature 0='nodes' 1='child'"
  * @generated
  */
 public interface AtomicSequence extends BehaviorTree {

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -22,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see ComBE.ComBEPackage#getRequirement()
- * @model annotation="StrategoTerm.index 0='id' 1='label'"
+ * @model annotation="spoofax.term2feature 0='id' 1='label'"
  * @generated
  */
 public interface Requirement extends EObject {
@@ -37,7 +33,7 @@ public interface Requirement extends EObject {
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see ComBE.ComBEPackage#getRequirement_Id()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getId();

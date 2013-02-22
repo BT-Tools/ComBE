@@ -1,15 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE.impl;
 
 import ComBE.Behavior;
 import ComBE.ComBEPackage;
 import ComBE.Component;
-import ComBE.Operator;
 import ComBE.Requirement;
 import ComBE.StandardNode;
 import ComBE.TraceabilityStatus;
@@ -38,7 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * @generated
  */
 public class StandardNodeImpl extends NodeImpl implements StandardNode {
-
 	/**
 	 * The cached value of the '{@link #getRequirement() <em>Requirement</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -48,6 +42,7 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * @ordered
 	 */
 	protected Requirement requirement;
+
 	/**
 	 * The default value of the '{@link #getTraceabilitystatus() <em>Traceabilitystatus</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -57,6 +52,7 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * @ordered
 	 */
 	protected static final TraceabilityStatus TRACEABILITYSTATUS_EDEFAULT = TraceabilityStatus.NONE;
+
 	/**
 	 * The cached value of the '{@link #getTraceabilitystatus() <em>Traceabilitystatus</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +62,7 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * @ordered
 	 */
 	protected TraceabilityStatus traceabilitystatus = TRACEABILITYSTATUS_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getComponent() <em>Component</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -75,6 +72,7 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	 * @ordered
 	 */
 	protected Component component;
+
 	/**
 	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -263,19 +261,12 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 	}
 
 	/**
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		// Somehow, EMF Compare calls this method with 
-		//		featureID = ComBEPackage.STANDARD_NODE__REQUIREMENT
-		// 		newValue = instanceof Behavior
-		// The if-statement below fixes this. Looks like a bug in EMF Compare?
-		if (newValue instanceof Behavior) {
-			setBehavior((Behavior)newValue);
-			return;
-		}
-		
 		switch (featureID) {
 			case ComBEPackage.STANDARD_NODE__REQUIREMENT:
 				setRequirement((Requirement)newValue);
@@ -288,12 +279,6 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 				return;
 			case ComBEPackage.STANDARD_NODE__BEHAVIOR:
 				setBehavior((Behavior)newValue);
-				return;
-			case ComBEPackage.STANDARD_NODE__LABEL:
-				setLabel((String)newValue);
-				return;
-			case ComBEPackage.STANDARD_NODE__OPERATOR:
-				setOperator((Operator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,4 +343,5 @@ public class StandardNodeImpl extends NodeImpl implements StandardNode {
 		result.append(')');
 		return result.toString();
 	}
-}
+
+} //StandardNodeImpl

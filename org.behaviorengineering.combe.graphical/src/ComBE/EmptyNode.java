@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -14,7 +10,7 @@ package ComBE;
  *
  *
  * @see ComBE.ComBEPackage#getEmptyNode()
- * @model annotation="StrategoTerm.index 0='label' 1='operator'"
+ * @model annotation="spoofax.term2feature 0='label' 1='operator'"
  * @generated
  */
 public interface EmptyNode extends Node {

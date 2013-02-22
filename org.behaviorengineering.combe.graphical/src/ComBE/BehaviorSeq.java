@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -24,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see ComBE.ComBEPackage#getBehaviorSeq()
- * @model annotation="StrategoTerm.index 0='behaviortype' 1='behavior'"
+ * @model annotation="spoofax.term2feature 0='behaviortype' 1='behavior'"
  * @generated
  */
 public interface BehaviorSeq extends EObject {

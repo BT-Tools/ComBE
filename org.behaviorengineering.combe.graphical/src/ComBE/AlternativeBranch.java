@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -21,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see ComBE.ComBEPackage#getAlternativeBranch()
- * @model annotation="StrategoTerm.index 0='nodes' 1='children'"
+ * @model annotation="spoofax.term2feature 0='nodes' 1='children'"
  * @generated
  */
 public interface AlternativeBranch extends BehaviorTree {

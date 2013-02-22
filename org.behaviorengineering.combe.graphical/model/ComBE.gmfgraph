@@ -184,8 +184,7 @@
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="6"
-            style="BOLD"/>
+            height="15"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
             qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -21,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see ComBE.ComBEPackage#getRoot()
- * @model annotation="StrategoTerm.index 0='behaviortree'"
+ * @model annotation="spoofax.term2feature 0='behaviortree'"
  * @generated
  */
 public interface Root extends EObject {

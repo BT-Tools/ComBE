@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE.impl;
 
@@ -728,7 +724,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		initEReference(getSpecification_Root(), this.getRoot(), null, "root", null, 0, 1, Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRequirement_Id(), ecorePackage.getEString(), "id", null, 1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequirement_Id(), ecorePackage.getEString(), "id", null, 1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequirement_Label(), ecorePackage.getEString(), "label", null, 1, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorSeqEClass, BehaviorSeq.class, "BehaviorSeq", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -736,14 +732,14 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		initEReference(getBehaviorSeq_Behavior(), this.getBehavior(), null, "behavior", null, 0, -1, BehaviorSeq.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBehavior_Int(), ecorePackage.getEInt(), "int", null, 1, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehavior_Int(), ecorePackage.getEInt(), "int", null, 1, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBehavior_Label(), ecorePackage.getEString(), "label", null, 1, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoot_Behaviortree(), this.getBehaviorTree(), null, "behaviortree", null, 1, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_Id(), ecorePackage.getEString(), "id", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Id(), ecorePackage.getEString(), "id", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Label(), ecorePackage.getEString(), "label", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Behaviorseqs(), this.getBehaviorSeq(), null, "behaviorseqs", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -811,36 +807,38 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
-		// Spoofax
+		// spoofax.config
 		createSpoofaxAnnotations();
-		// StrategoTerm.index
-		createStrategoTermAnnotations();
+		// spoofax.term2feature
+		createSpoofax_1Annotations();
+		// spoofax.def
+		createSpoofax_2Annotations();
 	}
 
 	/**
-	 * Initializes the annotations for <b>Spoofax</b>.
+	 * Initializes the annotations for <b>spoofax.config</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void createSpoofaxAnnotations() {
-		String source = "Spoofax";		
+		String source = "spoofax.config";		
 		addAnnotation
 		  (this, 
 		   source, 
 		   new String[] {
-			 "RootElement", "Specification"
-		   });												
+			 "root", "Specification"
+		   });															
 	}
 
 	/**
-	 * Initializes the annotations for <b>StrategoTerm.index</b>.
+	 * Initializes the annotations for <b>spoofax.term2feature</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createStrategoTermAnnotations() {
-		String source = "StrategoTerm.index";			
+	protected void createSpoofax_1Annotations() {
+		String source = "spoofax.term2feature";			
 		addAnnotation
 		  (specificationEClass, 
 		   source, 
@@ -855,7 +853,7 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		   new String[] {
 			 "0", "id",
 			 "1", "label"
-		   });		
+		   });			
 		addAnnotation
 		  (behaviorSeqEClass, 
 		   source, 
@@ -869,13 +867,13 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 		   new String[] {
 			 "0", "int",
 			 "1", "label"
-		   });		
+		   });			
 		addAnnotation
 		  (rootEClass, 
 		   source, 
 		   new String[] {
 			 "0", "behaviortree"
-		   });		
+		   });			
 		addAnnotation
 		  (standardComponentEClass, 
 		   source, 
@@ -931,6 +929,31 @@ public class ComBEPackageImpl extends EPackageImpl implements ComBEPackage {
 			 "0", "label",
 			 "1", "operator"
 		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>spoofax.def</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createSpoofax_2Annotations() {
+		String source = "spoofax.def";					
+		addAnnotation
+		  (getRequirement_Id(), 
+		   source, 
+		   new String[] {
+		   });				
+		addAnnotation
+		  (getBehavior_Int(), 
+		   source, 
+		   new String[] {
+		   });			
+		addAnnotation
+		  (getComponent_Id(), 
+		   source, 
+		   new String[] {
+		   });							
 	}
 
 } //ComBEPackageImpl

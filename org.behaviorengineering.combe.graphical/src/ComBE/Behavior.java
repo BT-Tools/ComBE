@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -22,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see ComBE.ComBEPackage#getBehavior()
- * @model annotation="StrategoTerm.index 0='int' 1='label'"
+ * @model annotation="spoofax.term2feature 0='int' 1='label'"
  * @generated
  */
 public interface Behavior extends EObject {
@@ -37,7 +33,7 @@ public interface Behavior extends EObject {
 	 * @return the value of the '<em>Int</em>' attribute.
 	 * @see #setInt(int)
 	 * @see ComBE.ComBEPackage#getBehavior_Int()
-	 * @model id="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	int getInt();

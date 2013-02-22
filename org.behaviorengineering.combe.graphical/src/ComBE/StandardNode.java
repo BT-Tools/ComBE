@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -23,7 +19,7 @@ package ComBE;
  * </p>
  *
  * @see ComBE.ComBEPackage#getStandardNode()
- * @model annotation="StrategoTerm.index 0='requirement' 1='traceabilitystatus' 2='component' 3='behavior' 4='label' 5='operator'"
+ * @model annotation="spoofax.term2feature 0='requirement' 1='traceabilitystatus' 2='component' 3='behavior' 4='label' 5='operator'"
  * @generated
  */
 public interface StandardNode extends Node {

@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package ComBE;
 
@@ -14,7 +10,7 @@ package ComBE;
  *
  *
  * @see ComBE.ComBEPackage#getSystemComponent()
- * @model annotation="StrategoTerm.index 0='id' 1='label' 2='behaviorseqs'"
+ * @model annotation="spoofax.term2feature 0='id' 1='label' 2='behaviorseqs'"
  * @generated
  */
 public interface SystemComponent extends Component {

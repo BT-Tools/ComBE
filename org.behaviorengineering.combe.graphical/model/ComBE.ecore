@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ComBE" nsURI="ComBE" nsPrefix="ComBE">
-  <eAnnotations source="Spoofax">
-    <details key="RootElement" value="Specification"/>
+  <eAnnotations source="spoofax.config">
+    <details key="root" value="Specification"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Specification">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="requirements"/>
       <details key="1" value="components"/>
       <details key="2" value="root"/>
@@ -17,16 +17,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//Root" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Requirement">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="id"/>
       <details key="1" value="label"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="spoofax.def"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorSeq">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="behaviortype"/>
       <details key="1" value="behavior"/>
     </eAnnotations>
@@ -36,37 +37,39 @@
         eType="#//Behavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Behavior">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="int"/>
       <details key="1" value="label"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="int" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="int" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="spoofax.def"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Root">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="behaviortree"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviortree" lowerBound="1"
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="spoofax.def"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorseqs" upperBound="-1"
         eType="#//BehaviorSeq" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardComponent" eSuperTypes="#//Component">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="id"/>
       <details key="1" value="label"/>
       <details key="2" value="behaviorseqs"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SystemComponent" eSuperTypes="#//Component">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="id"/>
       <details key="1" value="label"/>
       <details key="2" value="behaviorseqs"/>
@@ -77,7 +80,7 @@
         eType="#//Node" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicSequence" eSuperTypes="#//BehaviorTree">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="nodes"/>
       <details key="1" value="child"/>
     </eAnnotations>
@@ -85,7 +88,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlternativeBranch" eSuperTypes="#//BehaviorTree">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="nodes"/>
       <details key="1" value="children"/>
     </eAnnotations>
@@ -93,7 +96,7 @@
         eType="#//BehaviorTree" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParallelBranch" eSuperTypes="#//BehaviorTree">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="nodes"/>
       <details key="1" value="children"/>
     </eAnnotations>
@@ -106,7 +109,7 @@
         eType="#//Operator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="requirement"/>
       <details key="1" value="traceabilitystatus"/>
       <details key="2" value="component"/>
@@ -124,7 +127,7 @@
         eType="#//Behavior"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyNode" eSuperTypes="#//Node">
-    <eAnnotations source="StrategoTerm.index">
+    <eAnnotations source="spoofax.term2feature">
       <details key="0" value="label"/>
       <details key="1" value="operator"/>
     </eAnnotations>
