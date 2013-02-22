@@ -38,8 +38,8 @@ regular tree grammar
     ListPlusOfBehaviorSeq0  -> <conc>(ListPlusOfBehaviorSeq0,ListPlusOfBehaviorSeq0)
     ListPlusOfBehaviorSeq0  -> <cons>(BehaviorSeq,ListStarOfBehaviorSeq0)
     Root0                   -> <(1)>(Root)
-    OptRoot1                -> <some>(Root0)
-    OptRoot1                -> <none>()
+    OptRoot0                -> <some>(Root0)
+    OptRoot0                -> <none>()
     ListStarOfComponent0    -> ListPlusOfComponent0
     ListStarOfComponent0    -> <nil>()
     ListStarOfComponent0    -> <conc>(ListStarOfComponent0,ListStarOfComponent0)
@@ -68,7 +68,7 @@ regular tree grammar
     Component               -> SystemComponent(ID,Label,ListStarOfBehaviorSeq0)
     Component               -> StandardComponent(ID,Label,ListStarOfBehaviorSeq0)
     Requirement             -> Requirement(ID,Label)
-    Start                   -> Specification(ListStarOfRequirement0,ListStarOfComponent0,OptRoot1)
+    Start                   -> Specification(ListStarOfRequirement0,ListStarOfComponent0,OptRoot0)
     Operator                -> <string>
     TraceabilityStatus      -> <string>
     BehaviorType            -> <string>
