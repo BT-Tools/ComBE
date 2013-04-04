@@ -58,7 +58,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public ComBENavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
+				.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -75,28 +76,30 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
-			public void dispose() {
-			}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
+				new WorkspaceSynchronizer.Delegate() {
+					public void dispose() {
+					}
 
-			public boolean handleResourceChanged(final Resource resource) {
-				unloadAllResources();
-				asyncRefresh();
-				return true;
-			}
+					public boolean handleResourceChanged(final Resource resource) {
+						unloadAllResources();
+						asyncRefresh();
+						return true;
+					}
 
-			public boolean handleResourceDeleted(Resource resource) {
-				unloadAllResources();
-				asyncRefresh();
-				return true;
-			}
+					public boolean handleResourceDeleted(Resource resource) {
+						unloadAllResources();
+						asyncRefresh();
+						return true;
+					}
 
-			public boolean handleResourceMoved(Resource resource, final URI newURI) {
-				unloadAllResources();
-				asyncRefresh();
-				return true;
-			}
-		});
+					public boolean handleResourceMoved(Resource resource,
+							final URI newURI) {
+						unloadAllResources();
+						asyncRefresh();
+						return true;
+					}
+				});
 	}
 
 	/**
@@ -123,7 +126,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet()
+				.getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -133,7 +137,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay()
+					.asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -168,16 +173,23 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
+					.toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(
+					fileURI, true);
 			ArrayList<ComBE.diagram.navigator.ComBENavigatorItem> result = new ArrayList<ComBE.diagram.navigator.ComBENavigatorItem>();
-			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
+			ArrayList<View> topViews = new ArrayList<View>(resource
+					.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(selectViewsByType(topViews, ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID), file, false));
+			result.addAll(createNavigatorItems(
+					selectViewsByType(
+							topViews,
+							ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID),
+					file, false));
 			return result.toArray();
 		}
 
@@ -206,45 +218,42 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID: {
 			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranchChildren_4001_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranchChildren_4001_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranchChildren_4001_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranchChildren_4001_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
 			if (!source.isEmpty()) {
 				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID: {
-			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
-			Diagram sv = (Diagram) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup links = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_Specification_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
-			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			if (!links.isEmpty()) {
-				result.add(links);
 			}
 			return result.toArray();
 		}
@@ -252,40 +261,37 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID: {
 			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequenceChild_4003_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequenceChild_4003_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequenceChild_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequenceChild_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID: {
-			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranchChildren_4002_target, "icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranchChildren_4002_source, "icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -298,23 +304,57 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID: {
 			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranch_2002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranch_2002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranch_2002_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranch_2002_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -327,23 +367,57 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID: {
 			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranch_2001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranch_2001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranch_2001_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AlternativeBranch_2001_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -356,28 +430,151 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID: {
 			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequence_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequence_2003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup incominglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequence_2003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup outgoinglinks = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_AtomicSequence_2003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv), ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID: {
+			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			ComBE.diagram.navigator.ComBENavigatorGroup target = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranchChildren_4002_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			ComBE.diagram.navigator.ComBENavigatorGroup source = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_ParallelBranchChildren_4002_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
+			return result.toArray();
+		}
+
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID: {
+			LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem> result = new LinkedList<ComBE.diagram.navigator.ComBEAbstractNavigatorItem>();
+			Diagram sv = (Diagram) view;
+			ComBE.diagram.navigator.ComBENavigatorGroup links = new ComBE.diagram.navigator.ComBENavigatorGroup(
+					ComBE.diagram.part.Messages.NavigatorGroupName_Specification_1000_links,
+					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			connectedViews = getDiagramLinksByType(
+					Collections.singleton(sv),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID));
+			links.addChildren(createNavigatorItems(connectedViews, links, false));
+			if (!links.isEmpty()) {
+				result.add(links);
 			}
 			return result.toArray();
 		}
@@ -388,11 +585,13 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type) {
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges,
+			String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeSource = nextEdge.getSource();
-			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType())
+					&& isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -402,11 +601,13 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type) {
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges,
+			String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeTarget = nextEdge.getTarget();
-			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType())
+					&& isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -416,7 +617,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type) {
+	private Collection<View> getOutgoingLinksByType(
+			Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -427,7 +629,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type) {
+	private Collection<View> getIncomingLinksByType(
+			Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -438,7 +641,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type) {
+	private Collection<View> getChildrenByType(
+			Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -449,7 +653,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type) {
+	private Collection<View> getDiagramLinksByType(
+			Collection<Diagram> diagrams, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (Diagram nextDiagram : diagrams) {
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
@@ -461,7 +666,8 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
-	private Collection<View> selectViewsByType(Collection<View> views, String type) {
+	private Collection<View> selectViewsByType(Collection<View> views,
+			String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (View nextView : views) {
 			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
@@ -475,16 +681,21 @@ public class ComBENavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view));
+		return ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(ComBE.diagram.part.ComBEVisualIDRegistry
+						.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<ComBE.diagram.navigator.ComBENavigatorItem> createNavigatorItems(Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<ComBE.diagram.navigator.ComBENavigatorItem> result = new ArrayList<ComBE.diagram.navigator.ComBENavigatorItem>(views.size());
+	private Collection<ComBE.diagram.navigator.ComBENavigatorItem> createNavigatorItems(
+			Collection<View> views, Object parent, boolean isLeafs) {
+		ArrayList<ComBE.diagram.navigator.ComBENavigatorItem> result = new ArrayList<ComBE.diagram.navigator.ComBENavigatorItem>(
+				views.size());
 		for (View nextView : views) {
-			result.add(new ComBE.diagram.navigator.ComBENavigatorItem(nextView, parent, isLeafs));
+			result.add(new ComBE.diagram.navigator.ComBENavigatorItem(nextView,
+					parent, isLeafs));
 		}
 		return result;
 	}

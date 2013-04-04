@@ -17,7 +17,8 @@ import org.eclipse.gmf.tooling.runtime.parsers.EnumParser;
 /**
  * @generated
  */
-public class ComBEParserProvider extends AbstractProvider implements IParserProvider {
+public class ComBEParserProvider extends AbstractProvider implements
+		IParserProvider {
 
 	/**
 	 * @generated
@@ -50,8 +51,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getStandardNodeLabel_5004Parser() {
 		if (standardNodeLabel_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			standardNodeLabel_5004Parser = parser;
 		}
 		return standardNodeLabel_5004Parser;
@@ -81,8 +84,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getEmptyNodeLabel_5007Parser() {
 		if (emptyNodeLabel_5007Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			emptyNodeLabel_5007Parser = parser;
 		}
 		return emptyNodeLabel_5007Parser;
@@ -126,8 +131,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getStandardNodeLabel_5012Parser() {
 		if (standardNodeLabel_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			standardNodeLabel_5012Parser = parser;
 		}
 		return standardNodeLabel_5012Parser;
@@ -150,8 +157,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getEmptyNodeLabel_5023Parser() {
 		if (emptyNodeLabel_5023Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			emptyNodeLabel_5023Parser = parser;
 		}
 		return emptyNodeLabel_5023Parser;
@@ -181,8 +190,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getEmptyNodeLabel_5015Parser() {
 		if (emptyNodeLabel_5015Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			emptyNodeLabel_5015Parser = parser;
 		}
 		return emptyNodeLabel_5015Parser;
@@ -226,8 +237,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 */
 	private IParser getStandardNodeLabel_5020Parser() {
 		if (standardNodeLabel_5020Parser == null) {
-			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE.getNode_Label() };
-			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(features);
+			EAttribute[] features = new EAttribute[] { ComBE.ComBEPackage.eINSTANCE
+					.getNode_Label() };
+			ComBE.diagram.parsers.MessageFormatParser parser = new ComBE.diagram.parsers.MessageFormatParser(
+					features);
 			standardNodeLabel_5020Parser = parser;
 		}
 		return standardNodeLabel_5020Parser;
@@ -308,8 +321,10 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object, String parserHint) {
-		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object,
+			String parserHint) {
+		return ParserService.getInstance().getParser(
+				new HintAdapter(type, object, parserHint));
 	}
 
 	/**
@@ -318,11 +333,13 @@ public class ComBEParserProvider extends AbstractProvider implements IParserProv
 	public IParser getParser(IAdaptable hint) {
 		String vid = (String) hint.getAdapter(String.class);
 		if (vid != null) {
-			return getParser(ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(vid));
+			return getParser(ComBE.diagram.part.ComBEVisualIDRegistry
+					.getVisualID(vid));
 		}
 		View view = (View) hint.getAdapter(View.class);
 		if (view != null) {
-			return getParser(ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view));
+			return getParser(ComBE.diagram.part.ComBEVisualIDRegistry
+					.getVisualID(view));
 		}
 		return null;
 	}

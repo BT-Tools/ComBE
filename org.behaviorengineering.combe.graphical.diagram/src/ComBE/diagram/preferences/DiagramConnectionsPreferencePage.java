@@ -11,6 +11,7 @@ public class DiagramConnectionsPreferencePage extends ConnectionsPreferencePage 
 	 * @generated
 	 */
 	public DiagramConnectionsPreferencePage() {
-		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore());
+		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getPreferenceStore());
 	}
 }

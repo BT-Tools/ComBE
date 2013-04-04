@@ -23,7 +23,8 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class EmptyNodeLabelExpressionLabelParser5024 extends ExpressionLabelParserBase {
+public class EmptyNodeLabelExpressionLabelParser5024 extends
+		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
@@ -35,7 +36,8 @@ public class EmptyNodeLabelExpressionLabelParser5024 extends ExpressionLabelPars
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(17, ComBE.ComBEPackage.eINSTANCE.getEmptyNode(), null).body();
+		return ComBE.diagram.expressions.ComBEOCLFactory.getExpression(17,
+				ComBE.ComBEPackage.eINSTANCE.getEmptyNode(), null).body();
 	}
 
 	/**
@@ -48,25 +50,32 @@ public class EmptyNodeLabelExpressionLabelParser5024 extends ExpressionLabelPars
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable element,
+			String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
+	public ICommand getParseCommand(IAdaptable element, final String newString,
+			int flags) {
 		final EObject target = (EObject) element.getAdapter(EObject.class);
 		if (!validateValues(target, newString)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
+		TransactionalEditingDomain editingDomain = TransactionUtil
+				.getEditingDomain(target);
 		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		IFile affectedFile = WorkspaceSynchronizer.getFile(target.eResource());
-		return new AbstractTransactionalCommand(editingDomain, "Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		return new AbstractTransactionalCommand(
+				editingDomain,
+				"Set Values", affectedFile == null ? null : Collections.singletonList(affectedFile)) { //$NON-NLS-1$ 
+			protected CommandResult doExecuteWithResult(
+					IProgressMonitor monitor, IAdaptable info)
+					throws ExecutionException {
 				return new CommandResult(updateValues(target, newString));
 			}
 		};
@@ -90,10 +99,12 @@ public class EmptyNodeLabelExpressionLabelParser5024 extends ExpressionLabelPars
 	/**
 	 * @generated
 	 */
-	private IStatus updateValues(EObject target, String newString) throws ExecutionException {
+	private IStatus updateValues(EObject target, String newString)
+			throws ExecutionException {
 		// TODO implement this method
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
-		throw new ExecutionException("Please implement parsing and value modification");
+		throw new ExecutionException(
+				"Please implement parsing and value modification");
 	}
 
 }

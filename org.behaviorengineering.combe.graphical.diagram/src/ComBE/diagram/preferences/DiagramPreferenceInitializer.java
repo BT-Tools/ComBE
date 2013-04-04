@@ -13,11 +13,16 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 */
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = getPreferenceStore();
-		ComBE.diagram.preferences.DiagramGeneralPreferencePage.initDefaults(store);
-		ComBE.diagram.preferences.DiagramAppearancePreferencePage.initDefaults(store);
-		ComBE.diagram.preferences.DiagramConnectionsPreferencePage.initDefaults(store);
-		ComBE.diagram.preferences.DiagramPrintingPreferencePage.initDefaults(store);
-		ComBE.diagram.preferences.DiagramRulersAndGridPreferencePage.initDefaults(store);
+		ComBE.diagram.preferences.DiagramGeneralPreferencePage
+				.initDefaults(store);
+		ComBE.diagram.preferences.DiagramAppearancePreferencePage
+				.initDefaults(store);
+		ComBE.diagram.preferences.DiagramConnectionsPreferencePage
+				.initDefaults(store);
+		ComBE.diagram.preferences.DiagramPrintingPreferencePage
+				.initDefaults(store);
+		ComBE.diagram.preferences.DiagramRulersAndGridPreferencePage
+				.initDefaults(store);
 
 	}
 
@@ -25,6 +30,7 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore();
+		return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+				.getPreferenceStore();
 	}
 }

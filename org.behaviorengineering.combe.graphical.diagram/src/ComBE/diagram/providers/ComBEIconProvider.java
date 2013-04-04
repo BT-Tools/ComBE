@@ -10,7 +10,8 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ComBEIconProvider extends AbstractProvider implements IIconProvider {
+public class ComBEIconProvider extends AbstractProvider implements
+		IIconProvider {
 
 	/**
 	 * @generated

@@ -11,6 +11,7 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore());
+		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getPreferenceStore());
 	}
 }

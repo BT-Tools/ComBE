@@ -73,14 +73,19 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.StandardNode3ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.StandardNode3CanonicalEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new ComBE.diagram.edit.policies.StandardNode3ItemSemanticEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new ComBE.diagram.edit.policies.StandardNode3CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 		// BEGIN non-generated code
-		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new ComBESelectionEditPolicy());
+		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE,
+				new ComBESelectionEditPolicy());
 		// END non-generated code
 	}
 
@@ -91,7 +96,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -128,27 +134,38 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel13EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel13EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeRequirementLabelFigure());
+			((ComBE.diagram.edit.parts.WrappingLabel13EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureNodeRequirementLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel14EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel14EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeComponentLabelFigure());
+			((ComBE.diagram.edit.parts.WrappingLabel14EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureNodeComponentLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel15EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel15EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeBehaviorLabelFigure());
+			((ComBE.diagram.edit.parts.WrappingLabel15EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureNodeBehaviorLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.StandardNodeLabel3EditPart) {
-			((ComBE.diagram.edit.parts.StandardNodeLabel3EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeLabelLabelFigure());
+			((ComBE.diagram.edit.parts.StandardNodeLabel3EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureNodeLabelLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel16EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel16EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeTraceabilityStatusLabelFigure());
+			((ComBE.diagram.edit.parts.WrappingLabel16EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureNodeTraceabilityStatusLabelFigure());
 			return true;
 		}
 		if (childEditPart instanceof ComBE.diagram.edit.parts.WrappingLabel17EditPart) {
-			((ComBE.diagram.edit.parts.WrappingLabel17EditPart) childEditPart).setLabel(getPrimaryShape().getFigureNodeOperatorLabelFigure());
+			((ComBE.diagram.edit.parts.WrappingLabel17EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureNodeOperatorLabelFigure());
 			return true;
 		}
 		return false;
@@ -308,7 +325,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+		return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry
+				.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
 	}
 
 	/**
@@ -375,7 +393,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 
 			left0.setOutline(false);
 			left0.setLineWidth(0);
-			left0.setPreferredSize(new Dimension(getMapMode().DPtoLP(54), getMapMode().DPtoLP(60)));
+			left0.setPreferredSize(new Dimension(getMapMode().DPtoLP(54),
+					getMapMode().DPtoLP(60)));
 
 			this.add(left0);
 
@@ -394,7 +413,9 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			leftLeft1.setOutline(false);
 			leftLeft1.setLineWidth(0);
 
-			leftLeft1.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(0)));
+			leftLeft1.setBorder(new MarginBorder(getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(0)));
 
 			GridData constraintLeftLeft1 = new GridData();
 			constraintLeftLeft1.verticalAlignment = GridData.CENTER;
@@ -434,7 +455,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeRequirementLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeRequirementLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeRequirementLabelFigure.grabExcessVerticalSpace = true;
-			requirementRectangle2.add(fFigureNodeRequirementLabelFigure, constraintFFigureNodeRequirementLabelFigure);
+			requirementRectangle2.add(fFigureNodeRequirementLabelFigure,
+					constraintFFigureNodeRequirementLabelFigure);
 
 			RectangleFigure traceabilityStatusRectangle2 = new RectangleFigure();
 
@@ -447,7 +469,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			GridLayout layoutTraceabilityStatusRectangle2 = new GridLayout();
 			layoutTraceabilityStatusRectangle2.numColumns = 1;
 			layoutTraceabilityStatusRectangle2.makeColumnsEqualWidth = true;
-			traceabilityStatusRectangle2.setLayoutManager(layoutTraceabilityStatusRectangle2);
+			traceabilityStatusRectangle2
+					.setLayoutManager(layoutTraceabilityStatusRectangle2);
 
 			fFigureNodeTraceabilityStatusLabelFigure = new WrappingLabel();
 
@@ -461,7 +484,9 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeTraceabilityStatusLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeTraceabilityStatusLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeTraceabilityStatusLabelFigure.grabExcessVerticalSpace = true;
-			traceabilityStatusRectangle2.add(fFigureNodeTraceabilityStatusLabelFigure, constraintFFigureNodeTraceabilityStatusLabelFigure);
+			traceabilityStatusRectangle2.add(
+					fFigureNodeTraceabilityStatusLabelFigure,
+					constraintFFigureNodeTraceabilityStatusLabelFigure);
 
 			RectangleFigure line0 = new RectangleFigure();
 
@@ -485,7 +510,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 
 			right0.setOutline(false);
 			right0.setLineWidth(0);
-			right0.setPreferredSize(new Dimension(getMapMode().DPtoLP(125), getMapMode().DPtoLP(60)));
+			right0.setPreferredSize(new Dimension(getMapMode().DPtoLP(125),
+					getMapMode().DPtoLP(60)));
 
 			GridData constraintRight0 = new GridData();
 			constraintRight0.verticalAlignment = GridData.CENTER;
@@ -512,7 +538,9 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			rightLeft1.setOutline(false);
 			rightLeft1.setLineWidth(0);
 
-			rightLeft1.setBorder(new MarginBorder(getMapMode().DPtoLP(2), getMapMode().DPtoLP(0), getMapMode().DPtoLP(2), getMapMode().DPtoLP(0)));
+			rightLeft1.setBorder(new MarginBorder(getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(2),
+					getMapMode().DPtoLP(0)));
 
 			GridData constraintRightLeft1 = new GridData();
 			constraintRightLeft1.verticalAlignment = GridData.CENTER;
@@ -552,7 +580,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeComponentLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeComponentLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeComponentLabelFigure.grabExcessVerticalSpace = true;
-			componentRectangle2.add(fFigureNodeComponentLabelFigure, constraintFFigureNodeComponentLabelFigure);
+			componentRectangle2.add(fFigureNodeComponentLabelFigure,
+					constraintFFigureNodeComponentLabelFigure);
 
 			RectangleFigure behaviorRectangle2 = new RectangleFigure();
 
@@ -579,7 +608,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeBehaviorLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeBehaviorLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeBehaviorLabelFigure.grabExcessVerticalSpace = true;
-			behaviorRectangle2.add(fFigureNodeBehaviorLabelFigure, constraintFFigureNodeBehaviorLabelFigure);
+			behaviorRectangle2.add(fFigureNodeBehaviorLabelFigure,
+					constraintFFigureNodeBehaviorLabelFigure);
 
 			RectangleFigure rightRight1 = new RectangleFigure();
 
@@ -587,7 +617,9 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			rightRight1.setOutline(false);
 			rightRight1.setLineWidth(0);
 
-			rightRight1.setBorder(new MarginBorder(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0), getMapMode().DPtoLP(20), getMapMode().DPtoLP(0)));
+			rightRight1.setBorder(new MarginBorder(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(20),
+					getMapMode().DPtoLP(0)));
 
 			GridData constraintRightRight1 = new GridData();
 			constraintRightRight1.verticalAlignment = GridData.CENTER;
@@ -631,7 +663,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeOperatorLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeOperatorLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeOperatorLabelFigure.grabExcessVerticalSpace = true;
-			operatorRectangle2.add(fFigureNodeOperatorLabelFigure, constraintFFigureNodeOperatorLabelFigure);
+			operatorRectangle2.add(fFigureNodeOperatorLabelFigure,
+					constraintFFigureNodeOperatorLabelFigure);
 
 			RectangleFigure labelRectangle2 = new RectangleFigure();
 
@@ -662,7 +695,8 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 			constraintFFigureNodeLabelLabelFigure.verticalSpan = 1;
 			constraintFFigureNodeLabelLabelFigure.grabExcessHorizontalSpace = true;
 			constraintFFigureNodeLabelLabelFigure.grabExcessVerticalSpace = true;
-			labelRectangle2.add(fFigureNodeLabelLabelFigure, constraintFFigureNodeLabelLabelFigure);
+			labelRectangle2.add(fFigureNodeLabelLabelFigure,
+					constraintFFigureNodeLabelLabelFigure);
 
 		}
 
@@ -721,8 +755,10 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 		 * @generated NOT
 		 */
 		public void paint(Graphics graphics) {
-			CustomPainting.setNodeColor(this, (StandardNode) view.getElement(), hasFocus);
-			CustomPainting.setBehaviorLabel(fFigureNodeBehaviorLabelFigure, (StandardNode) view.getElement());
+			CustomPainting.setNodeColor(this, (StandardNode) view.getElement(),
+					hasFocus);
+			CustomPainting.setBehaviorLabel(fFigureNodeBehaviorLabelFigure,
+					(StandardNode) view.getElement());
 			super.paint(graphics);
 		}
 
@@ -752,5 +788,6 @@ public class StandardNode3EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font THIS_FONT = new Font(Display.getCurrent(), "ComBEFont", 6, SWT.BOLD);
+	static final Font THIS_FONT = new Font(Display.getCurrent(), "ComBEFont",
+			11, SWT.NORMAL);
 }

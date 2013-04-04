@@ -118,7 +118,9 @@ public class ComBEEditPartProvider extends AbstractEditPartProvider {
 	public synchronized boolean provides(IOperation operation) {
 		if (operation instanceof CreateGraphicEditPartOperation) {
 			View view = ((IEditPartOperation) operation).getView();
-			if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view))) {
+			if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+					.equals(ComBE.diagram.part.ComBEVisualIDRegistry
+							.getModelID(view))) {
 				return false;
 			}
 			if (isAllowCaching() && getCachedPart(view) != null) {

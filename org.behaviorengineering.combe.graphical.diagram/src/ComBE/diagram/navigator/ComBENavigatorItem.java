@@ -9,7 +9,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNavigatorItem {
+public class ComBENavigatorItem extends
+		ComBE.diagram.navigator.ComBEAbstractNavigatorItem {
 
 	/**
 	 * @generated
@@ -19,8 +20,10 @@ public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNav
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if (adaptableObject instanceof ComBE.diagram.navigator.ComBENavigatorItem && (adapterType == View.class || adapterType == EObject.class)) {
-					return ((ComBE.diagram.navigator.ComBENavigatorItem) adaptableObject).getView();
+				if (adaptableObject instanceof ComBE.diagram.navigator.ComBENavigatorItem
+						&& (adapterType == View.class || adapterType == EObject.class)) {
+					return ((ComBE.diagram.navigator.ComBENavigatorItem) adaptableObject)
+							.getView();
 				}
 				return null;
 			}
@@ -69,7 +72,11 @@ public class ComBENavigatorItem extends ComBE.diagram.navigator.ComBEAbstractNav
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
-			return EcoreUtil.getURI(getView()).equals(EcoreUtil.getURI(((ComBE.diagram.navigator.ComBENavigatorItem) obj).getView()));
+			return EcoreUtil
+					.getURI(getView())
+					.equals(EcoreUtil
+							.getURI(((ComBE.diagram.navigator.ComBENavigatorItem) obj)
+									.getView()));
 		}
 		return super.equals(obj);
 	}

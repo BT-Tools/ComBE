@@ -11,7 +11,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StandardNode2ItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
+public class StandardNode2ItemSemanticEditPolicy extends
+		ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

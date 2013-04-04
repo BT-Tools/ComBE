@@ -14,14 +14,16 @@ public class ComBELinkDescriptor extends UpdaterLinkDescriptor {
 	/**
 	 * @generated
 	 */
-	public ComBELinkDescriptor(EObject source, EObject destination, IElementType elementType, int linkVID) {
+	public ComBELinkDescriptor(EObject source, EObject destination,
+			IElementType elementType, int linkVID) {
 		super(source, destination, elementType, linkVID);
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComBELinkDescriptor(EObject source, EObject destination, EObject linkElement, IElementType elementType, int linkVID) {
+	public ComBELinkDescriptor(EObject source, EObject destination,
+			EObject linkElement, IElementType elementType, int linkVID) {
 		super(source, destination, linkElement, elementType, linkVID);
 	}
 

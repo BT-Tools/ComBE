@@ -52,7 +52,8 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	/**
 	 * @generated
 	 */
-	public MessageFormatParser(EAttribute[] features, EAttribute[] editableFeatures) {
+	public MessageFormatParser(EAttribute[] features,
+			EAttribute[] editableFeatures) {
 		super(features, editableFeatures);
 	}
 
@@ -96,7 +97,9 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	 */
 	protected MessageFormat getViewProcessor() {
 		if (viewProcessor == null) {
-			viewProcessor = new MessageFormat(getViewPattern() == null ? getDefaultPattern() : getViewPattern());
+			viewProcessor = new MessageFormat(
+					getViewPattern() == null ? getDefaultPattern()
+							: getViewPattern());
 		}
 		return viewProcessor;
 	}
@@ -106,7 +109,9 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	 */
 	protected MessageFormat getEditorProcessor() {
 		if (editorProcessor == null) {
-			editorProcessor = new MessageFormat(getEditorPattern() == null ? getDefaultEditablePattern() : getEditorPattern());
+			editorProcessor = new MessageFormat(
+					getEditorPattern() == null ? getDefaultEditablePattern()
+							: getEditorPattern());
 		}
 		return editorProcessor;
 	}
@@ -143,7 +148,9 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	 */
 	protected MessageFormat getEditProcessor() {
 		if (editProcessor == null) {
-			editProcessor = new MessageFormat(getEditPattern() == null ? getDefaultEditablePattern() : getEditPattern());
+			editProcessor = new MessageFormat(
+					getEditPattern() == null ? getDefaultEditablePattern()
+							: getEditPattern());
 		}
 		return editProcessor;
 	}
@@ -153,17 +160,24 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	 */
 	public String getEditString(IAdaptable adapter, int flags) {
 		EObject element = (EObject) adapter.getAdapter(EObject.class);
-		return getEditorProcessor().format(getEditableValues(element), new StringBuffer(), new FieldPosition(0)).toString();
+		return getEditorProcessor().format(getEditableValues(element),
+				new StringBuffer(), new FieldPosition(0)).toString();
 	}
 
 	/**
 	 * @generated
 	 */
-	public IParserEditStatus isValidEditString(IAdaptable adapter, String editString) {
+	public IParserEditStatus isValidEditString(IAdaptable adapter,
+			String editString) {
 		ParsePosition pos = new ParsePosition(0);
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null) {
-			return new ParserEditStatus(ComBE.diagram.part.ComBEDiagramEditorPlugin.ID, IParserEditStatus.UNEDITABLE, NLS.bind(ComBE.diagram.part.Messages.MessageFormatParser_InvalidInputError, new Integer(pos.getErrorIndex())));
+			return new ParserEditStatus(
+					ComBE.diagram.part.ComBEDiagramEditorPlugin.ID,
+					IParserEditStatus.UNEDITABLE,
+					NLS.bind(
+							ComBE.diagram.part.Messages.MessageFormatParser_InvalidInputError,
+							new Integer(pos.getErrorIndex())));
 		}
 		return validateNewValues(values);
 	}
@@ -171,8 +185,10 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	/**
 	 * @generated
 	 */
-	public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
-		Object[] values = getEditProcessor().parse(newString, new ParsePosition(0));
+	public ICommand getParseCommand(IAdaptable adapter, String newString,
+			int flags) {
+		Object[] values = getEditProcessor().parse(newString,
+				new ParsePosition(0));
 		return getParseCommand(adapter, values, flags);
 	}
 
@@ -181,7 +197,8 @@ public class MessageFormatParser extends ComBE.diagram.parsers.AbstractParser {
 	 */
 	public String getPrintString(IAdaptable adapter, int flags) {
 		EObject element = (EObject) adapter.getAdapter(EObject.class);
-		return getViewProcessor().format(getValues(element), new StringBuffer(), new FieldPosition(0)).toString();
+		return getViewProcessor().format(getValues(element),
+				new StringBuffer(), new FieldPosition(0)).toString();
 	}
 
 }

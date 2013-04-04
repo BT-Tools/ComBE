@@ -6,7 +6,8 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class ComBENavigatorGroup extends ComBE.diagram.navigator.ComBEAbstractNavigatorItem {
+public class ComBENavigatorGroup extends
+		ComBE.diagram.navigator.ComBEAbstractNavigatorItem {
 
 	/**
 	 * @generated

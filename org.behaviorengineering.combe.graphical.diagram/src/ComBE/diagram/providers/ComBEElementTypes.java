@@ -115,21 +115,26 @@ public class ComBEElementTypes {
 	/**
 	 * @generated
 	 */
-	private static ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
+	private static ImageDescriptor getProvidedImageDescriptor(
+			ENamedElement element) {
 		if (element instanceof EStructuralFeature) {
 			EStructuralFeature feature = ((EStructuralFeature) element);
 			EClass eContainingClass = feature.getEContainingClass();
 			EClassifier eType = feature.getEType();
 			if (eContainingClass != null && !eContainingClass.isAbstract()) {
 				element = eContainingClass;
-			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
+			} else if (eType instanceof EClass
+					&& !((EClass) eType).isAbstract()) {
 				element = eType;
 			}
 		}
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
 			if (!eClass.isAbstract()) {
-				return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
+				return ComBE.diagram.part.ComBEDiagramEditorPlugin
+						.getInstance().getItemImageDescriptor(
+								eClass.getEPackage().getEFactoryInstance()
+										.create(eClass));
 			}
 		}
 		// TODO : support structural features
@@ -201,31 +206,45 @@ public class ComBEElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(Specification_1000, ComBE.ComBEPackage.eINSTANCE.getSpecification());
+			elements.put(Specification_1000,
+					ComBE.ComBEPackage.eINSTANCE.getSpecification());
 
-			elements.put(AlternativeBranch_2001, ComBE.ComBEPackage.eINSTANCE.getAlternativeBranch());
+			elements.put(AlternativeBranch_2001,
+					ComBE.ComBEPackage.eINSTANCE.getAlternativeBranch());
 
-			elements.put(ParallelBranch_2002, ComBE.ComBEPackage.eINSTANCE.getParallelBranch());
+			elements.put(ParallelBranch_2002,
+					ComBE.ComBEPackage.eINSTANCE.getParallelBranch());
 
-			elements.put(AtomicSequence_2003, ComBE.ComBEPackage.eINSTANCE.getAtomicSequence());
+			elements.put(AtomicSequence_2003,
+					ComBE.ComBEPackage.eINSTANCE.getAtomicSequence());
 
-			elements.put(StandardNode_3001, ComBE.ComBEPackage.eINSTANCE.getStandardNode());
+			elements.put(StandardNode_3001,
+					ComBE.ComBEPackage.eINSTANCE.getStandardNode());
 
-			elements.put(EmptyNode_3002, ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
+			elements.put(EmptyNode_3002,
+					ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
 
-			elements.put(StandardNode_3003, ComBE.ComBEPackage.eINSTANCE.getStandardNode());
+			elements.put(StandardNode_3003,
+					ComBE.ComBEPackage.eINSTANCE.getStandardNode());
 
-			elements.put(EmptyNode_3004, ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
+			elements.put(EmptyNode_3004,
+					ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
 
-			elements.put(StandardNode_3005, ComBE.ComBEPackage.eINSTANCE.getStandardNode());
+			elements.put(StandardNode_3005,
+					ComBE.ComBEPackage.eINSTANCE.getStandardNode());
 
-			elements.put(EmptyNode_3006, ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
+			elements.put(EmptyNode_3006,
+					ComBE.ComBEPackage.eINSTANCE.getEmptyNode());
 
-			elements.put(AlternativeBranchChildren_4001, ComBE.ComBEPackage.eINSTANCE.getAlternativeBranch_Children());
+			elements.put(AlternativeBranchChildren_4001,
+					ComBE.ComBEPackage.eINSTANCE
+							.getAlternativeBranch_Children());
 
-			elements.put(ParallelBranchChildren_4002, ComBE.ComBEPackage.eINSTANCE.getParallelBranch_Children());
+			elements.put(ParallelBranchChildren_4002,
+					ComBE.ComBEPackage.eINSTANCE.getParallelBranch_Children());
 
-			elements.put(AtomicSequenceChild_4003, ComBE.ComBEPackage.eINSTANCE.getAtomicSequence_Child());
+			elements.put(AtomicSequenceChild_4003,
+					ComBE.ComBEPackage.eINSTANCE.getAtomicSequence_Child());
 		}
 		return (ENamedElement) elements.get(type);
 	}

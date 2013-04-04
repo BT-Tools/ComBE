@@ -66,10 +66,17 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.ParallelBranchItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.ParallelBranchCanonicalEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new ComBE.diagram.edit.policies.ParallelBranchItemSemanticEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new ComBE.diagram.edit.policies.ParallelBranchCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -82,7 +89,8 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child
+						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -119,9 +127,11 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getParallelBranchNodesCompartmentFigure();
+			IFigure pane = getPrimaryShape()
+					.getParallelBranchNodesCompartmentFigure();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart).getFigure());
+			pane.add(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -132,8 +142,10 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getParallelBranchNodesCompartmentFigure();
-			pane.remove(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart).getFigure());
+			IFigure pane = getPrimaryShape()
+					.getParallelBranchNodesCompartmentFigure();
+			pane.remove(((ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart) childEditPart)
+					.getFigure());
 			return true;
 		}
 		return false;
@@ -278,7 +290,8 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
 			types.add(ComBE.diagram.providers.ComBEElementTypes.ParallelBranchChildren_4002);
@@ -336,13 +349,18 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getTargetEditPart(Request request) {
 		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
 			if (type == ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003) {
-				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry
+						.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
 			}
 			if (type == ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004) {
-				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
+				return getChildBySemanticHint(ComBE.diagram.part.ComBEVisualIDRegistry
+						.getType(ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID));
 			}
 		}
 		return super.getTargetEditPart(request);
@@ -375,7 +393,8 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 			this.setFill(false);
 			this.setOutline(false);
 			this.setLineWidth(0);
-			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(202), getMapMode().DPtoLP(82)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(202),
+					getMapMode().DPtoLP(82)));
 			createContents();
 		}
 
@@ -386,8 +405,10 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 
 			fParallelBranchNodesCompartmentFigure = new RectangleFigure();
 
-			fParallelBranchNodesCompartmentFigure.setForegroundColor(ColorConstants.black);
-			fParallelBranchNodesCompartmentFigure.setBackgroundColor(ColorConstants.black);
+			fParallelBranchNodesCompartmentFigure
+					.setForegroundColor(ColorConstants.black);
+			fParallelBranchNodesCompartmentFigure
+					.setBackgroundColor(ColorConstants.black);
 
 			GridData constraintFParallelBranchNodesCompartmentFigure = new GridData();
 			constraintFParallelBranchNodesCompartmentFigure.verticalAlignment = GridData.CENTER;
@@ -397,7 +418,8 @@ public class ParallelBranchEditPart extends ShapeNodeEditPart {
 			constraintFParallelBranchNodesCompartmentFigure.verticalSpan = 1;
 			constraintFParallelBranchNodesCompartmentFigure.grabExcessHorizontalSpace = true;
 			constraintFParallelBranchNodesCompartmentFigure.grabExcessVerticalSpace = true;
-			this.add(fParallelBranchNodesCompartmentFigure, constraintFParallelBranchNodesCompartmentFigure);
+			this.add(fParallelBranchNodesCompartmentFigure,
+					constraintFParallelBranchNodesCompartmentFigure);
 
 		}
 

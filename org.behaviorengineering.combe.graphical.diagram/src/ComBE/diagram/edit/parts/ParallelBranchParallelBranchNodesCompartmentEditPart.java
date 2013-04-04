@@ -16,7 +16,8 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 /**
  * @generated
  */
-public class ParallelBranchParallelBranchNodesCompartmentEditPart extends ListCompartmentEditPart {
+public class ParallelBranchParallelBranchNodesCompartmentEditPart extends
+		ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -48,7 +49,8 @@ public class ParallelBranchParallelBranchNodesCompartmentEditPart extends ListCo
 	 * @generated NOT
 	 */
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super
+				.createFigure();
 		result.setTitleVisibility(false);
 
 		// START non-generated code: remove standard {5,5,5,5} Insets of compartment
@@ -67,10 +69,18 @@ public class ParallelBranchParallelBranchNodesCompartmentEditPart extends ListCo
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE, new CreationEditPolicyWithCustomReparent(ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ComBE.diagram.edit.policies.ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new ComBE.diagram.edit.policies.ParallelBranchParallelBranchNodesCompartmentItemSemanticEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						ComBE.diagram.part.ComBEVisualIDRegistry.TYPED_INSTANCE));
+		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
+				new DragDropEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new ComBE.diagram.edit.policies.ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy());
 	}
 
 	/**

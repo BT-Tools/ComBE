@@ -12,7 +12,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 /**
  * @generated
  */
-public class AlternativeBranchChildrenReorientCommand extends EditElementCommand {
+public class AlternativeBranchChildrenReorientCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -37,7 +38,8 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 	/**
 	 * @generated
 	 */
-	public AlternativeBranchChildrenReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public AlternativeBranchChildrenReorientCommand(
+			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -68,7 +70,9 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.AlternativeBranch)) {
 			return false;
 		}
-		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.getLinkConstraints().canExistAlternativeBranchChildren_4001(getNewSource(), getOldTarget());
+		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAlternativeBranchChildren_4001(
+						getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -78,15 +82,19 @@ public class AlternativeBranchChildrenReorientCommand extends EditElementCommand
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.BehaviorTree)) {
 			return false;
 		}
-		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.getLinkConstraints().canExistAlternativeBranchChildren_4001(getOldSource(), getNewTarget());
+		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAlternativeBranchChildren_4001(
+						getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException(
+					"Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

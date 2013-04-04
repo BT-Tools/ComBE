@@ -37,7 +37,8 @@ public class AtomicSequenceChildReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public AtomicSequenceChildReorientCommand(ReorientReferenceRelationshipRequest request) {
+	public AtomicSequenceChildReorientCommand(
+			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -68,7 +69,9 @@ public class AtomicSequenceChildReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.AtomicSequence)) {
 			return false;
 		}
-		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.getLinkConstraints().canExistAtomicSequenceChild_4003(getNewSource(), getOldTarget());
+		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAtomicSequenceChild_4003(
+						getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -78,15 +81,19 @@ public class AtomicSequenceChildReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof ComBE.BehaviorTree && newEnd instanceof ComBE.BehaviorTree)) {
 			return false;
 		}
-		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy.getLinkConstraints().canExistAtomicSequenceChild_4003(getOldSource(), getNewTarget());
+		return ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy
+				.getLinkConstraints().canExistAtomicSequenceChild_4003(
+						getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
+			IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException(
+					"Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

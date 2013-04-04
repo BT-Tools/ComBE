@@ -13,7 +13,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class AlternativeBranchChildrenEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class AlternativeBranchChildrenEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -32,7 +33,9 @@ public class AlternativeBranchChildrenEditPart extends ConnectionNodeEditPart im
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ComBE.diagram.edit.policies.AlternativeBranchChildrenItemSemanticEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new ComBE.diagram.edit.policies.AlternativeBranchChildrenItemSemanticEditPolicy());
 	}
 
 	/**

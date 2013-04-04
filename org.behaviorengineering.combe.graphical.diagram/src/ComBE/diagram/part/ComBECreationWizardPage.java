@@ -21,7 +21,8 @@ public class ComBECreationWizardPage extends WizardNewFileCreationPage {
 	/**
 	 * @generated
 	 */
-	public ComBECreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
+	public ComBECreationWizardPage(String pageName,
+			IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -62,7 +63,9 @@ public class ComBECreationWizardPage extends WizardNewFileCreationPage {
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil
+				.getUniqueFileName(getContainerFullPath(), getFileName(),
+						getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -74,8 +77,11 @@ public class ComBECreationWizardPage extends WizardNewFileCreationPage {
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(ComBE.diagram.part.Messages.ComBECreationWizardPageExtensionError, extension));
+		if (extension != null
+				&& !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS
+					.bind(ComBE.diagram.part.Messages.ComBECreationWizardPageExtensionError,
+							extension));
 			return false;
 		}
 		return true;

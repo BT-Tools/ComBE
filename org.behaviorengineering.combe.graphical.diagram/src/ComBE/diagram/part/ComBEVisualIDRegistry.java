@@ -26,13 +26,15 @@ public class ComBEVisualIDRegistry {
 	 */
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(view.getType())) {
+			if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+					.equals(view.getType())) {
 				return ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
-		return ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view.getType());
+		return ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view
+				.getType());
 	}
 
 	/**
@@ -57,8 +59,12 @@ public class ComBEVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
-				ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Unable to parse view type as a visualID number: " + type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(
+					Platform.getDebugOption(DEBUG_KEY))) {
+				ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+						.logError(
+								"Unable to parse view type as a visualID number: "
+										+ type);
 			}
 		}
 		return -1;
@@ -78,7 +84,9 @@ public class ComBEVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (ComBE.ComBEPackage.eINSTANCE.getSpecification().isSuperTypeOf(domainElement.eClass()) && isDiagram((ComBE.Specification) domainElement)) {
+		if (ComBE.ComBEPackage.eINSTANCE.getSpecification().isSuperTypeOf(
+				domainElement.eClass())
+				&& isDiagram((ComBE.Specification) domainElement)) {
 			return ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -91,13 +99,17 @@ public class ComBEVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		String containerModelID = ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(containerView);
-		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(containerModelID)) {
+		String containerModelID = ComBE.diagram.part.ComBEVisualIDRegistry
+				.getModelID(containerView);
+		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(containerView);
+		if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(containerModelID)) {
+			containerVisualID = ComBE.diagram.part.ComBEVisualIDRegistry
+					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID;
@@ -107,37 +119,46 @@ public class ComBEVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
-			if (ComBE.ComBEPackage.eINSTANCE.getAlternativeBranch().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getAlternativeBranch()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID;
 			}
-			if (ComBE.ComBEPackage.eINSTANCE.getParallelBranch().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getParallelBranch().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID;
 			}
-			if (ComBE.ComBEPackage.eINSTANCE.getAtomicSequence().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getAtomicSequence().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID;
 			}
 			break;
 		case ComBE.diagram.edit.parts.AlternativeBranchAlternativeBranchNodesCompartmentEditPart.VISUAL_ID:
-			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID;
 			}
-			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case ComBE.diagram.edit.parts.ParallelBranchParallelBranchNodesCompartmentEditPart.VISUAL_ID:
-			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID;
 			}
-			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID;
 			}
 			break;
 		case ComBE.diagram.edit.parts.AtomicSequenceAtomicSequenceNodesCompartmentEditPart.VISUAL_ID:
-			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getStandardNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID;
 			}
-			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(domainElement.eClass())) {
+			if (ComBE.ComBEPackage.eINSTANCE.getEmptyNode().isSuperTypeOf(
+					domainElement.eClass())) {
 				return ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID;
 			}
 			break;
@@ -149,13 +170,17 @@ public class ComBEVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
-		String containerModelID = ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(containerView);
-		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(containerModelID)) {
+		String containerModelID = ComBE.diagram.part.ComBEVisualIDRegistry
+				.getModelID(containerView);
+		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(containerView);
+		if (ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(containerModelID)) {
+			containerVisualID = ComBE.diagram.part.ComBEVisualIDRegistry
+					.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID;
@@ -325,7 +350,8 @@ public class ComBEVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView,
+			EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -394,15 +420,18 @@ public class ComBEVisualIDRegistry {
 		 */
 		@Override
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return ComBE.diagram.part.ComBEVisualIDRegistry.getNodeVisualID(containerView, domainElement);
+			return ComBE.diagram.part.ComBEVisualIDRegistry.getNodeVisualID(
+					containerView, domainElement);
 		}
 
 		/**
 		 * @generated
 		 */
 		@Override
-		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
-			return ComBE.diagram.part.ComBEVisualIDRegistry.checkNodeVisualID(containerView, domainElement, candidate);
+		public boolean checkNodeVisualID(View containerView,
+				EObject domainElement, int candidate) {
+			return ComBE.diagram.part.ComBEVisualIDRegistry.checkNodeVisualID(
+					containerView, domainElement, candidate);
 		}
 
 		/**
@@ -410,7 +439,8 @@ public class ComBEVisualIDRegistry {
 		 */
 		@Override
 		public boolean isCompartmentVisualID(int visualID) {
-			return ComBE.diagram.part.ComBEVisualIDRegistry.isCompartmentVisualID(visualID);
+			return ComBE.diagram.part.ComBEVisualIDRegistry
+					.isCompartmentVisualID(visualID);
 		}
 
 		/**
@@ -418,7 +448,8 @@ public class ComBEVisualIDRegistry {
 		 */
 		@Override
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return ComBE.diagram.part.ComBEVisualIDRegistry.isSemanticLeafVisualID(visualID);
+			return ComBE.diagram.part.ComBEVisualIDRegistry
+					.isSemanticLeafVisualID(visualID);
 		}
 	};
 

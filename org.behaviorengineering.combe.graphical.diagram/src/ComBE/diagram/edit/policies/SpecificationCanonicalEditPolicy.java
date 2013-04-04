@@ -53,7 +53,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getSpecification_1000SemanticChildren(viewObject);
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater
+				.getSpecification_1000SemanticChildren(viewObject);
 		for (ComBE.diagram.part.ComBENodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -63,16 +64,21 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
-		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren,
+			final View view) {
+		return isMyDiagramElement(view)
+				&& !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
-		return visualID == ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID;
+		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry
+				.getVisualID(view);
+		return visualID == ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID
+				|| visualID == ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID
+				|| visualID == ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -83,7 +89,9 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getSpecification_1000SemanticChildren((View) getHost().getModel());
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater
+				.getSpecification_1000SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -97,9 +105,12 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<ComBE.diagram.part.ComBENodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator.hasNext();) {
-			ComBE.diagram.part.ComBENodeDescriptor next = descriptorsIterator.next();
-			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next.getVisualID());
+		for (Iterator<ComBE.diagram.part.ComBENodeDescriptor> descriptorsIterator = childDescriptors
+				.iterator(); descriptorsIterator.hasNext();) {
+			ComBE.diagram.part.ComBENodeDescriptor next = descriptorsIterator
+					.next();
+			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next
+					.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -122,11 +133,16 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 		// or those we have potential matches to, and thus need to be recreated, preserving size/location information.
 		orphaned.addAll(knownViewChildren);
 		//
-		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(childDescriptors.size());
+		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
+				childDescriptors.size());
 		for (ComBE.diagram.part.ComBENodeDescriptor next : childDescriptors) {
-			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
+			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next
+					.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(
+					next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
+					host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -135,7 +151,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(
+					new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
@@ -149,7 +166,8 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
+					.getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 
@@ -163,13 +181,17 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
-		Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
+		Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors = collectAllLinks(
+				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
-		for (Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
+		for (Iterator linksIterator = existingLinks.iterator(); linksIterator
+				.hasNext();) {
 			Edge nextDiagramLink = (Edge) linksIterator.next();
-			int diagramLinkVisualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(nextDiagramLink);
+			int diagramLinkVisualID = ComBE.diagram.part.ComBEVisualIDRegistry
+					.getVisualID(nextDiagramLink);
 			if (diagramLinkVisualID == -1) {
-				if (nextDiagramLink.getSource() != null && nextDiagramLink.getTarget() != null) {
+				if (nextDiagramLink.getSource() != null
+						&& nextDiagramLink.getTarget() != null) {
 					linksIterator.remove();
 				}
 				continue;
@@ -177,9 +199,16 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 			EObject diagramLinkObject = nextDiagramLink.getElement();
 			EObject diagramLinkSrc = nextDiagramLink.getSource().getElement();
 			EObject diagramLinkDst = nextDiagramLink.getTarget().getElement();
-			for (Iterator<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptorsIterator = linkDescriptors.iterator(); linkDescriptorsIterator.hasNext();) {
-				ComBE.diagram.part.ComBELinkDescriptor nextLinkDescriptor = linkDescriptorsIterator.next();
-				if (diagramLinkObject == nextLinkDescriptor.getModelElement() && diagramLinkSrc == nextLinkDescriptor.getSource() && diagramLinkDst == nextLinkDescriptor.getDestination() && diagramLinkVisualID == nextLinkDescriptor.getVisualID()) {
+			for (Iterator<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptorsIterator = linkDescriptors
+					.iterator(); linkDescriptorsIterator.hasNext();) {
+				ComBE.diagram.part.ComBELinkDescriptor nextLinkDescriptor = linkDescriptorsIterator
+						.next();
+				if (diagramLinkObject == nextLinkDescriptor.getModelElement()
+						&& diagramLinkSrc == nextLinkDescriptor.getSource()
+						&& diagramLinkDst == nextLinkDescriptor
+								.getDestination()
+						&& diagramLinkVisualID == nextLinkDescriptor
+								.getVisualID()) {
 					linksIterator.remove();
 					linkDescriptorsIterator.remove();
 					break;
@@ -193,88 +222,104 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<ComBE.diagram.part.ComBELinkDescriptor> collectAllLinks(View view, Domain2Notation domain2NotationMap) {
-		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view))) {
+	private Collection<ComBE.diagram.part.ComBELinkDescriptor> collectAllLinks(
+			View view, Domain2Notation domain2NotationMap) {
+		if (!ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(ComBE.diagram.part.ComBEVisualIDRegistry
+						.getModelID(view))) {
 			return Collections.emptyList();
 		}
 		LinkedList<ComBE.diagram.part.ComBELinkDescriptor> result = new LinkedList<ComBE.diagram.part.ComBELinkDescriptor>();
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
 		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getSpecification_1000ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getSpecification_1000ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getAlternativeBranch_2001ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getAlternativeBranch_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getParallelBranch_2002ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getParallelBranch_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getAtomicSequence_2003ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getAtomicSequence_2003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getStandardNode_3001ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getStandardNode_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getEmptyNode_3002ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getEmptyNode_3002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getStandardNode_3003ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getStandardNode_3003ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getEmptyNode_3004ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getEmptyNode_3004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getStandardNode_3005ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getStandardNode_3005ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater.getEmptyNode_3006ContainedLinks(view));
+				result.addAll(ComBE.diagram.part.ComBEDiagramUpdater
+						.getEmptyNode_3006ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
-		for (Iterator children = view.getChildren().iterator(); children.hasNext();) {
-			result.addAll(collectAllLinks((View) children.next(), domain2NotationMap));
+		for (Iterator children = view.getChildren().iterator(); children
+				.hasNext();) {
+			result.addAll(collectAllLinks((View) children.next(),
+					domain2NotationMap));
 		}
 		for (Iterator edges = view.getSourceEdges().iterator(); edges.hasNext();) {
-			result.addAll(collectAllLinks((View) edges.next(), domain2NotationMap));
+			result.addAll(collectAllLinks((View) edges.next(),
+					domain2NotationMap));
 		}
 		return result;
 	}
@@ -282,16 +327,27 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private Collection<IAdaptable> createConnections(Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors, Domain2Notation domain2NotationMap) {
+	private Collection<IAdaptable> createConnections(
+			Collection<ComBE.diagram.part.ComBELinkDescriptor> linkDescriptors,
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (ComBE.diagram.part.ComBELinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor, domain2NotationMap);
-			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor, domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
-			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), ComBE.diagram.part.ComBEVisualIDRegistry.getType(nextLinkDescriptor.getVisualID()), ViewUtil.APPEND, false, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint());
-			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
+			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(
+					nextLinkDescriptor.getSemanticAdapter(),
+					ComBE.diagram.part.ComBEVisualIDRegistry
+							.getType(nextLinkDescriptor.getVisualID()),
+					ViewUtil.APPEND, false,
+					((IGraphicalEditPart) getHost())
+							.getDiagramPreferencesHint());
+			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(
+					descriptor);
 			ccr.setType(RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
@@ -312,10 +368,12 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap) {
+	private EditPart getEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
 		}
 		return null;
 	}
@@ -330,24 +388,29 @@ public class SpecificationCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor, Domain2Notation domain2NotationMap) {
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected final EditPart getHintedEditPart(EObject domainModelElement, Domain2Notation domain2NotationMap, int hintVisualId) {
-		View view = (View) domain2NotationMap.getHinted(domainModelElement, ComBE.diagram.part.ComBEVisualIDRegistry.getType(hintVisualId));
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap.getHinted(domainModelElement,
+				ComBE.diagram.part.ComBEVisualIDRegistry.getType(hintVisualId));
 		if (view != null) {
-			return (EditPart) getHost().getViewer().getEditPartRegistry().get(view);
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
 		}
 		return null;
 	}

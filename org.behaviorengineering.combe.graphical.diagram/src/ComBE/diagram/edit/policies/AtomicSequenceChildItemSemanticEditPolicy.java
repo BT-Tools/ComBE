@@ -13,13 +13,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class AtomicSequenceChildItemSemanticEditPolicy extends ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
+public class AtomicSequenceChildItemSemanticEditPolicy extends
+		ComBE.diagram.edit.policies.ComBEBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public AtomicSequenceChildItemSemanticEditPolicy() {
-		super(ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003);
+		super(
+				ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003);
 	}
 
 	/**
@@ -27,10 +29,13 @@ public class AtomicSequenceChildItemSemanticEditPolicy extends ComBE.diagram.edi
 	 */
 	protected Command getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return getGEFWrapper(new DestroyReferenceCommand(req) {
-			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
+			protected CommandResult doExecuteWithResult(
+					IProgressMonitor progressMonitor, IAdaptable info)
+					throws ExecutionException {
 				EObject referencedObject = getReferencedObject();
 				Resource resource = referencedObject.eResource();
-				CommandResult result = super.doExecuteWithResult(progressMonitor, info);
+				CommandResult result = super.doExecuteWithResult(
+						progressMonitor, info);
 				if (resource != null) {
 					resource.getContents().add(referencedObject);
 				}

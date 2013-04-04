@@ -34,14 +34,16 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 		Resource diagramResource = diagram.eResource();
 		for (EObject nextEObject : diagramResource.getContents()) {
 			if (nextEObject == diagram) {
-				return new FileEditorInput(WorkspaceSynchronizer.getFile(diagramResource));
+				return new FileEditorInput(
+						WorkspaceSynchronizer.getFile(diagramResource));
 			}
 			if (nextEObject instanceof Diagram) {
 				break;
 			}
 		}
 		URI uri = EcoreUtil.getURI(diagram);
-		String editorName = uri.lastSegment() + '#' + diagram.eResource().getContents().indexOf(diagram);
+		String editorName = uri.lastSegment() + '#'
+				+ diagram.eResource().getContents().indexOf(diagram);
 		IEditorInput editorInput = new URIEditorInput(uri, editorName);
 		return editorInput;
 	}
@@ -50,7 +52,9 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 	 * @generated
 	 */
 	public IStructuredSelection findSelection(IEditorInput anInput) {
-		IDiagramDocument document = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getDocumentProvider().getDiagramDocument(anInput);
+		IDiagramDocument document = ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getDocumentProvider()
+				.getDiagramDocument(anInput);
 		if (document == null) {
 			return StructuredSelection.EMPTY;
 		}
@@ -60,7 +64,8 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			ComBE.diagram.navigator.ComBENavigatorItem item = new ComBE.diagram.navigator.ComBENavigatorItem(diagram, file, false);
+			ComBE.diagram.navigator.ComBENavigatorItem item = new ComBE.diagram.navigator.ComBENavigatorItem(
+					diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -69,7 +74,8 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 	/**
 	 * @generated
 	 */
-	public void activateEditor(IWorkbenchPage aPage, IStructuredSelection aSelection) {
+	public void activateEditor(IWorkbenchPage aPage,
+			IStructuredSelection aSelection) {
 		if (aSelection == null || aSelection.isEmpty()) {
 			return;
 		}
@@ -77,14 +83,17 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 			return;
 		}
 
-		ComBE.diagram.navigator.ComBEAbstractNavigatorItem abstractNavigatorItem = (ComBE.diagram.navigator.ComBEAbstractNavigatorItem) aSelection.getFirstElement();
+		ComBE.diagram.navigator.ComBEAbstractNavigatorItem abstractNavigatorItem = (ComBE.diagram.navigator.ComBEAbstractNavigatorItem) aSelection
+				.getFirstElement();
 		View navigatorView = null;
 		if (abstractNavigatorItem instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
-			navigatorView = ((ComBE.diagram.navigator.ComBENavigatorItem) abstractNavigatorItem).getView();
+			navigatorView = ((ComBE.diagram.navigator.ComBENavigatorItem) abstractNavigatorItem)
+					.getView();
 		} else if (abstractNavigatorItem instanceof ComBE.diagram.navigator.ComBENavigatorGroup) {
 			ComBE.diagram.navigator.ComBENavigatorGroup navigatorGroup = (ComBE.diagram.navigator.ComBENavigatorGroup) abstractNavigatorItem;
 			if (navigatorGroup.getParent() instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
-				navigatorView = ((ComBE.diagram.navigator.ComBENavigatorItem) navigatorGroup.getParent()).getView();
+				navigatorView = ((ComBE.diagram.navigator.ComBENavigatorItem) navigatorGroup
+						.getParent()).getView();
 			}
 		}
 		if (navigatorView == null) {
@@ -98,13 +107,17 @@ public class ComBENavigatorLinkHelper implements ILinkHelper {
 		aPage.bringToTop(editor);
 		if (editor instanceof DiagramEditor) {
 			DiagramEditor diagramEditor = (DiagramEditor) editor;
-			ResourceSet diagramEditorResourceSet = diagramEditor.getEditingDomain().getResourceSet();
-			EObject selectedView = diagramEditorResourceSet.getEObject(EcoreUtil.getURI(navigatorView), true);
+			ResourceSet diagramEditorResourceSet = diagramEditor
+					.getEditingDomain().getResourceSet();
+			EObject selectedView = diagramEditorResourceSet.getEObject(
+					EcoreUtil.getURI(navigatorView), true);
 			if (selectedView == null) {
 				return;
 			}
-			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor.getAdapter(GraphicalViewer.class);
-			EditPart selectedEditPart = (EditPart) graphicalViewer.getEditPartRegistry().get(selectedView);
+			GraphicalViewer graphicalViewer = (GraphicalViewer) diagramEditor
+					.getAdapter(GraphicalViewer.class);
+			EditPart selectedEditPart = (EditPart) graphicalViewer
+					.getEditPartRegistry().get(selectedView);
 			if (selectedEditPart != null) {
 				graphicalViewer.select(selectedEditPart);
 			}

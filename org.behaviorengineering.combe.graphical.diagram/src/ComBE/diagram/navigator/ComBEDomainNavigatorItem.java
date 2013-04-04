@@ -17,7 +17,8 @@ public class ComBEDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		final Class[] supportedTypes = new Class[] { EObject.class,
+				IPropertySource.class };
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
@@ -28,7 +29,8 @@ public class ComBEDomainNavigatorItem extends PlatformObject {
 						return eObject;
 					}
 					if (adapterType == IPropertySource.class) {
-						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
+						return domainNavigatorItem.getPropertySourceProvider()
+								.getPropertySource(eObject);
 					}
 				}
 
@@ -59,7 +61,8 @@ public class ComBEDomainNavigatorItem extends PlatformObject {
 	/**
 	 * @generated
 	 */
-	public ComBEDomainNavigatorItem(EObject eObject, Object parent, IPropertySourceProvider propertySourceProvider) {
+	public ComBEDomainNavigatorItem(EObject eObject, Object parent,
+			IPropertySourceProvider propertySourceProvider) {
 		myParent = parent;
 		myEObject = eObject;
 		myPropertySourceProvider = propertySourceProvider;
@@ -91,7 +94,11 @@ public class ComBEDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof ComBE.diagram.navigator.ComBEDomainNavigatorItem) {
-			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil.getURI(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) obj).getEObject()));
+			return EcoreUtil
+					.getURI(getEObject())
+					.equals(EcoreUtil
+							.getURI(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) obj)
+									.getEObject()));
 		}
 		return super.equals(obj);
 	}

@@ -23,7 +23,8 @@ public abstract class ComBEAbstractNavigatorItem extends PlatformObject {
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
-				if (adaptableObject instanceof ComBE.diagram.navigator.ComBEAbstractNavigatorItem && adapterType == ITabbedPropertySheetPageContributor.class) {
+				if (adaptableObject instanceof ComBE.diagram.navigator.ComBEAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
 					return propertySheetPageContributor;
 				}
 				return null;

@@ -25,7 +25,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
+public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy
+		extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -53,7 +54,8 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 	protected List getSemanticChildrenList() {
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(viewObject);
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater
+				.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren(viewObject);
 		for (ComBE.diagram.part.ComBENodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -63,16 +65,20 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
-		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren,
+			final View view) {
+		return isMyDiagramElement(view)
+				&& !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view);
-		return visualID == ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID || visualID == ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID;
+		int visualID = ComBE.diagram.part.ComBEVisualIDRegistry
+				.getVisualID(view);
+		return visualID == ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID
+				|| visualID == ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID;
 	}
 
 	/**
@@ -83,7 +89,9 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 			return;
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren((View) getHost().getModel());
+		List<ComBE.diagram.part.ComBENodeDescriptor> childDescriptors = ComBE.diagram.part.ComBEDiagramUpdater
+				.getParallelBranchParallelBranchNodesCompartment_7002SemanticChildren((View) getHost()
+						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -97,9 +105,12 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 		// iteration happens over list of desired semantic elements, trying to find best matching View, while original CEP
 		// iterates views, potentially losing view (size/bounds) information - i.e. if there are few views to reference same EObject, only last one 
 		// to answer isOrphaned == true will be used for the domain element representation, see #cleanCanonicalSemanticChildren()
-		for (Iterator<ComBE.diagram.part.ComBENodeDescriptor> descriptorsIterator = childDescriptors.iterator(); descriptorsIterator.hasNext();) {
-			ComBE.diagram.part.ComBENodeDescriptor next = descriptorsIterator.next();
-			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next.getVisualID());
+		for (Iterator<ComBE.diagram.part.ComBENodeDescriptor> descriptorsIterator = childDescriptors
+				.iterator(); descriptorsIterator.hasNext();) {
+			ComBE.diagram.part.ComBENodeDescriptor next = descriptorsIterator
+					.next();
+			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next
+					.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -122,11 +133,16 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 		// or those we have potential matches to, and thus need to be recreated, preserving size/location information.
 		orphaned.addAll(knownViewChildren);
 		//
-		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(childDescriptors.size());
+		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
+				childDescriptors.size());
 		for (ComBE.diagram.part.ComBENodeDescriptor next : childDescriptors) {
-			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter, Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
+			String hint = ComBE.diagram.part.ComBEVisualIDRegistry.getType(next
+					.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(
+					next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
+					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
+					host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -135,7 +151,8 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(
+					new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
@@ -146,7 +163,8 @@ public class ParallelBranchParallelBranchNodesCompartmentCanonicalEditPolicy ext
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
+					.getEditingDomain(), createdViews, host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

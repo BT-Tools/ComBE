@@ -13,9 +13,11 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getElementInitializers();
+		ElementInitializers cached = ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getElementInitializers();
 		if (cached == null) {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+					.setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

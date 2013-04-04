@@ -30,7 +30,8 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getTypesForPopupBar(IAdaptable host) {
-		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host
+				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof ComBE.diagram.edit.parts.SpecificationEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 			types.add(ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001);
@@ -63,15 +64,19 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart).getMARelTypesOnSource();
+			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart).getMARelTypesOnSource();
+			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceEditPart) {
-			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart).getMARelTypesOnSource();
+			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -80,15 +85,19 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	 * @generated
 	 */
 	public List getRelTypesOnTarget(IAdaptable target) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) targetEditPart).getMARelTypesOnTarget();
+			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) targetEditPart).getMARelTypesOnTarget();
+			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceEditPart) {
-			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) targetEditPart).getMARelTypesOnTarget();
+			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -96,17 +105,23 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+	public List getRelTypesOnSourceAndTarget(IAdaptable source,
+			IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceEditPart) {
-			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart).getMARelTypesOnSourceAndTarget(targetEditPart);
+			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -114,16 +129,21 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForSource(IAdaptable target, IElementType relationshipType) {
-		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+	public List getTypesForSource(IAdaptable target,
+			IElementType relationshipType) {
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
+				.getAdapter(IGraphicalEditPart.class);
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) targetEditPart).getMATypesForSource(relationshipType);
+			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) targetEditPart).getMATypesForSource(relationshipType);
+			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceEditPart) {
-			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) targetEditPart).getMATypesForSource(relationshipType);
+			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -131,16 +151,21 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public List getTypesForTarget(IAdaptable source, IElementType relationshipType) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+	public List getTypesForTarget(IAdaptable source,
+			IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
+				.getAdapter(IGraphicalEditPart.class);
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AlternativeBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+			return ((ComBE.diagram.edit.parts.AlternativeBranchEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.ParallelBranchEditPart) {
-			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+			return ((ComBE.diagram.edit.parts.ParallelBranchEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof ComBE.diagram.edit.parts.AtomicSequenceEditPart) {
-			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart).getMATypesForTarget(relationshipType);
+			return ((ComBE.diagram.edit.parts.AtomicSequenceEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -148,15 +173,19 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForSource(IAdaptable target, IElementType relationshipType) {
-		return selectExistingElement(target, getTypesForSource(target, relationshipType));
+	public EObject selectExistingElementForSource(IAdaptable target,
+			IElementType relationshipType) {
+		return selectExistingElement(target,
+				getTypesForSource(target, relationshipType));
 	}
 
 	/**
 	 * @generated
 	 */
-	public EObject selectExistingElementForTarget(IAdaptable source, IElementType relationshipType) {
-		return selectExistingElement(source, getTypesForTarget(source, relationshipType));
+	public EObject selectExistingElementForTarget(IAdaptable source,
+			IElementType relationshipType) {
+		return selectExistingElement(source,
+				getTypesForTarget(source, relationshipType));
 	}
 
 	/**
@@ -166,13 +195,15 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 		if (types.isEmpty()) {
 			return null;
 		}
-		IGraphicalEditPart editPart = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart editPart = (IGraphicalEditPart) host
+				.getAdapter(IGraphicalEditPart.class);
 		if (editPart == null) {
 			return null;
 		}
 		Diagram diagram = (Diagram) editPart.getRoot().getContents().getModel();
 		HashSet<EObject> elements = new HashSet<EObject>();
-		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it.hasNext();) {
+		for (Iterator<EObject> it = diagram.getElement().eAllContents(); it
+				.hasNext();) {
 			EObject element = it.next();
 			if (isApplicableElement(element, types)) {
 				elements.add(element);
@@ -181,14 +212,16 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 		if (elements.isEmpty()) {
 			return null;
 		}
-		return selectElement((EObject[]) elements.toArray(new EObject[elements.size()]));
+		return selectElement((EObject[]) elements.toArray(new EObject[elements
+				.size()]));
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean isApplicableElement(EObject element, Collection types) {
-		IElementType type = ElementTypeRegistry.getInstance().getElementType(element);
+		IElementType type = ElementTypeRegistry.getInstance().getElementType(
+				element);
 		return types.contains(type);
 	}
 
@@ -197,8 +230,11 @@ public class ComBEModelingAssistantProvider extends ModelingAssistantProvider {
 	 */
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
-		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
-		ElementListSelectionDialog dialog = new ElementListSelectionDialog(shell, labelProvider);
+		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(
+				ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+						.getItemProvidersAdapterFactory());
+		ElementListSelectionDialog dialog = new ElementListSelectionDialog(
+				shell, labelProvider);
 		dialog.setMessage(ComBE.diagram.part.Messages.ComBEModelingAssistantProviderMessage);
 		dialog.setTitle(ComBE.diagram.part.Messages.ComBEModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);

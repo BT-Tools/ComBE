@@ -15,7 +15,9 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
-	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
+	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+					.getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -28,7 +30,9 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBEDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getImage(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element).getEObject());
+			return myAdapterFactoryLabelProvider
+					.getImage(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element)
+							.getEObject());
 		}
 		return null;
 	}
@@ -38,7 +42,9 @@ public class ComBEDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	 */
 	public String getText(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBEDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getText(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element).getEObject());
+			return myAdapterFactoryLabelProvider
+					.getText(((ComBE.diagram.navigator.ComBEDomainNavigatorItem) element)
+							.getEObject());
 		}
 		return null;
 	}

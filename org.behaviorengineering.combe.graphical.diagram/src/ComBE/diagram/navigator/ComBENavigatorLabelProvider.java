@@ -19,14 +19,21 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 /**
  * @generated
  */
-public class ComBENavigatorLabelProvider extends LabelProvider implements ICommonLabelProvider, ITreePathLabelProvider {
+public class ComBENavigatorLabelProvider extends LabelProvider implements
+		ICommonLabelProvider, ITreePathLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	static {
-		ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
-		ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getImageRegistry().put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance()
+				.getImageRegistry()
+				.put("Navigator?UnknownElement", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
+		ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance()
+				.getImageRegistry()
+				.put("Navigator?ImageNotFound", ImageDescriptor.getMissingImageDescriptor()); //$NON-NLS-1$
 	}
 
 	/**
@@ -34,7 +41,9 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 */
 	public void updateLabel(ViewerLabel label, TreePath elementPath) {
 		Object element = elementPath.getLastSegment();
-		if (element instanceof ComBE.diagram.navigator.ComBENavigatorItem && !isOwnView(((ComBE.diagram.navigator.ComBENavigatorItem) element).getView())) {
+		if (element instanceof ComBE.diagram.navigator.ComBENavigatorItem
+				&& !isOwnView(((ComBE.diagram.navigator.ComBENavigatorItem) element)
+						.getView())) {
 			return;
 		}
 		label.setText(getText(element));
@@ -47,7 +56,8 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	public Image getImage(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBENavigatorGroup) {
 			ComBE.diagram.navigator.ComBENavigatorGroup group = (ComBE.diagram.navigator.ComBENavigatorGroup) element;
-			return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getBundledImage(group.getIcon());
+			return ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance()
+					.getBundledImage(group.getIcon());
 		}
 
 		if (element instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
@@ -66,32 +76,45 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 */
 	public Image getImage(View view) {
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
-		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?ComBE?AlternativeBranch?children", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
-			return getImage("Navigator?Diagram?ComBE?Specification", ComBE.diagram.providers.ComBEElementTypes.Specification_1000); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?ComBE?AtomicSequence?child", ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?ComBE?ParallelBranch?children", ComBE.diagram.providers.ComBEElementTypes.ParallelBranchChildren_4002); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?ComBE?ParallelBranch", ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?ComBE?AlternativeBranch", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001); //$NON-NLS-1$
-		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002); //$NON-NLS-1$
+			return getImage(
+					"Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001); //$NON-NLS-1$
+			return getImage(
+					"Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?ComBE?AlternativeBranch?children", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranchChildren_4001); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?ComBE?AtomicSequence?child", ComBE.diagram.providers.ComBEElementTypes.AtomicSequenceChild_4003); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?ComBE?ParallelBranch", ComBE.diagram.providers.ComBEElementTypes.ParallelBranch_2002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?ComBE?AlternativeBranch", ComBE.diagram.providers.ComBEElementTypes.AlternativeBranch_2001); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?ComBE?AtomicSequence", ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003); //$NON-NLS-1$
+			return getImage(
+					"Navigator?TopLevelNode?ComBE?AtomicSequence", ComBE.diagram.providers.ComBEElementTypes.AtomicSequence_2003); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?ComBE?EmptyNode", ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?ComBE?ParallelBranch?children", ComBE.diagram.providers.ComBEElementTypes.ParallelBranchChildren_4002); //$NON-NLS-1$
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Diagram?ComBE?Specification", ComBE.diagram.providers.ComBEElementTypes.Specification_1000); //$NON-NLS-1$
 		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
-			return getImage("Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003); //$NON-NLS-1$
+			return getImage(
+					"Navigator?Node?ComBE?StandardNode", ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -100,10 +123,15 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private Image getImage(String key, IElementType elementType) {
-		ImageRegistry imageRegistry = ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getImageRegistry();
+		ImageRegistry imageRegistry = ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getImageRegistry();
 		Image image = imageRegistry.get(key);
-		if (image == null && elementType != null && ComBE.diagram.providers.ComBEElementTypes.isKnownElementType(elementType)) {
-			image = ComBE.diagram.providers.ComBEElementTypes.getImage(elementType);
+		if (image == null
+				&& elementType != null
+				&& ComBE.diagram.providers.ComBEElementTypes
+						.isKnownElementType(elementType)) {
+			image = ComBE.diagram.providers.ComBEElementTypes
+					.getImage(elementType);
 			imageRegistry.put(key, image);
 		}
 
@@ -142,30 +170,30 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(view)) {
-		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
-			return getEmptyNode_3006Text(view);
-		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
-			return getAlternativeBranchChildren_4001Text(view);
 		case ComBE.diagram.edit.parts.EmptyNode2EditPart.VISUAL_ID:
 			return getEmptyNode_3004Text(view);
-		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
-			return getSpecification_1000Text(view);
-		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
-			return getAtomicSequenceChild_4003Text(view);
-		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
-			return getParallelBranchChildren_4002Text(view);
-		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
-			return getStandardNode_3005Text(view);
-		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
-			return getParallelBranch_2002Text(view);
-		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
-			return getAlternativeBranch_2001Text(view);
-		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
-			return getEmptyNode_3002Text(view);
 		case ComBE.diagram.edit.parts.StandardNodeEditPart.VISUAL_ID:
 			return getStandardNode_3001Text(view);
+		case ComBE.diagram.edit.parts.AlternativeBranchChildrenEditPart.VISUAL_ID:
+			return getAlternativeBranchChildren_4001Text(view);
+		case ComBE.diagram.edit.parts.AtomicSequenceChildEditPart.VISUAL_ID:
+			return getAtomicSequenceChild_4003Text(view);
+		case ComBE.diagram.edit.parts.EmptyNodeEditPart.VISUAL_ID:
+			return getEmptyNode_3002Text(view);
+		case ComBE.diagram.edit.parts.ParallelBranchEditPart.VISUAL_ID:
+			return getParallelBranch_2002Text(view);
+		case ComBE.diagram.edit.parts.StandardNode3EditPart.VISUAL_ID:
+			return getStandardNode_3005Text(view);
+		case ComBE.diagram.edit.parts.AlternativeBranchEditPart.VISUAL_ID:
+			return getAlternativeBranch_2001Text(view);
 		case ComBE.diagram.edit.parts.AtomicSequenceEditPart.VISUAL_ID:
 			return getAtomicSequence_2003Text(view);
+		case ComBE.diagram.edit.parts.EmptyNode3EditPart.VISUAL_ID:
+			return getEmptyNode_3006Text(view);
+		case ComBE.diagram.edit.parts.ParallelBranchChildrenEditPart.VISUAL_ID:
+			return getParallelBranchChildren_4002Text(view);
+		case ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID:
+			return getSpecification_1000Text(view);
 		case ComBE.diagram.edit.parts.StandardNode2EditPart.VISUAL_ID:
 			return getStandardNode_3003Text(view);
 		}
@@ -176,11 +204,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getStandardNode_3001Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.StandardNode_3001,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -196,11 +232,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getEmptyNode_3006Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3006,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.EmptyNodeLabel3EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5023); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5023); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -209,11 +253,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getEmptyNode_3004Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3004,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.EmptyNodeLabel2EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5015); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5015); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -236,11 +288,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getStandardNode_3005Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.StandardNode_3005,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.WrappingLabel13EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5017); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5017); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -256,11 +316,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getStandardNode_3003Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.StandardNode_3003,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5009); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -283,11 +351,19 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private String getEmptyNode_3002Text(View view) {
-		IParser parser = ComBE.diagram.providers.ComBEParserProvider.getParser(ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002, view.getElement() != null ? view.getElement() : view, ComBE.diagram.part.ComBEVisualIDRegistry.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
+		IParser parser = ComBE.diagram.providers.ComBEParserProvider
+				.getParser(
+						ComBE.diagram.providers.ComBEElementTypes.EmptyNode_3002,
+						view.getElement() != null ? view.getElement() : view,
+						ComBE.diagram.part.ComBEVisualIDRegistry
+								.getType(ComBE.diagram.edit.parts.EmptyNodeLabelEditPart.VISUAL_ID));
 		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view), ParserOptions.NONE.intValue());
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5007); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -342,7 +418,9 @@ public class ComBENavigatorLabelProvider extends LabelProvider implements ICommo
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID.equals(ComBE.diagram.part.ComBEVisualIDRegistry.getModelID(view));
+		return ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID
+				.equals(ComBE.diagram.part.ComBEVisualIDRegistry
+						.getModelID(view));
 	}
 
 }

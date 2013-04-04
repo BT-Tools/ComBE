@@ -18,7 +18,8 @@ public class ComBENavigatorSorter extends ViewerSorter {
 	public int category(Object element) {
 		if (element instanceof ComBE.diagram.navigator.ComBENavigatorItem) {
 			ComBE.diagram.navigator.ComBENavigatorItem item = (ComBE.diagram.navigator.ComBENavigatorItem) element;
-			return ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(item.getView());
+			return ComBE.diagram.part.ComBEVisualIDRegistry.getVisualID(item
+					.getView());
 		}
 		return GROUP_CATEGORY;
 	}

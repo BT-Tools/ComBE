@@ -80,7 +80,8 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(
+			boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
@@ -91,7 +92,8 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(ComBE.diagram.part.Messages.ComBECreationWizardTitle);
-		setDefaultPageImageDescriptor(ComBE.diagram.part.ComBEDiagramEditorPlugin.getBundledImageDescriptor("icons/wizban/NewComBEWizard.gif")); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getBundledImageDescriptor("icons/wizban/NewComBEWizard.gif")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 	}
 
@@ -99,24 +101,33 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DiagramModelFile", getSelection(), "btc_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage.setDescription(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage(
+				"DiagramModelFile", getSelection(), "btc_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
+		diagramModelFilePage
+				.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage
+				.setDescription(ComBE.diagram.part.Messages.ComBECreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage("DomainModelFile", getSelection(), "btc") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new ComBE.diagram.part.ComBECreationWizardPage(
+				"DomainModelFile", getSelection(), "btc") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".btc_diagram".length()); //$NON-NLS-1$
-					setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName, "btc")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length()
+							- ".btc_diagram".length()); //$NON-NLS-1$
+					setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil
+							.getUniqueFileName(getContainerFullPath(),
+									fileName, "btc")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage.setDescription(ComBE.diagram.part.Messages.ComBECreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage
+				.setTitle(ComBE.diagram.part.Messages.ComBECreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage
+				.setDescription(ComBE.diagram.part.Messages.ComBECreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
@@ -126,13 +137,21 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
-				diagram = ComBE.diagram.part.ComBEDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(), domainModelFilePage.getURI(), monitor);
+			protected void execute(IProgressMonitor monitor)
+					throws CoreException, InterruptedException {
+				diagram = ComBE.diagram.part.ComBEDiagramEditorUtil
+						.createDiagram(diagramModelFilePage.getURI(),
+								domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
-						ComBE.diagram.part.ComBEDiagramEditorUtil.openDiagram(diagram);
+						ComBE.diagram.part.ComBEDiagramEditorUtil
+								.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog.openError(getContainer().getShell(), ComBE.diagram.part.Messages.ComBECreationWizardOpenEditorError, null, e.getStatus());
+						ErrorDialog
+								.openError(
+										getContainer().getShell(),
+										ComBE.diagram.part.Messages.ComBECreationWizardOpenEditorError,
+										null, e.getStatus());
 					}
 				}
 			}
@@ -143,9 +162,17 @@ public class ComBECreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog.openError(getContainer().getShell(), ComBE.diagram.part.Messages.ComBECreationWizardCreationError, null, ((CoreException) e.getTargetException()).getStatus());
+				ErrorDialog
+						.openError(
+								getContainer().getShell(),
+								ComBE.diagram.part.Messages.ComBECreationWizardCreationError,
+								null, ((CoreException) e.getTargetException())
+										.getStatus());
 			} else {
-				ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				ComBE.diagram.part.ComBEDiagramEditorPlugin
+						.getInstance()
+						.logError(
+								"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
 			}
 			return false;
 		}

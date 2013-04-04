@@ -11,6 +11,7 @@ public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 	 * @generated
 	 */
 	public DiagramPrintingPreferencePage() {
-		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore());
+		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getPreferenceStore());
 	}
 }

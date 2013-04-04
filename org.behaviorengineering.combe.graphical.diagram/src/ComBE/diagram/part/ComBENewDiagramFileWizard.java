@@ -51,30 +51,45 @@ public class ComBENewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	public ComBENewDiagramFileWizard(URI domainModelURI, EObject diagramRoot, TransactionalEditingDomain editingDomain) {
+	public ComBENewDiagramFileWizard(URI domainModelURI, EObject diagramRoot,
+			TransactionalEditingDomain editingDomain) {
 		assert domainModelURI != null : "Domain model uri must be specified"; //$NON-NLS-1$
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageName, StructuredSelection.EMPTY);
-		myFileCreationPage.setTitle(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(NLS.bind(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageDescription, ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID));
+		myFileCreationPage = new WizardNewFileCreationPage(
+				ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageName,
+				StructuredSelection.EMPTY);
+		myFileCreationPage
+				.setTitle(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageTitle);
+		myFileCreationPage
+				.setDescription(NLS
+						.bind(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_CreationPageDescription,
+								ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID));
 		IPath filePath;
-		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
+		String fileName = URI.decode(domainModelURI.trimFileExtension()
+				.lastSegment());
 		if (domainModelURI.isPlatformResource()) {
-			filePath = new Path(domainModelURI.trimSegments(1).toPlatformString(true));
+			filePath = new Path(domainModelURI.trimSegments(1)
+					.toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			filePath = new Path(domainModelURI.trimSegments(1).toFileString());
 		} else {
 			// TODO : use some default path
-			throw new IllegalArgumentException("Unsupported URI: " + domainModelURI); //$NON-NLS-1$
+			throw new IllegalArgumentException(
+					"Unsupported URI: " + domainModelURI); //$NON-NLS-1$
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
-		myFileCreationPage.setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil.getUniqueFileName(filePath, fileName, "btc_diagram")); //$NON-NLS-1$
+		myFileCreationPage
+				.setFileName(ComBE.diagram.part.ComBEDiagramEditorUtil
+						.getUniqueFileName(filePath, fileName, "btc_diagram")); //$NON-NLS-1$
 
-		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageName);
-		diagramRootElementSelectionPage.setTitle(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageTitle);
-		diagramRootElementSelectionPage.setDescription(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageDescription);
+		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
+				ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageName);
+		diagramRootElementSelectionPage
+				.setTitle(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageTitle);
+		diagramRootElementSelectionPage
+				.setDescription(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageDescription);
 		diagramRootElementSelectionPage.setModelElement(diagramRoot);
 
 		myEditingDomain = editingDomain;
@@ -96,31 +111,52 @@ public class ComBENewDiagramFileWizard extends Wizard {
 		IFile diagramFile = myFileCreationPage.createNewFile();
 		ComBE.diagram.part.ComBEDiagramEditorUtil.setCharset(diagramFile);
 		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile.getFullPath().toString(), true);
+		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
+				.getFullPath().toString(), true);
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
-		final Resource diagramResource = resourceSet.createResource(diagramModelURI);
-		AbstractTransactionalCommand command = new AbstractTransactionalCommand(myEditingDomain, ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_InitDiagramCommand, affectedFiles) {
+		final Resource diagramResource = resourceSet
+				.createResource(diagramModelURI);
+		AbstractTransactionalCommand command = new AbstractTransactionalCommand(
+				myEditingDomain,
+				ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_InitDiagramCommand,
+				affectedFiles) {
 
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				int diagramVID = ComBE.diagram.part.ComBEVisualIDRegistry.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
+			protected CommandResult doExecuteWithResult(
+					IProgressMonitor monitor, IAdaptable info)
+					throws ExecutionException {
+				int diagramVID = ComBE.diagram.part.ComBEVisualIDRegistry
+						.getDiagramVisualID(diagramRootElementSelectionPage
+								.getModelElement());
 				if (diagramVID != ComBE.diagram.edit.parts.SpecificationEditPart.VISUAL_ID) {
-					return CommandResult.newErrorCommandResult(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_IncorrectRootError);
+					return CommandResult
+							.newErrorCommandResult(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_IncorrectRootError);
 				}
-				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(), ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID, ComBE.diagram.part.ComBEDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				Diagram diagram = ViewService
+						.createDiagram(
+								diagramRootElementSelectionPage
+										.getModelElement(),
+								ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID,
+								ComBE.diagram.part.ComBEDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
 		};
 		try {
-			OperationHistoryFactory.getOperationHistory().execute(command, new NullProgressMonitor(), null);
-			diagramResource.save(ComBE.diagram.part.ComBEDiagramEditorUtil.getSaveOptions());
-			ComBE.diagram.part.ComBEDiagramEditorUtil.openDiagram(diagramResource);
+			OperationHistoryFactory.getOperationHistory().execute(command,
+					new NullProgressMonitor(), null);
+			diagramResource.save(ComBE.diagram.part.ComBEDiagramEditorUtil
+					.getSaveOptions());
+			ComBE.diagram.part.ComBEDiagramEditorUtil
+					.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
+			ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().logError(
+					"Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
 	}
@@ -128,7 +164,8 @@ public class ComBENewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private static class DiagramRootElementSelectionPage extends ComBE.diagram.part.ModelElementSelectionPage {
+	private static class DiagramRootElementSelectionPage extends
+			ComBE.diagram.part.ModelElementSelectionPage {
 
 		/**
 		 * @generated
@@ -152,8 +189,15 @@ public class ComBENewDiagramFileWizard extends Wizard {
 				setErrorMessage(ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
-			boolean result = ViewService.getInstance().provides(new CreateDiagramViewOperation(new EObjectAdapter(selectedModelElement), ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID, ComBE.diagram.part.ComBEDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
-			setErrorMessage(result ? null : ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
+			boolean result = ViewService
+					.getInstance()
+					.provides(
+							new CreateDiagramViewOperation(
+									new EObjectAdapter(selectedModelElement),
+									ComBE.diagram.edit.parts.SpecificationEditPart.MODEL_ID,
+									ComBE.diagram.part.ComBEDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+			setErrorMessage(result ? null
+					: ComBE.diagram.part.Messages.ComBENewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;
 		}
 	}

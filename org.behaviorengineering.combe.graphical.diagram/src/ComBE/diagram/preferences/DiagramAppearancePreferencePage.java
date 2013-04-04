@@ -11,6 +11,7 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin.getInstance().getPreferenceStore());
+		setPreferenceStore(ComBE.diagram.part.ComBEDiagramEditorPlugin
+				.getInstance().getPreferenceStore());
 	}
 }
