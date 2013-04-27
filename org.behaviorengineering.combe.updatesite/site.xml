@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/org.behaviorengineering.combe.feature_1.0.0.qualifier.jar" id="org.behaviorengineering.combe.feature" version="1.0.0.qualifier">
-      <category name="spoofax_modelware"/>
+      <category name="combe"/>
    </feature>
-   <category-def name="spoofax_modelware" label="Spoofax Modelware"/>
+   <category-def name="combe" label="ComBE"/>
 </site>
