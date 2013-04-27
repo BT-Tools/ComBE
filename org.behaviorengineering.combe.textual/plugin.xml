@@ -9,12 +9,4 @@
           <parser class="org.behaviorengineering.combe.textual.ComBEParseController" language="ComBE">
           </parser>
        </extension>    
-       <extension point="org.eclipse.emf.ecore.extension_parser"> <parser type="btc" class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/> </extension>
-        <extension point="org.spoofax.modelware.gmf.synchronizer">
-          <synchronizer
-                diagramFileExtension="btc_diagram"
-                domainFileExtension="btc"
-                packageName="ComBE"
-                textFileExtension="btc"></synchronizer>
-       </extension>
  </plugin>

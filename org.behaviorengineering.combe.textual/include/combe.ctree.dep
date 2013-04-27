@@ -1,14 +1,14 @@
-/home/oskar/ComBE/org.behaviorengineering.combe.textual/include/combe.ctree: \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/trans/analysis-manual.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/analysis-auto.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/trans/check.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/trans/names.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/nbl-library.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/compilation-library.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/analysis-library-internal.generated.str \
+/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/include/combe.ctree: \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/trans/analysis-manual.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/analysis-auto.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/trans/check.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/trans/names.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/nbl-library.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/compilation-library.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/analysis-library-internal.generated.str \
 	 \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/analysis-library.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/index-library.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/lib/editor-common.generated.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/include/ComBE.str \
-	/home/oskar/ComBE/org.behaviorengineering.combe.textual/trans/combe.str
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/analysis-library.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/index-library.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/lib/editor-common.generated.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/include/ComBE.str \
+	/home/oskar/git/ComBE/org.behaviorengineering.combe.textual/trans/combe.str

@@ -610,5 +610,21 @@
       <?gmfgen generated="true"?>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="false"?>
+      <parser
+            type="btc"
+            class="org.spoofax.modelware.gmf.resource.SpoofaxGMFResourceFactory"/>
+   </extension>
+
+   <extension point="org.spoofax.modelware.gmf.synchronizer">
+      <?gmfgen generated="false"?>
+      <synchronizer
+            diagramFileExtension="btc_diagram"
+            domainFileExtension="btc"
+            packageName="ComBE"
+            textFileExtension="btc">
+      </synchronizer>
+   </extension>
  
 </plugin>

@@ -16,5 +16,5 @@
             class="ComBE.ComBEPackage"
             genModel="model/ComBE.genmodel"/>
    </extension>
-
+   
 </plugin>
