@@ -16,7 +16,7 @@ rules // Adjust lookup
 	
 	// state references
 	adjust-index-lookup(target |namespace, path, prefix):
-		StandardNode(_, _, c, <target>, _, _) -> f*
+		StandardNode(_, _, c, <target>, _) -> f*
 		where
 			f* := <index-lookup-children(|Behavior(), prefix)> c
 			

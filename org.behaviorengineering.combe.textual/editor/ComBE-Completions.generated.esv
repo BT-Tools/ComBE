@@ -49,10 +49,11 @@ completions
                                       
   // Derived completions may follow   
                                       
-  completion keyword                : "#N{"
-  completion keyword                : "#P{"
   completion keyword                : "#RT"
   completion keyword                : "#C"
   completion keyword                : "#SC"
+  completion keyword                : "#T"
   completion keyword                : "#N"
   completion keyword                : "#P"
+  completion keyword                : "#N{"
+  completion keyword                : "#P{"

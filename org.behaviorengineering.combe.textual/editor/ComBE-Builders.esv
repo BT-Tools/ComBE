@@ -19,5 +19,5 @@ builders
                                                                                                                           
   builder  : "Show abstract syntax"                = debug-generate-aterm (openeditor) (realtime) (source)           
   builder  : "Show analyzed syntax"                = debug-generate-analyzed (openeditor) (realtime) (source)        
-  
+  builder  : "Pretty-print"                        = print-it-pretty-builder (openeditor) (realtime) (source) (meta)
                                                                                       

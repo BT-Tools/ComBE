@@ -98,26 +98,25 @@ rules
 rules
 
   nam-get-uses-keys :
-    StandardNode(r, _, c, b, _, _) -> [r, c, b]
+    StandardNode(r, _, c, b, _) -> [r, c, b]
 
   nam-get-uses :
-    StandardNode(r, _, c, b, _, _) -> [ (Requirement(), [r])
+    StandardNode(r, _, c, b, _) -> [ (Requirement(), [r])
                                       , (Component(), [c])
                                       , (Behavior(), [b])
                                       ]
 
   nam-annotate-names(|paths__, path__):
-    StandardNode(r, _, c, b, _, _) -> <StandardNode(
+    StandardNode(r, _, c, b, _) -> <StandardNode(
                                          nam-annotate-use(|paths__, Requirement())
                                        , id
                                        , nam-annotate-use(|paths__, Component())
                                        , nam-annotate-use(|paths__, Behavior())
                                        , id
-                                       , id
                                        )>
 
   adjust-index-lookup(target__|namespace__, path__, prefix__):
-    StandardNode(r, _, c, b, _, _) -> [ [Requirement()|path__]
+    StandardNode(r, _, c, b, _) -> [ [Requirement()|path__]
                                       , [Component()|path__]
                                       , [Behavior()|path__]
                                       ]

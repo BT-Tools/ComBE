@@ -29,7 +29,7 @@ rules
 	Behavior(x, _) :
 	  defines Behavior x
 
-	StandardNode(r, _, c, b, _, _) :
+	StandardNode(r, _, c, b, _) :
 	  refers to Requirement r
 	  refers to Component c
 	  refers to Behavior b

@@ -1,0 +1,301 @@
+module ComBE.pp
+
+imports
+	include/ComBE
+
+strategies
+  prettyprint-Start =
+    ?Specification(a, b, c)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("#RT ")
+           , <pp-V-list(prettyprint-Requirement)> a
+           ]
+         )
+       , H(
+           []
+         , [S("")]
+         )
+       , H(
+           [SOpt(HS(), "0")]
+         , [<pp-V-list(prettyprint-Component)> b]
+         )
+       , H(
+           []
+         , [S("")]
+         )
+       , H(
+           [SOpt(HS(), "0")]
+         , [<pp-option(pp-one-Z(prettyprint-Root))> c]
+         )
+       ]
+
+  prettyprint-Requirement =
+    ?Requirement(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-ID)> a
+           , S(" ")
+           , <pp-one-Z(prettyprint-Label)> b
+           ]
+         )
+       ]
+
+  prettyprint-Component =
+    ?StandardComponent(a, b, c)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("#C ")
+           , <pp-one-Z(prettyprint-ID)> a
+           , S(" ")
+           , <pp-one-Z(prettyprint-Label)> b
+           ]
+         )
+       , <pp-indent(|"5")> [<pp-V-list(prettyprint-BehaviorSeq)> c]
+       ]
+
+  prettyprint-Component =
+    ?SystemComponent(a, b, c)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("#SC ")
+           , <pp-one-Z(prettyprint-ID)> a
+           , S(" ")
+           , <pp-one-Z(prettyprint-Label)> b
+           ]
+         )
+       , <pp-indent(|"5")> [<pp-V-list(prettyprint-BehaviorSeq)> c]
+       ]
+
+  prettyprint-BehaviorSeq =
+    ?BehaviorSeq(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-BehaviorType)> a
+           , S(" ")
+           , <pp-V-list(prettyprint-Behavior)> b
+           ]
+         )
+       ]
+
+  prettyprint-Behavior =
+    ?Behavior(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-INT)> a
+           , S(" ")
+           , <pp-one-Z(prettyprint-Label)> b
+           ]
+         )
+       ]
+
+  prettyprint-Root =
+    ?Root(a)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("#T ")
+           , <pp-one-Z(prettyprint-BehaviorTree)> a
+           ]
+         )
+       ]
+
+  prettyprint-BehaviorTree =
+    ?AtomicSequence(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-AtomicSequence)> a
+           , S(" ")
+           , <pp-option(pp-one-Z(prettyprint-AtomicSequenceChild))> b
+           ]
+         )
+       ]
+
+  prettyprint-BehaviorTree =
+    ?AlternativeBranch(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-AtomicSequence)> a
+           , S(" #N{")
+           ]
+         )
+       , <pp-indent(|"2")> [<pp-one-Z(prettyprint-BranchChildren)> b]
+       , H(
+           [SOpt(HS(), "0")]
+         , [S("}")]
+         )
+       ]
+
+  prettyprint-BehaviorTree =
+    ?ParallelBranch(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-AtomicSequence)> a
+           , S(" #P{")
+           ]
+         )
+       , <pp-indent(|"10")> [<pp-one-Z(prettyprint-BranchChildren)> b]
+       , <pp-indent(|"8")> [S("}")]
+       ]
+
+  prettyprint-AtomicSequence =
+    ?a
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [<pp-H-list(prettyprint-Node|";; ")> a]
+         )
+       ]
+
+  prettyprint-AtomicSequenceChild =
+    ?a
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("; ")
+           , <pp-one-Z(prettyprint-BehaviorTree)> a
+           ]
+         )
+       ]
+
+  prettyprint-BranchChildren =
+    ?a
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [<pp-V-list(prettyprint-BehaviorTree)> a]
+         )
+       ]
+
+  prettyprint-Node =
+    ?StandardNode(a, b, c, d, e)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-ID)> a
+           , <space-or-no-space> b
+           , <pp-option(pp-one-Z(prettyprint-TraceabilityStatus))> b
+           , S(" ")
+           , <pp-one-Z(prettyprint-ID)> c
+           , S(" ")
+           , <pp-one-Z(prettyprint-INT)> d
+           , <space-or-no-space> e
+           , <pp-option(pp-one-Z(prettyprint-LabelAndOp))> e
+           ]
+         )
+       ]
+
+  prettyprint-LabelAndOp =
+    ?(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ <pp-one-Z(prettyprint-NodeLabel)> a
+           , S(" ")
+           , <pp-one-Z(prettyprint-Operator)> b
+           ]
+         )
+       ]
+       
+  prettyprint-Node =
+    ?EmptyNode(a)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("_ ")
+           , <pp-option(pp-one-Z(prettyprint-LabelAndOp))> a
+           ]
+         )
+       ]
+
+  prettyprint-example =
+    prettyprint-Start
+
+  prettyprint-example =
+    prettyprint-Requirement
+
+  prettyprint-example =
+    prettyprint-Component
+
+  prettyprint-example =
+    prettyprint-BehaviorSeq
+
+  prettyprint-example =
+    prettyprint-Behavior
+
+  prettyprint-example =
+    prettyprint-Root
+
+  prettyprint-example =
+    prettyprint-BehaviorTree
+
+  prettyprint-example =
+    prettyprint-AtomicSequence
+
+  prettyprint-example =
+    prettyprint-AtomicSequenceChild
+
+  prettyprint-example =
+    prettyprint-BranchChildren
+
+  prettyprint-example =
+    prettyprint-LabelAndOp
+
+  prettyprint-example =
+    prettyprint-Node
+
+
+strategies
+  prettyprint-BehaviorType =
+    ![S(<is-string>)]
+
+  prettyprint-TraceabilityStatus =
+    ![S(<is-string>)]
+
+  prettyprint-Operator =
+    ![S(<is-string>)]
+
+  prettyprint-example =
+    prettyprint-BehaviorType
+
+  prettyprint-example =
+    prettyprint-TraceabilityStatus
+
+  prettyprint-example =
+    prettyprint-Operator
+
+
+strategies
+  prettyprint-ID =
+    ![S(<is-string>)]
+
+  prettyprint-Label =
+    ![S(<is-string>)]
+
+  prettyprint-NodeLabel =
+    ![S(<is-string>)]
+
+  prettyprint-INT =
+    ![S(<is-string>)]
+
+  prettyprint-example =
+    prettyprint-ID
+
+  prettyprint-example =
+    prettyprint-Label
+
+  prettyprint-example =
+    prettyprint-NodeLabel
+
+  prettyprint-example =
+    prettyprint-INT
+
+
+strategies
+  prettyprint-ID =
+    ![S(<is-string>)]
+
+  prettyprint-example =
+    prettyprint-ID
+    
+rules
+  space-or-no-space: 	
+  	x -> result
+  	where
+  	  if <?None() + ?[]> x
+  	  then result := S("")
+  	  else result := S(" ")
+      end

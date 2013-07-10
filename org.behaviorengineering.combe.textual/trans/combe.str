@@ -11,9 +11,40 @@ imports
   lib/analysis-library-internal.generated
   lib/compilation-library.generated
   lib/nbl-library.generated
+  lib/pp-runtime
   names
   check
   analysis-manual
+  ComBE.pp
+
+rules
+	// should layout preservation algorithm be changed such that this one is not called? 
+	// it leaves an additional blank line behind upon delting an element.
+ 	prettyprint-example:
+ 		[] -> []
+ 			 
+	print-it-pretty:
+		term -> text
+		where
+			text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-example> term
+
+
+	print-it-pretty:
+		t -> <fail>
+		where <debug> t
+
+  print-it-pretty-builder:
+   (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"pp.btc")> path;
+      result   :=  <print-it-pretty> ast
+
+rules
+	adjust-model-to-tree = id
+	adjust-tree-to-model = id
+	parenthesize = fail
+	override-reconstruction = fail
+	resugar = fail
 
 rules // Analysis
   

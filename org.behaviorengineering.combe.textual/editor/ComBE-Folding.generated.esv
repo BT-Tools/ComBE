@@ -24,4 +24,5 @@ folding Default folding definitions
   Component.StandardComponent
   BehaviorSeq.BehaviorSeq
   Component.SystemComponent
-  OptRoot0
+  BehaviorTree.AtomicSequence
+  ListPlusOfNode0

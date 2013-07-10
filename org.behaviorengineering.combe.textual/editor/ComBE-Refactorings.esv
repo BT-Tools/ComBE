@@ -1,0 +1,11 @@
+module ComBE-Refactorings
+
+refactorings
+
+  pretty-print : print-it-pretty
+  resugar: resugar
+  parenthesize: parenthesize
+  override reconstruction : override-reconstruction
+  // 
+  // refactoring  : "Format"                    = print-it-pretty (source)  
+  //   shortcut : "org.eclipse.jdt.ui.edit.text.java.format"
