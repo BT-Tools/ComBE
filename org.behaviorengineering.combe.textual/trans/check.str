@@ -4,7 +4,6 @@ imports
   libstratego-lib
   include/ComBE
   lib/editor-common.generated
-  lib/analysis-auto.generated
   lib/index-library.generated
   lib/analysis-library.generated
   names
