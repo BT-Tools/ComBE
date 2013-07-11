@@ -18,7 +18,7 @@ strategies
          )
        , H(
            [SOpt(HS(), "0")]
-         , [<pp-V-list(prettyprint-Component)> b]
+         , [<pp-V-list(prettyprint-Component|"1")> b]
          )
        , H(
            []
@@ -104,7 +104,6 @@ strategies
     ; ![ H(
            [SOpt(HS(), "0")]
          , [ <pp-one-Z(prettyprint-AtomicSequence)> a
-           , S(" ")
            , <pp-option(pp-one-Z(prettyprint-AtomicSequenceChild))> b
            ]
          )
@@ -168,14 +167,25 @@ strategies
     ; ![ H(
            [SOpt(HS(), "0")]
          , [ <pp-one-Z(prettyprint-ID)> a
-           , <space-or-no-space> b
+           , <guarantee-one-space> b
            , <pp-option(pp-one-Z(prettyprint-TraceabilityStatus))> b
            , S(" ")
            , <pp-one-Z(prettyprint-ID)> c
            , S(" ")
            , <pp-one-Z(prettyprint-INT)> d
-           , <space-or-no-space> e
+           , <guarantee-one-space> e
            , <pp-option(pp-one-Z(prettyprint-LabelAndOp))> e
+           ]
+         )
+       ]
+       
+  prettyprint-Node =
+    ?EmptyNode(a)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("_")
+           , <guarantee-one-space> a
+           , <pp-option(pp-one-Z(prettyprint-LabelAndOp))> a
            ]
          )
        ]
@@ -185,18 +195,8 @@ strategies
     ; ![ H(
            [SOpt(HS(), "0")]
          , [ <pp-one-Z(prettyprint-NodeLabel)> a
-           , S(" ")
+           , <guarantee-one-space> b
            , <pp-one-Z(prettyprint-Operator)> b
-           ]
-         )
-       ]
-       
-  prettyprint-Node =
-    ?EmptyNode(a)
-    ; ![ H(
-           [SOpt(HS(), "0")]
-         , [ S("_ ")
-           , <pp-option(pp-one-Z(prettyprint-LabelAndOp))> a
            ]
          )
        ]
@@ -292,10 +292,50 @@ strategies
     prettyprint-ID
     
 rules
-  space-or-no-space: 	
+  guarantee-one-space: 	
   	x -> result
   	where
   	  if <?None() + ?[]> x
   	  then result := S("")
   	  else result := S(" ")
       end
+       
+  prettyprint-hack =
+  	?AtomicSequence(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("; ")
+           , <pp-one-Z(prettyprint-AtomicSequence)> a
+           , <pp-option(pp-one-Z(prettyprint-AtomicSequenceChild))> b
+           ]
+         )
+       ]
+
+  prettyprint-hack =
+   ?AlternativeBranch(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("; ")
+           , <pp-one-Z(prettyprint-AtomicSequence)> a
+           , S(" #N{")
+           ]
+         )
+       , <pp-indent(|"2")> [<pp-one-Z(prettyprint-BranchChildren)> b]
+       , H(
+           [SOpt(HS(), "0")]
+         , [S("}")]
+         )
+       ]
+
+  prettyprint-hack =
+    ?ParallelBranch(a, b)
+    ; ![ H(
+           [SOpt(HS(), "0")]
+         , [ S("; ")
+           , <pp-one-Z(prettyprint-AtomicSequence)> a
+           , S(" #P{")
+           ]
+         )
+       , <pp-indent(|"10")> [<pp-one-Z(prettyprint-BranchChildren)> b]
+       , <pp-indent(|"8")> [S("}")]
+       ]

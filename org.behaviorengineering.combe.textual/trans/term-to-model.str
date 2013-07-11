@@ -1,0 +1,29 @@
+module term-to-model
+
+imports
+	include/ComBE
+
+strategies
+	adjust-tree-to-model = alltd(t2m)
+	adjust-model-to-tree = alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
+
+rules	
+	t2m: StandardNode(a, b, c, d, Some((e, f))) -> StandardNode(a, b, c, d, e, Some(f))
+	t2m: StandardNode(a, b, c, d, None()) -> StandardNode(a, b, c, d, None(), None())
+	
+	t2m: EmptyNode(Some((a, b))) -> EmptyNode(a, Some(b))
+	t2m: EmptyNode(None()) -> EmptyNode(None(), None())
+
+rules
+	m2t-a: StandardNode(a, Some(""), c, d, e, f) -> StandardNode(a, None(), c, d, e, f)
+	m2t-b: StandardNode(a, b, c, d, _, Some("")) -> StandardNode(a, b, c, d, None())
+	m2t-c: StandardNode(a, b, c, d, Some(""), Some(f)) -> StandardNode(a, b, c, d, Some((None(), f)))
+	m2t-d: StandardNode(a, b, c, d, e, Some(f)) -> StandardNode(a, b, c, d, Some((e, f)))
+
+	m2t-a: EmptyNode(_, Some("")) -> EmptyNode(None())
+	m2t-b: EmptyNode(Some(""), Some(b)) -> EmptyNode(Some((None(), b)))
+	m2t-c: EmptyNode(a, Some(b)) -> EmptyNode(Some((a, b)))
+	
+signature constructors
+	StandardNode: a * b * c * d * e *f -> StandardNode
+	EmptyNode: a * b -> EmptyNode

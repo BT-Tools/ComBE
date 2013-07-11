@@ -11,11 +11,12 @@ imports
   lib/analysis-library-internal.generated
   lib/compilation-library.generated
   lib/nbl-library.generated
-  lib/pp-runtime
+  lib/runtime/tmpl/pp
   names
   check
   analysis-manual
   ComBE.pp
+  term-to-model
 
 rules
 	// should layout preservation algorithm be changed such that this one is not called? 
@@ -26,12 +27,7 @@ rules
 	print-it-pretty:
 		term -> text
 		where
-			text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-example> term
-
-
-	print-it-pretty:
-		t -> <fail>
-		where <debug> t
+			text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-hack <+ prettyprint-example> term
 
   print-it-pretty-builder:
    (selected, position, ast, path, project-path) -> (filename, result)
@@ -40,8 +36,6 @@ rules
       result   :=  <print-it-pretty> ast
 
 rules
-	adjust-model-to-tree = id
-	adjust-tree-to-model = id
 	parenthesize = fail
 	override-reconstruction = fail
 	resugar = fail
