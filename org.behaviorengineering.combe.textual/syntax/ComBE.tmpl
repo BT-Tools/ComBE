@@ -5,23 +5,25 @@ context-free start-symbols
 templates
 
 	Start.Specification = 
-	<
-	  #RT <Requirement*; separator="\n">
+		<
+		#RT <Requirement*; separator="\n">
+	  	
+		<Component*; separator="\n\n">
 		
-	  <Component*; separator="\n\n">
-		 
-	  <Root?>
-	>
+		<Root?>
+		>
  
 	Requirement.Requirement = <<INTorID> <Label>>
 	Component.StandardComponent = 
-		<#C <INTorID> <Label> 
-		 <BehaviorSeq*; separator="\n">
-		 >
-	Component.SystemComponent = 
-		<#SC <INTorID> <Label>
-		 <BehaviorSeq*; separator="\n">
+		<
+		#C <INTorID> <Label> 
+			<BehaviorSeq*; separator="\n">
 		>
+	Component.SystemComponent = 
+		<
+		#SC <INTorID> <Label>
+			<BehaviorSeq*; separator="\n">
+			>
 	BehaviorSeq.BehaviorSeq = <<BehaviorType> <Behavior*; separator="\n">>
 	Behavior.Behavior = <<INTorID> <Label>>
 	
@@ -29,13 +31,16 @@ templates
 	BehaviorTree.AtomicSequence = <<AtomicSequence> <AtomicSequenceChild?>>
 	BehaviorTree.AlternativeBranch = 
 		<
-		  <AtomicSequence> #N { 
-		    <BranchChildren>
-		  }>
+		<AtomicSequence> #N { 
+			<BranchChildren>
+		}
+		>
 	BehaviorTree.ParallelBranch = 
-		<<AtomicSequence> #P {
-	        <BranchChildren>
-	      }>
+		<
+		<AtomicSequence> #P {
+			<BranchChildren>
+		}
+		>
 	AtomicSequence = <<Node+; separator=";;">>
 	AtomicSequenceChild = <; <BehaviorTree>>
 	BranchChildren = <<BehaviorTree*; separator="\n">>
