@@ -27,7 +27,7 @@ rules
 	print-it-pretty:
 		term -> text
 		where
-			text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-hack <+ prettyprint-example> term
+			text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-example> term
 
   print-it-pretty-builder:
    (selected, position, ast, path, project-path) -> (filename, result)
