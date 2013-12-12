@@ -622,7 +622,7 @@
       <synchronizer
             diagramFileExtension="btc_diagram"
             domainFileExtension="btc"
-            packageName="ComBE"
+            nsURI="ComBE"
             textFileExtension="btc">
       </synchronizer>
    </extension>
