@@ -32,4 +32,4 @@ binding rules
 	StandardNode(r, _, c, b, _) :
 	  refers to Requirement r
 	  refers to Component c
-	  refers to Behavior b
+	  refers to Behavior b in c
