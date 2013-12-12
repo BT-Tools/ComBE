@@ -1,6 +1,6 @@
 module ComBE.main
 
-imports ComBE-Builders ComBE-Colorer ComBE-Completions ComBE-Folding ComBE-Outliner ComBE-References ComBE-Syntax ComBE-Refactorings
+imports ComBE-Menus ComBE-Colorer ComBE-Completions ComBE-Folding ComBE-Outliner ComBE-References ComBE-Syntax ComBE-Refactorings
 
 language General properties
                   

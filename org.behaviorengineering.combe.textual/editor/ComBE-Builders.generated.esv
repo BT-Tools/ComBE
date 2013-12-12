@@ -1,9 +1,0 @@
-module ComBE-Builders.generated
-
-// 
-// DEPRECATED. 
-//
-// Builders have been replaced by menus and actions (see 'editor/ComBE-Menus.esv'). 
-// Providers, the observer and the on-save builder are now part of the main language description. Fix: move them to 'editor/ComBE.main.esv'.
-// 
-
