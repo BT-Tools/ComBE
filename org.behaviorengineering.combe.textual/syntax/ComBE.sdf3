@@ -1,5 +1,7 @@
 module ComBE
 
+imports Common
+
 context-free start-symbols
   
     Start
