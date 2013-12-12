@@ -14,3 +14,8 @@ language General properties
   extensions    : btc
   table         : include/ComBE.tbl
   start symbols : Start
+  
+  provider : include/combe.ctree                                                                                          
+  provider : include/combe-java.jar                                                                                       
+                                                                                                                          
+  observer : editor-analyze 

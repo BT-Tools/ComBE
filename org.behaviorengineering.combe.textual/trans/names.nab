@@ -10,7 +10,7 @@ namespaces
 	Component
 	Behavior
 	
-rules
+binding rules
 
 	Specification(_, _, _) :
 	  scopes Requirement, Component

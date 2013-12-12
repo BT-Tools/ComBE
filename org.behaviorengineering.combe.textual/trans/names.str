@@ -1,123 +1,236 @@
 module names
 
 imports
-  lib/analysis-library.generated
-  lib/analysis-library-internal.generated
-  lib/index-library.generated
-
-
-imports
+  lib/runtime/nabl/-
+  lib/runtime/task/-
+  lib/runtime/properties/-
+  lib/runtime/types/-
+  lib/runtime/editor/-
   include/ComBE
 
 
 signature
   constructors
-    Type        : DefDataKind
-    Import      : DefDataKind
-    Transitive  : ImportAnno
-    CurrentFile : ImportAnno
-
-  constructors
-    Requirement : Namespace
-    Component   : Namespace
-    Behavior    : Namespace
+    NablNsRequirement : Namespace
+    NablNsComponent   : Namespace
+    NablNsBehavior    : Namespace
 
 
 rules
 
-  nam-get-scope-types :
-    Specification(_, _, _) -> [Requirement(), Component()]
+  nabl-scoping-site =
+    ?Specification(_, _, _)
+    ; origin-track-forced(
+        nabl-scope(
+        | [NablNsRequirement(), NablNsComponent()]
+        )
+      |
+      )
 
+  nabl-get-scope =
+    ?Specification(_, _, _)
+    ; ![NablNsRequirement(), NablNsComponent()]
 
-rules
+  nabl-get-name :
+    Requirement(x, _) -> x
 
-  nam-get-definition-keys :
-    Requirement(x, _) -> [x]
+  nabl-name-apply(s) =
+    Requirement(s, id)
 
-  nam-get-definitions :
-    Requirement(x, _) -> [(Requirement(), [x])]
+  nabl-def-site(child-uris__, sibl-uris__, implicits__|lang__, partition__, uniques__, uri__, states__) =
+    ?Requirement(x, _)
+    ; origin-track-forced(
+        Requirement(
+          nabl-def(
+            ?c-uri1__
+          , ?s-uri1__
+          | lang__
+          , partition__
+          , uniques__
+          , uri__
+          , uri__
+          , NablNsRequirement()
+          , Unique()
+          , Current()
+          , []
+          , []
+          )
+        , id
+        )
+        ; match(child-uris__|c-uri1__)
+        ; match(sibl-uris__|s-uri1__)
+        ; match(implicits__|[])
+      |
+      )
 
-  nam-annotate-names(|paths__, path__):
-    Requirement(x, _) -> <Requirement(nam-annotate-def(|path__), id)>
+  nabl-get-scope =
+    ?StandardComponent(x, _, _)
+    ; ![NablNsBehavior()]
 
-  nam-unique :
-    Requirement(x, _) -> <id>
+  nabl-get-name :
+    StandardComponent(x, _, _) -> x
 
+  nabl-name-apply(s) =
+    StandardComponent(s, id, id)
 
-rules
+  nabl-def-site(child-uris__, sibl-uris__, implicits__|lang__, partition__, uniques__, uri__, states__) =
+    ?StandardComponent(x, _, _)
+    ; origin-track-forced(
+        StandardComponent(
+          nabl-def(
+            ?c-uri1__
+          , ?s-uri1__
+          | lang__
+          , partition__
+          , uniques__
+          , uri__
+          , uri__
+          , NablNsComponent()
+          , Unique()
+          , Current()
+          , [NablNsBehavior()]
+          , []
+          )
+        , id
+        , id
+        )
+        ; match(child-uris__|c-uri1__)
+        ; match(sibl-uris__|s-uri1__)
+        ; match(implicits__|[])
+      |
+      )
 
-  nam-get-scope-types :
-    StandardComponent(x, _, _) -> [Behavior()]
+  nabl-get-scope =
+    ?SystemComponent(x, _, _)
+    ; ![NablNsBehavior()]
 
-  nam-get-definition-keys :
-    StandardComponent(x, _, _) -> [x]
+  nabl-get-name :
+    SystemComponent(x, _, _) -> x
 
-  nam-get-definitions :
-    StandardComponent(x, _, _) -> [(Component(), [x])]
+  nabl-name-apply(s) =
+    SystemComponent(s, id, id)
 
-  nam-annotate-names(|paths__, path__):
-    StandardComponent(x, _, _) -> <StandardComponent(nam-annotate-def(|path__), id, id)>
+  nabl-def-site(child-uris__, sibl-uris__, implicits__|lang__, partition__, uniques__, uri__, states__) =
+    ?SystemComponent(x, _, _)
+    ; origin-track-forced(
+        SystemComponent(
+          nabl-def(
+            ?c-uri1__
+          , ?s-uri1__
+          | lang__
+          , partition__
+          , uniques__
+          , uri__
+          , uri__
+          , NablNsComponent()
+          , Unique()
+          , Current()
+          , [NablNsBehavior()]
+          , []
+          )
+        , id
+        , id
+        )
+        ; match(child-uris__|c-uri1__)
+        ; match(sibl-uris__|s-uri1__)
+        ; match(implicits__|[])
+      |
+      )
 
-  nam-unique :
-    StandardComponent(x, _, _) -> <id>
+  nabl-get-name :
+    Behavior(x, _) -> x
 
+  nabl-name-apply(s) =
+    Behavior(s, id)
 
-rules
+  nabl-def-site(child-uris__, sibl-uris__, implicits__|lang__, partition__, uniques__, uri__, states__) =
+    ?Behavior(x, _)
+    ; origin-track-forced(
+        Behavior(
+          nabl-def(
+            ?c-uri1__
+          , ?s-uri1__
+          | lang__
+          , partition__
+          , uniques__
+          , uri__
+          , uri__
+          , NablNsBehavior()
+          , Unique()
+          , Current()
+          , []
+          , []
+          )
+        , id
+        )
+        ; match(child-uris__|c-uri1__)
+        ; match(sibl-uris__|s-uri1__)
+        ; match(implicits__|[])
+      |
+      )
 
-  nam-get-scope-types :
-    SystemComponent(x, _, _) -> [Behavior()]
-
-  nam-get-definition-keys :
-    SystemComponent(x, _, _) -> [x]
-
-  nam-get-definitions :
-    SystemComponent(x, _, _) -> [(Component(), [x])]
-
-  nam-annotate-names(|paths__, path__):
-    SystemComponent(x, _, _) -> <SystemComponent(nam-annotate-def(|path__), id, id)>
-
-  nam-unique :
-    SystemComponent(x, _, _) -> <id>
-
-
-rules
-
-  nam-get-definition-keys :
-    Behavior(x, _) -> [x]
-
-  nam-get-definitions :
-    Behavior(x, _) -> [(Behavior(), [x])]
-
-  nam-annotate-names(|paths__, path__):
-    Behavior(x, _) -> <Behavior(nam-annotate-def(|path__), id)>
-
-  nam-unique :
-    Behavior(x, _) -> <id>
-
-
-rules
-
-  nam-get-uses-keys :
-    StandardNode(r, _, c, b, _) -> [r, c, b]
-
-  nam-get-uses :
-    StandardNode(r, _, c, b, _) -> [ (Requirement(), [r])
-                                      , (Component(), [c])
-                                      , (Behavior(), [b])
-                                      ]
-
-  nam-annotate-names(|paths__, path__):
-    StandardNode(r, _, c, b, _) -> <StandardNode(
-                                         nam-annotate-use(|paths__, Requirement())
-                                       , id
-                                       , nam-annotate-use(|paths__, Component())
-                                       , nam-annotate-use(|paths__, Behavior())
-                                       , id
-                                       )>
-
-  adjust-index-lookup(target__|namespace__, path__, prefix__):
-    StandardNode(r, _, c, b, _) -> [ [Requirement()|path__]
-                                      , [Component()|path__]
-                                      , [Behavior()|path__]
-                                      ]
-    where <target__> r
+  nabl-use-site(|lang__, partition__, uniques__, uris__, states__) =
+    ?StandardNode(r, _, c, b, _)
+    ; origin-track-forced(
+        StandardNode(
+          nabl-use(
+          | lang__
+          , partition__
+          , uniques__
+          , uris__
+          , [ UseCandidate(
+                NablNsRequirement()
+              , []
+              , Current()
+              , True()
+              , []
+              )
+            ]
+          )
+        , id
+        , id
+        , id
+        , id
+        )
+        ; StandardNode(
+            id
+          , id
+          , nabl-use(
+            | lang__
+            , partition__
+            , uniques__
+            , uris__
+            , [ UseCandidate(
+                  NablNsComponent()
+                , []
+                , Current()
+                , True()
+                , []
+                )
+              ]
+            )
+          , id
+          , id
+          )
+        ; StandardNode(
+            id
+          , id
+          , id
+          , nabl-use(
+            | lang__
+            , partition__
+            , uniques__
+            , uris__
+            , [ UseCandidate(
+                  NablNsBehavior()
+                , []
+                , Current()
+                , True()
+                , []
+                )
+              ]
+            )
+          , id
+          )
+      |
+      )
