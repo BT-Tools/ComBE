@@ -1,0 +1,27 @@
+module pp
+
+imports
+
+	libstratego-gpp
+	lib/runtime/tmpl/pp
+	ComBE.pp
+
+rules
+	
+  print-it-pretty:
+    term -> text
+    where
+      text := <box2text-string(|100)> <!V([], <id>)> <prettyprint-example> term
+	
+  pp-Entity-string =
+    prettyprint-Start
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-debug :
+    ast -> result
+    with
+       result := <pp-Entity-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-Entity-string); debug(!"cannot pp ")))> ast
+    ;  result := ""
+
