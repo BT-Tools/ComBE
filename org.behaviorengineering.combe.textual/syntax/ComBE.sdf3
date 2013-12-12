@@ -1,3 +1,5 @@
+module ComBE
+
 context-free start-symbols
   
     Start
