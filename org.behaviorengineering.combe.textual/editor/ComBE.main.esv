@@ -18,4 +18,6 @@ language General properties
   provider : include/combe.ctree                                                                                          
   provider : include/combe-java.jar                                                                                       
                                                                                                                           
-  observer : editor-analyze 
+  observer: editor-analyze (multifile)
+  
+  on save : editor-save
