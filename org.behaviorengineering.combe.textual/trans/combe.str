@@ -14,7 +14,6 @@ imports
   lib/runtime/tmpl/pp
   names
   check
-  analysis-manual
   ComBE.pp
   term-to-model
 

@@ -6,4 +6,5 @@
 /lib-refactoring
 /syntax/*generated*
 /trans/*generated*
+/trans/names.str
 /editor/*generated*
