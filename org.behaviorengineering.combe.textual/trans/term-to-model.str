@@ -4,10 +4,12 @@ imports
 	include/ComBE
 
 strategies
-	adjust-tree-to-model = alltd(t2m)
-	adjust-model-to-tree = alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
+  
+  ASTtext-to-ASTgraph = ?(<id>, _); strip-annos; alltd(t2m)
+  ASTgraph-to-ASTtext = ?(<id>, _); strip-annos; alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
 
 rules	
+  
 	t2m: StandardNode(a, b, c, d, Some((e, f))) -> StandardNode(a, b, c, d, e, Some(f))
 	t2m: StandardNode(a, b, c, d, None()) -> StandardNode(a, b, c, d, None(), None())
 	
@@ -15,6 +17,7 @@ rules
 	t2m: EmptyNode(None()) -> EmptyNode(None(), None())
 
 rules
+  
 	m2t-a: StandardNode(a, Some(""), c, d, e, f) -> StandardNode(a, None(), c, d, e, f)
 	m2t-b: StandardNode(a, b, c, d, _, Some("")) -> StandardNode(a, b, c, d, None())
 	m2t-c: StandardNode(a, b, c, d, Some(""), Some(f)) -> StandardNode(a, b, c, d, Some((None(), f)))
@@ -25,5 +28,6 @@ rules
 	m2t-c: EmptyNode(a, Some(b)) -> EmptyNode(Some((a, b)))
 	
 signature constructors
+  
 	StandardNode: a * b * c * d * e *f -> StandardNode
 	EmptyNode: a * b -> EmptyNode
