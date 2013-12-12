@@ -15,7 +15,6 @@ imports
   lib/runtime/task/-
   lib/runtime/analysis/-
   names
-  check
   pp
   term-to-model
 
