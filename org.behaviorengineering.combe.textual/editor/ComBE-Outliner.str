@@ -1,0 +1,22 @@
+module editor/ComBE-Outliner
+
+imports
+  include/ComBE
+  lib/runtime/editor/outline-library
+  lib/runtime/editor/origins
+
+rules
+  
+  outline = simple-label-outline(to-outline-label)
+  outline-expand-to-level = !3
+  
+  to-outline-label = ?Requirement(_, <id>)
+  to-outline-label = ?StandardComponent(_, <id>, _)
+  to-outline-label = ?SystemComponent(_, <id>, _)
+  to-outline-label = ?Behavior(_, <id>)
+
+  // to-outline-label = ?Root(_); !"Tree"
+  // to-outline-label = ?AlternativeBranch(_, _); !"Alternative branch"
+  // to-outline-label = ?ParallelBranch(_, _); !"Parallel branch"
+  // to-outline-label = ?AtomicSequence([x|xs], _); !"Atomic Sequence"
+  // to-outline-label = ?StandardNode(_, _, _, _, _); origin-text
