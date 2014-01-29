@@ -1,12 +1,14 @@
 module term-to-model
 
 imports
+  
 	include/ComBE
+  runtime/modelware/-
 
 strategies
   
-  ASTtext-to-ASTgraph = ?(<id>, _); strip-annos; alltd(t2m)
-  ASTgraph-to-ASTtext = ?(<id>, _); strip-annos; alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
+  tree2model = ?(<id>, _); alltd(t2m); mw-tree2model
+  model2tree = ?(<id>, _); alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
 
 rules	
   
