@@ -4,10 +4,16 @@ imports
   
 	include/ComBE
   runtime/modelware/-
+  runtime/index/-
+  runtime/task/-
+  editor-common.generated
 
 strategies
   
-  tree2model = ?(<id>, _); alltd(t2m); mw-tree2model
+  tree2model =
+    index-setup(|<language>, <project-path>);
+    task-setup(|<project-path>);
+    ?(<id>, _); alltd(t2m); mw-tree2model
   model2tree = ?(<id>, _); alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
 
 rules	

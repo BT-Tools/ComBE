@@ -35,6 +35,14 @@ rules // Analysis
   
   editor-save = analysis-save-default(|<language>)
 
+rules // Custom builders
+  
+  debug-show-model:
+    (selected, position, ast, path, project-path) -> (filename, result)
+    with
+      filename := <guarantee-extension(|"model.aterm")> path;
+      result   := <tree2model> (ast, None())
+
 rules // Editor services
   
   // Resolves a reference when the user control-clicks or presses F3 in the editor.

@@ -9,6 +9,7 @@ menus
     action: "Format"               = editor-format (openeditor) (realtime)
     action: "Show abstract syntax" = debug-show-aterm (openeditor) (realtime) (meta) (source)
     action: "Show analyzed syntax" = debug-show-analyzed (openeditor) (meta)
+    action: "Show model"           = debug-show-model (openeditor) (meta)
     
   menu: "Analysis"
     
