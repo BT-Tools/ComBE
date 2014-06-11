@@ -14,16 +14,11 @@ strategies
     index-setup(|<language>, <project-path>);
     task-setup(|<project-path>);
     ?(<id>, _); mw-tree2model
-  model2tree = ?(<id>, _); alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
+    
+  model2tree = ?(<id>, _); alltd(m2t)
 
 rules
   
-	m2t-a: StandardNode(a, Some(""), c, d, e, f) -> StandardNode(a, None(), c, d, e, f)
-	m2t-b: StandardNode(a, b, c, d, _, Some("")) -> StandardNode(a, b, c, d, None())
-	m2t-c: StandardNode(a, b, c, d, Some(""), Some(f)) -> StandardNode(a, b, c, d, Some((None(), f)))
-	m2t-d: StandardNode(a, b, c, d, e, Some(f)) -> StandardNode(a, b, c, d, Some((e, f)))
-
-	m2t-a: EmptyNode(_, Some("")) -> EmptyNode(None())
-	m2t-b: EmptyNode(Some(""), Some(b)) -> EmptyNode(Some((None(), b)))
-	m2t-c: EmptyNode(a, Some(b)) -> EmptyNode(Some((a, b)))
-	
+    m2t = (?StandardNode(_, _, _, _, _, _) + ?EmptyNode(_, _)); alltd(some2none)
+    some2none = ?Some(""); !None()
+ 
