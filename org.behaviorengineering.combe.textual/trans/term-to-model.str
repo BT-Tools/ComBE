@@ -13,11 +13,16 @@ strategies
   tree2model =
     index-setup(|<language>, <project-path>);
     task-setup(|<project-path>);
-    ?(<id>, _); mw-tree2model
+    ?(<id>, _); alltd(t2m-requirements); mw-tree2model
     
-  model2tree = ?(<id>, _); alltd(some2none)
+  model2tree = ?(<id>, _); alltd(some2none); alltd(m2t-requirements)
 
 rules
   
     some2none = ?Some(""); !None()
  
+    t2m-requirements = fail // TODO: transform list of requirements to String. Usefull strategies: concat-strings
+    	
+    m2t-requirements = separate-by(|", ") // TODO: transform string into list of requirements. Usefull strategies: use separate-by(|",") and trim
+    
+    // Stratego API: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
