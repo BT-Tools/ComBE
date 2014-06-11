@@ -7,22 +7,23 @@ imports
   libstratego-aterm
   include/ComBE
   editor/ComBE-Outliner
-  lib/editor-common.generated
-  lib/runtime/index/-
-  lib/runtime/nabl/-
-  lib/runtime/properties/-
-  lib/runtime/types/-
-  lib/runtime/task/-
-  lib/runtime/analysis/-
+  editor-common.generated
+  runtime/index/-
+  runtime/nabl/-
+  runtime/properties/-
+  runtime/types/-
+  runtime/task/-
+  runtime/analysis/-
+  runtime/editor/-
   names
   pp
   term-to-model
 
 rules
   
-	parenthesize = fail
-	override-reconstruction = fail
-	resugar = fail
+  parenthesize = fail
+  override-reconstruction = fail
+  resugar = fail
 
 rules // Analysis
   
@@ -71,6 +72,12 @@ rules // Editor services
       filename := <guarantee-extension(|$[pp.[ext]])> path;
       result   := <pp-debug> selected
 
+  // Gathers the outline nodes for the outline view.
+  editor-outline:
+    (node, position, ast, path, project-path) -> outline
+    where
+      outline := <simple-label-outline(to-outline-label)> ast
+      
 rules // Debugging
   
   // Prints the abstract syntax ATerm of a selection.

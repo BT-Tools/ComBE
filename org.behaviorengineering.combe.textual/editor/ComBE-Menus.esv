@@ -1,7 +1,5 @@
 module ComBE-Menus
 
-imports ComBE-Menus.generated
-
 menus
   
   menu: "Syntax"

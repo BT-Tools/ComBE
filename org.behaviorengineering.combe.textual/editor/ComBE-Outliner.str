@@ -2,13 +2,9 @@ module editor/ComBE-Outliner
 
 imports
   include/ComBE
-  lib/runtime/editor/outline-library
   lib/runtime/editor/origins
 
 rules
-  
-  outline = simple-label-outline(to-outline-label)
-  outline-expand-to-level = !3
   
   to-outline-label = ?Requirement(_, <id>)
   to-outline-label = ?StandardComponent(_, <id>, _)
