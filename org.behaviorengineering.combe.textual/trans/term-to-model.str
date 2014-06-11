@@ -21,8 +21,8 @@ rules
   
     some2none = ?Some(""); !None()
  
-    t2m-requirements = fail // TODO: transform list of requirements to String. Usefull strategies: concat-strings
+    t2m-requirements = fail // TODO: transform list of requirements to String. Usefull strategies: use separate-by(|", ") and concat-strings
     	
-    m2t-requirements = separate-by(|", ") // TODO: transform string into list of requirements. Usefull strategies: use separate-by(|",") and trim
+    m2t-requirements = fail // TODO: transform string into list of requirements. Usefull strategies: string-tokenize(|',') and trim
     
     // Stratego API: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
