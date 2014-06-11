@@ -15,10 +15,9 @@ strategies
     task-setup(|<project-path>);
     ?(<id>, _); mw-tree2model
     
-  model2tree = ?(<id>, _); alltd(m2t)
+  model2tree = ?(<id>, _); alltd(some2none)
 
 rules
   
-    m2t = (?StandardNode(_, _, _, _, _, _) + ?EmptyNode(_, _)); alltd(some2none)
     some2none = ?Some(""); !None()
  
