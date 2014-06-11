@@ -13,16 +13,8 @@ strategies
   tree2model =
     index-setup(|<language>, <project-path>);
     task-setup(|<project-path>);
-    ?(<id>, _); alltd(t2m); mw-tree2model
+    ?(<id>, _); mw-tree2model
   model2tree = ?(<id>, _); alltd(m2t-a); alltd(m2t-b); alltd(m2t-c); alltd(m2t-d)
-
-rules	
-  
-	t2m: StandardNode(a, b, c, d, Some((e, f))) -> StandardNode(a, b, c, d, e, Some(f))
-	t2m: StandardNode(a, b, c, d, None()) -> StandardNode(a, b, c, d, None(), None())
-	
-	t2m: EmptyNode(Some((a, b))) -> EmptyNode(a, Some(b))
-	t2m: EmptyNode(None()) -> EmptyNode(None(), None())
 
 rules
   
@@ -35,7 +27,3 @@ rules
 	m2t-b: EmptyNode(Some(""), Some(b)) -> EmptyNode(Some((None(), b)))
 	m2t-c: EmptyNode(a, Some(b)) -> EmptyNode(Some((a, b)))
 	
-signature constructors
-  
-	StandardNode: a * b * c * d * e *f -> StandardNode
-	EmptyNode: a * b -> EmptyNode
