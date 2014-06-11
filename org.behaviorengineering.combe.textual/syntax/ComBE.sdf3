@@ -49,9 +49,8 @@ templates
 	AtomicSequenceChild = <; <BehaviorTree>>
 	BranchChildren = <<BehaviorTree*; separator="\n">>
 
-	Node.StandardNode = <<INTorID> <TraceabilityStatus?> <INTorID> <INTorID> <LabelAndOp?>>
-	Node.EmptyNode = <_ <LabelAndOp?>>
-	LabelAndOp = <<NodeLabel?> <Operator>>
+	Node.StandardNode = <<INTorID> <TraceabilityStatus?> <INTorID> <INTorID> <NodeLabel?> <Operator?>>
+	Node.EmptyNode = <_ <NodeLabel?> <Operator?>>
 		
  lexical syntax
   	
@@ -90,5 +89,6 @@ templates
   lexical restrictions
   
     %% Ensure greedy matching for lexicals
-    INTorID            -/- [a-zA-Z0-9\_]
+    INTorID       -/- [a-zA-Z0-9\_]
     Label         -/- ~[\n\r\ \;\#]
+    NodeLabel     -/- ~[\n\r\ \;]
