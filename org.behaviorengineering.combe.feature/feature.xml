@@ -38,6 +38,11 @@ Its components are based on Spoofax (GNU Lesser General Public License), and EMF
          optional="true"
          search-location="both"/>
 
+   <includes
+         id="org.eclipse.emf.compare"
+         version="0.0.0"
+         optional="true"/>
+
    <plugin
          id="org.behaviorengineering.combe.graphical"
          download-size="0"
