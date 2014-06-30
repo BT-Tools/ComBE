@@ -18,6 +18,9 @@ binding rules
 	Requirement(x, _) :
 	  defines Requirement x
 
+  RequirementRef(r) :
+    refers to Requirement r
+  
 	StandardComponent(x, _, _) :
 	  defines Component x
 	  scopes Behavior
@@ -29,7 +32,6 @@ binding rules
 	Behavior(x, _) :
 	  defines Behavior x
 
-	StandardNode(r, _, c, b, _, _) :
-	  refers to Requirement r
+	StandardNode(_, _, c, b, _, _) :
 	  refers to Component c
 	  refers to Behavior b in Component c

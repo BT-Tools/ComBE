@@ -49,9 +49,11 @@ templates
 	AtomicSequenceChild = <; <BehaviorTree>>
 	BranchChildren = <<BehaviorTree*; separator="\n">>
 
-	Node.StandardNode = <<INTorID> <TraceabilityStatus?> <INTorID> <INTorID> <NodeLabel?> <Operator?>>
+	Node.StandardNode = <<RequirementRefs> <TraceabilityStatus?> <INTorID> <INTorID> <NodeLabel?> <Operator?>>
 	Node.EmptyNode = <_ <NodeLabel?> <Operator?>>
-		
+	RequirementRefs.RequirementRefs = <<RequirementRef+; separator=", ">>
+  RequirementRef.RequirementRef = <<INTorID>>
+  
  lexical syntax
   	
   	StateRealisation:"#S"	-> BehaviorType
