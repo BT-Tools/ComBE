@@ -113,15 +113,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StandardNode" eSuperTypes="#//Node">
     <eAnnotations source="spoofax.featureIndex">
-      <details key="0" value="requirement"/>
+      <details key="0" value="requirements"/>
       <details key="1" value="traceabilitystatus"/>
       <details key="2" value="component"/>
       <details key="3" value="behavior"/>
       <details key="4" value="label"/>
       <details key="5" value="operator"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requirement" lowerBound="1"
-        eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requirements" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="traceabilitystatus" eType="#//TraceabilityStatus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
         eType="#//Component"/>

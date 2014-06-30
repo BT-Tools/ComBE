@@ -80,7 +80,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//Node/operator"/>
     </genClasses>
     <genClasses ecoreClass="ComBE.ecore#//StandardNode">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//StandardNode/requirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//StandardNode/requirements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComBE.ecore#//StandardNode/traceabilitystatus"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//StandardNode/component"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComBE.ecore#//StandardNode/behavior"/>

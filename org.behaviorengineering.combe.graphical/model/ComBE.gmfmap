@@ -23,12 +23,11 @@
           <domainMetaElement
               href="ComBE.ecore#//StandardNode"/>
           <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping"
-              readOnly="true">
+              xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
                 href="ComBE.gmfgraph#NodeRequirementLabel"/>
-            <viewExpression
-                body="if requirement->isEmpty() then '' else requirement.label endif"/>
+            <features
+                href="ComBE.ecore#//StandardNode/requirements"/>
           </labelMappings>
           <labelMappings
               xsi:type="gmfmap:ExpressionLabelMapping"
