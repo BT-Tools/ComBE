@@ -25,7 +25,7 @@
           <spacing/>
         </layout>
         <minimumSize
-            dx="202"
+            dx="232"
             dy="83"/>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -62,7 +62,7 @@
           <spacing/>
         </layout>
         <minimumSize
-            dx="202"
+            dx="232"
             dy="82"/>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -98,7 +98,7 @@
               green="211"
               blue="69"/>
           <preferredSize
-              dx="182"
+              dx="212"
               dy="27"/>
           <font
               xsi:type="gmfgraph:BasicFont"
@@ -138,7 +138,7 @@
           <spacing/>
         </layout>
         <minimumSize
-            dx="202"
+            dx="232"
             dy="82"/>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -184,7 +184,7 @@
         <font
             xsi:type="gmfgraph:BasicFont"
             faceName="ComBEFont"
-            height="15"/>
+            height="8"/>
         <border
             xsi:type="gmfgraph:CustomBorder"
             qualifiedClassName="ComBE.diagram.customCode.CustomLineBorder"/>
@@ -199,7 +199,7 @@
             <spacing/>
           </layout>
           <preferredSize
-              dx="54"
+              dx="64"
               dy="60"/>
           <children
               xsi:type="gmfgraph:Rectangle"
@@ -294,7 +294,7 @@
             <spacing/>
           </layout>
           <preferredSize
-              dx="125"
+              dx="145"
               dy="60"/>
           <children
               xsi:type="gmfgraph:Rectangle"
