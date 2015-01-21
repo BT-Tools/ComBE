@@ -1,0 +1,55 @@
+module Common
+
+
+lexical syntax
+  
+  STRING = "\"" StringChar* "\""
+  StringChar = ~[\"\n]
+  StringChar = "\\\""
+  StringChar = BackSlashChar
+  BackSlashChar = "\\"
+  
+  LAYOUT = [\ \t\n\r]
+  
+  CommentChar = [\*]
+  LAYOUT = "/*" (~[\*] | CommentChar)* "*/"
+  LAYOUT = "//" ~[\n\r]* ([\n\r] | EOF)
+  
+  EOF = 
+  
+lexical restrictions
+
+  %% Ensure greedy matching for lexicals
+
+  CommentChar   -/- [\/]
+  
+  %% EOF may not be followed by any char
+  
+  EOF           -/- ~[]
+
+  %% Backslash chars in strings may not be followed by " 
+  
+  BackSlashChar -/- [\"]
+
+context-free restrictions
+
+  %% Ensure greedy matching for comments
+
+  LAYOUT? -/- [\ \t\n\r]
+  LAYOUT? -/- [\/].[\/]
+  LAYOUT? -/- [\/].[\*]
+
+lexical syntax
+  
+  NodeLabel = "--" {reject}
+  NodeLabel = "&"   {reject}
+  NodeLabel = "|"   {reject}
+  NodeLabel = "%"   {reject}
+  NodeLabel = "=>" {reject}
+  NodeLabel = "^"   {reject}
+  NodeLabel = "^^" {reject}
+  NodeLabel = "="   {reject}
+  NodeLabel = "XOR" {reject}
+  NodeLabel = "#N{" {reject}
+  NodeLabel = "#P{" {reject}
+  

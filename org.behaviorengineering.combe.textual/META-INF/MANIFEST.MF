@@ -1,24 +1,20 @@
 Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: ComBE Plug-in
-Bundle-SymbolicName: org.behaviorengineering.combe.textual; singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.behaviorengineering.combe.textual.Activator
-Import-Package: org.osgi.framework;version="1.3.0"
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.core.resources,
- org.eclipse.imp.runtime,
- org.eclipse.ui,
- lpg.runtime,
- org.eclipse.jface.text,
- org.eclipse.ui.editors,
- org.eclipse.ui.workbench.texteditor,
- org.strategoxt.imp.runtime,
- org.spoofax.jsglr,
- org.strategoxt.strj,
- org.spoofax.terms
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Bundle-ActivationPolicy: lazy
 Export-Package: org.behaviorengineering.combe.textual
-Eclipse-RegisterBuddy: org.strategoxt.imp.runtime
+Bundle-ActivationPolicy: lazy
 Eclipse-BundleShape: dir
+Bundle-Name: ComBE Plug-in
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.ui.workbench.texteditor,org.eclipse.jface.
+ text,org.eclipse.core.runtime,org.eclipse.imp.runtime,org.eclipse.ui.
+ editors,lpg.runtime,org.eclipse.ui,org.eclipse.core.resources,org.spo
+ ofax.terms,org.strategoxt.strj,org.spoofax.jsglr,org.strategoxt.imp.r
+ untime,org.spoofax.interpreter.core,org.spoofax.interpreter.externald
+ eps
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-Activator: org.behaviorengineering.combe.textual.Activator
+Bundle-SymbolicName: org.behaviorengineering.combe.textual; singleton:
+ =true
+Import-Package: org.osgi.framework;version="1.3.0"
+Eclipse-RegisterBuddy: org.strategoxt.imp.runtime
+

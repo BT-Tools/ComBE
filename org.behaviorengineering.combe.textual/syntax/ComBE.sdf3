@@ -6,88 +6,88 @@ context-free start-symbols
   
     Start
 
-templates
+context-free syntax
 
-	Start.Specification = 
-		<
-		#RT <Requirement*; separator="\n">
-	  	
-		<Component*; separator="\n\n">
-		
-		<Root?>
-		>
+  Start.Specification = 
+    <
+    #RT <{Requirement "\n"}*>
+      
+    <{Component "\n\n"}*>
+    
+    <Root?>
+    >
  
-	Requirement.Requirement = <<INTorID> <Label>>
-	Component.StandardComponent = 
-		<
-		#C <INTorID> <Label> 
-			<BehaviorSeq*; separator="\n">
-		>
-	Component.SystemComponent = 
-		<
-		#SC <INTorID> <Label>
-			<BehaviorSeq*; separator="\n">
-			>
-	BehaviorSeq.BehaviorSeq = <<BehaviorType> <Behavior*; separator="\n">>
-	Behavior.Behavior = <<INTorID> <Label>>
-	
-	Root.Root = <#T <BehaviorTree>> %% workaround for GMF phantom node bug
-	BehaviorTree.AtomicSequence = <<AtomicSequence> <AtomicSequenceChild?>>
-	BehaviorTree.AlternativeBranch = 
-		<
-		<AtomicSequence> #N { 
-			<BranchChildren>
-		}
-		>
-	BehaviorTree.ParallelBranch = 
-		<
-		<AtomicSequence> #P {
-			<BranchChildren>
-		}
-		>
-	AtomicSequence = <<Node+; separator=";;">>
-	AtomicSequenceChild = <; <BehaviorTree>>
-	BranchChildren = <<BehaviorTree*; separator="\n">>
+  Requirement.Requirement = <<INTorID> <Label>>
+  Component.StandardComponent = 
+    <
+    #C <INTorID> <Label> 
+      <{BehaviorSeq "\n"}*>
+    >
+  Component.SystemComponent = 
+    <
+    #SC <INTorID> <Label>
+      <{BehaviorSeq "\n"}*>
+      >
+  BehaviorSeq.BehaviorSeq = <<BehaviorType> <{Behavior "\n"}*>>
+  Behavior.Behavior = <<INTorID> <Label>>
+  
+  Root.Root = <#T <BehaviorTree>> %% workaround for GMF phantom node bug
+  BehaviorTree.AtomicSequence = <<AtomicSequence> <AtomicSequenceChild?>>
+  BehaviorTree.AlternativeBranch = 
+    <
+    <AtomicSequence> #N { 
+      <BranchChildren>
+    }
+    >
+  BehaviorTree.ParallelBranch = 
+    <
+    <AtomicSequence> #P {
+      <BranchChildren>
+    }
+    >
+  AtomicSequence = <<{Node ";;"}+>>
+  AtomicSequenceChild = <; <BehaviorTree>>
+  BranchChildren = <<{BehaviorTree "\n"}*>>
 
-	Node.StandardNode = <<RequirementRefs> <TraceabilityStatus?> <INTorID> <INTorID> <NodeLabel?> <Operator?>>
-	Node.EmptyNode = <_ <NodeLabel?> <Operator?>>
-	RequirementRefs.RequirementRefs = <<RequirementRef+; separator=", ">>
+  Node.StandardNode = <<RequirementRefs> <TraceabilityStatus?> <INTorID> <INTorID> <NodeLabel?> <Operator?>>
+  Node.EmptyNode = <_ <NodeLabel?> <Operator?>>
+  RequirementRefs.RequirementRefs = <<{RequirementRef ", "}+>>
   RequirementRef.RequirementRef = <<INTorID>>
   
  lexical syntax
-  	
-  	StateRealisation:"#S"	-> BehaviorType
-	Selection:"#L"			-> BehaviorType
-	Event:"#E"				-> BehaviorType
-	Guard:"#G"				-> BehaviorType
-	IIEvent:"#II"			-> BehaviorType
-	IOEvent:"#IO"			-> BehaviorType
-	EIEvent:"#EI"			-> BehaviorType
-	EOEvent:"#EO"			-> BehaviorType
-	Assertion:"#A"			-> BehaviorType
-  	
-  	Implied:"+"				-> TraceabilityStatus
-	Missing:"-"				-> TraceabilityStatus
-	Updated:"++"			-> TraceabilityStatus 
-	Deleted:"--"			-> TraceabilityStatus
-	Refinement:"+-"			-> TraceabilityStatus
-  	
-	BranchKill:"--"			-> Operator
-	Conjunction:"&"			-> Operator
-	Disjunction:"|"			-> Operator
-	May:"%"					-> Operator
-	Reference:"=>"			-> Operator
-	Reversion:"^"			-> Operator
-	StartNew:"^^"			-> Operator
-	Synchronisation:"="		-> Operator
-	XOR:"XOR"				-> Operator
-	
+    
+    BehaviorType = StateRealisation:"#S" 
+    BehaviorType = Selection:"#L"
+    BehaviorType = Event:"#E"  
+    BehaviorType = Guard:"#G"  
+    BehaviorType = IIEvent:"#II"
+    BehaviorType = IOEvent:"#IO"
+    BehaviorType = EIEvent:"#EI"
+    BehaviorType = EOEvent:"#EO"
+    BehaviorType = Assertion:"#A"
+      
+    TraceabilityStatus = Implied:"+"
+    TraceabilityStatus = Missing:"-"
+    TraceabilityStatus = Updated:"++" 
+    TraceabilityStatus = Deleted:"--"
+    TraceabilityStatus = Refinement:"+-"
+      
+    Operator = BranchKill:"--"
+    Operator = Conjunction:"&"
+    Operator = Disjunction:"|"
+    Operator = May:"%"    
+    Operator = Reference:"=>"
+    Operator = Reversion:"^"
+    Operator = StartNew:"^^"
+    Operator = Synchronisation:"="
+    Operator = XOR:"XOR"
+  
   lexical syntax
     
-    [a-zA-Z0-9]+         -> INTorID
-    ~[\n\r\ \;\#]+	     -> Label
-    ~[\n\r\ \;]+	     -> NodeLabel
-	
+    INTorID = [a-zA-Z0-9]+
+    Label = ~[\n\r\ \;\#]+
+    NodeLabel = ~[\n\r\ \;]+
+  
   lexical restrictions
   
     %% Ensure greedy matching for lexicals

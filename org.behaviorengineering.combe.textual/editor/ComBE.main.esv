@@ -21,3 +21,6 @@ language General properties
   observer: editor-analyze (multifile)
   
   on save : editor-save
+  
+  jvm opts      : -Xmx512m
+  

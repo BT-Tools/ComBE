@@ -4,8 +4,6 @@
 /.cache
 /syntax/ComBE.generated.pp
 /lib-refactoring
-/syntax/*generated*
-/syntax/*.sdf
-/trans/*generated*
 /trans/names.str
 /editor/*generated*
+/src-gen/
