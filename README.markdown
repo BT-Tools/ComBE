@@ -17,7 +17,7 @@ This is how you can build the tool:
 - Download Eclipse Kepler (any package solution): http://www.eclipse.org/downloads/
 - Change your eclipse.ini as explained here: http://metaborg.org/wiki/spoofax/download
 - Make sure that Eclipse uses JDK 7 and not JDK 6. You can set this by going to 'Window -> Preferences -> Java -> Compiler'
-- Install Spoofax Core + Spoofax Modelware by pointing your Eclipse update manager to http://hydra.nixos.org/job/spoofax/spoofax-modelware/build/latest/download/1/update
+- Install Spoofax Core + Spoofax Modelware by pointing your Eclipse update manager to http://download.spoofax.org/update/release/1.3.1
 - Import the projects from https://github.com/oskarvanrest/ComBE into your workspace.
 - Open file org.behaviorengineering.combe.graphical/model/ComBE.genmodel, right-click on the top-most node in the editor and choose 'Generate All'
 - Right-click on org.behaviorengineering.combe.graphical/model/ComBE.gmfgen and choose 'Generate diagram code'
