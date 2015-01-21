@@ -3,7 +3,7 @@ ComBE
 
 ComBE is a real-time synchronized textual and graphical editor for Behavior Trees.
 
-- Website: http://oskarvanrest.github.com/ComBE/
+- Website: http://bt-tools.github.com/ComBE/
 - Issue tracking: http://yellowgrass.org/project/ComBE
 
 
