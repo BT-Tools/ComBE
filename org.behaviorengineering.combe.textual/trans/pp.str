@@ -3,7 +3,6 @@ module pp
 imports
 
 	libstratego-gpp
-	ComBE.pp.generated
   src-gen/pp/-
   src-gen/signatures/-
   lib/runtime/refactoring/-
